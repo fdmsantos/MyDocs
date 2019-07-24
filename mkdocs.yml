@@ -8,4 +8,8 @@ theme: slate
 nav:
   - Home: 'index.md'
   - ELK Stack:
+      - ESQueries: 'elk/queries.md'
+      - Administration: 'elk/admin.md'
       - Kibana: 'elk/kibana.md'
+      - Beats: 'elk/beats.md'
+      - Snapshots&Restore: 'elk/snapshotsAndRestore.md'
