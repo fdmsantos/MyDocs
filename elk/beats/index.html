@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="My Personal Docs">
+        
         <meta name="author" content="Fábio Santos">
-        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/">
-        <link rel="shortcut icon" href="img/favicon.ico">
-        <title>MyDocs</title>
-        <link href="css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/base.css" rel="stylesheet">
+        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/elk/beats/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Beats - MyDocs</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -19,13 +19,13 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <script src="js/jquery-1.10.2.min.js" defer></script>
-        <script src="js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
 
         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container">
@@ -39,38 +39,38 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href=".">MyDocs</a>
+                    <a class="navbar-brand" href="../..">MyDocs</a>
                 </div>
 
                 <!-- Expanded navigation -->
                 <div class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="active">
-                                <a href=".">Home</a>
+                            <li >
+                                <a href="../..">Home</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">ELK Stack <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="elk/queries/">ESQueries</a>
+    <a href="../queries/">ESQueries</a>
 </li>
                                     
 <li >
-    <a href="elk/admin/">Administration</a>
+    <a href="../admin/">Administration</a>
 </li>
                                     
 <li >
-    <a href="elk/kibana/">Kibana</a>
+    <a href="../kibana/">Kibana</a>
+</li>
+                                    
+<li class="active">
+    <a href="./">Beats</a>
 </li>
                                     
 <li >
-    <a href="elk/beats/">Beats</a>
-</li>
-                                    
-<li >
-    <a href="elk/snapshotsAndRestore/">Snapshots&Restore</a>
+    <a href="../snapshotsAndRestore/">Snapshots&Restore</a>
 </li>
                                 </ul>
                             </li>
@@ -82,18 +82,18 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="disabled">
-                                <a rel="next" >
+                            <li >
+                                <a rel="next" href="../kibana/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="elk/queries/">
+                                <a rel="prev" href="../snapshotsAndRestore/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/index.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/elk/beats.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -103,13 +103,35 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#welcome-to-my-personal-docks-mkdocs">Welcome to My Personal Docks MkDocs</a></li>
+        <li class="main active"><a href="#beats">Beats</a></li>
+            <li><a href="#creating-custom">Creating Custom</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="welcome-to-my-personal-docks-mkdocs">Welcome to My Personal Docks MkDocs</h1>
-<p>Work In Progress</p></div>
+<h1 id="beats">Beats</h1>
+<h2 id="creating-custom">Creating Custom</h2>
+<p><a href="https://www.elastic.co/guide/en/beats/devguide/current/new-beat.html">Creating New  Beat</a></p>
+<p><a href="https://www.elastic.co/blog/build-your-own-beat">Examples</a></p>
+<h4 id="know-errors">Know Errors</h4>
+<p><a href="https://discuss.elastic.co/t/error-on-make-setup/147473">bash: mage: command not found</a></p>
+<h4 id="use-vendoring">Use vendoring</h4>
+<p>We recommend to use vendoring for your beat. This means the dependencies are put into your beat folder. The beats team currently uses <a href="https://github.com/kardianos/govendor">govendor</a> for vendoring.</p>
+<pre><code class="sh">govendor init
+govendor update +e
+</code></pre>
+
+<p>This will create a directory <code>vendor</code> inside your repository. To make sure all dependencies for the Makefile commands are loaded from the vendor directory, find the following line in your Makefile:</p>
+<pre><code class="sh">ES_BEATS=${GOPATH}/src/github.com/elastic/beats
+</code></pre>
+
+<p>Replace it with:</p>
+<pre><code class="sh">ES_BEATS=./vendor/github.com/elastic/beats
+</code></pre>
+
+<p>To Fetch: </p>
+<pre><code class="sh">govendor fetch  github.com/vmware/govmomi/^ +out
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
@@ -117,11 +139,11 @@
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = ".",
+            var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="js/base.js" defer></script>
-        <script src="search/main.js" defer></script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
@@ -189,8 +211,3 @@
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.0.4
-Build Date UTC : 2019-07-24 18:39:07
--->
