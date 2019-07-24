@@ -15,3 +15,13 @@ For full documentation visit [mkdocs.org](https://mkdocs.org).
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
+
+
+```python
+a,b = 0,1
+def fib():
+    global a,b
+    while True:
+        a,b = b, a+b
+        yield a
+```

@@ -1,2 +1,6 @@
-site_name: My Docs
-theme: readthedocs
+site_name: MyDocs
+site_url: https://fdmsantos.github.io/MyDocs/
+site_description: My Personal Docs
+site_author: Fábio Santos
+repo_url: https://github.com/fdmsantos/MyDocs
+theme: slate
