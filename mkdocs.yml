@@ -4,3 +4,8 @@ site_description: My Personal Docs
 site_author: Fábio Santos
 repo_url: https://github.com/fdmsantos/MyDocs
 theme: slate
+
+nav:
+  - Home: 'index.md'
+  - ELK Stack:
+      - Kibana: 'elk/kibana.md'
