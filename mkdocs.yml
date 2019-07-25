@@ -7,9 +7,20 @@ theme: slate
 
 nav:
   - Home: 'index.md'
-  - ELK Stack:
-      - ESQueries: 'elk/queries.md'
-      - Administration: 'elk/admin.md'
-      - Kibana: 'elk/kibana.md'
-      - Beats: 'elk/beats.md'
-      - Snapshots&Restore: 'elk/snapshotsAndRestore.md'
+  - Databases:
+      - ELK Stack:
+         - ESQueries: 'elk/queries.md'
+         - Administration: 'elk/admin.md'
+         - Kibana: 'elk/kibana.md'
+         - Beats: 'elk/beats.md'
+         - Snapshots&Restore: 'elk/snapshotsAndRestore.md'
+  - Unix:
+      - Commands: 'unix/commands.md'
+      - Disks: 'unix/disks.md'
+      - Software:
+          - PHP: 'unix/software/php.md'
+          - Virsh: 'unix/software/virsh.md'
+      - OperationSystems:
+          - Redhat: 'unix/os/redhat.md'
+          - Ubuntu: 'unix/os/ubuntu.md'
+          - Archlinux: 'unix/os/archlinux.md'
