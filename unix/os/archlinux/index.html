@@ -6,12 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="Fábio Santos">
-        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/elk/snapshotsAndRestore/">
-        <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Snapshots&Restore - MyDocs</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/unix/os/archlinux/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Archlinux - MyDocs</title>
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -39,7 +39,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../..">MyDocs</a>
+                    <a class="navbar-brand" href="../../..">MyDocs</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -47,9 +47,9 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="../..">Home</a>
+                                <a href="../../..">Home</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Databases <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -58,38 +58,38 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../queries/">ESQueries</a>
+    <a href="../../../elk/queries/">ESQueries</a>
 </li>
             
 <li >
-    <a href="../admin/">Administration</a>
+    <a href="../../../elk/admin/">Administration</a>
 </li>
             
 <li >
-    <a href="../kibana/">Kibana</a>
+    <a href="../../../elk/kibana/">Kibana</a>
 </li>
             
 <li >
-    <a href="../beats/">Beats</a>
+    <a href="../../../elk/beats/">Beats</a>
 </li>
             
-<li class="active">
-    <a href="./">Snapshots&Restore</a>
+<li >
+    <a href="../../../elk/snapshotsAndRestore/">Snapshots&Restore</a>
 </li>
     </ul>
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Unix <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../unix/commands/">Commands</a>
+    <a href="../../commands/">Commands</a>
 </li>
                                     
 <li >
-    <a href="../../unix/disks/">Disks</a>
+    <a href="../../disks/">Disks</a>
 </li>
                                     
   <li class="dropdown-submenu">
@@ -97,11 +97,11 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../unix/software/php/">PHP</a>
+    <a href="../../software/php/">PHP</a>
 </li>
             
 <li >
-    <a href="../../unix/software/virsh/">Virsh</a>
+    <a href="../../software/virsh/">Virsh</a>
 </li>
     </ul>
   </li>
@@ -111,15 +111,15 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../unix/os/redhat/">Redhat</a>
+    <a href="../redhat/">Redhat</a>
 </li>
             
 <li >
-    <a href="../../unix/os/ubuntu/">Ubuntu</a>
+    <a href="../ubuntu/">Ubuntu</a>
 </li>
             
-<li >
-    <a href="../../unix/os/archlinux/">Archlinux</a>
+<li class="active">
+    <a href="./">Archlinux</a>
 </li>
     </ul>
   </li>
@@ -134,17 +134,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../beats/">
+                                <a rel="next" href="../ubuntu/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li >
-                                <a rel="prev" href="../../unix/commands/">
+                            <li class="disabled">
+                                <a rel="prev" >
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/elk/snapshotsAndRestore.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/unix/os/archlinux.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -154,65 +154,45 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#snapshot">Snapshot</a></li>
-            <li><a href="#config">Config</a></li>
-            <li><a href="#create">Create</a></li>
-            <li><a href="#list-all-snapshots-from-a-repo">List all Snapshots from a repo</a></li>
-            <li><a href="#delete">Delete</a></li>
-        <li class="main "><a href="#repositories">Repositories</a></li>
-            <li><a href="#create_1">Create</a></li>
-            <li><a href="#list">List</a></li>
-            <li><a href="#delete_1">Delete</a></li>
-        <li class="main "><a href="#restore">Restore</a></li>
-            <li><a href="#restore-from-snapshot">Restore From Snapshot</a></li>
+        <li class="main active"><a href="#packages">Packages</a></li>
+        <li class="main "><a href="#update-package">Update Package</a></li>
+        <li class="main "><a href="#update-corrupted-or-invalid-database">Update corrupted or invalid database</a></li>
+        <li class="main "><a href="#resolve-icu-package-problem">Resolve ICU Package Problem</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="snapshot">Snapshot</h2>
-<h3 id="config">Config</h3>
-<p><strong>Change parameter in elastic search config file for all nodes</strong></p>
-<p>The path.repo needs to be a shared folder beetween the cluster</p>
-<pre><code class="yaml">path.repo: [&quot;/usr/share/elasticsearch/snapshots&quot;]
+<h2 id="packages">Packages</h2>
+<p><a href="https://archive.archlinux.org/packages/">Packages</a></p>
+<h2 id="update-package">Update Package</h2>
+<pre><code class="sh">sudo pacman -U &lt;link - see above&gt;
 </code></pre>
 
-<h3 id="create">Create</h3>
-<pre><code class="json">PUT /_snapshot/{repository}/{snapshot}?wait_for_completion=true
+<h2 id="update-corrupted-or-invalid-database">Update corrupted or invalid database</h2>
+<pre><code class="sh">pacman-key --delete 91FFE0700E80619CEB73235CA88E23E377514E00
+pacman-key --populate archlinux
 </code></pre>
 
-<h3 id="list-all-snapshots-from-a-repo">List all Snapshots from a repo</h3>
-<pre><code class="json">GET /_cat/snapshots/{repository}?v&amp;s=id
-</code></pre>
+<h2 id="resolve-icu-package-problem">Resolve ICU Package Problem</h2>
+<p><a href="https://github.com/gcarq/inox-patchset/issues/159">Link</a></p>
+<pre><code class="sh">Download and Install old &quot;icu&quot; package;
+ wget https://archive.archlinux.org/packages/i/icu/icu-62.1-1-x86_64.pkg.tar.xz
+ sudo pacman -U icu-62.1-1-x86_64.pkg.tar.xz
 
-<h3 id="delete">Delete</h3>
-<pre><code class="json">DELETE /_snapshot/{repository}/{snapshot}
-</code></pre>
+Copy all &quot;icu&quot; files to a backup directory;
+ sudo mkdir /usr/lib/backup
+ sudo cp -r /usr/lib/libicu* /usr/lib/backup/
 
-<h2 id="repositories">Repositories</h2>
-<h3 id="create_1">Create</h3>
-<pre><code class="json">PUT /_snapshot/my_backup
-{
-    &quot;type&quot;: &quot;fs&quot;,
-    &quot;settings&quot;: {
-      &quot;location&quot;: &quot;/usr/share/elasticsearch/snapshots/backup&quot;
-    }
+Install new version of &quot;icu&quot; again;
+ sudo pacman -U /var/cache/pacman/pkg/icu-62.1-1-x86_64.pkg.tar.xz
 
-}
-</code></pre>
+Copy this three files back to /var/lib/ direcotry;
+ sudo cp /var/lib/libicui18n.so.61 /usr/lib/
+ sudo cp /var/lib/libicuuc.so.61 /usr/lib/
+ sudo cp /var/lib/libicudata.so.61 /usr/lib/
 
-<h3 id="list">List</h3>
-<pre><code class="json">GET /_cat/repositories?v
-GET /_snapshot/_all
-</code></pre>
-
-<h3 id="delete_1">Delete</h3>
-<pre><code class="json">DELETE /_snapshot/{repository}
-</code></pre>
-
-<h2 id="restore">Restore</h2>
-<p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html#_restore">Restore - Official Doc</a></p>
-<h3 id="restore-from-snapshot">Restore From Snapshot</h3>
-<pre><code class="json">POST /_snapshot/{repository}/{snapshot}/_restore
+You can now cleanup backup files;
+ sudo rm -rf /var/lib/backup
 </code></pre></div>
         </div>
 
@@ -221,11 +201,11 @@ GET /_snapshot/_all
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "../..",
+            var base_url = "../../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">
