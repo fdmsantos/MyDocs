@@ -1,4 +1,14 @@
-# Welcome to My Personal Docks MkDocs
+# Deploy
 
-Work In Progress
+## Localhost
+
+```bash
+python -m mkdocs serve
+```
+
+## Github Pages
+
+```bash
+python -m mkdocs gh-deploy
+```
 
