@@ -7,6 +7,8 @@ theme: slate
 
 nav:
   - Home: 'index.md'
+  - AWS:
+      - VPC: 'aws/vpc.md'
   - Databases:
       - ELK Stack:
          - ESQueries: 'elk/queries.md'
