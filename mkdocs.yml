@@ -8,7 +8,12 @@ theme: slate
 nav:
   - Home: 'index.md'
   - AWS:
-      - VPC: 'aws/vpc.md'
+      - Networking:
+          - VPC: 'aws/vpc.md'
+      - Compute:
+          - EC2: 'aws/ec2.md'
+      - Storage:
+          - EBS: 'aws/ebs.md'
   - Databases:
       - ELK Stack:
          - ESQueries: 'elk/queries.md'
