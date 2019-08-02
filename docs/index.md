@@ -14,4 +14,10 @@ python -m mkdocs gh-deploy
 
 ## URL
 
-https://fdmsantos.github.io/MyDocs/
+[MyDocs](https://fdmsantos.github.io/MyDocs/)
+
+# Cheatseets
+
+## Markdown
+
+[Markdown](https://yakworks.github.io/mkdocs-material-components/cheat-sheet/)

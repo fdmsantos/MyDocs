@@ -9,11 +9,13 @@ nav:
   - Home: 'index.md'
   - AWS:
       - Networking:
-          - VPC: 'aws/vpc.md'
+          - VPC: 'aws/networking/vpc.md'
       - Compute:
-          - EC2: 'aws/ec2.md'
+          - EC2: 'aws/compute/ec2.md'
       - Storage:
-          - EBS: 'aws/ebs.md'
+          - EBS: 'aws/storage/ebs.md'
+      - Deployment:
+          - Cloudformation: 'aws/deployment/cloudformation.md'
   - Databases:
       - ELK Stack:
          - ESQueries: 'elk/queries.md'
