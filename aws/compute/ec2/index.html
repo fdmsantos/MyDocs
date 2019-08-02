@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="Fábio Santos">
-        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/unix/os/archlinux/">
+        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/aws/compute/ec2/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Archlinux - MyDocs</title>
+        <title>EC2 - MyDocs</title>
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -49,7 +49,7 @@
                             <li >
                                 <a href="../../..">Home</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">AWS <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -58,7 +58,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../aws/networking/vpc/">VPC</a>
+    <a href="../../networking/vpc/">VPC</a>
 </li>
     </ul>
   </li>
@@ -67,8 +67,8 @@
     <a href="#">Compute</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../../aws/compute/ec2/">EC2</a>
+<li class="active">
+    <a href="./">EC2</a>
 </li>
     </ul>
   </li>
@@ -78,7 +78,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../aws/storage/ebs/">EBS</a>
+    <a href="../../storage/ebs/">EBS</a>
 </li>
     </ul>
   </li>
@@ -88,7 +88,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../aws/deployment/cloudformation/">Cloudformation</a>
+    <a href="../../deployment/cloudformation/">Cloudformation</a>
 </li>
     </ul>
   </li>
@@ -125,16 +125,16 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Unix <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li >
-    <a href="../../commands/">Commands</a>
+    <a href="../../../unix/commands/">Commands</a>
 </li>
                                     
 <li >
-    <a href="../../disks/">Disks</a>
+    <a href="../../../unix/disks/">Disks</a>
 </li>
                                     
   <li class="dropdown-submenu">
@@ -142,11 +142,11 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../software/php/">PHP</a>
+    <a href="../../../unix/software/php/">PHP</a>
 </li>
             
 <li >
-    <a href="../../software/virsh/">Virsh</a>
+    <a href="../../../unix/software/virsh/">Virsh</a>
 </li>
     </ul>
   </li>
@@ -156,15 +156,15 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../redhat/">Redhat</a>
+    <a href="../../../unix/os/redhat/">Redhat</a>
 </li>
             
 <li >
-    <a href="../ubuntu/">Ubuntu</a>
+    <a href="../../../unix/os/ubuntu/">Ubuntu</a>
 </li>
             
-<li class="active">
-    <a href="./">Archlinux</a>
+<li >
+    <a href="../../../unix/os/archlinux/">Archlinux</a>
 </li>
     </ul>
   </li>
@@ -179,17 +179,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../ubuntu/">
+                                <a rel="next" href="../../networking/vpc/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li class="disabled">
-                                <a rel="prev" >
+                            <li >
+                                <a rel="prev" href="../../storage/ebs/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/unix/os/archlinux.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/aws/compute/ec2.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -199,45 +199,45 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#packages">Packages</a></li>
-        <li class="main "><a href="#update-package">Update Package</a></li>
-        <li class="main "><a href="#update-corrupted-or-invalid-database">Update corrupted or invalid database</a></li>
-        <li class="main "><a href="#resolve-icu-package-problem">Resolve ICU Package Problem</a></li>
+        <li class="main active"><a href="#ami">AMI</a></li>
+            <li><a href="#create">Create</a></li>
+        <li class="main "><a href="#snapshots">Snapshots</a></li>
+            <li><a href="#restore">Restore</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="packages">Packages</h2>
-<p><a href="https://archive.archlinux.org/packages/">Packages</a></p>
-<h2 id="update-package">Update Package</h2>
-<pre><code class="sh">sudo pacman -U &lt;link - see above&gt;
-</code></pre>
-
-<h2 id="update-corrupted-or-invalid-database">Update corrupted or invalid database</h2>
-<pre><code class="sh">pacman-key --delete 91FFE0700E80619CEB73235CA88E23E377514E00
-pacman-key --populate archlinux
-</code></pre>
-
-<h2 id="resolve-icu-package-problem">Resolve ICU Package Problem</h2>
-<p><a href="https://github.com/gcarq/inox-patchset/issues/159">Link</a></p>
-<pre><code class="sh">Download and Install old &quot;icu&quot; package;
- wget https://archive.archlinux.org/packages/i/icu/icu-62.1-1-x86_64.pkg.tar.xz
- sudo pacman -U icu-62.1-1-x86_64.pkg.tar.xz
-
-Copy all &quot;icu&quot; files to a backup directory;
- sudo mkdir /usr/lib/backup
- sudo cp -r /usr/lib/libicu* /usr/lib/backup/
-
-Install new version of &quot;icu&quot; again;
- sudo pacman -U /var/cache/pacman/pkg/icu-62.1-1-x86_64.pkg.tar.xz
-
-Copy this three files back to /var/lib/ direcotry;
- sudo cp /var/lib/libicui18n.so.61 /usr/lib/
- sudo cp /var/lib/libicuuc.so.61 /usr/lib/
- sudo cp /var/lib/libicudata.so.61 /usr/lib/
-
-You can now cleanup backup files;
- sudo rm -rf /var/lib/backup
+<h1 id="ami">AMI</h1>
+<h2 id="create">Create</h2>
+<ul>
+<li>
+<p><strong>EC2 EBS Backed</strong></p>
+<ol>
+<li>Launch an instance</li>
+<li>Connect to your instance and customize it</li>
+<li>Stop Instances (stopping the instance ensures data integrity of the instance; a snapshot will be taken of the instance)</li>
+<li>Create the image </li>
+<li>Bundle it (use bundle command in console) </li>
+<li>AWS automatically registers it for you  </li>
+</ol>
+</li>
+<li>
+<p><strong>EC2 Instance store</strong></p>
+<ol>
+<li>Launch an instance</li>
+<li>Connect to your instance and customize it</li>
+<li>Bundle it (Consists of an image manifest -image.manifest.xml- and files -image.part.xx-) </li>
+<li>Upload the bundle to S3 bucket</li>
+<li>Register AMI</li>
+</ol>
+</li>
+</ul>
+<h1 id="snapshots">Snapshots</h1>
+<h2 id="restore">Restore</h2>
+<p><strong>Read all blocks to eliminate penalty in production</strong></p>
+<pre><code class="sh">sudo dd if=/dev/xvdf of=/dev/null bs=1M
+# Or
+sudo fio –filename=/dev/xvdf –rw=read –bs=128k –iodepth=32 –ioengine=libaio –direct=1 –name=volume-initialize
 </code></pre></div>
         </div>
 
