@@ -24,6 +24,7 @@ nav:
          - Beats: 'elk/beats.md'
          - Snapshots&Restore: 'elk/snapshotsAndRestore.md'
   - Unix:
+      - Devices: 'unix/devices.md'
       - Commands: 'unix/commands.md'
       - Disks: 'unix/disks.md'
       - Software:
@@ -31,5 +32,5 @@ nav:
           - Virsh: 'unix/software/virsh.md'
       - OperationSystems:
           - Redhat: 'unix/os/redhat.md'
-          - Ubuntu: 'unix/os/ubuntu.md'
+          - Debian: 'unix/os/debian.md'
           - Archlinux: 'unix/os/archlinux.md'

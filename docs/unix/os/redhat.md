@@ -1,4 +1,4 @@
-## Recover Root Password
+# Recover Root Password
 
 * Na console
 
@@ -16,7 +16,7 @@ ctrl d
 ctrl d
 ```
 
-## Permit SSH Root Login
+# Permit SSH Root Login
 
 ```sh
 vi /etc/ssh/sshd_config
@@ -25,7 +25,7 @@ vi /etc/ssh/sshd_config
 systemctl restart sshd 
 ```
 
-## Configure Network Interface
+# Configure Network Interface
 
 ```sh
 vi /etc/sysconfig/network-scripts/ifcfg-eth0
@@ -34,4 +34,39 @@ GATEWAY=172.16.1.16
 DNS1=172.16.1.112
 DNS2=172.16.1.119
 systemctl restart network
+```
+
+# Package Manager
+
+## RPM
+
+```bash
+sudo rpm -i wget-xxxxxx.rpm
+
+# To see which lib file belongs
+rpm -qf /etc/protocols
+
+
+# To see if some file is missing from lib
+sudo rpm --verify setup
+sudo rpm -Va # To verify entire machine
+
+```
+
+## YUM
+
+```bash
+# Config file
+cat /etc/yum.conf
+
+# Repos dir
+cd /etc/yum.repos.d
+
+
+sudo yum update
+
+# To download but not install
+sudo yum install --downloadonly --downloaddir=/tmp wget
+
+sudo yum remove wget
 ```
