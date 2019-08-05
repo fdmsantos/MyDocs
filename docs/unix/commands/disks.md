@@ -217,7 +217,7 @@ root@ip-172-31-81-196:~# vi /etc/fstab
 /dev/VG1/LV1 /mnt/LV1-mount ext4 defaults 0 0 # Add This Line
 
 
-# Can edit first the /etc/fsatab file and after do mount -a instead mount command
+# Can edit first the /etc/fsatab file and after do mount -a (mount everything in /etc/fstab file) instead mount command
 ```
 
 # Share Disk

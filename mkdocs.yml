@@ -24,13 +24,20 @@ nav:
          - Beats: 'elk/beats.md'
          - Snapshots&Restore: 'elk/snapshotsAndRestore.md'
   - Unix:
-      - Filesystem:
-           - Disks: 'unix/filesystem/disks.md'
-           - Filesystem: 'unix/filesystem/filesystem.md'
-      - Commands: 'unix/commands.md'
+      - Commands:
+             - Disks: 'unix/commands/disks.md'
+             - Filesystem: 'unix/commands/filesystem.md'
+             - Logging: 'unix/commands/logging.md'
+             - Kernel: 'unix/commands/kernel.md'
+             - Networking: 'unix/commands/networking.md'
+             - Security: 'unix/commands/security.md'
       - Software:
-          - PHP: 'unix/software/php.md'
-          - Virsh: 'unix/software/virsh.md'
+          - Mail:
+              - Postfix: 'unix/software/mail/postfix.md'
+          - Programming:
+              - PHP: 'unix/software/programming/php.md'
+          - Virtualization:
+              - Virsh: 'unix/software/virtualization/virsh.md'
       - OperationSystems:
           - Redhat: 'unix/os/redhat.md'
           - Debian: 'unix/os/debian.md'
