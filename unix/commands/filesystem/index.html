@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="Fábio Santos">
-        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/unix/os/ubuntu/">
+        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/unix/commands/filesystem/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Ubuntu - MyDocs</title>
+        <title>Filesystem - MyDocs</title>
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -129,25 +129,69 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Unix <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
+  <li class="dropdown-submenu">
+    <a href="#">Commands</a>
+    <ul class="dropdown-menu">
+            
 <li >
-    <a href="../../commands/">Commands</a>
+    <a href="../disks/">Disks</a>
 </li>
-                                    
+            
+<li class="active">
+    <a href="./">Filesystem</a>
+</li>
+            
 <li >
-    <a href="../../disks/">Disks</a>
+    <a href="../logging/">Logging</a>
 </li>
+            
+<li >
+    <a href="../kernel/">Kernel</a>
+</li>
+            
+<li >
+    <a href="../networking/">Networking</a>
+</li>
+            
+<li >
+    <a href="../security/">Security</a>
+</li>
+    </ul>
+  </li>
                                     
   <li class="dropdown-submenu">
     <a href="#">Software</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../software/php/">PHP</a>
-</li>
+  <li class="dropdown-submenu">
+    <a href="#">Mail</a>
+    <ul class="dropdown-menu">
             
 <li >
-    <a href="../../software/virsh/">Virsh</a>
+    <a href="../../software/mail/postfix/">Postfix</a>
 </li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Programming</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../software/programming/php/">PHP</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Virtualization</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../software/virtualization/virsh/">Virsh</a>
+</li>
+    </ul>
+  </li>
     </ul>
   </li>
                                     
@@ -156,15 +200,15 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../redhat/">Redhat</a>
-</li>
-            
-<li class="active">
-    <a href="./">Ubuntu</a>
+    <a href="../../os/redhat/">Redhat</a>
 </li>
             
 <li >
-    <a href="../archlinux/">Archlinux</a>
+    <a href="../../os/debian/">Debian</a>
+</li>
+            
+<li >
+    <a href="../../os/archlinux/">Archlinux</a>
 </li>
     </ul>
   </li>
@@ -179,17 +223,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../redhat/">
+                                <a rel="next" href="../disks/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../archlinux/">
+                                <a rel="prev" href="../logging/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/unix/os/ubuntu.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/unix/commands/filesystem.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -199,16 +243,166 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#know-errors">Know Errors</a></li>
-            <li><a href="#unable-to-lock-the-administration-directory">Unable to lock the administration directory</a></li>
+        <li class="main active"><a href="#filesystem">FileSystem</a></li>
+        <li class="main "><a href="#commands">Commands</a></li>
+            <li><a href="#dirs">Dirs</a></li>
+            <li><a href="#find">Find</a></li>
+            <li><a href="#inodes">Inodes</a></li>
+            <li><a href="#disk-space">Disk Space</a></li>
+            <li><a href="#filesystem_1">Filesystem</a></li>
+            <li><a href="#disk-quotas">Disk Quotas</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="know-errors">Know Errors</h1>
-<h2 id="unable-to-lock-the-administration-directory">Unable to lock the administration directory</h2>
-<p><strong>Desc:</strong> Unable to lock the administration directory (/var/lib/dpkg/) is another process using it? <a href="https://askubuntu.com/questions/15433/unable-to-lock-the-administration-directory-var-lib-dpkg-is-another-process">Solution</a></p>
-<pre><code class="bash">sudo rm /var/lib/apt/lists/lock
+<h1 id="filesystem">FileSystem</h1>
+<table>
+<thead>
+<tr>
+<th>Dir</th>
+<th align="center">Function</th>
+<th align="right">Extras</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/dev</td>
+<td align="center">(udev) Device manager. Contain device files</td>
+<td align="right">Config in /etc/udev</td>
+</tr>
+<tr>
+<td>/sys</td>
+<td align="center">(sysfs) Virtual file system. Info about Hardware devices, drivers</td>
+<td align="right"></td>
+</tr>
+<tr>
+<td>/proc</td>
+<td align="center">(procfs)Similiar to sysfs, but with info about processes and system info</td>
+<td align="right">Can be used to interface with the kernel. Change parameters on the fly</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>File System space usage</strong></li>
+</ul>
+<pre><code class="bash">df -h
+</code></pre>
+
+<h1 id="commands">Commands</h1>
+<h2 id="dirs">Dirs</h2>
+<h3 id="create">Create</h3>
+<ul>
+<li><strong>Multiple Dirs</strong></li>
+</ul>
+<pre><code class="bash">mkdir -p {networking,compute,storage}
+</code></pre>
+
+<ul>
+<li><strong>Multiple Files in Multiple Dirs</strong></li>
+</ul>
+<pre><code class="bash">touch {networking,compute,storage}/{main.tf,variables.tf,outputs.tf}
+</code></pre>
+
+<h2 id="find">Find</h2>
+<pre><code class="bash">sudo find / -type f -name .gitconfig
+</code></pre>
+
+<h2 id="inodes">Inodes</h2>
+<ul>
+<li><strong>Get File Inode</strong></li>
+</ul>
+<pre><code class="bash">ls -i /etc/passwd
+</code></pre>
+
+<ul>
+<li><strong>Find File by Inode</strong></li>
+</ul>
+<pre><code class="sh">find / -inum 55116 /etc/passwd
+</code></pre>
+
+<ul>
+<li>Get Inodes Available</li>
+</ul>
+<pre><code class="bash">df -i
+</code></pre>
+
+<h2 id="disk-space">Disk Space</h2>
+<pre><code class="sh">du -h
+
+du -s # To sum the total
+
+du -s /
+
+du -h --max-depth=1 # Show the disk usage by folder, and not the sub dirs because of Depth = 1
+</code></pre>
+
+<h2 id="filesystem_1">Filesystem</h2>
+<h3 id="fsck-filesystem-check">fsck (filesystem check)</h3>
+<ul>
+<li><strong>To check errors from filesystem</strong></li>
+<li><strong>Don't do in mounted filesystem</strong></li>
+</ul>
+<pre><code class="bash">sudo fsck /dev/sdb1
+sudo umount /dev/sdb1
+</code></pre>
+
+<h3 id="dumpe2fs">dumpe2fs</h3>
+<ul>
+<li><strong>Get info about filesystem</strong></li>
+</ul>
+<pre><code class="sh">sudo dumpe2fs -h /dev/sdb1
+</code></pre>
+
+<h3 id="tune2fs">tune2fs</h3>
+<ul>
+<li><strong>To get info and tune filesystem</strong></li>
+</ul>
+<pre><code class="sh">tune2fs -l /dev/xvda1
+</code></pre>
+
+<ul>
+<li><strong>Set Volume Name</strong></li>
+</ul>
+<pre><code class="sh">tune2fs -L Photos /dev/xvda1
+</code></pre>
+
+<ul>
+<li><strong>Set mount counts will be filesystem checked</strong></li>
+</ul>
+<pre><code class="sh">tune2fs -c 10 /dev/xvda1
+</code></pre>
+
+<h3 id="fuser">fuser</h3>
+<ul>
+<li><strong>Show which process is using the directory</strong></li>
+</ul>
+<pre><code class="sh"># fuser /mount/Photos
+/mount/Photos:              3157c
+
+# ps aux | grep 3157
+-- Will see the process, probably /bin/bash
+
+# ps auxf  -&gt; Show which command executed and the login session called
+</code></pre>
+
+<h2 id="disk-quotas">Disk Quotas</h2>
+<pre><code class="bash"># vi /etc/fstab
+LABEL=projectA /mnt/ProjectA/ ext4 defaults,usrquota 0 0 
+# mount -a
+# apt-get install quota
+# cd /mnt/ProjectA
+# quotacheck -avugc # Create filesystem to support quotas
+quotacheck: Your kernel probably supports journaled quota but you are not using it. Consider switching to journaled quota to avoid running quotacheck after an unclean shutdown.
+quotacheck: Scanning /dev/xvdf7 [/mnt/ProjectA] done
+quotacheck: Cannot stat old user quota file /mnt/ProjectA/aquota.user: No such file or directory. Usage will not be subtracted.
+quotacheck: Old group file name could not been determined. Usage will not be subtracted.
+quotacheck: Checked 3 directories and 0 files
+quotacheck: Old file not found.
+# edquota -u fsantos # To edit quotas to user
+# quotaon /mnt/Photos # Enable quotas
+# quota -v # To see quotas usage
+# sudo repquota /mnt/Photos # To see a resume from users
+
 </code></pre></div>
         </div>
 

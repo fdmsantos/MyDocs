@@ -6,12 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="Fábio Santos">
-        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/unix/commands/">
-        <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Commands - MyDocs</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/unix/commands/networking/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Networking - MyDocs</title>
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -39,7 +39,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../..">MyDocs</a>
+                    <a class="navbar-brand" href="../../..">MyDocs</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -47,7 +47,7 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="../..">Home</a>
+                                <a href="../../..">Home</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">AWS <b class="caret"></b></a>
@@ -58,7 +58,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../aws/networking/vpc/">VPC</a>
+    <a href="../../../aws/networking/vpc/">VPC</a>
 </li>
     </ul>
   </li>
@@ -68,7 +68,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../aws/compute/ec2/">EC2</a>
+    <a href="../../../aws/compute/ec2/">EC2</a>
 </li>
     </ul>
   </li>
@@ -78,7 +78,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../aws/storage/ebs/">EBS</a>
+    <a href="../../../aws/storage/ebs/">EBS</a>
 </li>
     </ul>
   </li>
@@ -88,7 +88,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../aws/deployment/cloudformation/">Cloudformation</a>
+    <a href="../../../aws/deployment/cloudformation/">Cloudformation</a>
 </li>
     </ul>
   </li>
@@ -103,23 +103,23 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../elk/queries/">ESQueries</a>
+    <a href="../../../elk/queries/">ESQueries</a>
 </li>
             
 <li >
-    <a href="../../elk/admin/">Administration</a>
+    <a href="../../../elk/admin/">Administration</a>
 </li>
             
 <li >
-    <a href="../../elk/kibana/">Kibana</a>
+    <a href="../../../elk/kibana/">Kibana</a>
 </li>
             
 <li >
-    <a href="../../elk/beats/">Beats</a>
+    <a href="../../../elk/beats/">Beats</a>
 </li>
             
 <li >
-    <a href="../../elk/snapshotsAndRestore/">Snapshots&Restore</a>
+    <a href="../../../elk/snapshotsAndRestore/">Snapshots&Restore</a>
 </li>
     </ul>
   </li>
@@ -129,25 +129,69 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Unix <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-<li class="active">
-    <a href="./">Commands</a>
-</li>
-                                    
+  <li class="dropdown-submenu">
+    <a href="#">Commands</a>
+    <ul class="dropdown-menu">
+            
 <li >
     <a href="../disks/">Disks</a>
 </li>
+            
+<li >
+    <a href="../filesystem/">Filesystem</a>
+</li>
+            
+<li >
+    <a href="../logging/">Logging</a>
+</li>
+            
+<li >
+    <a href="../kernel/">Kernel</a>
+</li>
+            
+<li class="active">
+    <a href="./">Networking</a>
+</li>
+            
+<li >
+    <a href="../security/">Security</a>
+</li>
+    </ul>
+  </li>
                                     
   <li class="dropdown-submenu">
     <a href="#">Software</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../software/php/">PHP</a>
-</li>
+  <li class="dropdown-submenu">
+    <a href="#">Mail</a>
+    <ul class="dropdown-menu">
             
 <li >
-    <a href="../software/virsh/">Virsh</a>
+    <a href="../../software/mail/postfix/">Postfix</a>
 </li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Programming</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../software/programming/php/">PHP</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Virtualization</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../software/virtualization/virsh/">Virsh</a>
+</li>
+    </ul>
+  </li>
     </ul>
   </li>
                                     
@@ -156,15 +200,15 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../os/redhat/">Redhat</a>
+    <a href="../../os/redhat/">Redhat</a>
 </li>
             
 <li >
-    <a href="../os/ubuntu/">Ubuntu</a>
+    <a href="../../os/debian/">Debian</a>
 </li>
             
 <li >
-    <a href="../os/archlinux/">Archlinux</a>
+    <a href="../../os/archlinux/">Archlinux</a>
 </li>
     </ul>
   </li>
@@ -179,17 +223,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../../elk/snapshotsAndRestore/">
+                                <a rel="next" href="../kernel/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../disks/">
+                                <a rel="prev" href="../security/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/unix/commands.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/unix/commands/networking.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -199,61 +243,101 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#networking">Networking</a></li>
+        <li class="main active"><a href="#config">Config</a></li>
+            <li><a href="#ifconfig">ifconfig</a></li>
+            <li><a href="#ip">ip</a></li>
+            <li><a href="#route">route</a></li>
+            <li><a href="#dns">Dns</a></li>
+            <li><a href="#file">File</a></li>
+        <li class="main "><a href="#connectivity">Connectivity</a></li>
             <li><a href="#netstat">Netstat</a></li>
+            <li><a href="#get-open-ports">Get open ports</a></li>
             <li><a href="#ss">SS</a></li>
             <li><a href="#who-listen-on-port">Who listen on Port</a></li>
             <li><a href="#test-remote-connection-to-port">Test Remote Connection to port</a></li>
-        <li class="main "><a href="#services">Services</a></li>
-            <li><a href="#start">Start</a></li>
-            <li><a href="#journalctl">Journalctl</a></li>
-        <li class="main "><a href="#dirs">Dirs</a></li>
-            <li><a href="#create-multiple-dirs">Create Multiple Dirs</a></li>
-            <li><a href="#create-multiple-files-in-multiple-dirs">Create Multiple Files in Multiple Dirs</a></li>
-        <li class="main "><a href="#find">Find</a></li>
+            <li><a href="#get-ports-than-services-are-listen">Get Ports than services are listen</a></li>
+            <li><a href="#dns_1">DNS</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="networking">Networking</h2>
-<h3 id="netstat">Netstat</h3>
+<h1 id="config">Config</h1>
+<h2 id="ifconfig">ifconfig</h2>
+<pre><code class="bash">ip addr
+ifconfig
+ifconfig -a
+ifdown enp0s3
+ifup enp0s3
+ifconfig enp0s3 192.168.0.150/24 # Not Permanent
+</code></pre>
+
+<h3 id="add-secondary-ip">Add Secondary IP</h3>
+<p><a href="https://www.garron.me/en/linux/add-secondary-ip-linux.html">Link</a></p>
+<pre><code class="bash">ifconfig eth0:1 172.31.81.196 netmask 255.255.240.0 up # Not Permanent
+</code></pre>
+
+<h2 id="ip">ip</h2>
+<pre><code class="bash">ip a 
+ip addr show
+</code></pre>
+
+<h3 id="remove-secondary-ip">Remove Secondary Ip</h3>
+<pre><code class="bash">ip addr del 172.31.81.196/20 dev eth0:1 # Not Permanent
+</code></pre>
+
+<h2 id="route">route</h2>
+<pre><code class="bash">route
+route -n
+route add default gw 192.168.0.254
+</code></pre>
+
+<h2 id="dns">Dns</h2>
+<pre><code class="bash">cat /etc/hosts
+cat /etc/nsswitch.conf # show how priority to will resolve dns
+
+cat /etc/resolv.conf
+cat /etc/dhcp/dhclient.conf
+
+sudo service networking restart
+</code></pre>
+
+<h2 id="file">File</h2>
+<pre><code class="bash">cat /etc/network/interfaces
+</code></pre>
+
+<h1 id="connectivity">Connectivity</h1>
+<h2 id="netstat">Netstat</h2>
 <pre><code class="bash">$ sudo netstat -nl -p tcp  | grep 8123
 $ sudo netstat -nl -p tcp  | head
 </code></pre>
 
-<h3 id="ss">SS</h3>
+<h2 id="get-open-ports">Get open ports</h2>
+<pre><code class="bash">nmap localhost
+netstat -at
+
+</code></pre>
+
+<h2 id="ss">SS</h2>
 <pre><code class="bash">ss -an | grep -i listen
 </code></pre>
 
-<h3 id="who-listen-on-port">Who listen on Port</h3>
-<pre><code class="bash">lsof -i :8000
+<h2 id="who-listen-on-port">Who listen on Port</h2>
+<pre><code class="bash">sudo lsof -i :8000
 </code></pre>
 
-<h3 id="test-remote-connection-to-port">Test Remote Connection to port</h3>
+<h2 id="test-remote-connection-to-port">Test Remote Connection to port</h2>
 <pre><code class="bash">nc -v 10.240.100.18  2049
+
+netcat -l 12345 # To listen a Port
 </code></pre>
 
-<h2 id="services">Services</h2>
-<h3 id="start">Start</h3>
-<pre><code class="bash">systemctl start kubelet.service
-systemctl status kubelet.service
+<h2 id="get-ports-than-services-are-listen">Get Ports than services are listen</h2>
+<pre><code class="bash">cat /etc/services
 </code></pre>
 
-<h3 id="journalctl">Journalctl</h3>
-<pre><code class="bash">journalctl -u kubelet.service
-</code></pre>
-
-<h2 id="dirs">Dirs</h2>
-<h3 id="create-multiple-dirs">Create Multiple Dirs</h3>
-<pre><code class="bash">mkdir -p {networking,compute,storage}
-</code></pre>
-
-<h3 id="create-multiple-files-in-multiple-dirs">Create Multiple Files in Multiple Dirs</h3>
-<pre><code class="bash">touch {networking,compute,storage}/{main.tf,variables.tf,outputs.tf}
-</code></pre>
-
-<h2 id="find">Find</h2>
-<pre><code class="bash">sudo find / -type f -name .gitconfig
+<h2 id="dns_1">DNS</h2>
+<pre><code class="bash">host google.com
+dig google.com
 </code></pre></div>
         </div>
 
@@ -262,11 +346,11 @@ systemctl status kubelet.service
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "../..",
+            var base_url = "../../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">

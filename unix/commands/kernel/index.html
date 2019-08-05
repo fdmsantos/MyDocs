@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="Fábio Santos">
-        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/aws/networking/vpc/">
+        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/unix/commands/kernel/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>VPC - MyDocs</title>
+        <title>Kernel - MyDocs</title>
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -49,7 +49,7 @@
                             <li >
                                 <a href="../../..">Home</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">AWS <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -57,8 +57,8 @@
     <a href="#">Networking</a>
     <ul class="dropdown-menu">
             
-<li class="active">
-    <a href="./">VPC</a>
+<li >
+    <a href="../../../aws/networking/vpc/">VPC</a>
 </li>
     </ul>
   </li>
@@ -68,7 +68,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../compute/ec2/">EC2</a>
+    <a href="../../../aws/compute/ec2/">EC2</a>
 </li>
     </ul>
   </li>
@@ -78,7 +78,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../storage/ebs/">EBS</a>
+    <a href="../../../aws/storage/ebs/">EBS</a>
 </li>
     </ul>
   </li>
@@ -88,7 +88,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../deployment/cloudformation/">Cloudformation</a>
+    <a href="../../../aws/deployment/cloudformation/">Cloudformation</a>
 </li>
     </ul>
   </li>
@@ -125,7 +125,7 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Unix <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -134,27 +134,27 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../unix/commands/disks/">Disks</a>
+    <a href="../disks/">Disks</a>
 </li>
             
 <li >
-    <a href="../../../unix/commands/filesystem/">Filesystem</a>
+    <a href="../filesystem/">Filesystem</a>
 </li>
             
 <li >
-    <a href="../../../unix/commands/logging/">Logging</a>
+    <a href="../logging/">Logging</a>
+</li>
+            
+<li class="active">
+    <a href="./">Kernel</a>
 </li>
             
 <li >
-    <a href="../../../unix/commands/kernel/">Kernel</a>
+    <a href="../networking/">Networking</a>
 </li>
             
 <li >
-    <a href="../../../unix/commands/networking/">Networking</a>
-</li>
-            
-<li >
-    <a href="../../../unix/commands/security/">Security</a>
+    <a href="../security/">Security</a>
 </li>
     </ul>
   </li>
@@ -168,7 +168,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../unix/software/mail/postfix/">Postfix</a>
+    <a href="../../software/mail/postfix/">Postfix</a>
 </li>
     </ul>
   </li>
@@ -178,7 +178,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../unix/software/programming/php/">PHP</a>
+    <a href="../../software/programming/php/">PHP</a>
 </li>
     </ul>
   </li>
@@ -188,7 +188,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../unix/software/virtualization/virsh/">Virsh</a>
+    <a href="../../software/virtualization/virsh/">Virsh</a>
 </li>
     </ul>
   </li>
@@ -200,15 +200,15 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../unix/os/redhat/">Redhat</a>
+    <a href="../../os/redhat/">Redhat</a>
 </li>
             
 <li >
-    <a href="../../../unix/os/debian/">Debian</a>
+    <a href="../../os/debian/">Debian</a>
 </li>
             
 <li >
-    <a href="../../../unix/os/archlinux/">Archlinux</a>
+    <a href="../../os/archlinux/">Archlinux</a>
 </li>
     </ul>
   </li>
@@ -223,17 +223,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../../..">
+                                <a rel="next" href="../logging/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../../compute/ec2/">
+                                <a rel="prev" href="../networking/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/aws/networking/vpc.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/unix/commands/kernel.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -243,57 +243,48 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#bastion-host">Bastion Host</a></li>
-            <li><a href="#high-availability">High Availability</a></li>
-        <li class="main "><a href="#vpc-flow-logs">VPC Flow Logs</a></li>
-            <li><a href="#traffic-not-logged">Traffic Not Logged</a></li>
-        <li class="main "><a href="#troubleshooting">Troubleshooting</a></li>
-            <li><a href="#instances-cannot-communicate">Instances cannot communicate</a></li>
-            <li><a href="#nat-configuration">Nat Configuration</a></li>
-            <li><a href="#peering-request-approval">Peering request approval</a></li>
+        <li class="main active"><a href="#kernel-modules">Kernel Modules</a></li>
+        <li class="main "><a href="#libs">Libs</a></li>
+            <li><a href="#shared">Shared</a></li>
+        <li class="main "><a href="#hardware">Hardware</a></li>
+            <li><a href="#pci-devices">PCI Devices</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="bastion-host">Bastion Host</h1>
-<h2 id="high-availability">High Availability</h2>
-<ul>
-<li>Create 2 bastion hosts in different subnets. Create dns entry in Route53 which uses round robin dns and points to each instance. Tell your sysdamins to connect using the new dns entry</li>
-<li>EC2 Auto-recovery - If fails, will be recreate</li>
-<li>Autoscaling group of MAX =1 and MIN = 1. So if the bastion fails it is recreated automatically</li>
-</ul>
-<h1 id="vpc-flow-logs">VPC Flow Logs</h1>
-<h2 id="traffic-not-logged">Traffic Not Logged</h2>
-<ul>
-<li>Traffic generated by instances when contact the Amazon DNS server (if use own dns, so all that traffic is logged)</li>
-<li>Traffic generated by a windows instance for Amazon windows license activation</li>
-<li>Traffic to and from 169.254.169.254 for instance metadata</li>
-<li>DHCP traffic</li>
-<li>Traffic to the reserved IP address for the default VPC router</li>
-</ul>
-<h1 id="troubleshooting">Troubleshooting</h1>
-<h2 id="instances-cannot-communicate">Instances cannot communicate</h2>
-<p><strong>If instances in subnets cannot communicate with one another</strong></p>
-<ul>
-<li>Verify that it is a network issue, not an instance issue</li>
-<li>Check network ACLs</li>
-<li>If enable, check VPC flow Logs</li>
-</ul>
-<h2 id="nat-configuration">Nat Configuration</h2>
-<ul>
-<li>Nat Instance and Nat Gateway - Check Route table Association</li>
-<li>Nat Instance - Check to see if the source/Dest check is disabled</li>
-<li>Ensure that NAT has masquerade configured, Restart NAT, check the inbound security Group rules
-If you cannot reach resources in a peered network:</li>
-</ul>
-<h2 id="peering-request-approval">Peering request approval</h2>
-<ul>
-<li>Route table configuration</li>
-<li>Check network ACLs: are you forbidding all external traffic</li>
-<li>Check security Group configurations on resources</li>
-<li>Use Cidr block rules in VPC A to allow Access from VPC B</li>
-<li>If you are not seeing network traffic flow on the AWS side of your VPN connection to your Amazon VPC. Turn on route propagation in the Amazon VPC’s main routing table.</li>
-</ul></div>
+<h1 id="kernel-modules">Kernel Modules</h1>
+<pre><code class="sh"># To view who use the modules
+lsmod
+
+# To remove
+sudo rmmod video
+
+# To enable
+sudo modprobe video
+</code></pre>
+
+<h1 id="libs">Libs</h1>
+<h2 id="shared">Shared</h2>
+<pre><code class="bash"># Get Shared libs location
+cat /etc/ld.so.conf
+
+# To load new lib
+ldconfig
+
+# Change Library Path temporary
+export LD_LIBRARY_PATH=/home/nick/lib
+
+# Print shared libs from app
+ldd /bin/ls
+</code></pre>
+
+<h1 id="hardware">Hardware</h1>
+<h2 id="pci-devices">PCI Devices</h2>
+<pre><code class="sh"># To list pci Devices
+lspci
+lspci -v
+lspci -vvv
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="Fábio Santos">
-        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/unix/software/virsh/">
+        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/unix/commands/security/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Virsh - MyDocs</title>
+        <title>Security - MyDocs</title>
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -129,25 +129,69 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Unix <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
+  <li class="dropdown-submenu">
+    <a href="#">Commands</a>
+    <ul class="dropdown-menu">
+            
 <li >
-    <a href="../../commands/">Commands</a>
+    <a href="../disks/">Disks</a>
 </li>
-                                    
+            
 <li >
-    <a href="../../disks/">Disks</a>
+    <a href="../filesystem/">Filesystem</a>
 </li>
+            
+<li >
+    <a href="../logging/">Logging</a>
+</li>
+            
+<li >
+    <a href="../kernel/">Kernel</a>
+</li>
+            
+<li >
+    <a href="../networking/">Networking</a>
+</li>
+            
+<li class="active">
+    <a href="./">Security</a>
+</li>
+    </ul>
+  </li>
                                     
   <li class="dropdown-submenu">
     <a href="#">Software</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../php/">PHP</a>
-</li>
+  <li class="dropdown-submenu">
+    <a href="#">Mail</a>
+    <ul class="dropdown-menu">
             
-<li class="active">
-    <a href="./">Virsh</a>
+<li >
+    <a href="../../software/mail/postfix/">Postfix</a>
 </li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Programming</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../software/programming/php/">PHP</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Virtualization</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../software/virtualization/virsh/">Virsh</a>
+</li>
+    </ul>
+  </li>
     </ul>
   </li>
                                     
@@ -160,7 +204,7 @@
 </li>
             
 <li >
-    <a href="../../os/ubuntu/">Ubuntu</a>
+    <a href="../../os/debian/">Debian</a>
 </li>
             
 <li >
@@ -179,17 +223,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../php/">
+                                <a rel="next" href="../networking/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../../os/redhat/">
+                                <a rel="prev" href="../../software/mail/postfix/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/unix/software/virsh.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/unix/commands/security.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -199,152 +243,22 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#vm">VM</a></li>
-            <li><a href="#snapshot">Snapshot</a></li>
+        <li class="main active"><a href="#security">Security</a></li>
+            <li><a href="#host">Host</a></li>
+            <li><a href="#nologin">Nologin</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="vm">VM</h2>
-<h3 id="snapshot">Snapshot</h3>
-<pre><code class="sh">$ ssh -l rgameiro 10.242.12.23
-$ virsh list --all
- Id    Name                           State
-----------------------------------------------------
- 1     bm02vsc01                      running
- 2     bm02alinternal01               running
- 3     architect                      running
- 4     bm02ifwinternal01              running
- 5     bm02vsd01                      running
- 6     bm02sfinternal02               running
- 7     bm02acinternal01               running
- 8     bm02dirinternal01              running
- -     bm02nes01                      shut off
+<h1 id="security">Security</h1>
+<h2 id="host">Host</h2>
+<pre><code class="bash">cat /etc/hosts.allow # Hosts allowed to access
 
-$ virsh destroy bm02sfinternal02
-$ virsh dumpxml bm02sfinternal02 # Find Disk File
-&lt;domain type='kvm'&gt;
-  &lt;name&gt;bm02sfinternal02&lt;/name&gt;
-  &lt;uuid&gt;af7d246d-4578-4660-96fa-ac40c87c24eb&lt;/uuid&gt;
-  &lt;memory unit='KiB'&gt;2097152&lt;/memory&gt;
-  &lt;currentMemory unit='KiB'&gt;2097152&lt;/currentMemory&gt;
-  &lt;vcpu placement='static'&gt;4&lt;/vcpu&gt;
-  &lt;os&gt;
-    &lt;type arch='x86_64' machine='pc-i440fx-rhel7.3.0'&gt;hvm&lt;/type&gt;
-    &lt;boot dev='hd'/&gt;
-  &lt;/os&gt;
-  &lt;features&gt;
-    &lt;acpi/&gt;
-    &lt;apic/&gt;
-    &lt;vmport state='off'/&gt;
-  &lt;/features&gt;
-  &lt;cpu mode='host-model' check='partial'&gt;
-    &lt;model fallback='allow'/&gt;
-  &lt;/cpu&gt;
-  &lt;clock offset='utc'&gt;
-    &lt;timer name='rtc' tickpolicy='catchup'/&gt;
-    &lt;timer name='pit' tickpolicy='delay'/&gt;
-    &lt;timer name='hpet' present='no'/&gt;
-  &lt;/clock&gt;
-  &lt;on_poweroff&gt;destroy&lt;/on_poweroff&gt;
-  &lt;on_reboot&gt;restart&lt;/on_reboot&gt;
-  &lt;on_crash&gt;restart&lt;/on_crash&gt;
-  &lt;pm&gt;
-    &lt;suspend-to-mem enabled='no'/&gt;
-    &lt;suspend-to-disk enabled='no'/&gt;
-  &lt;/pm&gt;
-  &lt;devices&gt;
-    &lt;emulator&gt;/usr/libexec/qemu-kvm&lt;/emulator&gt;
-    &lt;disk type='file' device='disk'&gt;
-      &lt;driver name='qemu' type='qcow2' cache='none' io='native'/&gt;
-      &lt;source file='/var/lib/libvirt/images/bm02sfinternal02.qcow2'/&gt;
-      &lt;target dev='vda' bus='virtio'/&gt;
-      &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x06' function='0x0'/&gt;
-    &lt;/disk&gt;
-    &lt;disk type='file' device='cdrom'&gt;
-      &lt;driver name='qemu' type='raw'/&gt;
-      &lt;target dev='hda' bus='ide'/&gt;
-      &lt;readonly/&gt;
-      &lt;address type='drive' controller='0' bus='0' target='0' unit='0'/&gt;
-    &lt;/disk&gt;
-    &lt;controller type='usb' index='0' model='ich9-ehci1'&gt;
-      &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x7'/&gt;
-    &lt;/controller&gt;
-    &lt;controller type='usb' index='0' model='ich9-uhci1'&gt;
-      &lt;master startport='0'/&gt;
-      &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x0' multifunction='on'/&gt;
-    &lt;/controller&gt;
-    &lt;controller type='usb' index='0' model='ich9-uhci2'&gt;
-      &lt;master startport='2'/&gt;
-      &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x1'/&gt;
-    &lt;/controller&gt;
-    &lt;controller type='usb' index='0' model='ich9-uhci3'&gt;
-      &lt;master startport='4'/&gt;
-      &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x05' function='0x2'/&gt;
-    &lt;/controller&gt;
-    &lt;controller type='pci' index='0' model='pci-root'/&gt;
-    &lt;controller type='ide' index='0'&gt;
-      &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x1'/&gt;
-    &lt;/controller&gt;
-    &lt;controller type='virtio-serial' index='0'&gt;
-      &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x04' function='0x0'/&gt;
-    &lt;/controller&gt;
-    &lt;interface type='bridge'&gt;
-      &lt;mac address='52:54:00:84:7e:d0'/&gt;
-      &lt;source bridge='br100'/&gt;
-      &lt;model type='virtio'/&gt;
-      &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/&gt;
-    &lt;/interface&gt;
-    &lt;serial type='pty'&gt;
-      &lt;target type='isa-serial' port='0'&gt;
-        &lt;model name='isa-serial'/&gt;
-      &lt;/target&gt;
-    &lt;/serial&gt;
-    &lt;console type='pty'&gt;
-      &lt;target type='serial' port='0'/&gt;
-    &lt;/console&gt;
-    &lt;channel type='unix'&gt;
-      &lt;target type='virtio' name='org.qemu.guest_agent.0'/&gt;
-      &lt;address type='virtio-serial' controller='0' bus='0' port='1'/&gt;
-    &lt;/channel&gt;
-    &lt;channel type='spicevmc'&gt;
-      &lt;target type='virtio' name='com.redhat.spice.0'/&gt;
-      &lt;address type='virtio-serial' controller='0' bus='0' port='2'/&gt;
-    &lt;/channel&gt;
-    &lt;input type='tablet' bus='usb'&gt;
-      &lt;address type='usb' bus='0' port='1'/&gt;
-    &lt;/input&gt;
-    &lt;input type='mouse' bus='ps2'/&gt;
-    &lt;input type='keyboard' bus='ps2'/&gt;
-    &lt;graphics type='spice' autoport='yes'&gt;
-      &lt;listen type='address'/&gt;
-    &lt;/graphics&gt;
-    &lt;video&gt;
-      &lt;model type='qxl' ram='65536' vram='65536' vgamem='16384' heads='1' primary='yes'/&gt;
-      &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0'/&gt;
-    &lt;/video&gt;
-    &lt;redirdev bus='usb' type='spicevmc'&gt;
-      &lt;address type='usb' bus='0' port='2'/&gt;
-    &lt;/redirdev&gt;
-    &lt;redirdev bus='usb' type='spicevmc'&gt;
-      &lt;address type='usb' bus='0' port='3'/&gt;
-    &lt;/redirdev&gt;
-    &lt;memballoon model='virtio'&gt;
-      &lt;address type='pci' domain='0x0000' bus='0x00' slot='0x07' function='0x0'/&gt;
-    &lt;/memballoon&gt;
-  &lt;/devices&gt;
-&lt;/domain&gt;
+cat /etc/hosts.deny # Hosts not allowed to access
+</code></pre>
 
-$ ls -la /var/lib/libvirt/images/bm02sfinternal02.qcow2
-$ df -B 1g # Ensure we have space to copy disk
-$ cp  /var/lib/libvirt/images/bm02sfinternal02.qcow2  /var/lib/libvirt/images/bm02sfinternal02-pre-php-upgrade.qcow2
-$ bg # Por o Processo em Brackground
-$ ls -la /var/lib/libvirt/images/bm02sfinternal02-pre-php-upgrade.qcow2
-rw------- 1 root root 17607884800 Oct 30 08:21 /var/lib/libvirt/images/bm02sfinternal02-pre-php-upgrade.qcow2
-$ ls -la /var/lib/libvirt/images/bm02sfinternal02-pre-php-upgrade.qcow2 # Terminou
-[1]+  Done                    cp -i /var/lib/libvirt/images/bm02sfinternal02.qcow2 /var/lib/libvirt/images/bm02sfinternal02-pre-php-upgrade.qcow2
-$ ls -la /var/lib/libvirt/images/bm02sfinternal02*
-$ virsh start bm02sfinternal02
+<h2 id="nologin">Nologin</h2>
+<pre><code class="bash">touch /etc/nologin # Denies login to all users (except root). Need remove the file
 </code></pre></div>
         </div>
 

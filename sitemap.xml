@@ -2,87 +2,112 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/</loc>
-     <lastmod>2019-08-02</lastmod>
+     <lastmod>2019-08-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/aws/networking/vpc/</loc>
-     <lastmod>2019-08-02</lastmod>
+     <lastmod>2019-08-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/aws/compute/ec2/</loc>
-     <lastmod>2019-08-02</lastmod>
+     <lastmod>2019-08-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/aws/storage/ebs/</loc>
-     <lastmod>2019-08-02</lastmod>
+     <lastmod>2019-08-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/aws/deployment/cloudformation/</loc>
-     <lastmod>2019-08-02</lastmod>
+     <lastmod>2019-08-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/elk/queries/</loc>
-     <lastmod>2019-08-02</lastmod>
+     <lastmod>2019-08-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/elk/admin/</loc>
-     <lastmod>2019-08-02</lastmod>
+     <lastmod>2019-08-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/elk/kibana/</loc>
-     <lastmod>2019-08-02</lastmod>
+     <lastmod>2019-08-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/elk/beats/</loc>
-     <lastmod>2019-08-02</lastmod>
+     <lastmod>2019-08-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/elk/snapshotsAndRestore/</loc>
-     <lastmod>2019-08-02</lastmod>
+     <lastmod>2019-08-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://fdmsantos.github.io/MyDocs/unix/commands/</loc>
-     <lastmod>2019-08-02</lastmod>
+     <loc>https://fdmsantos.github.io/MyDocs/unix/commands/disks/</loc>
+     <lastmod>2019-08-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://fdmsantos.github.io/MyDocs/unix/disks/</loc>
-     <lastmod>2019-08-02</lastmod>
+     <loc>https://fdmsantos.github.io/MyDocs/unix/commands/filesystem/</loc>
+     <lastmod>2019-08-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://fdmsantos.github.io/MyDocs/unix/software/php/</loc>
-     <lastmod>2019-08-02</lastmod>
+     <loc>https://fdmsantos.github.io/MyDocs/unix/commands/logging/</loc>
+     <lastmod>2019-08-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://fdmsantos.github.io/MyDocs/unix/software/virsh/</loc>
-     <lastmod>2019-08-02</lastmod>
+     <loc>https://fdmsantos.github.io/MyDocs/unix/commands/kernel/</loc>
+     <lastmod>2019-08-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://fdmsantos.github.io/MyDocs/unix/commands/networking/</loc>
+     <lastmod>2019-08-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://fdmsantos.github.io/MyDocs/unix/commands/security/</loc>
+     <lastmod>2019-08-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://fdmsantos.github.io/MyDocs/unix/software/mail/postfix/</loc>
+     <lastmod>2019-08-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://fdmsantos.github.io/MyDocs/unix/software/programming/php/</loc>
+     <lastmod>2019-08-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://fdmsantos.github.io/MyDocs/unix/software/virtualization/virsh/</loc>
+     <lastmod>2019-08-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/unix/os/redhat/</loc>
-     <lastmod>2019-08-02</lastmod>
+     <lastmod>2019-08-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://fdmsantos.github.io/MyDocs/unix/os/ubuntu/</loc>
-     <lastmod>2019-08-02</lastmod>
+     <loc>https://fdmsantos.github.io/MyDocs/unix/os/debian/</loc>
+     <lastmod>2019-08-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/unix/os/archlinux/</loc>
-     <lastmod>2019-08-02</lastmod>
+     <lastmod>2019-08-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

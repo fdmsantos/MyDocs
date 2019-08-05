@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="Fábio Santos">
-        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/unix/os/redhat/">
+        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/unix/commands/disks/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Redhat - MyDocs</title>
+        <title>Disks - MyDocs</title>
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -133,28 +133,28 @@
     <a href="#">Commands</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../commands/disks/">Disks</a>
+<li class="active">
+    <a href="./">Disks</a>
 </li>
             
 <li >
-    <a href="../../commands/filesystem/">Filesystem</a>
+    <a href="../filesystem/">Filesystem</a>
 </li>
             
 <li >
-    <a href="../../commands/logging/">Logging</a>
+    <a href="../logging/">Logging</a>
 </li>
             
 <li >
-    <a href="../../commands/kernel/">Kernel</a>
+    <a href="../kernel/">Kernel</a>
 </li>
             
 <li >
-    <a href="../../commands/networking/">Networking</a>
+    <a href="../networking/">Networking</a>
 </li>
             
 <li >
-    <a href="../../commands/security/">Security</a>
+    <a href="../security/">Security</a>
 </li>
     </ul>
   </li>
@@ -199,16 +199,16 @@
     <a href="#">OperationSystems</a>
     <ul class="dropdown-menu">
             
-<li class="active">
-    <a href="./">Redhat</a>
+<li >
+    <a href="../../os/redhat/">Redhat</a>
 </li>
             
 <li >
-    <a href="../debian/">Debian</a>
+    <a href="../../os/debian/">Debian</a>
 </li>
             
 <li >
-    <a href="../archlinux/">Archlinux</a>
+    <a href="../../os/archlinux/">Archlinux</a>
 </li>
     </ul>
   </li>
@@ -223,17 +223,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../../software/virtualization/virsh/">
+                                <a rel="next" href="../../../elk/snapshotsAndRestore/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../debian/">
+                                <a rel="prev" href="../filesystem/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/unix/os/redhat.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/unix/commands/disks.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -243,77 +243,260 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#recover-root-password">Recover Root Password</a></li>
-        <li class="main "><a href="#permit-ssh-root-login">Permit SSH Root Login</a></li>
-        <li class="main "><a href="#configure-network-interface">Configure Network Interface</a></li>
-        <li class="main "><a href="#package-manager">Package Manager</a></li>
-            <li><a href="#rpm">RPM</a></li>
-            <li><a href="#yum">YUM</a></li>
+        <li class="main active"><a href="#disks">Disks</a></li>
+            <li><a href="#create-ext4-filesystem">Create ext4 Filesystem</a></li>
+            <li><a href="#create-swap-partition">Create Swap Partition</a></li>
+            <li><a href="#create-lvm-filesystem">Create LVM Filesystem</a></li>
+        <li class="main "><a href="#share-disk">Share Disk</a></li>
+            <li><a href="#install-nfs">Install NFS</a></li>
+            <li><a href="#master">Master</a></li>
+            <li><a href="#slaves">Slaves</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="recover-root-password">Recover Root Password</h1>
+<h1 id="disks">Disks</h1>
 <ul>
-<li>Na console</li>
+<li><strong>Lists block devices</strong></li>
 </ul>
-<pre><code class="sh">send ctrl-alt-del
-press &quot;e&quot; =&gt; TO Edit
-Na linha linux16 -- No final da linha adicionar rd.break
-press &quot;ctrl-x&quot;
-mount -o remount,rw /sysroot
-cd /sysroot
-chroot .
-touch .autorelabel
-passwd teste123ibm4
-ctrl d
-ctrl d
+<pre><code class="bash">lsblk
+
+fdisk -l
 </code></pre>
 
-<h1 id="permit-ssh-root-login">Permit SSH Root Login</h1>
-<pre><code class="sh">vi /etc/ssh/sshd_config
-# Comment PasswordAuthentication no
-# Descomment PasswordAuthentication yes
-systemctl restart sshd 
+<h2 id="create-ext4-filesystem">Create ext4 Filesystem</h2>
+<p><strong>Can use parted command</strong></p>
+<pre><code class="sh"># lsblk
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+loop0     7:0    0 88.5M  1 loop /snap/core/7270
+loop1     7:1    0   18M  1 loop /snap/amazon-ssm-agent/1455
+xvda    202:0    0    8G  0 disk 
+└─xvda1 202:1    0    8G  0 part /
+xvdf    202:80   0    8G  0 disk 
+
+# fdisk /dev/xvdf
+Command (m for help): n  =&gt; Create Partition
+Partition type:
+  p   primary (0 primary, 0 extended, 4 free)
+  e   extended
+Command (m for help): p   =&gt; Print partition
+Command (m for help): w   =&gt; Write
+
+# mkfs -L projectA -t ext4 /dev/xvdf1  # Format Partition and create label
+# mkdir /mnt/ProjectA
+# mount /dev/xvdf1 /mnt/ProjectA/ 
+# vi /etc/fstab
+LABEL=projectA /mnt/ProjectA/ ext4 defaults 0 0 # Add This Line
 </code></pre>
 
-<h1 id="configure-network-interface">Configure Network Interface</h1>
-<pre><code class="sh">vi /etc/sysconfig/network-scripts/ifcfg-eth0
-IPADDR=172.16.1.180
-GATEWAY=172.16.1.16
-DNS1=172.16.1.112
-DNS2=172.16.1.119
-systemctl restart network
+<pre><code class="bash">umount /mnt/ProjectA/ 
 </code></pre>
 
-<h1 id="package-manager">Package Manager</h1>
-<h2 id="rpm">RPM</h2>
-<pre><code class="bash">sudo rpm -i wget-xxxxxx.rpm
+<h2 id="create-swap-partition">Create Swap Partition</h2>
+<p><strong>Can use parted command</strong></p>
+<pre><code class="sh"># fdisk /dev/xvdf
 
-# To see which lib file belongs
-rpm -qf /etc/protocols
+Welcome to fdisk (util-linux 2.31.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
 
 
-# To see if some file is missing from lib
-sudo rpm --verify setup
-sudo rpm -Va # To verify entire machine
+Command (m for help): p
+Disk /dev/xvdf: 8 GiB, 8589934592 bytes, 16777216 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xaef5270b
 
+Device     Boot    Start      End Sectors  Size Id Type
+/dev/xvdf1          2048  4196351 4194304    2G 82 Linux swap / Solaris
+/dev/xvdf2       4196352 10487807 6291456    3G 83 Linux
+/dev/xvdf3      10487808 16777215 6289408    3G  5 Extended
+/dev/xvdf5      10489856 12587007 2097152    1G 83 Linux
+/dev/xvdf6      12589056 14686207 2097152    1G 83 Linux
+/dev/xvdf7      14688256 16777215 2088960 1020M 83 Linux
+
+Command (m for help): t
+Partition number (1-3,5-7, default 7): 1
+Hex code (type L to list all codes): 82
+Command (m for help): w
+
+# mkswap /dev/xvdf1
+# swapon /dev/xvdf1 # to shutoff -&gt; swapoff /dev/xvdf2
+# free -m
+
+# vi /etc/fstab 
+UUID=99fd52d5-e821-45a5-9366-30666046406f swap swap default 0 0
 </code></pre>
 
-<h2 id="yum">YUM</h2>
-<pre><code class="bash"># Config file
-cat /etc/yum.conf
+<h2 id="create-lvm-filesystem">Create LVM Filesystem</h2>
+<pre><code class="sh"># fdisk /dev/xvdf
 
-# Repos dir
-cd /etc/yum.repos.d
+Welcome to fdisk (util-linux 2.31.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
 
 
-sudo yum update
+Command (m for help): p
+Disk /dev/xvdf: 8 GiB, 8589934592 bytes, 16777216 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xaef5270b
 
-# To download but not install
-sudo yum install --downloadonly --downloaddir=/tmp wget
+Device     Boot    Start      End Sectors  Size Id Type
+/dev/xvdf1          2048  4196351 4194304    2G 82 Linux swap / Solaris
+/dev/xvdf2       4196352 10487807 6291456    3G 83 Linux
+/dev/xvdf3      10487808 16777215 6289408    3G  5 Extended
+/dev/xvdf5      10489856 12587007 2097152    1G 83 Linux
+/dev/xvdf6      12589056 14686207 2097152    1G 83 Linux
+/dev/xvdf7      14688256 16777215 2088960 1020M 83 Linux
 
-sudo yum remove wget
+Command (m for help): t
+Partition number (1-3,5-7, default 7): 2           
+Hex code (type L to list all codes): 8e
+
+Changed type of partition 'Linux' to 'Linux LVM'.
+
+Command (m for help): w
+The partition table has been altered.
+Syncing disks.
+
+# fdisk /dev/xvdf
+
+Welcome to fdisk (util-linux 2.31.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+
+Command (m for help): p
+Disk /dev/xvdf: 8 GiB, 8589934592 bytes, 16777216 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xaef5270b
+
+Device     Boot    Start      End Sectors  Size Id Type
+/dev/xvdf1          2048  4196351 4194304    2G 82 Linux swap / Solaris
+/dev/xvdf2       4196352 10487807 6291456    3G 8e Linux LVM
+/dev/xvdf3      10487808 16777215 6289408    3G  5 Extended
+/dev/xvdf5      10489856 12587007 2097152    1G 83 Linux
+/dev/xvdf6      12589056 14686207 2097152    1G 83 Linux
+/dev/xvdf7      14688256 16777215 2088960 1020M 83 Linux
+
+Command (m for help): t
+Partition number (1-3,5-7, default 7): 5            
+Hex code (type L to list all codes): 8e
+
+Changed type of partition 'Linux' to 'Linux LVM'.
+
+Command (m for help): w
+The partition table has been altered.
+Syncing disks.
+
+# pvcreate /dev/xvdf2 
+  Physical volume &quot;/dev/xvdf2&quot; successfully created.
+# pvcreate /dev/xvdf5
+  Physical volume &quot;/dev/xvdf5&quot; successfully created.
+# vgcreate VG1 /dev/xvdf2 /dev/xvdf5 
+  Volume group &quot;VG1&quot; successfully created
+root@ip-172-31-81-196:~# vgdisplay /dev/VG1
+  --- Volume group ---
+  VG Name               VG1
+  System ID             
+  Format                lvm2
+  Metadata Areas        2
+  Metadata Sequence No  1
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                0
+  Open LV               0
+  Max PV                0
+  Cur PV                2
+  Act PV                2
+  VG Size               3.99 GiB
+  PE Size               4.00 MiB
+  Total PE              1022
+  Alloc PE / Size       0 / 0   
+  Free  PE / Size       1022 / 3.99 GiB
+  VG UUID               ELopyA-2vai-XuiQ-vm7M-RF9q-k0ve-yUeXM6
+
+# lvcreate VG1 -L +3.9G -n LV1
+  Rounding up size to full physical extent 3.90 GiB
+  Logical volume &quot;LV1&quot; created.
+root@ip-172-31-81-196:~# lvdisplay
+  --- Logical volume ---
+  LV Path                /dev/VG1/LV1
+  LV Name                LV1
+  VG Name                VG1
+  LV UUID                Q0mXgw-q9E7-ncuH-Vv2t-NTqx-epn9-3EK3DH
+  LV Write Access        read/write
+  LV Creation host, time ip-172-31-81-196, 2019-08-02 21:45:49 +0000
+  LV Status              available
+  # open                 0
+  LV Size                3.90 GiB
+  Current LE             999
+  Segments               2
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently set to     256
+  Block device           253:0
+
+# mkfs.ext4 /dev/VG1/LV1
+mke2fs 1.44.1 (24-Mar-2018)
+Creating filesystem with 1022976 4k blocks and 256000 inodes
+Filesystem UUID: 3cc6d97e-a315-4051-a572-16e06bf9c9f9
+Superblock backups stored on blocks: 
+    32768, 98304, 163840, 229376, 294912, 819200, 884736
+
+Allocating group tables: done                            
+Writing inode tables: done                            
+Creating journal (16384 blocks): done
+Writing superblocks and filesystem accounting information: done 
+
+root@ip-172-31-81-196:~# mkdir /mnt/LV1-mount 
+root@ip-172-31-81-196:~# mount /dev/VG1/LV1 /mnt/LV1-mount
+root@ip-172-31-81-196:~# vi /etc/fstab 
+/dev/VG1/LV1 /mnt/LV1-mount ext4 defaults 0 0 # Add This Line
+
+
+# Can edit first the /etc/fsatab file and after do mount -a (mount everything in /etc/fstab file) instead mount command
+</code></pre>
+
+<h1 id="share-disk">Share Disk</h1>
+<h2 id="install-nfs">Install NFS</h2>
+<pre><code class="sh">yum install -y nfs-utils
+systemctl enable nfs
+systemctl start nfs 
+</code></pre>
+
+<h2 id="master">Master</h2>
+<h3 id="configure-export">Configure Export</h3>
+<p><strong>/snapshots is a filestem from nfs type</strong></p>
+<pre><code class="sh"># vi /etc/exports
+/snapshots *(rw)  =&gt; Add Line
+# exportfs
+/snapshots      &lt;world&gt;
+</code></pre>
+
+<h3 id="enable-service">Enable Service</h3>
+<pre><code class="sh">firewall-cmd --add-service nfs --permanent
+firewall-cmd --permanent --add-service=rpc-bind
+firewall-cmd --permanent --add-service=mountd
+firewall-cmd --permanent --add-port=2049/tcp
+firewall-cmd --permanent --add-port=2049/udp
+firewall-cmd --reload
+</code></pre>
+
+<h2 id="slaves">Slaves</h2>
+<pre><code class="sh"># vi /etc/fstab 
+10.240.100.18:/snapshots /elastic/snapshots     nfs     _netdev,rw      0 0
+# mount -a
+# mount | grep elastic
 </code></pre></div>
         </div>
 
