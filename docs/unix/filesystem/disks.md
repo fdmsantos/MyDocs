@@ -1,4 +1,4 @@
-# Devices
+# Disks
  
 * **Lists block devices**
 
@@ -29,7 +29,7 @@ Partition type:
 Command (m for help): p   => Print partition
 Command (m for help): w   => Write
 
-# mkfs -L projectA -t ext4 /dev/xvdf1  # Format Partition
+# mkfs -L projectA -t ext4 /dev/xvdf1  # Format Partition and create label
 # mkdir /mnt/ProjectA
 # mount /dev/xvdf1 /mnt/ProjectA/ 
 # vi /etc/fstab
@@ -215,20 +215,50 @@ root@ip-172-31-81-196:~# mkdir /mnt/LV1-mount
 root@ip-172-31-81-196:~# mount /dev/VG1/LV1 /mnt/LV1-mount
 root@ip-172-31-81-196:~# vi /etc/fstab 
 /dev/VG1/LV1 /mnt/LV1-mount ext4 defaults 0 0 # Add This Line
+
+
+# Can edit first the /etc/fsatab file and after do mount -a instead mount command
 ```
 
-# FileSystem
+# Share Disk
 
+## Install NFS
 
-|  Dir  |      Function      |   Extras    |
-| -------- |:-------------:| ---------:|
-| /dev | (udev) Device manager. Contain device files | Config in /etc/udev |
-| /sys | (sysfs) Virtual file system. Info about Hardware devices, drivers |  |
-| /proc | (procfs)Similiar to sysfs, but with info about processes and system info | Can be used to interface with the kernel. Change parameters on the fly  |
-
-* **File System space usage**
-
-```bash
-df -h
+```sh
+yum install -y nfs-utils
+systemctl enable nfs
+systemctl start nfs 
 ```
 
+## Master
+
+### Configure Export
+
+**/snapshots is a filestem from nfs type**
+
+```sh hl_lines="2"
+# vi /etc/exports
+/snapshots *(rw)  => Add Line
+# exportfs
+/snapshots      <world>
+```
+
+### Enable Service
+
+```sh
+firewall-cmd --add-service nfs --permanent
+firewall-cmd --permanent --add-service=rpc-bind
+firewall-cmd --permanent --add-service=mountd
+firewall-cmd --permanent --add-port=2049/tcp
+firewall-cmd --permanent --add-port=2049/udp
+firewall-cmd --reload
+```
+
+## Slaves
+
+```sh hl_lines="2"
+# vi /etc/fstab 
+10.240.100.18:/snapshots /elastic/snapshots     nfs     _netdev,rw      0 0
+# mount -a
+# mount | grep elastic
+```

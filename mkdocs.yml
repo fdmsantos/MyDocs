@@ -24,9 +24,10 @@ nav:
          - Beats: 'elk/beats.md'
          - Snapshots&Restore: 'elk/snapshotsAndRestore.md'
   - Unix:
-      - Devices: 'unix/devices.md'
+      - Filesystem:
+           - Disks: 'unix/filesystem/disks.md'
+           - Filesystem: 'unix/filesystem/filesystem.md'
       - Commands: 'unix/commands.md'
-      - Disks: 'unix/disks.md'
       - Software:
           - PHP: 'unix/software/php.md'
           - Virsh: 'unix/software/virsh.md'
