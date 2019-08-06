@@ -32,6 +32,19 @@ ip addr show
 ip addr del 172.31.81.196/20 dev eth0:1 # Not Permanent
 ```
 
+## Network-Manager
+
+```bash
+sudo apt install network-manager
+sudo service network-manager restart
+nmcli
+nmcli connection # Connection information
+# Add Static Route
+sudo nmcli connection add con-name STATIC ipv4.addresses 192.168.58.1/24 ifname eth0 type ethernet
+nmcli connection show STATIC
+sudo nmcli connection modify  STATIC +ipv4.routes "172.16.0.0/16 192.168.58.254" ipv4.dns 172.16.58.254
+```
+
 ## route
 
 ```bash
@@ -99,6 +112,12 @@ netcat -l 12345 # To listen a Port
 
 ```bash
 cat /etc/services
+```
+
+## MTR
+
+```bash
+mtr acloud.com
 ```
 
 ## DNS
