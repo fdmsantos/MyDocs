@@ -1,4 +1,4 @@
-# Example File
+# Examples
 
 ## Simple Example
 ```yaml

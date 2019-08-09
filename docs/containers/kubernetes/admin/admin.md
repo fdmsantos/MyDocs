@@ -200,5 +200,7 @@ sudo yum-config-manager --enable epel
 # Instal bash completion
 yum install bash-completion bash-completion-extras
 
-vi /.bashrc # Add - source <(kubectl completion bash)
+vi /.bashrc # Add Following lines
+# alias k=kubectl
+# source <(kubectl completion bash | sed s/kubectl/k/g)
 ```

@@ -26,12 +26,12 @@ nav:
               - Scheduler: 'containers/kubernetes/admin/scheduler.md'
               - Security: 'containers/kubernetes/admin/security.md'
               - Taint: 'containers/kubernetes/admin/taint.md'
-              - PersistentVolumes: 'containers/kubernetes/admin/persistentvolumes.md'
               - Monitoring: 'containers/kubernetes/admin/monitoring.md'
           - Development:
               - Pods: 'containers/kubernetes/development/pods.md'
               - Deployments: 'containers/kubernetes/development/deployments.md'
               - Services: 'containers/kubernetes/development/services.md'
+              - PersistentVolumes: 'containers/kubernetes/development/persistentvolumes.md'
               - Ingress: 'containers/kubernetes/development/ingress.md'
               - ReplicaSets: 'containers/kubernetes/development/replicasets.md'
               - DaemonSets: 'containers/kubernetes/development/daemonsets.md'
