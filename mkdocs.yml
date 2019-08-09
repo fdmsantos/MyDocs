@@ -37,6 +37,7 @@ nav:
               - DaemonSets: 'containers/kubernetes/development/daemonsets.md'
               - Secrets&ConfigMaps: 'containers/kubernetes/development/secrets_configmaps.md'
               - StatefulSets: 'containers/kubernetes/development/statefulsets.md'
+              - Jobs: 'containers/kubernetes/development/jobs.md'
   - Databases:
       - ELK Stack:
          - ESQueries: 'elk/queries.md'

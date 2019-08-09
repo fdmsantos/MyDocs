@@ -204,3 +204,20 @@ vi /.bashrc # Add Following lines
 # alias k=kubectl
 # source <(kubectl completion bash | sed s/kubectl/k/g)
 ```
+
+# Geral Commands
+
+```bash
+kubectl api-resources -o name
+```
+
+# Kubectl
+
+## Install
+
+```bash
+wget https://storage.googleapis.com/kubernetes-release/release/v1.10.2/bin/linux/amd64/kubectl
+chmod +x kubectl
+sudo mv kubectl /usr/local/bin/
+kubectl version --client
+```
