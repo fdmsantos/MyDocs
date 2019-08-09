@@ -144,3 +144,13 @@ quotacheck: Old file not found.
 # sudo repquota /mnt/Photos # To see a resume from users
 
 ```
+
+## Tar
+
+```bash
+# List files without extract
+tar -tvf etcd-v3.3.13-linux-amd64.tar.gz
+
+# Extract only one file
+tar -xvf etcd-v3.3.13-linux-amd64.tar.gz etcd-v3.3.13-linux-amd64/etcdctl
+```

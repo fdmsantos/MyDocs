@@ -1,0 +1,47 @@
+# Example file
+
+```yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend
+  labels:
+    app: nginx
+    tier: frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels: 
+      tier: frontend
+    matchExpressions:
+      - {key: tier, operator: In, values: [frontend]}
+  template:
+    metadata:
+      labels:
+        app: nginx
+        tier: frontend
+    spec:
+      containers:
+      - name: nginx
+        image: darealmc/nginx-k8s:v1
+        ports:
+        - containerPort: 80
+```
+
+# Describe
+
+```bash
+kubectl describe rs/frontend
+```
+
+# Scale
+
+```bash
+kubectl scale rs/frontend --replicas=4
+```
+
+# Delete
+
+```bash
+kubectl delete rs/frontend
+```

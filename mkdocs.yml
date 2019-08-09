@@ -16,6 +16,27 @@ nav:
           - EBS: 'aws/storage/ebs.md'
       - Deployment:
           - Cloudformation: 'aws/deployment/cloudformation.md'
+  - Containers:
+      - Kubernetes:
+          - Admin:
+              - Admin: 'containers/kubernetes/admin/admin.md'
+              - Networking: 'containers/kubernetes/admin/networking.md'
+              - Nodes: 'containers/kubernetes/admin/nodes.md'
+              - Etcd: 'containers/kubernetes/admin/etcd.md'
+              - Scheduler: 'containers/kubernetes/admin/scheduler.md'
+              - Security: 'containers/kubernetes/admin/security.md'
+              - Taint: 'containers/kubernetes/admin/taint.md'
+              - PersistentVolumes: 'containers/kubernetes/admin/persistentvolumes.md'
+              - Monitoring: 'containers/kubernetes/admin/monitoring.md'
+          - Development:
+              - Pods: 'containers/kubernetes/development/pods.md'
+              - Deployments: 'containers/kubernetes/development/deployments.md'
+              - Services: 'containers/kubernetes/development/services.md'
+              - Ingress: 'containers/kubernetes/development/ingress.md'
+              - ReplicaSets: 'containers/kubernetes/development/replicasets.md'
+              - DaemonSets: 'containers/kubernetes/development/daemonsets.md'
+              - Secrets&ConfigMaps: 'containers/kubernetes/development/secrets_configmaps.md'
+              - StatefulSets: 'containers/kubernetes/development/statefulsets.md'
   - Databases:
       - ELK Stack:
          - ESQueries: 'elk/queries.md'
