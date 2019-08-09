@@ -95,6 +95,97 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Containers <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Kubernetes</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#">Admin</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../containers/kubernetes/admin/admin/">Admin</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/admin/networking/">Networking</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/admin/nodes/">Nodes</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/admin/etcd/">Etcd</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/admin/scheduler/">Scheduler</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/admin/security/">Security</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/admin/taint/">Taint</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/admin/persistentvolumes/">PersistentVolumes</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/admin/monitoring/">Monitoring</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Development</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../containers/kubernetes/development/pods/">Pods</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/development/deployments/">Deployments</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/development/services/">Services</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/development/ingress/">Ingress</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/development/replicasets/">ReplicaSets</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/development/daemonsets/">DaemonSets</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/development/secrets_configmaps/">Secrets&ConfigMaps</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/development/statefulsets/">StatefulSets</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Databases <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -246,6 +337,12 @@
         <li class="main active"><a href="#security">Security</a></li>
             <li><a href="#host">Host</a></li>
             <li><a href="#nologin">Nologin</a></li>
+        <li class="main "><a href="#se-linux">SE Linux</a></li>
+            <li><a href="#install-ubuntu">Install Ubuntu</a></li>
+            <li><a href="#config">Config</a></li>
+            <li><a href="#contexts">Contexts</a></li>
+            <li><a href="#booleans">Booleans</a></li>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -259,6 +356,59 @@ cat /etc/hosts.deny # Hosts not allowed to access
 
 <h2 id="nologin">Nologin</h2>
 <pre><code class="bash">touch /etc/nologin # Denies login to all users (except root). Need remove the file
+</code></pre>
+
+<h1 id="se-linux">SE Linux</h1>
+<h2 id="install-ubuntu">Install Ubuntu</h2>
+<pre><code class="bash"># Need remove apparmor in ubuntu systems
+# make sure you have the most up-to-date info
+apt-get update
+apt-get dist-upgrade
+
+#disable and remove apparmor
+/etc/init.d/apparmor stop
+apt-get remove apparmor
+
+#install SELinux
+apt-get install selinux
+
+# install the missing dependency
+apt-get install auditd
+
+# install the activate tool required to make it work
+apt-get install selinux-basics
+
+#missing manual step to actually make SELinux work (part of selinux-basics)
+selinux-activate
+</code></pre>
+
+<h2 id="config">Config</h2>
+<pre><code class="bash"># Config file
+cat /etc/selinux/config
+getenforce
+setenforce 1
+sestatus
+ls -Z /etc/shadow
+ps -Z
+
+</code></pre>
+
+<h2 id="contexts">Contexts</h2>
+<pre><code class="bash"># List
+semanage fcontext -l
+semanage fcontext -l | grep httpd_sys_content_t
+# Change Context Type
+chcon -t user_home_dir_t /etc/shadow
+</code></pre>
+
+<h2 id="booleans">Booleans</h2>
+<pre><code class="bash">getsebool -a
+semanage boolean -l | sort | less
+semanage boolean -m -1 httpd_enable_homedirs # or setsebool -P httpd_enable_homedirs=1
+</code></pre>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+<pre><code class="bash">grep http /var/log/audit/audit.log
 </code></pre></div>
         </div>
 

@@ -6,12 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="Fábio Santos">
-        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/elk/admin/">
-        <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Administration - MyDocs</title>
-        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/containers/kubernetes/admin/nodes/">
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Nodes - MyDocs</title>
+        <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -39,7 +39,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../..">MyDocs</a>
+                    <a class="navbar-brand" href="../../../..">MyDocs</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -47,7 +47,7 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="../..">Home</a>
+                                <a href="../../../..">Home</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">AWS <b class="caret"></b></a>
@@ -58,7 +58,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../aws/networking/vpc/">VPC</a>
+    <a href="../../../../aws/networking/vpc/">VPC</a>
 </li>
     </ul>
   </li>
@@ -68,7 +68,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../aws/compute/ec2/">EC2</a>
+    <a href="../../../../aws/compute/ec2/">EC2</a>
 </li>
     </ul>
   </li>
@@ -78,7 +78,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../aws/storage/ebs/">EBS</a>
+    <a href="../../../../aws/storage/ebs/">EBS</a>
 </li>
     </ul>
   </li>
@@ -88,13 +88,13 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../aws/deployment/cloudformation/">Cloudformation</a>
+    <a href="../../../../aws/deployment/cloudformation/">Cloudformation</a>
 </li>
     </ul>
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Containers <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -107,39 +107,39 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../containers/kubernetes/admin/admin/">Admin</a>
+    <a href="../admin/">Admin</a>
 </li>
             
 <li >
-    <a href="../../containers/kubernetes/admin/networking/">Networking</a>
+    <a href="../networking/">Networking</a>
+</li>
+            
+<li class="active">
+    <a href="./">Nodes</a>
 </li>
             
 <li >
-    <a href="../../containers/kubernetes/admin/nodes/">Nodes</a>
+    <a href="../etcd/">Etcd</a>
 </li>
             
 <li >
-    <a href="../../containers/kubernetes/admin/etcd/">Etcd</a>
+    <a href="../scheduler/">Scheduler</a>
 </li>
             
 <li >
-    <a href="../../containers/kubernetes/admin/scheduler/">Scheduler</a>
+    <a href="../security/">Security</a>
 </li>
             
 <li >
-    <a href="../../containers/kubernetes/admin/security/">Security</a>
+    <a href="../taint/">Taint</a>
 </li>
             
 <li >
-    <a href="../../containers/kubernetes/admin/taint/">Taint</a>
+    <a href="../persistentvolumes/">PersistentVolumes</a>
 </li>
             
 <li >
-    <a href="../../containers/kubernetes/admin/persistentvolumes/">PersistentVolumes</a>
-</li>
-            
-<li >
-    <a href="../../containers/kubernetes/admin/monitoring/">Monitoring</a>
+    <a href="../monitoring/">Monitoring</a>
 </li>
     </ul>
   </li>
@@ -149,35 +149,35 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../containers/kubernetes/development/pods/">Pods</a>
+    <a href="../../development/pods/">Pods</a>
 </li>
             
 <li >
-    <a href="../../containers/kubernetes/development/deployments/">Deployments</a>
+    <a href="../../development/deployments/">Deployments</a>
 </li>
             
 <li >
-    <a href="../../containers/kubernetes/development/services/">Services</a>
+    <a href="../../development/services/">Services</a>
 </li>
             
 <li >
-    <a href="../../containers/kubernetes/development/ingress/">Ingress</a>
+    <a href="../../development/ingress/">Ingress</a>
 </li>
             
 <li >
-    <a href="../../containers/kubernetes/development/replicasets/">ReplicaSets</a>
+    <a href="../../development/replicasets/">ReplicaSets</a>
 </li>
             
 <li >
-    <a href="../../containers/kubernetes/development/daemonsets/">DaemonSets</a>
+    <a href="../../development/daemonsets/">DaemonSets</a>
 </li>
             
 <li >
-    <a href="../../containers/kubernetes/development/secrets_configmaps/">Secrets&ConfigMaps</a>
+    <a href="../../development/secrets_configmaps/">Secrets&ConfigMaps</a>
 </li>
             
 <li >
-    <a href="../../containers/kubernetes/development/statefulsets/">StatefulSets</a>
+    <a href="../../development/statefulsets/">StatefulSets</a>
 </li>
     </ul>
   </li>
@@ -185,7 +185,7 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Databases <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -194,23 +194,23 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../queries/">ESQueries</a>
-</li>
-            
-<li class="active">
-    <a href="./">Administration</a>
+    <a href="../../../../elk/queries/">ESQueries</a>
 </li>
             
 <li >
-    <a href="../kibana/">Kibana</a>
+    <a href="../../../../elk/admin/">Administration</a>
 </li>
             
 <li >
-    <a href="../beats/">Beats</a>
+    <a href="../../../../elk/kibana/">Kibana</a>
 </li>
             
 <li >
-    <a href="../snapshotsAndRestore/">Snapshots&Restore</a>
+    <a href="../../../../elk/beats/">Beats</a>
+</li>
+            
+<li >
+    <a href="../../../../elk/snapshotsAndRestore/">Snapshots&Restore</a>
 </li>
     </ul>
   </li>
@@ -225,27 +225,27 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../unix/commands/disks/">Disks</a>
+    <a href="../../../../unix/commands/disks/">Disks</a>
 </li>
             
 <li >
-    <a href="../../unix/commands/filesystem/">Filesystem</a>
+    <a href="../../../../unix/commands/filesystem/">Filesystem</a>
 </li>
             
 <li >
-    <a href="../../unix/commands/logging/">Logging</a>
+    <a href="../../../../unix/commands/logging/">Logging</a>
 </li>
             
 <li >
-    <a href="../../unix/commands/kernel/">Kernel</a>
+    <a href="../../../../unix/commands/kernel/">Kernel</a>
 </li>
             
 <li >
-    <a href="../../unix/commands/networking/">Networking</a>
+    <a href="../../../../unix/commands/networking/">Networking</a>
 </li>
             
 <li >
-    <a href="../../unix/commands/security/">Security</a>
+    <a href="../../../../unix/commands/security/">Security</a>
 </li>
     </ul>
   </li>
@@ -259,7 +259,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../unix/software/mail/postfix/">Postfix</a>
+    <a href="../../../../unix/software/mail/postfix/">Postfix</a>
 </li>
     </ul>
   </li>
@@ -269,7 +269,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../unix/software/programming/php/">PHP</a>
+    <a href="../../../../unix/software/programming/php/">PHP</a>
 </li>
     </ul>
   </li>
@@ -279,7 +279,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../unix/software/virtualization/virsh/">Virsh</a>
+    <a href="../../../../unix/software/virtualization/virsh/">Virsh</a>
 </li>
     </ul>
   </li>
@@ -291,15 +291,15 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../unix/os/redhat/">Redhat</a>
+    <a href="../../../../unix/os/redhat/">Redhat</a>
 </li>
             
 <li >
-    <a href="../../unix/os/debian/">Debian</a>
+    <a href="../../../../unix/os/debian/">Debian</a>
 </li>
             
 <li >
-    <a href="../../unix/os/archlinux/">Archlinux</a>
+    <a href="../../../../unix/os/archlinux/">Archlinux</a>
 </li>
     </ul>
   </li>
@@ -314,17 +314,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../queries/">
+                                <a rel="next" href="../networking/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../kibana/">
+                                <a rel="prev" href="../etcd/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/elk/admin.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/containers/kubernetes/admin/nodes.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -334,36 +334,36 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#deploy">Deploy</a></li>
-            <li><a href="#docker-compose">Docker-compose</a></li>
-        <li class="main "><a href="#know-errors">Know Errors</a></li>
-            <li><a href="#max-virtual-memory">Max virtual memory</a></li>
-            <li><a href="#forbidden-index-x-read-only-allow-delete-api">Forbidden Index x-read-only-allow-delete-api</a></li>
+        <li class="main active"><a href="#get">Get</a></li>
+        <li class="main "><a href="#describe">Describe</a></li>
+        <li class="main "><a href="#api-resources">Api resources</a></li>
+        <li class="main "><a href="#components-status">Components Status</a></li>
+        <li class="main "><a href="#label">Label</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="deploy">Deploy</h2>
-<h3 id="docker-compose">Docker-compose</h3>
-<pre><code class="sh">git clone https://github.com/maxyermayank/docker-compose-elasticsearch-kibana
+<h1 id="get">Get</h1>
+<pre><code class="bash">kubectl get nodes
 </code></pre>
 
-<h2 id="know-errors">Know Errors</h2>
-<h3 id="max-virtual-memory">Max virtual memory</h3>
-<p><strong>Desc:</strong> Max virtual memory areas vm.max_map_count [65530] likely too low, increase to at least [262144]</p>
-<pre><code class="sh">sudo sysctl -w vm.max_map_count=262144
+<h1 id="describe">Describe</h1>
+<pre><code class="bash">kubectl describe node/node1
+kubectl describe node/node2
+kubectl describe node/master
 </code></pre>
 
-<h3 id="forbidden-index-x-read-only-allow-delete-api">Forbidden Index x-read-only-allow-delete-api</h3>
-<p><a href="https://discuss.elastic.co/t/forbidden-12-index-read-only-allow-delete-api/110282">Link</a></p>
-<pre><code class="json">PUT .kibana/_settings
-{
-    &quot;index&quot;: {
-      &quot;blocks&quot;: {
-        &quot;read_only_allow_delete&quot;: &quot;false&quot;
-      }
-    }
-}
+<h1 id="api-resources">Api resources</h1>
+<pre><code class="bash">kubectl api-resources -o wide
+</code></pre>
+
+<h1 id="components-status">Components Status</h1>
+<pre><code class="bash">kubectl get componentstatus
+</code></pre>
+
+<h1 id="label">Label</h1>
+<pre><code class="bash">kubectl label node node1 availability-zone=zone1
+kubectl label node node2 share-type=dedicated
 </code></pre></div>
         </div>
 
@@ -372,11 +372,11 @@
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "../..",
+            var base_url = "../../../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../../js/base.js" defer></script>
-        <script src="../../search/main.js" defer></script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">

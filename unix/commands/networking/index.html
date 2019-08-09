@@ -95,6 +95,97 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Containers <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Kubernetes</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#">Admin</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../containers/kubernetes/admin/admin/">Admin</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/admin/networking/">Networking</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/admin/nodes/">Nodes</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/admin/etcd/">Etcd</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/admin/scheduler/">Scheduler</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/admin/security/">Security</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/admin/taint/">Taint</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/admin/persistentvolumes/">PersistentVolumes</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/admin/monitoring/">Monitoring</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Development</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../containers/kubernetes/development/pods/">Pods</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/development/deployments/">Deployments</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/development/services/">Services</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/development/ingress/">Ingress</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/development/replicasets/">ReplicaSets</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/development/daemonsets/">DaemonSets</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/development/secrets_configmaps/">Secrets&ConfigMaps</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/development/statefulsets/">StatefulSets</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Databases <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -246,6 +337,7 @@
         <li class="main active"><a href="#config">Config</a></li>
             <li><a href="#ifconfig">ifconfig</a></li>
             <li><a href="#ip">ip</a></li>
+            <li><a href="#network-manager">Network-Manager</a></li>
             <li><a href="#route">route</a></li>
             <li><a href="#dns">Dns</a></li>
             <li><a href="#file">File</a></li>
@@ -256,6 +348,7 @@
             <li><a href="#who-listen-on-port">Who listen on Port</a></li>
             <li><a href="#test-remote-connection-to-port">Test Remote Connection to port</a></li>
             <li><a href="#get-ports-than-services-are-listen">Get Ports than services are listen</a></li>
+            <li><a href="#mtr">MTR</a></li>
             <li><a href="#dns_1">DNS</a></li>
     </ul>
 </div></div>
@@ -283,6 +376,17 @@ ip addr show
 
 <h3 id="remove-secondary-ip">Remove Secondary Ip</h3>
 <pre><code class="bash">ip addr del 172.31.81.196/20 dev eth0:1 # Not Permanent
+</code></pre>
+
+<h2 id="network-manager">Network-Manager</h2>
+<pre><code class="bash">sudo apt install network-manager
+sudo service network-manager restart
+nmcli
+nmcli connection # Connection information
+# Add Static Route
+sudo nmcli connection add con-name STATIC ipv4.addresses 192.168.58.1/24 ifname eth0 type ethernet
+nmcli connection show STATIC
+sudo nmcli connection modify  STATIC +ipv4.routes &quot;172.16.0.0/16 192.168.58.254&quot; ipv4.dns 172.16.58.254
 </code></pre>
 
 <h2 id="route">route</h2>
@@ -333,6 +437,10 @@ netcat -l 12345 # To listen a Port
 
 <h2 id="get-ports-than-services-are-listen">Get Ports than services are listen</h2>
 <pre><code class="bash">cat /etc/services
+</code></pre>
+
+<h2 id="mtr">MTR</h2>
+<pre><code class="bash">mtr acloud.com
 </code></pre>
 
 <h2 id="dns_1">DNS</h2>

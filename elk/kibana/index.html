@@ -94,6 +94,97 @@
   </li>
                                 </ul>
                             </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Containers <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Kubernetes</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#">Admin</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../containers/kubernetes/admin/admin/">Admin</a>
+</li>
+            
+<li >
+    <a href="../../containers/kubernetes/admin/networking/">Networking</a>
+</li>
+            
+<li >
+    <a href="../../containers/kubernetes/admin/nodes/">Nodes</a>
+</li>
+            
+<li >
+    <a href="../../containers/kubernetes/admin/etcd/">Etcd</a>
+</li>
+            
+<li >
+    <a href="../../containers/kubernetes/admin/scheduler/">Scheduler</a>
+</li>
+            
+<li >
+    <a href="../../containers/kubernetes/admin/security/">Security</a>
+</li>
+            
+<li >
+    <a href="../../containers/kubernetes/admin/taint/">Taint</a>
+</li>
+            
+<li >
+    <a href="../../containers/kubernetes/admin/persistentvolumes/">PersistentVolumes</a>
+</li>
+            
+<li >
+    <a href="../../containers/kubernetes/admin/monitoring/">Monitoring</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Development</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../containers/kubernetes/development/pods/">Pods</a>
+</li>
+            
+<li >
+    <a href="../../containers/kubernetes/development/deployments/">Deployments</a>
+</li>
+            
+<li >
+    <a href="../../containers/kubernetes/development/services/">Services</a>
+</li>
+            
+<li >
+    <a href="../../containers/kubernetes/development/ingress/">Ingress</a>
+</li>
+            
+<li >
+    <a href="../../containers/kubernetes/development/replicasets/">ReplicaSets</a>
+</li>
+            
+<li >
+    <a href="../../containers/kubernetes/development/daemonsets/">DaemonSets</a>
+</li>
+            
+<li >
+    <a href="../../containers/kubernetes/development/secrets_configmaps/">Secrets&ConfigMaps</a>
+</li>
+            
+<li >
+    <a href="../../containers/kubernetes/development/statefulsets/">StatefulSets</a>
+</li>
+    </ul>
+  </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
                             <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Databases <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -251,13 +342,13 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h2 id="time-series">Time Series</h2>
-<h3 id="filters">Filters</h3>
+<h1 id="time-series">Time Series</h1>
+<h2 id="filters">Filters</h2>
 <pre><code class="sh">performancemanager.virtualmachines.metric.info.metric: &quot;cpu.usagemhz.average&quot; AND NOT performancemanager.virtualmachines.metric.sample.instance: &quot;*&quot; AND performancemanager.hosts.metric.sample.instance: &quot;*&quot;
 </code></pre>
 
-<h2 id="timelion">Timelion</h2>
-<h3 id="expression">Expression</h3>
+<h1 id="timelion">Timelion</h1>
+<h2 id="expression">Expression</h2>
 <pre><code class="sh">.es(index=vspherebeat-emp-imopolis-*, timefield=performancemanager.datastoresclusters.metric.sample.timestamp, metric=sum:performancemanager.datastoresclusters.metric.sample.value,q=&quot;performancemanager.datastoresclusters.metric.info.metric: disk.provisioned.latest&quot;).divide(1000000000).label(&quot;Disk Provisioned [TB]&quot;).color(black).lines(fill=1,width=2).title(&quot;Capacity Assessment&quot;),
 
 .es(index=vspherebeat-emp-imopolis-*, timefield=performancemanager.datastoresclusters.metric.sample.timestamp, metric=sum:performancemanager.datastoresclusters.metaData.Storage.Capacity,q=&quot;performancemanager.datastoresclusters.metric.info.metric: disk.provisioned.latest&quot;).divide(1000000000000).label(&quot;Total Capacity [TB]&quot;).color(yellow).lines(fill=2,width=2),
