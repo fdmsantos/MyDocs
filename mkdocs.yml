@@ -20,13 +20,14 @@ nav:
       - Kubernetes:
           - Admin:
               - Admin: 'containers/kubernetes/admin/admin.md'
+              - Etcd: 'containers/kubernetes/admin/etcd.md'
+              - Control Plane: 'containers/kubernetes/admin/controlplane.md'
               - Networking: 'containers/kubernetes/admin/networking.md'
               - Nodes: 'containers/kubernetes/admin/nodes.md'
-              - Etcd: 'containers/kubernetes/admin/etcd.md'
-              - Scheduler: 'containers/kubernetes/admin/scheduler.md'
               - Security: 'containers/kubernetes/admin/security.md'
               - Taint: 'containers/kubernetes/admin/taint.md'
               - Monitoring: 'containers/kubernetes/admin/monitoring.md'
+
           - Development:
               - Pods: 'containers/kubernetes/development/pods.md'
               - Deployments: 'containers/kubernetes/development/deployments.md'

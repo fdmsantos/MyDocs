@@ -18,12 +18,6 @@ kubectl describe node/master
 kubectl api-resources -o wide
 ```
 
-# Components Status
-
-```bash
-kubectl get componentstatus
-```
-
 # Label
 
 ```bash

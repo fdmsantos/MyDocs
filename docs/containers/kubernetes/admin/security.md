@@ -1,23 +1,3 @@
-# End-To End Tests
- 
-## CheckList
-
-1. Deployments can run
-
-2. Pods can run
-
-3. Pods can be directly accessed
-
-4. Logs can be collected
-
-5. Commands run from pod
-
-6. Services can provide access
-
-7. Nodes are healthy
-
-8. Pods are healthy
-
 # Service Accounts
 
 ## Get
@@ -488,6 +468,24 @@ cfssl gencert \
 
 }
 ```
+
+## Distributing the Certificate Files
+
+### Move certificate files to the worker nodes:
+    
+```bash
+scp ca.pem <worker 1 hostname>-key.pem <worker 1 hostname>.pem user@<worker 1 public IP>:~/
+scp ca.pem <worker 2 hostname>-key.pem <worker 2 hostname>.pem user@<worker 2 public IP>:~/
+```
+    
+### Move certificate files to the Master nodes:
+
+```bash
+scp ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem service-account-key.pem service-account.pem user@<master 1 public IP>:~/
+scp ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem service-account-key.pem service-account.pem user@<master 2 public IP>:~/
+```   
+
+    
 
 ## Create TLS For Applications (Not Cluster, only same pods)
 
