@@ -48,13 +48,7 @@ packer -v
         "type": "shell",
         "inline": [
           "sudo yum update -y",
-          "sudo yum install -y git",
-          "mkdir -p /var/code",
-          "cd /root",
-          "curl -L https://github.com/linuxacademy/content-nodejs-hello-world/archive/v1.0.tar.gz -o code.tar.gz",
-          "tar zxvf code.tar.gz -C /var/code --strip-components=1",
-          "cd /var/code",
-          "npm install"
+          "sudo yum install -y git"
         ]
       }
   ]
