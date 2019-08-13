@@ -68,8 +68,8 @@ sudo apt-mark hold docker-ce
 ## Amazon AMI Linux 2
 
 ```bash
-amazon-linux-extras install -y docker
-cat > /etc/docker/daemon.json <<EOF
+sudo amazon-linux-extras install -y docker
+sudo cat > /etc/docker/daemon.json <<EOF
 {
   "exec-opts": ["native.cgroupdriver=systemd"],
   "log-driver": "json-file",
@@ -79,10 +79,10 @@ cat > /etc/docker/daemon.json <<EOF
   "storage-driver": "overlay2"
 }
 EOF
-systemctl daemon-reload
-systemctl enable docker
-systemctl start docker
-usermod -a -G docker ec2-user
+sudo systemctl daemon-reload
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo usermod -a -G docker ec2-user
 ```
 
 # kubernetes
