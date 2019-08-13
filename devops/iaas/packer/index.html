@@ -6,12 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="Fábio Santos">
-        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/containers/kubernetes/admin/scheduler/">
-        <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>Scheduler - MyDocs</title>
-        <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/devops/iaas/packer/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Packer - MyDocs</title>
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -19,8 +19,8 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -39,7 +39,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="../../../..">MyDocs</a>
+                    <a class="navbar-brand" href="../../..">MyDocs</a>
                 </div>
 
                 <!-- Expanded navigation -->
@@ -47,7 +47,7 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="../../../..">Home</a>
+                                <a href="../../..">Home</a>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">AWS <b class="caret"></b></a>
@@ -58,7 +58,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../../aws/networking/vpc/">VPC</a>
+    <a href="../../../aws/networking/vpc/">VPC</a>
 </li>
     </ul>
   </li>
@@ -68,7 +68,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../../aws/compute/ec2/">EC2</a>
+    <a href="../../../aws/compute/ec2/">EC2</a>
 </li>
     </ul>
   </li>
@@ -78,7 +78,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../../aws/storage/ebs/">EBS</a>
+    <a href="../../../aws/storage/ebs/">EBS</a>
 </li>
     </ul>
   </li>
@@ -88,13 +88,13 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../../aws/deployment/cloudformation/">Cloudformation</a>
+    <a href="../../../aws/deployment/cloudformation/">Cloudformation</a>
 </li>
     </ul>
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Containers <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -107,39 +107,35 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../admin/">Admin</a>
+    <a href="../../../containers/kubernetes/admin/admin/">Admin</a>
 </li>
             
 <li >
-    <a href="../networking/">Networking</a>
+    <a href="../../../containers/kubernetes/admin/etcd/">Etcd</a>
 </li>
             
 <li >
-    <a href="../nodes/">Nodes</a>
+    <a href="../../../containers/kubernetes/admin/controlplane/">Control Plane</a>
 </li>
             
 <li >
-    <a href="../etcd/">Etcd</a>
-</li>
-            
-<li class="active">
-    <a href="./">Scheduler</a>
+    <a href="../../../containers/kubernetes/admin/networking/">Networking</a>
 </li>
             
 <li >
-    <a href="../security/">Security</a>
+    <a href="../../../containers/kubernetes/admin/nodes/">Nodes</a>
 </li>
             
 <li >
-    <a href="../taint/">Taint</a>
+    <a href="../../../containers/kubernetes/admin/security/">Security</a>
 </li>
             
 <li >
-    <a href="../persistentvolumes/">PersistentVolumes</a>
+    <a href="../../../containers/kubernetes/admin/taint/">Taint</a>
 </li>
             
 <li >
-    <a href="../monitoring/">Monitoring</a>
+    <a href="../../../containers/kubernetes/admin/monitoring/">Monitoring</a>
 </li>
     </ul>
   </li>
@@ -149,38 +145,61 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../development/pods/">Pods</a>
+    <a href="../../../containers/kubernetes/development/pods/">Pods</a>
 </li>
             
 <li >
-    <a href="../../development/deployments/">Deployments</a>
+    <a href="../../../containers/kubernetes/development/deployments/">Deployments</a>
 </li>
             
 <li >
-    <a href="../../development/services/">Services</a>
+    <a href="../../../containers/kubernetes/development/services/">Services</a>
 </li>
             
 <li >
-    <a href="../../development/ingress/">Ingress</a>
+    <a href="../../../containers/kubernetes/development/persistentvolumes/">PersistentVolumes</a>
 </li>
             
 <li >
-    <a href="../../development/replicasets/">ReplicaSets</a>
+    <a href="../../../containers/kubernetes/development/ingress/">Ingress</a>
 </li>
             
 <li >
-    <a href="../../development/daemonsets/">DaemonSets</a>
+    <a href="../../../containers/kubernetes/development/replicasets/">ReplicaSets</a>
 </li>
             
 <li >
-    <a href="../../development/secrets_configmaps/">Secrets&ConfigMaps</a>
+    <a href="../../../containers/kubernetes/development/daemonsets/">DaemonSets</a>
 </li>
             
 <li >
-    <a href="../../development/statefulsets/">StatefulSets</a>
+    <a href="../../../containers/kubernetes/development/secrets_configmaps/">Secrets&ConfigMaps</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/development/statefulsets/">StatefulSets</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/development/jobs/">Jobs</a>
 </li>
     </ul>
   </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">DevOps <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">IAAS</a>
+    <ul class="dropdown-menu">
+            
+<li class="active">
+    <a href="./">Packer</a>
+</li>
     </ul>
   </li>
                                 </ul>
@@ -194,23 +213,23 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../../elk/queries/">ESQueries</a>
+    <a href="../../../elk/queries/">ESQueries</a>
 </li>
             
 <li >
-    <a href="../../../../elk/admin/">Administration</a>
+    <a href="../../../elk/admin/">Administration</a>
 </li>
             
 <li >
-    <a href="../../../../elk/kibana/">Kibana</a>
+    <a href="../../../elk/kibana/">Kibana</a>
 </li>
             
 <li >
-    <a href="../../../../elk/beats/">Beats</a>
+    <a href="../../../elk/beats/">Beats</a>
 </li>
             
 <li >
-    <a href="../../../../elk/snapshotsAndRestore/">Snapshots&Restore</a>
+    <a href="../../../elk/snapshotsAndRestore/">Snapshots&Restore</a>
 </li>
     </ul>
   </li>
@@ -225,27 +244,27 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../../unix/commands/disks/">Disks</a>
+    <a href="../../../unix/commands/disks/">Disks</a>
 </li>
             
 <li >
-    <a href="../../../../unix/commands/filesystem/">Filesystem</a>
+    <a href="../../../unix/commands/filesystem/">Filesystem</a>
 </li>
             
 <li >
-    <a href="../../../../unix/commands/logging/">Logging</a>
+    <a href="../../../unix/commands/logging/">Logging</a>
 </li>
             
 <li >
-    <a href="../../../../unix/commands/kernel/">Kernel</a>
+    <a href="../../../unix/commands/kernel/">Kernel</a>
 </li>
             
 <li >
-    <a href="../../../../unix/commands/networking/">Networking</a>
+    <a href="../../../unix/commands/networking/">Networking</a>
 </li>
             
 <li >
-    <a href="../../../../unix/commands/security/">Security</a>
+    <a href="../../../unix/commands/security/">Security</a>
 </li>
     </ul>
   </li>
@@ -259,7 +278,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../../unix/software/mail/postfix/">Postfix</a>
+    <a href="../../../unix/software/mail/postfix/">Postfix</a>
 </li>
     </ul>
   </li>
@@ -269,7 +288,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../../unix/software/programming/php/">PHP</a>
+    <a href="../../../unix/software/programming/php/">PHP</a>
 </li>
     </ul>
   </li>
@@ -279,7 +298,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../../unix/software/virtualization/virsh/">Virsh</a>
+    <a href="../../../unix/software/virtualization/virsh/">Virsh</a>
 </li>
     </ul>
   </li>
@@ -291,15 +310,15 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../../../unix/os/redhat/">Redhat</a>
+    <a href="../../../unix/os/redhat/">Redhat</a>
 </li>
             
 <li >
-    <a href="../../../../unix/os/debian/">Debian</a>
+    <a href="../../../unix/os/debian/">Debian</a>
 </li>
             
 <li >
-    <a href="../../../../unix/os/archlinux/">Archlinux</a>
+    <a href="../../../unix/os/archlinux/">Archlinux</a>
 </li>
     </ul>
   </li>
@@ -314,17 +333,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../etcd/">
+                                <a rel="next" href="../../../containers/kubernetes/development/jobs/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../security/">
+                                <a rel="prev" href="../../../elk/queries/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/containers/kubernetes/admin/scheduler.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/devops/iaas/packer.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -334,203 +353,122 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#default-scheduler">Default Scheduler</a></li>
-        <li class="main "><a href="#custom-scheduler">Custom Scheduler</a></li>
-            <li><a href="#clusterrole">ClusterRole</a></li>
-            <li><a href="#clusterrolebinding">ClusterRoleBinding</a></li>
-            <li><a href="#role">Role</a></li>
-            <li><a href="#rolebinding">RoleBinding</a></li>
-            <li><a href="#my-scheduler">My-scheduler</a></li>
-            <li><a href="#deploy">Deploy</a></li>
-        <li class="main "><a href="#get-config">Get config</a></li>
-        <li class="main "><a href="#troubleshooting">Troubleshooting</a></li>
+        <li class="main active"><a href="#install">Install</a></li>
+        <li class="main "><a href="#template">Template</a></li>
+            <li><a href="#ami">AMI</a></li>
+            <li><a href="#docker">Docker</a></li>
+        <li class="main "><a href="#commands">Commands</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="default-scheduler">Default Scheduler</h1>
-<ol>
-<li>Does the node have adequate hardware resources?</li>
-<li>Is the node running out of resources?</li>
-<li>Does the pod request a specific node?</li>
-<li>Does the node have a matching label?</li>
-<li>If the pod requests a port, is it available?</li>
-<li>If the pod requests a volume, can it be mounted?</li>
-<li>Does the pod tolerate the taints of the node?</li>
-<li>Does the pod specify node or pod affinity?</li>
-</ol>
-<h1 id="custom-scheduler">Custom Scheduler</h1>
-<h2 id="clusterrole">ClusterRole</h2>
-<pre><code class="yaml">apiVersion: rbac.authorization.k8s.io/v1beta1
-kind: ClusterRole
-metadata:
-  name: csinodes-admin
-rules:
-- apiGroups: [&quot;storage.k8s.io&quot;]
-  resources: [&quot;csinodes&quot;]
-  verbs: [&quot;get&quot;, &quot;watch&quot;, &quot;list&quot;]
+<h1 id="install">Install</h1>
+<pre><code class="bash">wget https://releases.hashicorp.com/packer/1.4.2/packer_1.4.2_linux_amd64.zip
+unzip packer_1.4.2_linux_amd64.zip
+rm packer_1.4.2_linux_amd64.zip
+sudo mv packer /usr/bin/
+packer -v
 </code></pre>
 
-<h2 id="clusterrolebinding">ClusterRoleBinding</h2>
-<pre><code class="yaml">apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: read-csinodes-global
-subjects:
-- kind: ServiceAccount
-  name: my-scheduler
-  namespace: kube-system
-roleRef:
-  kind: ClusterRole
-  name: csinodes-admin
-  apiGroup: rbac.authorization.k8s.io
+<h1 id="template">Template</h1>
+<ul>
+<li><strong>packer.json</strong></li>
+</ul>
+<h2 id="ami">AMI</h2>
+<pre><code class="json">{
+  &quot;variables&quot;: {
+    &quot;instance_size&quot;: &quot;t2.micro&quot;,
+    &quot;ami_name&quot;: &quot;test&quot;,
+    &quot;base_ami&quot;: &quot;ami-0b898040803850657&quot;,
+    &quot;ssh_username&quot;: &quot;ec2-user&quot;,
+    &quot;vpc_id&quot;: &quot;&quot;,
+    &quot;subnet_id&quot;: &quot;&quot;
+  },
+  &quot;builders&quot;: [
+    {
+        &quot;type&quot;: &quot;amazon-ebs&quot;,
+        &quot;region&quot;: &quot;us-east-1&quot;,
+        &quot;source_ami&quot;: &quot;{{user `base_ami`}}&quot;,
+        &quot;instance_type&quot;: &quot;{{user `instance_size`}}&quot;,
+        &quot;ssh_username&quot;: &quot;{{user `ssh_username`}}&quot;,
+        &quot;ssh_timeout&quot;: &quot;20m&quot;,
+        &quot;ssh_pty&quot;: &quot;true&quot;,
+        &quot;ami_name&quot;: &quot;{{user `ami_name`}}&quot;,
+        &quot;vpc_id&quot;: &quot;{{user `vpc_id`}}&quot;,
+        &quot;subnet_id&quot;: &quot;{{user `subnet_id`}}&quot;,
+        &quot;tags&quot;: {
+          &quot;Name&quot;: &quot;App Name&quot;,
+          &quot;BuiltBy&quot;: &quot;Packer&quot;
+        }
+    }
+  ],
+  &quot;description&quot;: &quot;AWS Image&quot;,
+  &quot;provisioners&quot;: [
+      {
+        &quot;type&quot;: &quot;shell&quot;,
+        &quot;inline&quot;: [
+          &quot;sudo yum update -y&quot;,
+          &quot;sudo yum install -y git&quot;,
+          &quot;mkdir -p /var/code&quot;,
+          &quot;cd /root&quot;,
+          &quot;curl -L https://github.com/linuxacademy/content-nodejs-hello-world/archive/v1.0.tar.gz -o code.tar.gz&quot;,
+          &quot;tar zxvf code.tar.gz -C /var/code --strip-components=1&quot;,
+          &quot;cd /var/code&quot;,
+          &quot;npm install&quot;
+        ]
+      }
+  ]
+}
 </code></pre>
 
-<h2 id="role">Role</h2>
-<pre><code class="yaml">apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  name: system:serviceaccount:kube-system:my-scheduler
-  namespace: kube-system
-rules:
-- apiGroups:
-  - storage.k8s.io
-  resources:
-  - csinodes
-  verbs:
-  - get
-  - list
-  - watch
+<h2 id="docker">Docker</h2>
+<pre><code class="json">{
+  &quot;variables&quot;: {
+    &quot;repository&quot;: &quot;la/express&quot;,
+    &quot;tag&quot;: &quot;0.1.0&quot;
+  },
+  &quot;builders&quot;: [
+    {
+        &quot;type&quot;: &quot;docker&quot;,
+        &quot;author&quot;: &quot;Fabio Santos&quot;,
+        &quot;image&quot;: &quot;node&quot;,
+        &quot;commit&quot;: &quot;true&quot;,
+        &quot;changes&quot;: [
+          &quot;EXPOSE 3000&quot;
+        ]
+    }
+  ],
+  &quot;provisioners&quot;: [
+      {
+        &quot;type&quot;: &quot;shell&quot;,
+        &quot;inline&quot;: [
+          &quot;apt-get update -y &amp;&amp; apt-get install curl -y&quot;,
+          &quot;mkdir -p /var/code&quot;,
+          &quot;cd /root&quot;,
+          &quot;curl -L https://github.com/linuxacademy/content-nodejs-hello-world/archive/v1.0.tar.gz -o code.tar.gz&quot;,
+          &quot;tar zxvf code.tar.gz -C /var/code --strip-components=1&quot;,
+          &quot;cd /var/code&quot;,
+          &quot;npm install&quot;
+        ]
+      }
+  ],
+  &quot;post-processors&quot;: [
+    {
+      &quot;type&quot;: &quot;docker-tag&quot;,
+      &quot;repository&quot;: &quot;{{user `repository`}}&quot;,
+      &quot;tag&quot;: &quot;{{user `tag`}}&quot;
+    }
+  ]
+}
 </code></pre>
 
-<h2 id="rolebinding">RoleBinding</h2>
-<pre><code class="yaml">apiVersion: rbac.authorization.k8s.io/v1
-kind: RoleBinding
-metadata:
-  name: read-csinodes
-  namespace: kube-system
-subjects:
-- kind: User
-  name: kubernetes-admin
-  apiGroup: rbac.authorization.k8s.io
-roleRef:
-  kind: Role 
-  name: system:serviceaccount:kube-system:my-scheduler
-  apiGroup: rbac.authorization.k8s.io
-</code></pre>
+<h1 id="commands">Commands</h1>
+<pre><code class="bash">packer validate packer.json
+packer build -var 'tag=0.0.1' -var 'another=212' packer.json
 
-<h2 id="my-scheduler">My-scheduler</h2>
-<pre><code class="yaml">apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: my-scheduler
-  namespace: kube-system
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: my-scheduler-as-kube-scheduler
-subjects:
-- kind: ServiceAccount
-  name: my-scheduler
-  namespace: kube-system
-roleRef:
-  kind: ClusterRole
-  name: system:kube-scheduler
-  apiGroup: rbac.authorization.k8s.io
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  labels:
-    component: scheduler
-    tier: control-plane
-  name: my-scheduler
-  namespace: kube-system
-spec:
-  selector:
-    matchLabels:
-      component: scheduler
-      tier: control-plane
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        component: scheduler
-        tier: control-plane
-        version: second
-    spec:
-      serviceAccountName: my-scheduler
-      containers:
-      - command:
-        - /usr/local/bin/kube-scheduler
-        - --address=0.0.0.0
-        - --leader-elect=false
-        - --scheduler-name=my-scheduler
-        image: chadmcrowell/custom-scheduler
-        livenessProbe:
-          httpGet:
-            path: /healthz
-            port: 10251
-          initialDelaySeconds: 15
-        name: kube-second-scheduler
-        readinessProbe:
-          httpGet:
-            path: /healthz
-            port: 10251
-        resources:
-          requests:
-            cpu: '0.1'
-        securityContext:
-          privileged: false
-        volumeMounts: []
-      hostNetwork: false
-      hostPID: false
-      volumes: []
-</code></pre>
-
-<h2 id="deploy">Deploy</h2>
-<pre><code class="bash">kubectl create -f clusterrole.yaml
-kubectl create -f clusterrolebinding.yaml
-kubectl create -f role.yaml
-kubectl create -f rolebinding.yaml
-kubectl edit clusterrole system:kube-scheduler # And add the following
-</code></pre>
-
-<pre><code class="yaml">- apiGroups:
-  - &quot;&quot;
-  resourceNames:
-  - kube-scheduler
-  - my-scheduler
-  resources:
-  - endpoints
-  verbs:
-  - delete
-  - get
-  - patch
-  - update
-- apiGroups:
-  - storage.k8s.io
-  resources:
-  - storageclasses
-  verbs:
-  - watch
-  - list
-  - get
-</code></pre>
-
-<pre><code class="bash">kubectl create -f my-scheduler.yaml
-kubectl get pods -n kube-system
-</code></pre>
-
-<h1 id="get-config">Get config</h1>
-<pre><code class="bash">kubectl get endpoints kube-scheduler -n kube-system -o yaml
-</code></pre>
-
-<h1 id="troubleshooting">Troubleshooting</h1>
-<pre><code class="bash">kubectl describe pods [scheduler_pod_name] -n kube-system
-kubectl logs [kube_scheduler_pod_name] -n kube-system
-cat /var/log/kube-scheduler.log
+# Not Tested it
+packer fix
+packer validate
 </code></pre></div>
         </div>
 
@@ -539,11 +477,11 @@ cat /var/log/kube-scheduler.log
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "../../../..",
+            var base_url = "../../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../../../../js/base.js" defer></script>
-        <script src="../../../../search/main.js" defer></script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
     <div class="modal-dialog">

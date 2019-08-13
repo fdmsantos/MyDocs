@@ -111,19 +111,19 @@
 </li>
             
 <li >
+    <a href="../etcd/">Etcd</a>
+</li>
+            
+<li >
+    <a href="../controlplane/">Control Plane</a>
+</li>
+            
+<li >
     <a href="../networking/">Networking</a>
 </li>
             
 <li >
     <a href="../nodes/">Nodes</a>
-</li>
-            
-<li >
-    <a href="../etcd/">Etcd</a>
-</li>
-            
-<li >
-    <a href="../scheduler/">Scheduler</a>
 </li>
             
 <li class="active">
@@ -132,10 +132,6 @@
             
 <li >
     <a href="../taint/">Taint</a>
-</li>
-            
-<li >
-    <a href="../persistentvolumes/">PersistentVolumes</a>
 </li>
             
 <li >
@@ -161,6 +157,10 @@
 </li>
             
 <li >
+    <a href="../../development/persistentvolumes/">PersistentVolumes</a>
+</li>
+            
+<li >
     <a href="../../development/ingress/">Ingress</a>
 </li>
             
@@ -179,8 +179,27 @@
 <li >
     <a href="../../development/statefulsets/">StatefulSets</a>
 </li>
+            
+<li >
+    <a href="../../development/jobs/">Jobs</a>
+</li>
     </ul>
   </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">DevOps <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">IAAS</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../../devops/iaas/packer/">Packer</a>
+</li>
     </ul>
   </li>
                                 </ul>
@@ -314,7 +333,7 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../scheduler/">
+                                <a rel="next" href="../nodes/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -334,9 +353,7 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#end-to-end-tests">End-To End Tests</a></li>
-            <li><a href="#checklist">CheckList</a></li>
-        <li class="main "><a href="#service-accounts">Service Accounts</a></li>
+        <li class="main active"><a href="#service-accounts">Service Accounts</a></li>
             <li><a href="#get">Get</a></li>
             <li><a href="#create">Create</a></li>
             <li><a href="#pod-example">Pod Example</a></li>
@@ -351,43 +368,21 @@
             <li><a href="#cluster-role-binding">Cluster Role Binding</a></li>
             <li><a href="#test">Test</a></li>
         <li class="main "><a href="#tls-certficates">TLS Certficates</a></li>
-            <li><a href="#create_2">Create</a></li>
+            <li><a href="#install-cfssl">Install cfssl</a></li>
+            <li><a href="#create-certificate-authority-to-kubernetes">Create Certificate Authority to Kubernetes</a></li>
+            <li><a href="#generating-client-certificates">Generating Client Certificates</a></li>
+            <li><a href="#generating-the-kubernetes-api-server-certificate">Generating the Kubernetes API Server Certificate</a></li>
+            <li><a href="#generating-the-service-account-key-pair">Generating the Service Account Key Pair</a></li>
+            <li><a href="#distributing-the-certificate-files">Distributing the Certificate Files</a></li>
+            <li><a href="#create-tls-for-applications-not-cluster-only-same-pods">Create TLS For Applications (Not Cluster, only same pods)</a></li>
         <li class="main "><a href="#container-registry">Container Registry</a></li>
-            <li><a href="#create_3">Create</a></li>
+            <li><a href="#create_2">Create</a></li>
         <li class="main "><a href="#security-contexts">Security Contexts</a></li>
         <li class="main "><a href="#persistent-key-value-store">Persistent Key Value Store</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="end-to-end-tests">End-To End Tests</h1>
-<h2 id="checklist">CheckList</h2>
-<ol>
-<li>
-<p>Deployments can run</p>
-</li>
-<li>
-<p>Pods can run</p>
-</li>
-<li>
-<p>Pods can be directly accessed</p>
-</li>
-<li>
-<p>Logs can be collected</p>
-</li>
-<li>
-<p>Commands run from pod</p>
-</li>
-<li>
-<p>Services can provide access</p>
-</li>
-<li>
-<p>Nodes are healthy</p>
-</li>
-<li>
-<p>Pods are healthy</p>
-</li>
-</ol>
 <h1 id="service-accounts">Service Accounts</h1>
 <h2 id="get">Get</h2>
 <pre><code class="bash">kubectl get serviceaccounts
@@ -487,11 +482,9 @@ curl localhost:8001/api/v1/persistentvolumes
 </code></pre>
 
 <h1 id="tls-certficates">TLS Certficates</h1>
-<h2 id="create_2">Create</h2>
-<pre><code class="bash"># Find the CA certificate on a pod in your cluster:
-kubectl exec busybox -- ls /var/run/secrets/kubernetes.io/serviceaccount
-# Download the binaries for the cfssl tool:
-wget -q --show-progress --https-only --timestamping \
+<h2 id="install-cfssl">Install cfssl</h2>
+<pre><code class="bash"># Download the binaries for the cfssl tool:
+wget -q --timestamping \
   https://pkg.cfssl.org/R1.2/cfssl_linux-amd64 \
   https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
 
@@ -499,8 +492,350 @@ wget -q --show-progress --https-only --timestamping \
 chmod +x cfssl_linux-amd64 cfssljson_linux-amd64
 sudo mv cfssl_linux-amd64 /usr/local/bin/cfssl
 sudo mv cfssljson_linux-amd64 /usr/local/bin/cfssljson
+</code></pre>
+
+<h2 id="create-certificate-authority-to-kubernetes">Create Certificate Authority to Kubernetes</h2>
+<pre><code class="bash">cd ~/
+mkdir kthw
+cd kthw/
+
+{
+
+cat &gt; ca-config.json &lt;&lt; EOF
+{
+  &quot;signing&quot;: {
+    &quot;default&quot;: {
+      &quot;expiry&quot;: &quot;8760h&quot;
+    },
+    &quot;profiles&quot;: {
+      &quot;kubernetes&quot;: {
+        &quot;usages&quot;: [&quot;signing&quot;, &quot;key encipherment&quot;, &quot;server auth&quot;, &quot;client auth&quot;],
+        &quot;expiry&quot;: &quot;8760h&quot;
+      }
+    }
+  }
+}
+EOF
+
+cat &gt; ca-csr.json &lt;&lt; EOF
+{
+  &quot;CN&quot;: &quot;Kubernetes&quot;,
+  &quot;key&quot;: {
+    &quot;algo&quot;: &quot;rsa&quot;,
+    &quot;size&quot;: 2048
+  },
+  &quot;names&quot;: [
+    {
+      &quot;C&quot;: &quot;US&quot;,
+      &quot;L&quot;: &quot;Portland&quot;,
+      &quot;O&quot;: &quot;Kubernetes&quot;,
+      &quot;OU&quot;: &quot;CA&quot;,
+      &quot;ST&quot;: &quot;Oregon&quot;
+    }
+  ]
+}
+EOF
+
+cfssl gencert -initca ca-csr.json | cfssljson -bare ca
+
+}
+</code></pre>
+
+<h2 id="generating-client-certificates">Generating Client Certificates</h2>
+<p><strong>will generate the following client certificates: admin, kubelet (one for each worker node), kube-controller-manager, kube-proxy, and kube-scheduler</strong></p>
+<ul>
+<li>Admin Client Certificate</li>
+</ul>
+<pre><code class="bash">{
+
+cat &gt; admin-csr.json &lt;&lt; EOF
+{
+  &quot;CN&quot;: &quot;admin&quot;,
+  &quot;key&quot;: {
+    &quot;algo&quot;: &quot;rsa&quot;,
+    &quot;size&quot;: 2048
+  },
+  &quot;names&quot;: [
+    {
+      &quot;C&quot;: &quot;US&quot;,
+      &quot;L&quot;: &quot;Portland&quot;,
+      &quot;O&quot;: &quot;system:masters&quot;,
+      &quot;OU&quot;: &quot;Kubernetes The Hard Way&quot;,
+      &quot;ST&quot;: &quot;Oregon&quot;
+    }
+  ]
+}
+EOF
+
+cfssl gencert \
+  -ca=ca.pem \
+  -ca-key=ca-key.pem \
+  -config=ca-config.json \
+  -profile=kubernetes \
+  admin-csr.json | cfssljson -bare admin
+
+}
+</code></pre>
+
+<ul>
+<li>Kubelet Client certificates</li>
+</ul>
+<pre><code class="bash">export WORKER0_HOST=&lt;Public hostname of your first worker node cloud server&gt;
+export WORKER0_IP=&lt;Private IP of your first worker node cloud server&gt;
+export WORKER1_HOST=&lt;Public hostname of your second worker node cloud server&gt;
+export WORKER1_IP=&lt;Private IP of your second worker node cloud server&gt;
+
+{
+cat &gt; ${WORKER0_HOST}-csr.json &lt;&lt; EOF
+{
+  &quot;CN&quot;: &quot;system:node:${WORKER0_HOST}&quot;,
+  &quot;key&quot;: {
+    &quot;algo&quot;: &quot;rsa&quot;,
+    &quot;size&quot;: 2048
+  },
+  &quot;names&quot;: [
+    {
+      &quot;C&quot;: &quot;US&quot;,
+      &quot;L&quot;: &quot;Portland&quot;,
+      &quot;O&quot;: &quot;system:nodes&quot;,
+      &quot;OU&quot;: &quot;Kubernetes The Hard Way&quot;,
+      &quot;ST&quot;: &quot;Oregon&quot;
+    }
+  ]
+}
+EOF
+
+cfssl gencert \
+  -ca=ca.pem \
+  -ca-key=ca-key.pem \
+  -config=ca-config.json \
+  -hostname=${WORKER0_IP},${WORKER0_HOST} \
+  -profile=kubernetes \
+  ${WORKER0_HOST}-csr.json | cfssljson -bare ${WORKER0_HOST}
+
+cat &gt; ${WORKER1_HOST}-csr.json &lt;&lt; EOF
+{
+  &quot;CN&quot;: &quot;system:node:${WORKER1_HOST}&quot;,
+  &quot;key&quot;: {
+    &quot;algo&quot;: &quot;rsa&quot;,
+    &quot;size&quot;: 2048
+  },
+  &quot;names&quot;: [
+    {
+      &quot;C&quot;: &quot;US&quot;,
+      &quot;L&quot;: &quot;Portland&quot;,
+      &quot;O&quot;: &quot;system:nodes&quot;,
+      &quot;OU&quot;: &quot;Kubernetes The Hard Way&quot;,
+      &quot;ST&quot;: &quot;Oregon&quot;
+    }
+  ]
+}
+EOF
+
+cfssl gencert \
+  -ca=ca.pem \
+  -ca-key=ca-key.pem \
+  -config=ca-config.json \
+  -hostname=${WORKER1_IP},${WORKER1_HOST} \
+  -profile=kubernetes \
+  ${WORKER1_HOST}-csr.json | cfssljson -bare ${WORKER1_HOST}
+
+}
+
+</code></pre>
+
+<ul>
+<li><strong>Controller Manager Client certificate</strong></li>
+</ul>
+<pre><code class="bash">{
+
+cat &gt; kube-controller-manager-csr.json &lt;&lt; EOF
+{
+  &quot;CN&quot;: &quot;system:kube-controller-manager&quot;,
+  &quot;key&quot;: {
+    &quot;algo&quot;: &quot;rsa&quot;,
+    &quot;size&quot;: 2048
+  },
+  &quot;names&quot;: [
+    {
+      &quot;C&quot;: &quot;US&quot;,
+      &quot;L&quot;: &quot;Portland&quot;,
+      &quot;O&quot;: &quot;system:kube-controller-manager&quot;,
+      &quot;OU&quot;: &quot;Kubernetes The Hard Way&quot;,
+      &quot;ST&quot;: &quot;Oregon&quot;
+    }
+  ]
+}
+EOF
+
+cfssl gencert \
+  -ca=ca.pem \
+  -ca-key=ca-key.pem \
+  -config=ca-config.json \
+  -profile=kubernetes \
+  kube-controller-manager-csr.json | cfssljson -bare kube-controller-manager
+
+}
+</code></pre>
+
+<ul>
+<li><strong>Kube-proxy Client certificate</strong></li>
+</ul>
+<pre><code class="bash">{
+
+cat &gt; kube-proxy-csr.json &lt;&lt; EOF
+{
+  &quot;CN&quot;: &quot;system:kube-proxy&quot;,
+  &quot;key&quot;: {
+    &quot;algo&quot;: &quot;rsa&quot;,
+    &quot;size&quot;: 2048
+  },
+  &quot;names&quot;: [
+    {
+      &quot;C&quot;: &quot;US&quot;,
+      &quot;L&quot;: &quot;Portland&quot;,
+      &quot;O&quot;: &quot;system:node-proxier&quot;,
+      &quot;OU&quot;: &quot;Kubernetes The Hard Way&quot;,
+      &quot;ST&quot;: &quot;Oregon&quot;
+    }
+  ]
+}
+EOF
+
+cfssl gencert \
+  -ca=ca.pem \
+  -ca-key=ca-key.pem \
+  -config=ca-config.json \
+  -profile=kubernetes \
+  kube-proxy-csr.json | cfssljson -bare kube-proxy
+
+}
+</code></pre>
+
+<ul>
+<li><strong>Kube Scheduler Client Certificate</strong></li>
+</ul>
+<pre><code class="bash">{
+
+cat &gt; kube-scheduler-csr.json &lt;&lt; EOF
+{
+  &quot;CN&quot;: &quot;system:kube-scheduler&quot;,
+  &quot;key&quot;: {
+    &quot;algo&quot;: &quot;rsa&quot;,
+    &quot;size&quot;: 2048
+  },
+  &quot;names&quot;: [
+    {
+      &quot;C&quot;: &quot;US&quot;,
+      &quot;L&quot;: &quot;Portland&quot;,
+      &quot;O&quot;: &quot;system:kube-scheduler&quot;,
+      &quot;OU&quot;: &quot;Kubernetes The Hard Way&quot;,
+      &quot;ST&quot;: &quot;Oregon&quot;
+    }
+  ]
+}
+EOF
+
+cfssl gencert \
+  -ca=ca.pem \
+  -ca-key=ca-key.pem \
+  -config=ca-config.json \
+  -profile=kubernetes \
+  kube-scheduler-csr.json | cfssljson -bare kube-scheduler
+
+}
+</code></pre>
+
+<h2 id="generating-the-kubernetes-api-server-certificate">Generating the Kubernetes API Server Certificate</h2>
+<ul>
+<li><strong>Note: 10.32.0.1 - Common use this IP. Can be used by the pods in some scenarios</strong></li>
+</ul>
+<pre><code class="bash">cd ~/kthw
+export CERT_HOSTNAME=10.32.0.1,&lt;controller node 1 Private IP&gt;,&lt;controller node 1 hostname&gt;,&lt;controller node 2 Private IP&gt;,&lt;controller node 2 hostname&gt;,&lt;API load balancer Private IP&gt;,&lt;API load balancer hostname&gt;,127.0.0.1,localhost,kubernetes.default
+
+{
+
+cat &gt; kubernetes-csr.json &lt;&lt; EOF
+{
+  &quot;CN&quot;: &quot;kubernetes&quot;,
+  &quot;key&quot;: {
+    &quot;algo&quot;: &quot;rsa&quot;,
+    &quot;size&quot;: 2048
+  },
+  &quot;names&quot;: [
+    {
+      &quot;C&quot;: &quot;US&quot;,
+      &quot;L&quot;: &quot;Portland&quot;,
+      &quot;O&quot;: &quot;Kubernetes&quot;,
+      &quot;OU&quot;: &quot;Kubernetes The Hard Way&quot;,
+      &quot;ST&quot;: &quot;Oregon&quot;
+    }
+  ]
+}
+EOF
+
+cfssl gencert \
+  -ca=ca.pem \
+  -ca-key=ca-key.pem \
+  -config=ca-config.json \
+  -hostname=${CERT_HOSTNAME} \
+  -profile=kubernetes \
+  kubernetes-csr.json | cfssljson -bare kubernetes
+
+}
+</code></pre>
+
+<h2 id="generating-the-service-account-key-pair">Generating the Service Account Key Pair</h2>
+<pre><code class="bash">cd ~/kthw
+
+{
+
+cat &gt; service-account-csr.json &lt;&lt; EOF
+{
+  &quot;CN&quot;: &quot;service-accounts&quot;,
+  &quot;key&quot;: {
+    &quot;algo&quot;: &quot;rsa&quot;,
+    &quot;size&quot;: 2048
+  },
+  &quot;names&quot;: [
+    {
+      &quot;C&quot;: &quot;US&quot;,
+      &quot;L&quot;: &quot;Portland&quot;,
+      &quot;O&quot;: &quot;Kubernetes&quot;,
+      &quot;OU&quot;: &quot;Kubernetes The Hard Way&quot;,
+      &quot;ST&quot;: &quot;Oregon&quot;
+    }
+  ]
+}
+EOF
+
+cfssl gencert \
+  -ca=ca.pem \
+  -ca-key=ca-key.pem \
+  -config=ca-config.json \
+  -profile=kubernetes \
+  service-account-csr.json | cfssljson -bare service-account
+
+}
+</code></pre>
+
+<h2 id="distributing-the-certificate-files">Distributing the Certificate Files</h2>
+<h3 id="move-certificate-files-to-the-worker-nodes">Move certificate files to the worker nodes:</h3>
+<pre><code class="bash">scp ca.pem &lt;worker 1 hostname&gt;-key.pem &lt;worker 1 hostname&gt;.pem user@&lt;worker 1 public IP&gt;:~/
+scp ca.pem &lt;worker 2 hostname&gt;-key.pem &lt;worker 2 hostname&gt;.pem user@&lt;worker 2 public IP&gt;:~/
+</code></pre>
+
+<h3 id="move-certificate-files-to-the-master-nodes">Move certificate files to the Master nodes:</h3>
+<pre><code class="bash">scp ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem service-account-key.pem service-account.pem user@&lt;master 1 public IP&gt;:~/
+scp ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem service-account-key.pem service-account.pem user@&lt;master 2 public IP&gt;:~/
+</code></pre>
+
+<h2 id="create-tls-for-applications-not-cluster-only-same-pods">Create TLS For Applications (Not Cluster, only same pods)</h2>
+<pre><code class="bash"># Find the CA certificate on a pod in your cluster:
+kubectl exec busybox -- ls /var/run/secrets/kubernetes.io/serviceaccount
+
 cfssl version
-# Create a CSR file
+# Create a CSR file - Need instal cfssl tool
 cat &lt;&lt;EOF | cfssl genkey - | cfssljson -bare server
 {
   &quot;hosts&quot;: [
@@ -551,7 +886,7 @@ kubectl get csr pod-csr.web -o jsonpath='{.status.certificate}' \
 </code></pre>
 
 <h1 id="container-registry">Container Registry</h1>
-<h2 id="create_3">Create</h2>
+<h2 id="create_2">Create</h2>
 <pre><code class="bash"># Create a new docker-registry secret:
 kubectl create secret docker-registry acr --docker-server=https://podofminerva.azurecr.io --docker-username=podofminerva --docker-password='otj701c9OucKZOCx5qrRblofcNRf3W+e' --docker-email=user@example.com
 

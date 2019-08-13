@@ -111,6 +111,14 @@
 </li>
             
 <li >
+    <a href="../etcd/">Etcd</a>
+</li>
+            
+<li >
+    <a href="../controlplane/">Control Plane</a>
+</li>
+            
+<li >
     <a href="../networking/">Networking</a>
 </li>
             
@@ -119,23 +127,11 @@
 </li>
             
 <li >
-    <a href="../etcd/">Etcd</a>
-</li>
-            
-<li >
-    <a href="../scheduler/">Scheduler</a>
-</li>
-            
-<li >
     <a href="../security/">Security</a>
 </li>
             
 <li >
     <a href="../taint/">Taint</a>
-</li>
-            
-<li >
-    <a href="../persistentvolumes/">PersistentVolumes</a>
 </li>
             
 <li >
@@ -161,6 +157,10 @@
 </li>
             
 <li >
+    <a href="../../development/persistentvolumes/">PersistentVolumes</a>
+</li>
+            
+<li >
     <a href="../../development/ingress/">Ingress</a>
 </li>
             
@@ -179,8 +179,27 @@
 <li >
     <a href="../../development/statefulsets/">StatefulSets</a>
 </li>
+            
+<li >
+    <a href="../../development/jobs/">Jobs</a>
+</li>
     </ul>
   </li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">DevOps <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">IAAS</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../../devops/iaas/packer/">Packer</a>
+</li>
     </ul>
   </li>
                                 </ul>
@@ -319,7 +338,7 @@
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../etcd/">
+                                <a rel="prev" href="../security/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -337,7 +356,6 @@
         <li class="main active"><a href="#get">Get</a></li>
         <li class="main "><a href="#describe">Describe</a></li>
         <li class="main "><a href="#api-resources">Api resources</a></li>
-        <li class="main "><a href="#components-status">Components Status</a></li>
         <li class="main "><a href="#label">Label</a></li>
     </ul>
 </div></div>
@@ -355,10 +373,6 @@ kubectl describe node/master
 
 <h1 id="api-resources">Api resources</h1>
 <pre><code class="bash">kubectl api-resources -o wide
-</code></pre>
-
-<h1 id="components-status">Components Status</h1>
-<pre><code class="bash">kubectl get componentstatus
 </code></pre>
 
 <h1 id="label">Label</h1>
