@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="Fábio Santos">
-        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/aws/compute/ec2/">
+        <link rel="canonical" href="https://fdmsantos.github.io/MyDocs/aws/applicationIntegration/stepfunctions/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>EC2 - MyDocs</title>
+        <title>Step Functions - MyDocs</title>
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -67,16 +67,16 @@
     <a href="#">Compute</a>
     <ul class="dropdown-menu">
             
-<li class="active">
-    <a href="./">EC2</a>
+<li >
+    <a href="../../compute/ec2/">EC2</a>
 </li>
             
 <li >
-    <a href="../ebs/">EBS</a>
+    <a href="../../compute/ebs/">EBS</a>
 </li>
             
 <li >
-    <a href="../lambda/">Lambda</a>
+    <a href="../../compute/lambda/">Lambda</a>
 </li>
     </ul>
   </li>
@@ -85,8 +85,8 @@
     <a href="#">Application Integration</a>
     <ul class="dropdown-menu">
             
-<li >
-    <a href="../../applicationIntegration/stepfunctions/">Step Functions</a>
+<li class="active">
+    <a href="./">Step Functions</a>
 </li>
     </ul>
   </li>
@@ -359,17 +359,17 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../../networking/vpc/">
+                                <a rel="next" href="../../compute/lambda/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../ebs/">
+                                <a rel="prev" href="../../management/cloudformation/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/aws/compute/ec2.md"><i class="fa fa-github"></i> Edit on GitHub</a>
+                                <a href="https://github.com/fdmsantos/MyDocs/edit/master/docs/aws/applicationIntegration/stepfunctions.md"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -379,45 +379,325 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#ami">AMI</a></li>
-            <li><a href="#create">Create</a></li>
-        <li class="main "><a href="#snapshots">Snapshots</a></li>
-            <li><a href="#restore">Restore</a></li>
+        <li class="main active"><a href="#task">Task</a></li>
+            <li><a href="#submit-batch-job">Submit Batch Job</a></li>
+            <li><a href="#notify">Notify</a></li>
+            <li><a href="#fargate-task">Fargate Task</a></li>
+            <li><a href="#read-next-message-from-dynamo-db">Read Next Message from Dynamo DB</a></li>
+            <li><a href="#send-message-to-sqs">Send Message to SQS</a></li>
+            <li><a href="#retry">Retry</a></li>
+            <li><a href="#start-an-execution-of-another-state-machine-and-continue">Start an execution of another state machine and continue</a></li>
+            <li><a href="#callback-pattern">Callback Pattern</a></li>
+            <li><a href="#catch">Catch</a></li>
+        <li class="main "><a href="#parallel">Parallel</a></li>
+        <li class="main "><a href="#choice">Choice</a></li>
+            <li><a href="#if">If</a></li>
+            <li><a href="#for-loop">For Loop</a></li>
+        <li class="main "><a href="#pass">Pass</a></li>
+            <li><a href="#hello-world">Hello World</a></li>
+            <li><a href="#pop-element-from-list">Pop Element from List</a></li>
+        <li class="main "><a href="#succeed">Succeed</a></li>
+        <li class="main "><a href="#fail">Fail</a></li>
+        <li class="main "><a href="#wait">Wait</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="ami">AMI</h1>
-<h2 id="create">Create</h2>
-<ul>
-<li>
-<p><strong>EC2 EBS Backed</strong></p>
-<ol>
-<li>Launch an instance</li>
-<li>Connect to your instance and customize it</li>
-<li>Stop Instances (stopping the instance ensures data integrity of the instance; a snapshot will be taken of the instance)</li>
-<li>Create the image </li>
-<li>Bundle it (use bundle command in console) </li>
-<li>AWS automatically registers it for you  </li>
-</ol>
-</li>
-<li>
-<p><strong>EC2 Instance store</strong></p>
-<ol>
-<li>Launch an instance</li>
-<li>Connect to your instance and customize it</li>
-<li>Bundle it (Consists of an image manifest -image.manifest.xml- and files -image.part.xx-) </li>
-<li>Upload the bundle to S3 bucket</li>
-<li>Register AMI</li>
-</ol>
-</li>
-</ul>
-<h1 id="snapshots">Snapshots</h1>
-<h2 id="restore">Restore</h2>
-<p><strong>Read all blocks to eliminate penalty in production</strong></p>
-<pre><code class="sh">sudo dd if=/dev/xvdf of=/dev/null bs=1M
-# Or
-sudo fio –filename=/dev/xvdf –rw=read –bs=128k –iodepth=32 –ioengine=libaio –direct=1 –name=volume-initialize
+<h1 id="task">Task</h1>
+<h2 id="submit-batch-job">Submit Batch Job</h2>
+<pre><code class="json">&quot;Submit Batch Job&quot;: {
+  &quot;Type&quot;: &quot;Task&quot;,
+  &quot;Resource&quot;: &quot;arn:&lt;PARTITION&gt;:states:::batch:submitJob.sync&quot;,
+  &quot;Parameters&quot;: {
+    &quot;JobName&quot;: &quot;BatchJobNotification&quot;,
+    &quot;JobQueue&quot;: &quot;&lt;BATCH_QUEUE_ARN&gt;&quot;,
+    &quot;JobDefinition&quot;: &quot;&lt;BATCH_JOB_DEFINITION_ARN&gt;&quot;
+  },
+  &quot;Next&quot;: &quot;Notify Success&quot;,
+  &quot;Catch&quot;: [
+    {
+      &quot;ErrorEquals&quot;: [ &quot;States.ALL&quot; ],
+      &quot;Next&quot;: &quot;Notify Failure&quot;
+    }
+  ]
+}
+</code></pre>
+
+<h2 id="notify">Notify</h2>
+<pre><code class="json">&quot;Notify Success&quot;: {
+  &quot;Type&quot;: &quot;Task&quot;,
+  &quot;Resource&quot;: &quot;arn:&lt;PARTITION&gt;:states:::sns:publish&quot;,
+  &quot;Parameters&quot;: {
+    &quot;Message&quot;: &quot;Batch job submitted through Step Functions succeeded&quot;,
+    &quot;TopicArn&quot;: &quot;&lt;SNS_TOPIC_ARN&gt;&quot;
+  },
+  &quot;End&quot;: true
+},
+</code></pre>
+
+<h2 id="fargate-task">Fargate Task</h2>
+<pre><code class="json">&quot;Run Fargate Task&quot;: {
+  &quot;Type&quot;: &quot;Task&quot;,
+  &quot;Resource&quot;: &quot;arn:&lt;PARTITION&gt;:states:::ecs:runTask.sync&quot;,
+  &quot;Parameters&quot;: {
+    &quot;LaunchType&quot;: &quot;FARGATE&quot;,
+    &quot;Cluster&quot;: &quot;&lt;ECS_CLUSTER_ARN&gt;&quot;,
+    &quot;TaskDefinition&quot;: &quot;&lt;ECS_TASK_DEFINITION_ARN&gt;&quot;,
+    &quot;NetworkConfiguration&quot;: {
+      &quot;AwsvpcConfiguration&quot;: {
+        &quot;Subnets&quot;: [
+          &quot;${subnetAz1}&quot;,
+          &quot;${subnetAz2}&quot;
+        ],
+        &quot;AssignPublicIp&quot;: &quot;ENABLED&quot;
+      }
+    }
+  },
+  &quot;Next&quot;: &quot;Notify Success&quot;,
+  &quot;Catch&quot;: [
+    {
+      &quot;ErrorEquals&quot;: [ &quot;States.ALL&quot; ],
+      &quot;Next&quot;: &quot;Notify Failure&quot;
+    }
+  ]
+},
+</code></pre>
+
+<h2 id="read-next-message-from-dynamo-db">Read Next Message from Dynamo DB</h2>
+<pre><code class="json">&quot;Read Next Message from DynamoDB&quot;: {
+  &quot;Type&quot;: &quot;Task&quot;,
+  &quot;Resource&quot;: &quot;arn:&lt;PARTITION&gt;:states:::dynamodb:getItem&quot;,
+  &quot;Parameters&quot;: {
+    &quot;TableName&quot;: &quot;&lt;DYNAMO_DB_TABLE_NAME&gt;&quot;,
+    &quot;Key&quot;: {
+      &quot;MessageId&quot;: {&quot;S.$&quot;: &quot;$.List[0]&quot;}
+    }
+  },
+  &quot;ResultPath&quot;: &quot;$.DynamoDB&quot;,
+  &quot;Next&quot;: &quot;Send Message to SQS&quot;
+},
+</code></pre>
+
+<h2 id="send-message-to-sqs">Send Message to SQS</h2>
+<pre><code class="json">&quot;Send Message to SQS&quot;: {
+  &quot;Type&quot;: &quot;Task&quot;,
+  &quot;Resource&quot;: &quot;arn:&lt;PARTITION&gt;:states:::sqs:sendMessage&quot;,
+  &quot;Parameters&quot;: {
+    &quot;MessageBody.$&quot;: &quot;$.DynamoDB.Item.Message.S&quot;,
+    &quot;QueueUrl&quot;: &quot;&lt;SQS_QUEUE_URL&gt;&quot;
+  },
+  &quot;ResultPath&quot;: &quot;$.SQS&quot;,
+  &quot;Next&quot;: &quot;Pop Element from List&quot;
+},
+</code></pre>
+
+<h2 id="retry">Retry</h2>
+<pre><code class="json">&quot;Submit Job&quot;: {
+  &quot;Type&quot;: &quot;Task&quot;,
+  &quot;Resource&quot;:
+  &quot;arn:&lt;PARTITION&gt;:lambda:::function:SubmitJob&quot;,
+  &quot;ResultPath&quot;: &quot;$.guid&quot;,
+  &quot;Next&quot;: &quot;Wait X Seconds&quot;,
+  &quot;Retry&quot;: [
+    {
+      &quot;ErrorEquals&quot;: [&quot;States.ALL&quot;],
+      &quot;IntervalSeconds&quot;: 1,
+      &quot;MaxAttempts&quot;: 3,
+      &quot;BackoffRate&quot;: 2
+    }
+  ]
+}
+</code></pre>
+
+<h2 id="start-an-execution-of-another-state-machine-and-continue">Start an execution of another state machine and continue</h2>
+<pre><code class="json">&quot;Start new workflow and continue&quot;: {
+  &quot;Comment&quot;: &quot;Start an execution of another state machine and continue&quot;,
+  &quot;Type&quot;: &quot;Task&quot;,
+  &quot;Resource&quot;: &quot;arn:&lt;PARTITION&gt;:states:::states:startExecution&quot;,
+  &quot;Parameters&quot;: {
+    &quot;StateMachineArn&quot;: &quot;&lt;STATE_MACHINE_ARN&gt;&quot;,
+    &quot;Input&quot;: {
+      &quot;NeedCallback&quot;: false,
+      &quot;AWS_STEP_FUNCTIONS_STARTED_BY_EXECUTION_ID.$&quot;: &quot;$$.Execution.Id&quot;
+    }
+  },
+  &quot;Next&quot;: &quot;Start in parallel&quot;
+}
+</code></pre>
+
+<h2 id="callback-pattern">Callback Pattern</h2>
+<pre><code class="json">&quot;Start Task And Wait For Callback&quot;: {
+  &quot;Type&quot;: &quot;Task&quot;,
+  &quot;Resource&quot;: &quot;arn:&lt;PARTITION&gt;:states:::sqs:sendMessage.waitForTaskToken&quot;,
+  &quot;Parameters&quot;: {
+    &quot;QueueUrl&quot;: &quot;&lt;SQS_QUEUE_URL&gt;&quot;,
+    &quot;MessageBody&quot;: {
+      &quot;MessageTitle&quot;: &quot;Task started by Step Functions. Waiting for callback with task token.&quot;,
+      &quot;TaskToken.$&quot;: &quot;$$.Task.Token&quot;
+    }
+  },
+  &quot;Next&quot;: &quot;Notify Success&quot;,
+  &quot;Catch&quot;: [
+    {
+      &quot;ErrorEquals&quot;: [ &quot;States.ALL&quot; ],
+      &quot;Next&quot;: &quot;Notify Failure&quot;
+    }
+  ]
+}
+</code></pre>
+
+<h2 id="catch">Catch</h2>
+<pre><code class="json">&quot;HelloWorld&quot;: {
+  &quot;Type&quot;: &quot;Task&quot;,
+  &quot;Resource&quot;: &quot;arn:aws:lambda:REGION:ACCOUNT_ID:function:FUNCTION_NAME&quot;,
+  &quot;Catch&quot;: [
+    {
+      &quot;ErrorEquals&quot;: [&quot;CustomError&quot;],
+      &quot;Next&quot;: &quot;CustomErrorFallback&quot;
+    },
+    {
+      &quot;ErrorEquals&quot;: [&quot;States.TaskFailed&quot;],
+      &quot;Next&quot;: &quot;ReservedTypeFallback&quot;
+    },
+    {
+      &quot;ErrorEquals&quot;: [&quot;States.ALL&quot;],
+      &quot;Next&quot;: &quot;CatchAllFallback&quot;
+    }
+  ],
+  &quot;End&quot;: true
+}
+</code></pre>
+
+<h1 id="parallel">Parallel</h1>
+<pre><code class="json">&quot;Start in parallel&quot;: {
+  &quot;Comment&quot;: &quot;Start two executions of the same state machine in parallel&quot;,
+  &quot;Type&quot;: &quot;Parallel&quot;,
+  &quot;End&quot;: true,
+  &quot;Branches&quot;: [
+    {
+      &quot;StartAt&quot;: &quot;Start new workflow and wait for completion&quot;,
+      &quot;States&quot;: {
+        &quot;Start new workflow and wait for completion&quot;: {
+          &quot;Comment&quot;: &quot;Start an execution and wait for it to complete&quot;,
+          &quot;Type&quot;: &quot;Task&quot;,
+          &quot;Resource&quot;: &quot;arn:&lt;PARTITION&gt;:states:::states:startExecution.sync&quot;,
+          &quot;Parameters&quot;: {
+            &quot;StateMachineArn&quot;: &quot;&lt;STATE_MACHINE_ARN&gt;&quot;,
+            &quot;Input&quot;: {
+              &quot;NeedCallback&quot;: false,
+              &quot;AWS_STEP_FUNCTIONS_STARTED_BY_EXECUTION_ID.$&quot;: &quot;$$.Execution.Id&quot;
+            }
+          },
+          &quot;OutputPath&quot;: &quot;$.Output&quot;,
+          &quot;End&quot;: true
+        }
+      }
+    },
+    {
+      &quot;StartAt&quot;: &quot;Start new workflow and wait for callback&quot;,
+      &quot;States&quot;: {
+        &quot;Start new workflow and wait for callback&quot;: {
+          &quot;Comment&quot;: &quot;Start an execution and wait for it to call back with a task token&quot;,
+          &quot;Type&quot;: &quot;Task&quot;,
+          &quot;Resource&quot;: &quot;arn:&lt;PARTITION&gt;:states:::states:startExecution.waitForTaskToken&quot;,
+          &quot;Parameters&quot;: {
+            &quot;StateMachineArn&quot;: &quot;&lt;STATE_MACHINE_ARN&gt;&quot;,
+            &quot;Input&quot;: {
+              &quot;NeedCallback&quot;: true,
+              &quot;AWS_STEP_FUNCTIONS_STARTED_BY_EXECUTION_ID.$&quot;: &quot;$$.Execution.Id&quot;,
+              &quot;TaskToken.$&quot;: &quot;$$.Task.Token&quot;
+            }
+          },
+          &quot;End&quot;: true
+        }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h1 id="choice">Choice</h1>
+<h2 id="if">If</h2>
+<pre><code class="json">&quot;Job Complete?&quot;: {
+  &quot;Type&quot;: &quot;Choice&quot;,
+  &quot;Choices&quot;: [
+    {
+      &quot;Variable&quot;: &quot;$.status&quot;,
+      &quot;StringEquals&quot;: &quot;FAILED&quot;,
+      &quot;Next&quot;: &quot;Job Failed&quot;
+    },
+    {
+      &quot;Variable&quot;: &quot;$.status&quot;,
+      &quot;StringEquals&quot;: &quot;SUCCEEDED&quot;,
+      &quot;Next&quot;: &quot;Get Final Job Status&quot;
+    }
+  ],
+  &quot;Default&quot;: &quot;Wait X Seconds&quot;
+}
+</code></pre>
+
+<h2 id="for-loop">For Loop</h2>
+<pre><code class="json">&quot;For Loop Condition&quot;: {
+  &quot;Type&quot;: &quot;Choice&quot;,
+  &quot;Choices&quot;: [
+    {
+      &quot;Not&quot;: {
+        &quot;Variable&quot;: &quot;$.List[0]&quot;,
+        &quot;StringEquals&quot;: &quot;DONE&quot;
+      },
+      &quot;Next&quot;: &quot;Read Next Message from DynamoDB&quot;
+    }
+  ],
+  &quot;Default&quot;: &quot;Succeed&quot;
+}
+</code></pre>
+
+<h1 id="pass">Pass</h1>
+<h2 id="hello-world">Hello World</h2>
+<pre><code class="json">{
+  &quot;Comment&quot;: &quot;A Hello World example of the Amazon States Language using a Pass state&quot;,
+  &quot;StartAt&quot;: &quot;HelloWorld&quot;,
+  &quot;States&quot;: {
+    &quot;HelloWorld&quot;: {
+      &quot;Type&quot;: &quot;Pass&quot;,
+      &quot;Result&quot;: &quot;Hello World!&quot;,
+      &quot;End&quot;: true
+    }
+  }
+}
+
+</code></pre>
+
+<h2 id="pop-element-from-list">Pop Element from List</h2>
+<pre><code class="json">&quot;Pop Element from List&quot;: {
+  &quot;Type&quot;: &quot;Pass&quot;,
+  &quot;Parameters&quot;: {
+    &quot;List.$&quot;: &quot;$.List[1:]&quot;
+  },
+  &quot;Next&quot;: &quot;For Loop Condition&quot;
+}
+</code></pre>
+
+<h1 id="succeed">Succeed</h1>
+<pre><code class="json">&quot;Succeed&quot;: {
+  &quot;Type&quot;: &quot;Succeed&quot;
+}
+</code></pre>
+
+<h1 id="fail">Fail</h1>
+<pre><code class="json">&quot;Job Failed&quot;: {
+  &quot;Type&quot;: &quot;Fail&quot;,
+  &quot;Cause&quot;: &quot;AWS Batch Job Failed&quot;,
+  &quot;Error&quot;: &quot;DescribeJob returned FAILED&quot;
+}
+</code></pre>
+
+<h1 id="wait">Wait</h1>
+<pre><code class="json">&quot;Wait X Seconds&quot;: {
+  &quot;Type&quot;: &quot;Wait&quot;,
+  &quot;SecondsPath&quot;: &quot;$.wait_time&quot;,
+  &quot;Next&quot;: &quot;Get Job Status&quot;
+}
 </code></pre></div>
         </div>
 
