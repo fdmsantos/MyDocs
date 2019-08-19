@@ -6,21 +6,21 @@
 
 ```bash
 setenforce 0
-sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+sudo sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 ```
 
 * **Enable the br_netfilter module for cluster communication**
 
 ```bash
-modprobe br_netfilter
-echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables
+sudo modprobe br_netfilter
+sudo echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables
 ```
 
 * **Disable swap to prevent memory allocation issues**
 
 ```bash
 swapoff -a
-vi /etc/fstab -> Comment out the swap line
+sudo vi /etc/fstab -> Comment out the swap line
 ```
 
 # Docker
@@ -188,7 +188,7 @@ sudo kubeadm token generate
 sudo kubeadm token create [token_name] --ttl 2h --print-join-command
 ```
 
-# Autocomple
+# Autocomplete
 
 ## Redhat
 
