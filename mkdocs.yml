@@ -12,10 +12,17 @@ nav:
           - VPC: 'aws/networking/vpc.md'
       - Compute:
           - EC2: 'aws/compute/ec2.md'
-      - Storage:
-          - EBS: 'aws/storage/ebs.md'
-      - Deployment:
-          - Cloudformation: 'aws/deployment/cloudformation.md'
+          - EBS: 'aws/compute/ebs.md'
+          - Lambda: 'aws/compute/lambda.md'
+      - Application Integration:
+          - Step Functions: 'aws/applicationIntegration/stepfunctions.md'
+      - Management:
+          - Cloudformation: 'aws/management/cloudformation.md'
+      - Developer:
+          - CodeCommit: 'aws/developer/codecommit.md'
+          - CodeBuild: 'aws/developer/codebuild.md'
+          - CodeDeploy: 'aws/developer/codedeploy.md'
+
   - Containers:
       - Kubernetes:
           - Admin:

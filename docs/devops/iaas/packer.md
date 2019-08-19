@@ -15,44 +15,48 @@ packer -v
 ## AMI
 
 ```json
-{
-  "variables": {
-    "instance_size": "t2.micro",
-    "ami_name": "test",
-    "base_ami": "ami-0b898040803850657",
-    "ssh_username": "ec2-user",
-    "vpc_id": "",
-    "subnet_id": ""
-  },
-  "builders": [
-    {
-        "type": "amazon-ebs",
-        "region": "us-east-1",
-        "source_ami": "{{user `base_ami`}}",
-        "instance_type": "{{user `instance_size`}}",
-        "ssh_username": "{{user `ssh_username`}}",
-        "ssh_timeout": "20m",
-        "ssh_pty": "true",
-        "ami_name": "{{user `ami_name`}}",
-        "vpc_id": "{{user `vpc_id`}}",
-        "subnet_id": "{{user `subnet_id`}}",
-        "tags": {
-          "Name": "App Name",
-          "BuiltBy": "Packer"
-        }
-    }
-  ],
-  "description": "AWS Image",
-  "provisioners": [
-      {
-        "type": "shell",
-        "inline": [
-          "sudo yum update -y",
-          "sudo yum install -y git"
-        ]
-      }
-  ]
-}
+{ 
+  "variables": { 
+    "subnet_id": "", 
+    "instance_size": "t2.micro", 
+    "ami_name": "bastion", 
+    "ssh_username": "ec2-user" 
+  }, 
+  "builders": [ 
+    { 
+      "type": "amazon-ebs", 
+      "instance_type": "{{user `instance_size`}}", 
+      "ssh_username": "{{user `ssh_username`}}", 
+      "ssh_timeout": "20m", 
+      "ssh_pty": "true", 
+      "ami_name": "{{user `ami_name`}}", 
+      "subnet_id": "{{user `subnet_id`}}", 
+      "source_ami_filter": { 
+        "filters": { 
+          "virtualization-type": "hvm", 
+          "name": "amzn2-ami-hvm-2.0.*-x86_64-gp2*", 
+          "root-device-type": "ebs" 
+        }, 
+        "owners": ["amazon"], 
+        "most_recent": true 
+      }, 
+      "tags": { 
+        "Name": "{{user `ami_name`}}", 
+        "BuiltBy": "Packer" 
+      } 
+    } 
+  ], 
+  "description": "AWS Bastion AMI", 
+  "provisioners": [ 
+    { 
+      "type": "shell", 
+      "inline": [ 
+        "sudo yum update -y", 
+        "sudo hostnamectl set-hostname bastion" 
+      ] 
+    } 
+  ] 
+} 
 ```
 
 ## Docker
