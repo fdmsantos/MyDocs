@@ -22,6 +22,8 @@ nav:
           - CodeCommit: 'aws/developer/codecommit.md'
           - CodeBuild: 'aws/developer/codebuild.md'
           - CodeDeploy: 'aws/developer/codedeploy.md'
+      - Security:
+          - ACM: 'aws/security/acm.md'
 
   - Containers:
       - Kubernetes:
@@ -34,6 +36,7 @@ nav:
               - Security: 'containers/kubernetes/admin/security.md'
               - Taint: 'containers/kubernetes/admin/taint.md'
               - Monitoring: 'containers/kubernetes/admin/monitoring.md'
+              - Kops:  'containers/kubernetes/admin/kops.md'
 
           - Development:
               - Pods: 'containers/kubernetes/development/pods.md'

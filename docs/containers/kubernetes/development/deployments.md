@@ -1,6 +1,7 @@
 # Examples
 
 ## Simple Example
+
 ```yaml
 apiVersion: apps/v1
 kind: Deployment

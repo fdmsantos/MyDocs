@@ -241,6 +241,15 @@ kubectl config set-context kubernetes-the-hard-way \
 kubectl config use-context kubernetes-the-hard-way
 ```
 
+## Insecure
+
+* **File:** $HOME/.kube/config
+
+```yaml
+- cluster:
+    insecure-skip-tls-verify: true
+```
+
 # Kube Configs
 
 ## Generate Kube Configs

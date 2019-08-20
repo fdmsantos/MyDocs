@@ -92,6 +92,9 @@ netstat -at
 
 ```bash
 ss -an | grep -i listen
+
+sudo ss -ntlp # To get process
+
 ```
 
 ## Who listen on Port
@@ -125,4 +128,20 @@ mtr acloud.com
 ```bash
 host google.com
 dig google.com
+```
+
+## IP Tables
+
+### Nat
+
+```bash
+sudo iptables -t nat -L | grep 100.66.20.131
+
+sudo iptables -t nat -L | grep nginx-service
+```
+
+# TCP Dump
+
+```bash
+sudo tcpdump -v -l -i any 'host 100.65.17.226'
 ```
