@@ -118,6 +118,16 @@
 </li>
     </ul>
   </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Security</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../security/acm/">ACM</a>
+</li>
+    </ul>
+  </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -162,6 +172,10 @@
             
 <li >
     <a href="../../../containers/kubernetes/admin/monitoring/">Monitoring</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/admin/kops/">Kops</a>
 </li>
     </ul>
   </li>
@@ -383,6 +397,10 @@
             <li><a href="#create">Create</a></li>
         <li class="main "><a href="#snapshots">Snapshots</a></li>
             <li><a href="#restore">Restore</a></li>
+        <li class="main "><a href="#security">Security</a></li>
+            <li><a href="#proxy-ssh">Proxy SSH</a></li>
+        <li class="main "><a href="#troubleshooting">Troubleshooting</a></li>
+            <li><a href="#repair-without-console">Repair Without Console</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -418,7 +436,15 @@
 <pre><code class="sh">sudo dd if=/dev/xvdf of=/dev/null bs=1M
 # Or
 sudo fio –filename=/dev/xvdf –rw=read –bs=128k –iodepth=32 –ioengine=libaio –direct=1 –name=volume-initialize
-</code></pre></div>
+</code></pre>
+
+<h1 id="security">Security</h1>
+<h2 id="proxy-ssh">Proxy SSH</h2>
+<p><a href="https://heipei.io/2015/02/26/SSH-Agent-Forwarding-considered-harmful/">Link</a></p>
+<h1 id="troubleshooting">Troubleshooting</h1>
+<h2 id="repair-without-console">Repair Without Console</h2>
+<p><a href="https://www.rootusers.com/how-to-repair-an-aws-ec2-instance-without-console/">How To Repair An AWS EC2 Instance Without Console</a></p>
+<p><a href="https://serverfault.com/questions/948408/mount-wrong-fs-type-bad-option-bad-superblock-on-dev-xvdf1-missing-codepage">Duplicate XFS UUIDs.</a></p></div>
         </div>
 
         <footer class="col-md-12">

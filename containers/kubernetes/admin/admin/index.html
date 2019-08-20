@@ -118,6 +118,16 @@
 </li>
     </ul>
   </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Security</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../../aws/security/acm/">ACM</a>
+</li>
+    </ul>
+  </li>
                                 </ul>
                             </li>
                             <li class="dropdown active">
@@ -162,6 +172,10 @@
             
 <li >
     <a href="../monitoring/">Monitoring</a>
+</li>
+            
+<li >
+    <a href="../kops/">Kops</a>
 </li>
     </ul>
   </li>
@@ -359,7 +373,7 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../../../../aws/developer/codedeploy/">
+                                <a rel="next" href="../../../../aws/security/acm/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -393,12 +407,13 @@
         <li class="main "><a href="#maintenance">Maintenance</a></li>
             <li><a href="#evict-pods">Evict Pods</a></li>
             <li><a href="#delete-node">Delete Node</a></li>
-        <li class="main "><a href="#autocomple">Autocomple</a></li>
+        <li class="main "><a href="#autocomplete">Autocomplete</a></li>
             <li><a href="#redhat_3">Redhat</a></li>
         <li class="main "><a href="#geral-commands">Geral Commands</a></li>
         <li class="main "><a href="#kubectl">Kubectl</a></li>
             <li><a href="#install">Install</a></li>
             <li><a href="#set-remote">Set Remote</a></li>
+            <li><a href="#insecure">Insecure</a></li>
         <li class="main "><a href="#kube-configs">Kube Configs</a></li>
             <li><a href="#generate-kube-configs">Generate Kube Configs</a></li>
             <li><a href="#distributing-the-kubeconfig-files">Distributing the Kubeconfig Files</a></li>
@@ -415,21 +430,21 @@
 <li><strong>Disable SELinux</strong></li>
 </ul>
 <pre><code class="bash">setenforce 0
-sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+sudo sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 </code></pre>
 
 <ul>
 <li><strong>Enable the br_netfilter module for cluster communication</strong></li>
 </ul>
-<pre><code class="bash">modprobe br_netfilter
-echo '1' &gt; /proc/sys/net/bridge/bridge-nf-call-iptables
+<pre><code class="bash">sudo modprobe br_netfilter
+sudo echo '1' &gt; /proc/sys/net/bridge/bridge-nf-call-iptables
 </code></pre>
 
 <ul>
 <li><strong>Disable swap to prevent memory allocation issues</strong></li>
 </ul>
 <pre><code class="bash">swapoff -a
-vi /etc/fstab -&gt; Comment out the swap line
+sudo vi /etc/fstab -&gt; Comment out the swap line
 </code></pre>
 
 <h1 id="docker">Docker</h1>
@@ -577,7 +592,7 @@ sudo kubeadm token generate
 sudo kubeadm token create [token_name] --ttl 2h --print-join-command
 </code></pre>
 
-<h1 id="autocomple">Autocomple</h1>
+<h1 id="autocomplete">Autocomplete</h1>
 <h2 id="redhat_3">Redhat</h2>
 <pre><code class="bash"># Enable Epel Repo
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -618,6 +633,14 @@ kubectl config set-context kubernetes-the-hard-way \
   --user=admin
 
 kubectl config use-context kubernetes-the-hard-way
+</code></pre>
+
+<h2 id="insecure">Insecure</h2>
+<ul>
+<li><strong>File:</strong> $HOME/.kube/config</li>
+</ul>
+<pre><code class="yaml">- cluster:
+    insecure-skip-tls-verify: true
 </code></pre>
 
 <h1 id="kube-configs">Kube Configs</h1>
