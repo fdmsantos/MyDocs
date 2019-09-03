@@ -10,6 +10,7 @@ nav:
   - AWS:
       - Networking:
           - VPC: 'aws/networking/vpc.md'
+          - ELB: 'aws/networking/elb.md'
       - Compute:
           - EC2: 'aws/compute/ec2.md'
           - EBS: 'aws/compute/ebs.md'
