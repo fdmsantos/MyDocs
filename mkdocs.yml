@@ -23,6 +23,8 @@ nav:
           - CodeCommit: 'aws/developer/codecommit.md'
           - CodeBuild: 'aws/developer/codebuild.md'
           - CodeDeploy: 'aws/developer/codedeploy.md'
+      - Database:
+          - Elasticache: 'aws/database/elasticache.md'
       - Storage:
           - EFS: 'aws/storage/efs.md'
       - Security:
