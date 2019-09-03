@@ -25,6 +25,7 @@ nav:
           - CodeDeploy: 'aws/developer/codedeploy.md'
       - Database:
           - Elasticache: 'aws/database/elasticache.md'
+          - Redshift: 'aws/database/redshift.md'
       - Storage:
           - EFS: 'aws/storage/efs.md'
       - Security:
