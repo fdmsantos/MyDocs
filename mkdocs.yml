@@ -24,6 +24,7 @@ nav:
           - CodeBuild: 'aws/developer/codebuild.md'
           - CodeDeploy: 'aws/developer/codedeploy.md'
       - Database:
+          - RDS: 'aws/database/rds.md'
           - Elasticache: 'aws/database/elasticache.md'
           - Redshift: 'aws/database/redshift.md'
       - Storage:
