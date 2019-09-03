@@ -5,7 +5,7 @@
 * **Disable SELinux**
 
 ```bash
-setenforce 0
+sudo setenforce 0
 sudo sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 ```
 
@@ -30,14 +30,14 @@ sudo vi /etc/fstab -> Comment out the swap line
 * **Install the Docker prerequisites**
 
 ```bash
-yum install -y yum-utils device-mapper-persistent-data lvm2
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
 ```
 
 * **Add the Docker repo and install Docker**
 
 ```bash
-yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-yum install -y docker-ce
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install -y docker-ce
 ```
 
 * **Configure the Docker Cgroup Driver to systemd, enable and start Docker**
@@ -83,6 +83,9 @@ sudo systemctl daemon-reload
 sudo systemctl enable docker
 sudo systemctl start docker
 sudo usermod -a -G docker ec2-user
+
+# Exit e login na sessao
+
 ```
 
 # kubernetes
@@ -101,8 +104,8 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
    https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF
 
-yum install -y kubelet kubeadm kubectl
-systemctl enable kubelet
+sudo yum install -y kubelet kubeadm kubectl
+sudo systemctl enable kubelet
 kubeadm init --pod-network-cidr=10.244.0.0/16
 
 # Exit sudo user

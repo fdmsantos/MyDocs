@@ -49,6 +49,11 @@ nav:
               - Secrets&ConfigMaps: 'containers/kubernetes/development/secrets_configmaps.md'
               - StatefulSets: 'containers/kubernetes/development/statefulsets.md'
               - Jobs: 'containers/kubernetes/development/jobs.md'
+
+          - Deploy AWS KubeAdm:
+              - IAM: 'containers/kubernetes/deploy_aws_kubeadm/iam.md'
+              - VPC: 'containers/kubernetes/deploy_aws_kubeadm/vpc.md'
+              - Route53: 'containers/kubernetes/deploy_aws_kubeadm/route53.md'
   - DevOps:
       - IAAS:
           - Packer: 'devops/iaas/packer.md'
