@@ -10,10 +10,10 @@ nav:
   - AWS:
       - Networking:
           - VPC: 'aws/networking/vpc.md'
-          - ELB: 'aws/networking/elb.md'
       - Compute:
           - EC2: 'aws/compute/ec2.md'
           - EBS: 'aws/compute/ebs.md'
+          - ELB: 'aws/compute/elb.md'
           - Lambda: 'aws/compute/lambda.md'
       - Application Integration:
           - Step Functions: 'aws/applicationIntegration/stepfunctions.md'
