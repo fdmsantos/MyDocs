@@ -75,6 +75,10 @@
     <a href="../ebs/">EBS</a>
 </li>
             
+<li >
+    <a href="../elb/">ELB</a>
+</li>
+            
 <li class="active">
     <a href="./">Lambda</a>
 </li>
@@ -115,6 +119,34 @@
             
 <li >
     <a href="../../developer/codedeploy/">CodeDeploy</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Database</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../database/rds/">RDS</a>
+</li>
+            
+<li >
+    <a href="../../database/elasticache/">Elasticache</a>
+</li>
+            
+<li >
+    <a href="../../database/redshift/">Redshift</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Storage</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../storage/efs/">EFS</a>
 </li>
     </ul>
   </li>
@@ -222,6 +254,24 @@
             
 <li >
     <a href="../../../containers/kubernetes/development/jobs/">Jobs</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Deploy AWS KubeAdm</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../containers/kubernetes/deploy_aws_kubeadm/iam/">IAM</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/deploy_aws_kubeadm/vpc/">VPC</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/deploy_aws_kubeadm/route53/">Route53</a>
 </li>
     </ul>
   </li>
@@ -373,7 +423,7 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="../ebs/">
+                                <a rel="next" href="../elb/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -396,6 +446,8 @@
         <li class="main active"><a href="#sam">SAM</a></li>
         <li class="main "><a href="#runtimes">Runtimes</a></li>
             <li><a href="#go">Go</a></li>
+        <li class="main "><a href="#deploy-lambda-with-dependencies">Deploy Lambda With Dependencies</a></li>
+            <li><a href="#python">Python</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -433,6 +485,20 @@ if err != nil {
 
 fmt.Println(result)
 return true, nil
+</code></pre>
+
+<h1 id="deploy-lambda-with-dependencies">Deploy Lambda With Dependencies</h1>
+<h2 id="python">Python</h2>
+<pre><code class="bash">mkdir project
+python3 -m venv venv
+source venv/bin/activate
+(venv) pip install requests
+(venv) touch my_handler.py
+(venv) pip freeze &gt; requirements.txt
+(venv) pip install -r requirements.txt -t .
+(venv) deactivate
+rm -rf venv
+# zip all folder (Not project folder, but the files inside the project folder) and upload to AWS Lambda
 </code></pre></div>
         </div>
 

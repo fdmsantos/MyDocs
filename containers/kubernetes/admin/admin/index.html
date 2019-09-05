@@ -76,6 +76,10 @@
 </li>
             
 <li >
+    <a href="../../../../aws/compute/elb/">ELB</a>
+</li>
+            
+<li >
     <a href="../../../../aws/compute/lambda/">Lambda</a>
 </li>
     </ul>
@@ -115,6 +119,34 @@
             
 <li >
     <a href="../../../../aws/developer/codedeploy/">CodeDeploy</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Database</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../../aws/database/rds/">RDS</a>
+</li>
+            
+<li >
+    <a href="../../../../aws/database/elasticache/">Elasticache</a>
+</li>
+            
+<li >
+    <a href="../../../../aws/database/redshift/">Redshift</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Storage</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../../aws/storage/efs/">EFS</a>
 </li>
     </ul>
   </li>
@@ -222,6 +254,24 @@
             
 <li >
     <a href="../../development/jobs/">Jobs</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Deploy AWS KubeAdm</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../deploy_aws_kubeadm/iam/">IAM</a>
+</li>
+            
+<li >
+    <a href="../../deploy_aws_kubeadm/vpc/">VPC</a>
+</li>
+            
+<li >
+    <a href="../../deploy_aws_kubeadm/route53/">Route53</a>
 </li>
     </ul>
   </li>
@@ -429,7 +479,7 @@
 <ul>
 <li><strong>Disable SELinux</strong></li>
 </ul>
-<pre><code class="bash">setenforce 0
+<pre><code class="bash">sudo setenforce 0
 sudo sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
 </code></pre>
 
@@ -452,14 +502,14 @@ sudo vi /etc/fstab -&gt; Comment out the swap line
 <ul>
 <li><strong>Install the Docker prerequisites</strong></li>
 </ul>
-<pre><code class="bash">yum install -y yum-utils device-mapper-persistent-data lvm2
+<pre><code class="bash">sudo yum install -y yum-utils device-mapper-persistent-data lvm2
 </code></pre>
 
 <ul>
 <li><strong>Add the Docker repo and install Docker</strong></li>
 </ul>
-<pre><code class="bash">yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-yum install -y docker-ce
+<pre><code class="bash">sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install -y docker-ce
 </code></pre>
 
 <ul>
@@ -501,6 +551,9 @@ sudo systemctl daemon-reload
 sudo systemctl enable docker
 sudo systemctl start docker
 sudo usermod -a -G docker ec2-user
+
+# Exit e login na sessao
+
 </code></pre>
 
 <h1 id="kubernetes">kubernetes</h1>
@@ -516,8 +569,8 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg
    https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF
 
-yum install -y kubelet kubeadm kubectl
-systemctl enable kubelet
+sudo yum install -y kubelet kubeadm kubectl
+sudo systemctl enable kubelet
 kubeadm init --pod-network-cidr=10.244.0.0/16
 
 # Exit sudo user

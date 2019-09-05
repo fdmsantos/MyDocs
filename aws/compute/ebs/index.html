@@ -76,6 +76,10 @@
 </li>
             
 <li >
+    <a href="../elb/">ELB</a>
+</li>
+            
+<li >
     <a href="../lambda/">Lambda</a>
 </li>
     </ul>
@@ -115,6 +119,34 @@
             
 <li >
     <a href="../../developer/codedeploy/">CodeDeploy</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Database</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../database/rds/">RDS</a>
+</li>
+            
+<li >
+    <a href="../../database/elasticache/">Elasticache</a>
+</li>
+            
+<li >
+    <a href="../../database/redshift/">Redshift</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Storage</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../storage/efs/">EFS</a>
 </li>
     </ul>
   </li>
@@ -222,6 +254,24 @@
             
 <li >
     <a href="../../../containers/kubernetes/development/jobs/">Jobs</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Deploy AWS KubeAdm</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../containers/kubernetes/deploy_aws_kubeadm/iam/">IAM</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/deploy_aws_kubeadm/vpc/">VPC</a>
+</li>
+            
+<li >
+    <a href="../../../containers/kubernetes/deploy_aws_kubeadm/route53/">Route53</a>
 </li>
     </ul>
   </li>
@@ -378,7 +428,7 @@
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../lambda/">
+                                <a rel="prev" href="../elb/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -395,6 +445,10 @@
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#root-volumes">Root Volumes</a></li>
             <li><a href="#resize">Resize</a></li>
+        <li class="main "><a href="#monitoring">Monitoring</a></li>
+            <li><a href="#cloudwatch-metrics">Cloudwatch Metrics</a></li>
+            <li><a href="#ebs-status-checks">EBS Status Checks</a></li>
+            <li><a href="#real-cases">Real Cases</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -422,7 +476,79 @@
 </ol>
 </li>
 </ul>
-<p><strong>Note:</strong> If the size of the volume was modified, extend the volume's file system to take advantage of the increased storage capacity</p></div>
+<p><strong>Note:</strong> If the size of the volume was modified, extend the volume's file system to take advantage of the increased storage capacity</p>
+<h1 id="monitoring">Monitoring</h1>
+<h2 id="cloudwatch-metrics">Cloudwatch Metrics</h2>
+<ul>
+<li>VolumeReadOps<ul>
+<li>Total number of IOPS in a specific period of time. To 1000 in 1 minute = 1000/60 IOPS - Change IOPS based off of usage.</li>
+</ul>
+</li>
+<li>VolumeWriteOps<ul>
+<li>Total number of IOPS in a specific period of time . TO 1000 in 1 minute = 1000/60 iops - Change IOPS based off of usage</li>
+</ul>
+</li>
+<li>VolumeQueueLength<ul>
+<li>The number of read/write operation requests waiting to process. We want close at 0. If higher than 0, increase the number of available IOPS</li>
+</ul>
+</li>
+<li>VolumeReadBytes</li>
+<li>VolumeWriteBytes</li>
+<li>VolumeTotalReadTime</li>
+<li>VolumeTotalWriteTime</li>
+<li>VolumeIdleTime</li>
+<li>VolumeThroughputPercentage<ul>
+<li>Provisioned IOPS SSD only
+*Determine the percentage of I/O operations delivered of the total IOPS provisioned for an EBS volume. During a write, it there are no other pending I/O requests in a minute, the metric value will be 100 percent.</li>
+</ul>
+</li>
+<li>VolumeConsumedReadWriteOps<ul>
+<li>Provisioned IOPS only</li>
+</ul>
+</li>
+<li>BurstBalance <ul>
+<li>(gp2, st1, and sc1 volumes only)</li>
+</ul>
+</li>
+</ul>
+<h2 id="ebs-status-checks">EBS Status Checks</h2>
+<ul>
+<li>Tests run every 5 minutes</li>
+<li>Returns<ul>
+<li>OK</li>
+<li>Warning</li>
+<li>Degraded<ul>
+<li>Performance below expectations</li>
+</ul>
+</li>
+<li>Severely Degraded<ul>
+<li>Performance well below expectations</li>
+</ul>
+</li>
+<li>Impaired <ul>
+<li>Can change the result of impaired response</li>
+</ul>
+</li>
+<li>Stalled<ul>
+<li>Performance is severely impacted</li>
+</ul>
+</li>
+<li>Not available<ul>
+<li>Unable to determine I/O, disabled</li>
+</ul>
+</li>
+<li>Insufficient data</li>
+</ul>
+</li>
+</ul>
+<h2 id="real-cases">Real Cases</h2>
+<ul>
+<li>Reach IOPS limit of your volume will result in:<ul>
+<li>Will start to get your IO requests queuing</li>
+<li>Depending on your applications sensitivity to IOPS and latency, you may see your applications becaming slow</li>
+</ul>
+</li>
+</ul></div>
         </div>
 
         <footer class="col-md-12">

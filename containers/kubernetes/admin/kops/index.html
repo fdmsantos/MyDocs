@@ -76,6 +76,10 @@
 </li>
             
 <li >
+    <a href="../../../../aws/compute/elb/">ELB</a>
+</li>
+            
+<li >
     <a href="../../../../aws/compute/lambda/">Lambda</a>
 </li>
     </ul>
@@ -115,6 +119,34 @@
             
 <li >
     <a href="../../../../aws/developer/codedeploy/">CodeDeploy</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Database</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../../aws/database/rds/">RDS</a>
+</li>
+            
+<li >
+    <a href="../../../../aws/database/elasticache/">Elasticache</a>
+</li>
+            
+<li >
+    <a href="../../../../aws/database/redshift/">Redshift</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Storage</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../../aws/storage/efs/">EFS</a>
 </li>
     </ul>
   </li>
@@ -222,6 +254,24 @@
             
 <li >
     <a href="../../development/jobs/">Jobs</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Deploy AWS KubeAdm</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../deploy_aws_kubeadm/iam/">IAM</a>
+</li>
+            
+<li >
+    <a href="../../deploy_aws_kubeadm/vpc/">VPC</a>
+</li>
+            
+<li >
+    <a href="../../deploy_aws_kubeadm/route53/">Route53</a>
 </li>
     </ul>
   </li>
@@ -393,15 +443,35 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#create">Create</a></li>
+        <li class="main active"><a href="#install">Install</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="create">Create</h1>
-<pre><code class="bash">kops create cluster \
+<h1 id="install">Install</h1>
+<pre><code class="bash"># Install Kops
+wget https://github.com/kubernetes/kops/releases/download/1.13.0/kops-linux-amd64
+
+chmod +x kops-linux-amd64
+sudo mv kops-linux-amd64 /usr/local/bin/kops
+
+export REGION=eu-west-1
+
+# Create S3
+aws s3 mb s3://fsantos-k8s-state-store --region ${REGION}
+aws s3api put-bucket-versioning --bucket fsantos-k8s-state-store --versioning-configuration Status=Enabled
+aws s3api put-bucket-encryption --bucket fsantos-k8s-state-store --server-side-encryption-configuration '{&quot;Rules&quot;:[{&quot;ApplyServerSideEncryptionByDefault&quot;:{&quot;SSEAlgorithm&quot;:&quot;AES256&quot;}}]}'
+
+export KOPS_STATE_STORE=s3://fsantos-k8s-state-store
+export NAME=tiagomsantos.com
+
+
+kops create secret --name ${NAME} sshpublickey admin -i ~/.ssh/id_rsa.pub
+
+kops create cluster \
        --state ${KOPS_STATE_STORE} \
        --zones &quot;eu-west-1a,eu-west-1b,eu-west-1c&quot;  \
+       --api-loadbalancer-type public \
        --master-count 3 \
        --master-size=t2.micro \
        --master-volume-size 8 \
@@ -412,7 +482,8 @@
        --cloud aws \
        --networking calico \
        --topology private \
-       --api-ssl-certificate arn:aws:acm:eu-west-1:720008680639:certificate/47ceabbf-4add-4798-a240-972965b4befe \
+       --ssh-public-key ~/.ssh/id_rsa.pub \
+       --api-ssl-certificate arn:aws:acm:eu-west-1:395563851492:certificate/9190b1fe-8a63-4432-9f6f-01a631c4f1b2 \
        --bastion \
        --yes
 </code></pre></div>
