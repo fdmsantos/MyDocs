@@ -144,4 +144,6 @@ sudo iptables -t nat -L | grep nginx-service
 
 ```bash
 sudo tcpdump -v -l -i any 'host 100.65.17.226'
+
+tcpdump -n port 6443
 ```
