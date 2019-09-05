@@ -38,3 +38,20 @@ if err != nil {
 fmt.Println(result)
 return true, nil
 ```
+
+# Deploy Lambda With Dependencies
+
+## Python
+
+```bash
+mkdir project
+python3 -m venv venv
+source venv/bin/activate
+(venv) pip install requests
+(venv) touch my_handler.py
+(venv) pip freeze > requirements.txt
+(venv) pip install -r requirements.txt -t .
+(venv) deactivate
+rm -rf venv
+# zip all folder (Not project folder, but the files inside the project folder) and upload to AWS Lambda
+```
