@@ -109,9 +109,24 @@ session.commit(config_request)
 # <Response [200]>
 ```
 
-# LookupbyDn
+
+# Lookups
+
+## LookupbyDn
 
 ```python
 # set top level universe directory
 uniMo = moDir.lookupByDn('uni')
 ```
+
+
+## lookupByClass
+
+```python
+# use the "lookupByClass" method to find all endpoints (fvCEp)
+
+endpoints = md.lookupByClass('fvCEp')
+
+print([str(ep.dn) for ep in endpoints]) 
+```
+
