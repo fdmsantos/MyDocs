@@ -2,282 +2,312 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/aws/networking/vpc/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/aws/compute/ec2/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/aws/compute/ebs/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/aws/compute/elb/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/aws/compute/lambda/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/aws/applicationIntegration/stepfunctions/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/aws/management/cloudformation/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/aws/developer/codecommit/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/aws/developer/codebuild/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/aws/developer/codedeploy/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/aws/database/rds/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/aws/database/elasticache/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/aws/database/redshift/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/aws/storage/efs/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/aws/security/acm/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/admin/admin/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/admin/etcd/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/admin/controlplane/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/admin/networking/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/admin/nodes/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/admin/security/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/admin/taint/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/admin/monitoring/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/admin/kops/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/development/pods/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/development/deployments/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/development/services/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/development/persistentvolumes/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/development/ingress/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/development/replicasets/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/development/daemonsets/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/development/secrets_configmaps/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/development/statefulsets/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/development/jobs/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/deploy_aws_kubeadm/iam/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/deploy_aws_kubeadm/vpc/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/containers/kubernetes/deploy_aws_kubeadm/route53/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/devops/iaas/packer/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/elk/queries/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/elk/admin/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/elk/kibana/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/elk/beats/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/elk/snapshotsAndRestore/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/unix/commands/disks/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/unix/commands/filesystem/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/unix/commands/logging/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/unix/commands/kernel/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/unix/commands/networking/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/unix/commands/security/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/unix/software/mail/postfix/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/unix/software/programming/php/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/unix/software/virtualization/virsh/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/unix/os/redhat/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/unix/os/debian/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://fdmsantos.github.io/MyDocs/unix/os/archlinux/</loc>
-     <lastmod>2019-09-05</lastmod>
+     <lastmod>2019-10-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://fdmsantos.github.io/MyDocs/developer/testing/robotframework/gettingstarted/</loc>
+     <lastmod>2019-10-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://fdmsantos.github.io/MyDocs/developer/testing/robotframework/robotfile/</loc>
+     <lastmod>2019-10-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://fdmsantos.github.io/MyDocs/developer/testing/robotframework/pom/</loc>
+     <lastmod>2019-10-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://fdmsantos.github.io/MyDocs/developer/testing/robotframework/seleniumLibrary/</loc>
+     <lastmod>2019-10-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://fdmsantos.github.io/MyDocs/developer/testing/robotframework/ddd/</loc>
+     <lastmod>2019-10-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://fdmsantos.github.io/MyDocs/sdn/ciscoAci/cobra/</loc>
+     <lastmod>2019-10-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
