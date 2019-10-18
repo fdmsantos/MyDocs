@@ -89,6 +89,14 @@ nav:
           - Redhat: 'unix/os/redhat.md'
           - Debian: 'unix/os/debian.md'
           - Archlinux: 'unix/os/archlinux.md'
+  - Developer:
+      - Testing:
+          - RobotFramework:
+              - GettingStarted: 'developer/testing/robotframework/gettingstarted.md'
+              - RobotFile: 'developer/testing/robotframework/robotfile.md'
+              - PageObjectModel: 'developer/testing/robotframework/pom.md'
+              - SeleniumLibrary: 'developer/testing/robotframework/seleniumLibrary.md'
+              - DataDrivenTest: 'developer/testing/robotframework/ddd.md'
   - Sdn:
      -  Cisco ACI:
           - Cobra: 'sdn/ciscoAci/cobra.md'
