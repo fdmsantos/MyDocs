@@ -86,6 +86,8 @@ nav:
               - PHP: 'unix/software/programming/php.md'
           - Virtualization:
               - Virsh: 'unix/software/virtualization/virsh.md'
+          - Python:
+              - Install Packages: 'unix/software/python/installPackages.md'
       - OperationSystems:
           - Redhat: 'unix/os/redhat.md'
           - Debian: 'unix/os/debian.md'
@@ -99,6 +101,6 @@ nav:
               - SeleniumLibrary: 'developer/testing/robotframework/seleniumLibrary.md'
               - RestApi: 'developer/testing/robotframework/restApi.md'
               - DataDrivenTest: 'developer/testing/robotframework/ddd.md'
-  - Sdn:
+  - SDN:
      -  Cisco ACI:
           - Cobra: 'sdn/ciscoAci/cobra.md'
