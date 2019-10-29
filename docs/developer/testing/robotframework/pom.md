@@ -142,9 +142,9 @@ Close my browsers
 
 # Tests
 
-File: TestCases/LoginTest.robor
+File: TestCases/LoginTest.robot
 
-```robottestfile
+```robotframework
 *** Settings ***
 Documentation    Suite description
 Library  SeleniumLibrary

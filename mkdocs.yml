@@ -3,7 +3,7 @@ site_url: https://fdmsantos.github.io/MyDocs/
 site_description: My Personal Docs
 site_author: Fábio Santos
 repo_url: https://github.com/fdmsantos/MyDocs
-theme: slate
+theme: yeti
 
 nav:
   - Home: 'index.md'
@@ -27,6 +27,7 @@ nav:
           - RDS: 'aws/database/rds.md'
           - Elasticache: 'aws/database/elasticache.md'
           - Redshift: 'aws/database/redshift.md'
+          - DynamoDB: 'aws/database/dynamoDb.md'
       - Storage:
           - EFS: 'aws/storage/efs.md'
       - Security:
@@ -96,6 +97,7 @@ nav:
               - RobotFile: 'developer/testing/robotframework/robotfile.md'
               - PageObjectModel: 'developer/testing/robotframework/pom.md'
               - SeleniumLibrary: 'developer/testing/robotframework/seleniumLibrary.md'
+              - RestApi: 'developer/testing/robotframework/restApi.md'
               - DataDrivenTest: 'developer/testing/robotframework/ddd.md'
   - Sdn:
      -  Cisco ACI:
