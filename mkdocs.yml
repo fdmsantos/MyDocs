@@ -64,6 +64,8 @@ nav:
   - DevOps:
       - IAAS:
           - Packer: 'devops/iaas/packer.md'
+          - Terraform:
+              - Design Patterns: 'devops/iaas/terraform/designpatterns.md'
   - Databases:
       - ELK Stack:
          - ESQueries: 'elk/queries.md'
