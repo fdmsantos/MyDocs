@@ -29,3 +29,9 @@ tar xvfz keystone-deps.tgz
 cd keystone-deps
 pip install --target=~/lib/python keystone-deps.whl -f ./ --no-index
 ```
+
+## With PIP but not installed
+
+https://stackoverflow.com/questions/36132350/install-python-wheel-file-without-using-pip
+
+
