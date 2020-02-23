@@ -166,7 +166,7 @@ sudo apt install -y kubelet=1.14.1-00
 sudo apt-mark hold kubelet
 ```
 
-## Maintenance
+## Maintenance And Troubleshooting
 
 ### Evict Pods
 
@@ -174,6 +174,7 @@ sudo apt-mark hold kubelet
 # Evict the pods on a node
 kubectl drain [node_name] --ignore-daemonsets
 
+# Watch as the node changes status:
 kubectl get nodes -w
 
 # Rollback - Schedule pods to the node after maintenance is complete
@@ -183,8 +184,12 @@ kubectl uncordon [node_name]
 ### Delete Node
 
 ```bash
+# Remove a node from the cluster:
 kubectl delete node [node_name]
 sudo kubeadm token generate
+
+# List the tokens:
+sudo kubeadm token list
 
 # Print the kubeadm join command to join a node to the cluster
 sudo kubeadm token create [token_name] --ttl 2h --print-join-command
@@ -224,6 +229,13 @@ spec:
        operator: Equal
        value: prod
        effect: NoSchedule
+```
+
+### Commands
+
+```bash
+kubectl get componentstatus
+kubectl api-resources -o wide
 ```
 
 ## Autocomplete

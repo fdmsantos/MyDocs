@@ -84,3 +84,9 @@ spec:
     app: kubserve2
 ```
 
+## Troubleshooting
+
+```bash
+# Look at the iptables rules for your services:
+sudo iptables-save | grep KUBE | grep nginx
+```

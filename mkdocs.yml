@@ -92,6 +92,7 @@ nav:
           - Admin:
               - Administrator: platforms/kubernetes/admin/admin.md
               - Etcd: platforms/kubernetes/admin/etcd.md
+              - KubeControllerManager: platforms/kubernetes/admin/kubecontrollermanager.md
               - Monitoring: platforms/kubernetes/admin/monitoring.md
               - Networking: platforms/kubernetes/admin/networking.md
               - Security: platforms/kubernetes/admin/security.md
@@ -119,6 +120,7 @@ nav:
           - Virsh: platforms/unix/virsh.md
   - DevOps:
       - Packer: devops/packer.md
+      - Git: devops/git.md
   - Databases:
       - ElasticSearch:
           - Search: databases/elasticsearch/search.md
@@ -131,7 +133,6 @@ nav:
           - Snapshots: databases/elasticsearch/snapshots.md
       - MySQL:
           - Galera: databases/mysql/galera-cluster.md
-
   - Developer:
       - Python:
           - Packages: developer/python/packages.md
@@ -142,6 +143,9 @@ nav:
           - Page-Object Model: developer/robotframework/pom.md
           - RobotFile: developer/robotframework/robotfile.md
           - Selenium: developer/robotframework/selenium.md
+  - Certifications:
+      - Kubernetes:
+          - CKAD: certifications/kubernetes/ckad.md
 
 
 extra_css:

@@ -60,6 +60,41 @@ kubectl config set-context kubernetes --cluster=kubernetes --user=chad --namespa
 kubectl config use-context kubernetes
 ```
 
+### Generate client Cert
+
+
+* Generate Private Key
+
+```bash
+openssl genrsa -out mia.key 2048
+```
+
+* Generate CSR
+
+```bash
+openssl req -new -key mia.key -out mia.csr -subj "/CN=mia/O=acg"
+```
+
+* Generate Client Certificate
+
+```bash
+openssl x509 -req \
+  -in mia.csr \
+  -CA cluster.crt \
+  -CAkey cluster.key \
+  -CAcreateserial \
+  -out mia.crt \
+  -days 365
+```
+
+* Kubectl
+
+```bash
+kubectl config set-credentials mia --client-certificate=mia.crt --client-key=mia.key
+kubectl config set-context mia --cluster=tiagomsantos.com --namespace=development --user=mia
+kubectl config use-context mia
+```
+
 ## Roles
 
 ### Role 

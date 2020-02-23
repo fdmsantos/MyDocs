@@ -1,5 +1,7 @@
 # Kops
 
+## Install
+
 ```bash
 # Install Kops
 wget https://github.com/kubernetes/kops/releases/download/1.13.0/kops-linux-amd64
@@ -38,4 +40,17 @@ kops create cluster \
        --api-ssl-certificate arn:aws:acm:eu-west-1:395563851492:certificate/9190b1fe-8a63-4432-9f6f-01a631c4f1b2 \
        --bastion \
        --yes
+```
+
+## Suspend Autoscaling Process
+
+```bash
+for groupName in $(aws autoscaling describe-auto-scaling-groups --query 'AutoScalingGroups[*].AutoScalingGroupName' --output text); 
+do 
+    if [[ $groupName =~ ${NAME} ]]
+      then
+        echo "Processing autoscaling $groupName ..."
+        aws autoscaling suspend-processes --auto-scaling-group-name $groupName --scaling-processes HealthCheck ReplaceUnhealthy AlarmNotification AZRebalance Launch Terminate ScheduledActions AddToLoadBalancer RemoveFromLoadBalancerLowPriority 
+    fi
+done
 ```
