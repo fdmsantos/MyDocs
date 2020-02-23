@@ -1,0 +1,1742 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="My Docs">
+      
+      
+      
+        <meta name="author" content="Fábio Santos">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
+    
+    
+      
+        <title>Cisco ACI - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.01ccdecf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="https://cdn.rawgit.com/knsv/mermaid/0.5.6/dist/mermaid.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#cisco-aci-cobra" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="My Docs" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              My Docs
+            </span>
+            <span class="md-header-nav__topic">
+              Cisco ACI
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." title="Index" class="md-tabs__link">
+        Index
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../platforms/aws/compute/ec2/" title="Platforms" class="md-tabs__link">
+          Platforms
+        </a>
+      
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../databases/elasticsearch/search/" title="Databases" class="md-tabs__link">
+          Databases
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../python/packages/" title="Developer" class="md-tabs__link">
+          Developer
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="My Docs" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Platforms
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Platforms
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      AWS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        AWS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-1" type="checkbox" id="nav-2-1-1">
+    
+    <label class="md-nav__link" for="nav-2-1-1">
+      Compute
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-1">
+        Compute
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/compute/ec2/" title="EC2" class="md-nav__link">
+      EC2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/compute/ebs/" title="EBS" class="md-nav__link">
+      EBS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/compute/elb/" title="ELB" class="md-nav__link">
+      ELB
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-2" type="checkbox" id="nav-2-1-2">
+    
+    <label class="md-nav__link" for="nav-2-1-2">
+      Severless
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-2">
+        Severless
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/serverless/lambda/" title="Lambda" class="md-nav__link">
+      Lambda
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/serverless/cognito/" title="Cognito" class="md-nav__link">
+      Cognito
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-3" type="checkbox" id="nav-2-1-3">
+    
+    <label class="md-nav__link" for="nav-2-1-3">
+      Databases
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-3">
+        Databases
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/databases/rds/" title="RDS" class="md-nav__link">
+      RDS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/databases/dynamodb/" title="DynamoDB" class="md-nav__link">
+      DynamoDB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/databases/elasticache/" title="Elasticache" class="md-nav__link">
+      Elasticache
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/databases/redshift/" title="Redshift" class="md-nav__link">
+      Redshift
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-4" type="checkbox" id="nav-2-1-4">
+    
+    <label class="md-nav__link" for="nav-2-1-4">
+      DevOps
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-4">
+        DevOps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/devops/cloudwatch/" title="CloudWatch" class="md-nav__link">
+      CloudWatch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/devops/cloudformation/" title="Cloudformation" class="md-nav__link">
+      Cloudformation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-5" type="checkbox" id="nav-2-1-5">
+    
+    <label class="md-nav__link" for="nav-2-1-5">
+      Security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-5">
+        Security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/security/acm/" title="ACM" class="md-nav__link">
+      ACM
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Kubernetes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Kubernetes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2-1" type="checkbox" id="nav-2-2-1">
+    
+    <label class="md-nav__link" for="nav-2-2-1">
+      Admin
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-2-1">
+        Admin
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/admin/admin/" title="Administrator" class="md-nav__link">
+      Administrator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/admin/etcd/" title="Etcd" class="md-nav__link">
+      Etcd
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/admin/monitoring/" title="Monitoring" class="md-nav__link">
+      Monitoring
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/admin/networking/" title="Networking" class="md-nav__link">
+      Networking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/admin/security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/admin/hardway/" title="Hardway" class="md-nav__link">
+      Hardway
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/admin/kops/" title="Kops" class="md-nav__link">
+      Kops
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2-2" type="checkbox" id="nav-2-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2-2">
+      Developer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-2-2">
+        Developer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/developer/pods/" title="Pods" class="md-nav__link">
+      Pods
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/developer/daemonsets/" title="DaemonSets" class="md-nav__link">
+      DaemonSets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/developer/deployments/" title="Deployments" class="md-nav__link">
+      Deployments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/developer/ingress/" title="Ingress" class="md-nav__link">
+      Ingress
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/developer/jobs/" title="Jobs" class="md-nav__link">
+      Jobs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/developer/volumes/" title="Volumes" class="md-nav__link">
+      Volumes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/developer/replicasets/" title="Replicasets" class="md-nav__link">
+      Replicasets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/developer/secrets_configmaps/" title="Secrets&ConfigMaps" class="md-nav__link">
+      Secrets&ConfigMaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/developer/services/" title="Services" class="md-nav__link">
+      Services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/developer/statefulsets/" title="StatefulSets" class="md-nav__link">
+      StatefulSets
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Unix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        Unix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/unix/commands/" title="Commands" class="md-nav__link">
+      Commands
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/unix/disks/" title="Disks" class="md-nav__link">
+      Disks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/unix/networking/" title="Networking" class="md-nav__link">
+      Networking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/unix/security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/unix/redhat/" title="Redhat" class="md-nav__link">
+      Redhat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/unix/debian/" title="Debian" class="md-nav__link">
+      Debian
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/unix/archlinux/" title="Archlinux" class="md-nav__link">
+      Archlinux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/unix/virsh/" title="Virsh" class="md-nav__link">
+      Virsh
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Databases
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Databases
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      ElasticSearch
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        ElasticSearch
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../databases/elasticsearch/search/" title="Search" class="md-nav__link">
+      Search
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../databases/elasticsearch/indices/" title="Indices" class="md-nav__link">
+      Indices
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../databases/elasticsearch/cat/" title="Cat" class="md-nav__link">
+      Cat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../databases/elasticsearch/beat/" title="Beat" class="md-nav__link">
+      Beat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../databases/elasticsearch/kibana/" title="Kibana" class="md-nav__link">
+      Kibana
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../databases/elasticsearch/cluster/" title="Cluster" class="md-nav__link">
+      Cluster
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../databases/elasticsearch/nodes/" title="Nodes" class="md-nav__link">
+      Nodes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../databases/elasticsearch/snapshots/" title="Snapshots" class="md-nav__link">
+      Snapshots
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Developer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Developer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      Python
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/packages/" title="Packages" class="md-nav__link">
+      Packages
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Cisco ACI
+      </label>
+    
+    <a href="./" title="Cisco ACI" class="md-nav__link md-nav__link--active">
+      Cisco ACI
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-session" title="Create Session" class="md-nav__link">
+    Create Session
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dn-query" title="DN Query" class="md-nav__link">
+    DN Query
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-query" title="Class Query" class="md-nav__link">
+    Class Query
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make-a-class-query-for-all-app-profiles" title="Make a Class Query for All App Profiles" class="md-nav__link">
+    Make a Class Query for All App Profiles
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#child-objects" title="Child Objects" class="md-nav__link">
+    Child Objects
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#have-the-query-return-child-objects" title="Have the Query Return Child Objects" class="md-nav__link">
+    Have the Query Return Child Objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-the-child-objects-for-the-query" title="View the Child Objects for the Query" class="md-nav__link">
+    View the Child Objects for the Query
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submitting-configurations" title="Submitting Configurations" class="md-nav__link">
+    Submitting Configurations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lookups" title="Lookups" class="md-nav__link">
+    Lookups
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lookupbydn" title="LookupbyDn" class="md-nav__link">
+    LookupbyDn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lookupbyclass" title="lookupByClass" class="md-nav__link">
+    lookupByClass
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      RobotFramework
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        RobotFramework
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../robotframework/gettingstarted/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../robotframework/ddd/" title="Data-Driver" class="md-nav__link">
+      Data-Driver
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../robotframework/pom/" title="Page-Object Model" class="md-nav__link">
+      Page-Object Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../robotframework/robotfile/" title="RobotFile" class="md-nav__link">
+      RobotFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../robotframework/selenium/" title="Selenium" class="md-nav__link">
+      Selenium
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-session" title="Create Session" class="md-nav__link">
+    Create Session
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dn-query" title="DN Query" class="md-nav__link">
+    DN Query
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#class-query" title="Class Query" class="md-nav__link">
+    Class Query
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make-a-class-query-for-all-app-profiles" title="Make a Class Query for All App Profiles" class="md-nav__link">
+    Make a Class Query for All App Profiles
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#child-objects" title="Child Objects" class="md-nav__link">
+    Child Objects
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#have-the-query-return-child-objects" title="Have the Query Return Child Objects" class="md-nav__link">
+    Have the Query Return Child Objects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-the-child-objects-for-the-query" title="View the Child Objects for the Query" class="md-nav__link">
+    View the Child Objects for the Query
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submitting-configurations" title="Submitting Configurations" class="md-nav__link">
+    Submitting Configurations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lookups" title="Lookups" class="md-nav__link">
+    Lookups
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lookupbydn" title="LookupbyDn" class="md-nav__link">
+    LookupbyDn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lookupbyclass" title="lookupByClass" class="md-nav__link">
+    lookupByClass
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="cisco-aci-cobra">Cisco ACI Cobra<a class="headerlink" href="#cisco-aci-cobra" title="Permanent link">&para;</a></h1>
+<h2 id="create-session">Create Session<a class="headerlink" href="#create-session" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">credentials</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">cobra.mit.session</span>
+<span class="kn">import</span> <span class="nn">cobra.mit.access</span>
+
+<span class="n">auth</span> <span class="o">=</span> <span class="n">cobra</span><span class="o">.</span><span class="n">mit</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">LoginSession</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="n">LOGIN</span><span class="p">,</span> <span class="n">PASSWORD</span><span class="p">)</span>
+<span class="n">session</span> <span class="o">=</span> <span class="n">cobra</span><span class="o">.</span><span class="n">mit</span><span class="o">.</span><span class="n">access</span><span class="o">.</span><span class="n">MoDirectory</span><span class="p">(</span><span class="n">auth</span><span class="p">)</span>
+<span class="n">session</span><span class="o">.</span><span class="n">login</span><span class="p">()</span>
+</pre></div>
+
+<h2 id="dn-query">DN Query<a class="headerlink" href="#dn-query" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">cobra.mit.request</span>
+<span class="n">tenant_query</span> <span class="o">=</span> <span class="n">cobra</span><span class="o">.</span><span class="n">mit</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">DnQuery</span><span class="p">(</span><span class="s2">&quot;uni/tn-Heroes&quot;</span><span class="p">)</span>
+<span class="n">heroes_tenant</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">tenant_query</span><span class="p">)</span>
+<span class="n">heroes</span> <span class="o">=</span> <span class="n">heroes_tenant</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">dir</span><span class="p">(</span><span class="n">heroes</span><span class="p">)</span>
+</pre></div>
+
+<h2 id="class-query">Class Query<a class="headerlink" href="#class-query" title="Permanent link">&para;</a></h2>
+<ul>
+<li>propFilter (query-target-filter) filters the results based on class attributes.</li>
+<li>queryTarget (query-target) specifies what part of the MIT to query:<ul>
+<li>self</li>
+<li>children</li>
+<li>subtree</li>
+</ul>
+</li>
+<li>classFilter (target-subtree-class) can be used when queryTarget is set to either "children" or "subtree" to filter the returned children to only objects of a specific class or classes.<ul>
+<li>For example, to filter for Application Profiles use fvAp.
+*subtree (rsp-subtree) specifies how much of the subtree to retrieve:</li>
+<li>no</li>
+<li>children</li>
+<li>full</li>
+</ul>
+</li>
+<li>subtreeClassFilter (rsp-subtree-class) filters what subtree classes to include in the response.</li>
+<li>subtreeInclude (rsp-subtree-include) specifies what type of information to include in the subtree<ul>
+<li>audit-logs</li>
+<li>event-logs</li>
+<li>faults<ul>
+<li>faults,no-scoped</li>
+</ul>
+</li>
+<li>health</li>
+</ul>
+</li>
+</ul>
+<h3 id="make-a-class-query-for-all-app-profiles">Make a Class Query for All App Profiles<a class="headerlink" href="#make-a-class-query-for-all-app-profiles" title="Permanent link">&para;</a></h3>
+<p>```python
+app_query = cobra.mit.request.ClassQuery('fvAp')
+apps = session.query(app_query)
+<div class="codehilite"><pre><span></span>### Scope the Query to Applications Named &quot;Save_The_Planet&quot;
+
+```python
+# set the property filter to only return the app named &quot;Save_The_Planet&quot;
+app_query.propFilter = &#39;eq(fvAp.name, &quot;Save_The_Planet&quot;)&#39;
+save_the_planet_app = session.query(app_query)
+</pre></div></p>
+<h2 id="child-objects">Child Objects<a class="headerlink" href="#child-objects" title="Permanent link">&para;</a></h2>
+<h3 id="have-the-query-return-child-objects">Have the Query Return Child Objects<a class="headerlink" href="#have-the-query-return-child-objects" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1"># set the scope to subtree full</span>
+<span class="n">app_query</span><span class="o">.</span><span class="n">subtree</span> <span class="o">=</span> <span class="s2">&quot;full&quot;</span>
+
+<span class="c1"># demonstrate a typo; cobra provides the acceptable options</span>
+<span class="n">app_query</span><span class="o">.</span><span class="n">queryTarget</span> <span class="o">=</span> <span class="s2">&quot;subtre&quot;</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<span class="o">...</span>
+    <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">allowedValues</span><span class="p">)))</span>
+<span class="ne">ValueError</span><span class="p">:</span> <span class="s2">&quot;subtre&quot;</span> <span class="ow">is</span> <span class="n">invalid</span><span class="p">,</span> <span class="n">valid</span> <span class="n">values</span> <span class="n">are</span> <span class="s2">&quot;set([&#39;self&#39;, &#39;subtree&#39;, &#39;children&#39;])&quot;</span>
+
+<span class="c1"># scope the query to subtree</span>
+<span class="n">app_query</span><span class="o">.</span><span class="n">queryTarget</span> <span class="o">=</span> <span class="s2">&quot;subtree&quot;</span>
+<span class="c1"># look at the applied query scopes using .options</span>
+<span class="n">app_query</span><span class="o">.</span><span class="n">options</span>
+<span class="s1">&#39;rsp-subtree=full&amp;query-target-filter=eq(fvAp.name, &quot;Save_The_Planet&quot;)&amp;query-target=subtree&#39;</span>
+<span class="n">save_the_planet_app_subtree</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">app_query</span><span class="p">)</span>
+</pre></div>
+
+<h3 id="view-the-child-objects-for-the-query">View the Child Objects for the Query<a class="headerlink" href="#view-the-child-objects-for-the-query" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="n">save_the_planet_app_subtree</span>
+<span class="p">[</span><span class="o">&lt;</span><span class="n">cobra</span><span class="o">.</span><span class="n">modelimpl</span><span class="o">.</span><span class="n">fv</span><span class="o">.</span><span class="n">ap</span><span class="o">.</span><span class="n">Ap</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7f3c3c735150</span><span class="o">&gt;</span><span class="p">]</span>
+<span class="n">save_the_planet_app_subtree</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">numChildren</span>
+<span class="mi">3</span>
+
+<span class="k">for</span> <span class="n">epg</span> <span class="ow">in</span> <span class="n">save_the_planet_app_subtree</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+     <span class="k">print</span> <span class="n">epg</span><span class="o">.</span><span class="n">dn</span>
+
+<span class="n">uni</span><span class="o">/</span><span class="n">tn</span><span class="o">-</span><span class="n">Heroes</span><span class="o">/</span><span class="n">ap</span><span class="o">-</span><span class="n">Save_The_Planet</span><span class="o">/</span><span class="n">epg</span><span class="o">-</span><span class="n">web</span>
+<span class="n">uni</span><span class="o">/</span><span class="n">tn</span><span class="o">-</span><span class="n">Heroes</span><span class="o">/</span><span class="n">ap</span><span class="o">-</span><span class="n">Save_The_Planet</span><span class="o">/</span><span class="n">epg</span><span class="o">-</span><span class="n">app</span>
+<span class="n">uni</span><span class="o">/</span><span class="n">tn</span><span class="o">-</span><span class="n">Heroes</span><span class="o">/</span><span class="n">ap</span><span class="o">-</span><span class="n">Save_The_Planet</span><span class="o">/</span><span class="n">epg</span><span class="o">-</span><span class="n">db</span>
+</pre></div>
+
+<h2 id="submitting-configurations">Submitting Configurations<a class="headerlink" href="#submitting-configurations" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="c1"># submit staged configuration to APIC</span>
+<span class="n">config_request</span> <span class="o">=</span> <span class="n">cobra</span><span class="o">.</span><span class="n">mit</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">ConfigRequest</span><span class="p">()</span>
+<span class="n">config_request</span><span class="o">.</span><span class="n">addMo</span><span class="p">(</span><span class="n">epg</span><span class="p">)</span>
+<span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="n">config_request</span><span class="p">)</span>
+
+<span class="c1"># You will see these two output lines</span>
+<span class="c1"># SSL Warning</span>
+<span class="c1"># &lt;Response [200]&gt;</span>
+</pre></div>
+
+<h2 id="lookups">Lookups<a class="headerlink" href="#lookups" title="Permanent link">&para;</a></h2>
+<h3 id="lookupbydn">LookupbyDn<a class="headerlink" href="#lookupbydn" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1"># set top level universe directory</span>
+<span class="n">uniMo</span> <span class="o">=</span> <span class="n">moDir</span><span class="o">.</span><span class="n">lookupByDn</span><span class="p">(</span><span class="s1">&#39;uni&#39;</span><span class="p">)</span>
+</pre></div>
+
+<h3 id="lookupbyclass">lookupByClass<a class="headerlink" href="#lookupbyclass" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1"># use the &quot;lookupByClass&quot; method to find all endpoints (fvCEp)</span>
+
+<span class="n">endpoints</span> <span class="o">=</span> <span class="n">md</span><span class="o">.</span><span class="n">lookupByClass</span><span class="p">(</span><span class="s1">&#39;fvCEp&#39;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">ep</span><span class="o">.</span><span class="n">dn</span><span class="p">)</span> <span class="k">for</span> <span class="n">ep</span> <span class="ow">in</span> <span class="n">endpoints</span><span class="p">])</span> 
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../python/packages/" title="Packages" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Packages
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../robotframework/gettingstarted/" title="Getting Started" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Getting Started
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 Fabio Santos
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.dc02f8ce.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+        <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

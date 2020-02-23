@@ -1,0 +1,2391 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="My Docs">
+      
+      
+      
+        <meta name="author" content="Fábio Santos">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
+    
+    
+      
+        <title>Administrator - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../../../assets/javascripts/modernizr.01ccdecf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="https://cdn.rawgit.com/knsv/mermaid/0.5.6/dist/mermaid.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#pre-requisites" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../../.." title="My Docs" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              My Docs
+            </span>
+            <span class="md-header-nav__topic">
+              Administrator
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../../.." title="Index" class="md-tabs__link">
+        Index
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../aws/compute/ec2/" title="Platforms" class="md-tabs__link">
+          Platforms
+        </a>
+      
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../databases/elasticsearch/search/" title="Databases" class="md-tabs__link">
+          Databases
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../developer/python/packages/" title="Developer" class="md-tabs__link">
+          Developer
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../../.." title="My Docs" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../.." title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Platforms
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Platforms
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      AWS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        AWS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-1" type="checkbox" id="nav-2-1-1">
+    
+    <label class="md-nav__link" for="nav-2-1-1">
+      Compute
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-1">
+        Compute
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/compute/ec2/" title="EC2" class="md-nav__link">
+      EC2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/compute/ebs/" title="EBS" class="md-nav__link">
+      EBS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/compute/elb/" title="ELB" class="md-nav__link">
+      ELB
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-2" type="checkbox" id="nav-2-1-2">
+    
+    <label class="md-nav__link" for="nav-2-1-2">
+      Severless
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-2">
+        Severless
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/serverless/lambda/" title="Lambda" class="md-nav__link">
+      Lambda
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/serverless/cognito/" title="Cognito" class="md-nav__link">
+      Cognito
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-3" type="checkbox" id="nav-2-1-3">
+    
+    <label class="md-nav__link" for="nav-2-1-3">
+      Databases
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-3">
+        Databases
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/databases/rds/" title="RDS" class="md-nav__link">
+      RDS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/databases/dynamodb/" title="DynamoDB" class="md-nav__link">
+      DynamoDB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/databases/elasticache/" title="Elasticache" class="md-nav__link">
+      Elasticache
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/databases/redshift/" title="Redshift" class="md-nav__link">
+      Redshift
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-4" type="checkbox" id="nav-2-1-4">
+    
+    <label class="md-nav__link" for="nav-2-1-4">
+      DevOps
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-4">
+        DevOps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/devops/cloudwatch/" title="CloudWatch" class="md-nav__link">
+      CloudWatch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/devops/cloudformation/" title="Cloudformation" class="md-nav__link">
+      Cloudformation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-5" type="checkbox" id="nav-2-1-5">
+    
+    <label class="md-nav__link" for="nav-2-1-5">
+      Security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-5">
+        Security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/security/acm/" title="ACM" class="md-nav__link">
+      ACM
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Kubernetes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Kubernetes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2-1" type="checkbox" id="nav-2-2-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-2-1">
+      Admin
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-2-1">
+        Admin
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Administrator
+      </label>
+    
+    <a href="./" title="Administrator" class="md-nav__link md-nav__link--active">
+      Administrator
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisites" title="Pre-Requisites" class="md-nav__link">
+    Pre-Requisites
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redhat" title="Redhat" class="md-nav__link">
+    Redhat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" title="Docker" class="md-nav__link">
+    Docker
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redhat_1" title="Redhat" class="md-nav__link">
+    Redhat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu" title="Ubuntu" class="md-nav__link">
+    Ubuntu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amazon-ami-linux-2" title="Amazon AMI Linux 2" class="md-nav__link">
+    Amazon AMI Linux 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes" title="kubernetes" class="md-nav__link">
+    kubernetes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redhat_2" title="Redhat" class="md-nav__link">
+    Redhat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu_1" title="Ubuntu" class="md-nav__link">
+    Ubuntu
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade" title="Upgrade" class="md-nav__link">
+    Upgrade
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu_2" title="Ubuntu" class="md-nav__link">
+    Ubuntu
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance" title="Maintenance" class="md-nav__link">
+    Maintenance
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evict-pods" title="Evict Pods" class="md-nav__link">
+    Evict Pods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-node" title="Delete Node" class="md-nav__link">
+    Delete Node
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#taint" title="Taint" class="md-nav__link">
+    Taint
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pod-with-toleration" title="Pod with Toleration" class="md-nav__link">
+    Pod with Toleration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autocomplete" title="Autocomplete" class="md-nav__link">
+    Autocomplete
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redhat_3" title="Redhat" class="md-nav__link">
+    Redhat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubectl" title="Kubectl" class="md-nav__link">
+    Kubectl
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install" title="Install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-remote" title="Set Remote" class="md-nav__link">
+    Set Remote
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insecure" title="Insecure" class="md-nav__link">
+    Insecure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-resources" title="Api Resources" class="md-nav__link">
+    Api Resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kube-config" title="Kube Config" class="md-nav__link">
+    Kube Config
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-kube-configs" title="Generate Kube Configs" class="md-nav__link">
+    Generate Kube Configs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#move-kubeconfig-files-to-the-worker-nodes" title="Move kubeconfig files to the worker nodes:" class="md-nav__link">
+    Move kubeconfig files to the worker nodes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#move-kubeconfig-files-to-the-master-nodes" title="Move kubeconfig files to the master nodes:" class="md-nav__link">
+    Move kubeconfig files to the master nodes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-encryption-config" title="Data Encryption Config" class="md-nav__link">
+    Data Encryption Config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loadbalancer" title="LoadBalancer" class="md-nav__link">
+    LoadBalancer
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../etcd/" title="Etcd" class="md-nav__link">
+      Etcd
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../monitoring/" title="Monitoring" class="md-nav__link">
+      Monitoring
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../networking/" title="Networking" class="md-nav__link">
+      Networking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../hardway/" title="Hardway" class="md-nav__link">
+      Hardway
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kops/" title="Kops" class="md-nav__link">
+      Kops
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2-2" type="checkbox" id="nav-2-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2-2">
+      Developer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-2-2">
+        Developer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/pods/" title="Pods" class="md-nav__link">
+      Pods
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/daemonsets/" title="DaemonSets" class="md-nav__link">
+      DaemonSets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/deployments/" title="Deployments" class="md-nav__link">
+      Deployments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/ingress/" title="Ingress" class="md-nav__link">
+      Ingress
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/jobs/" title="Jobs" class="md-nav__link">
+      Jobs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/volumes/" title="Volumes" class="md-nav__link">
+      Volumes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/replicasets/" title="Replicasets" class="md-nav__link">
+      Replicasets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/secrets_configmaps/" title="Secrets&ConfigMaps" class="md-nav__link">
+      Secrets&ConfigMaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/services/" title="Services" class="md-nav__link">
+      Services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/statefulsets/" title="StatefulSets" class="md-nav__link">
+      StatefulSets
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Unix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        Unix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/commands/" title="Commands" class="md-nav__link">
+      Commands
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/disks/" title="Disks" class="md-nav__link">
+      Disks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/networking/" title="Networking" class="md-nav__link">
+      Networking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/redhat/" title="Redhat" class="md-nav__link">
+      Redhat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/debian/" title="Debian" class="md-nav__link">
+      Debian
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/archlinux/" title="Archlinux" class="md-nav__link">
+      Archlinux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/virsh/" title="Virsh" class="md-nav__link">
+      Virsh
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Databases
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Databases
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      ElasticSearch
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        ElasticSearch
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/search/" title="Search" class="md-nav__link">
+      Search
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/indices/" title="Indices" class="md-nav__link">
+      Indices
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/cat/" title="Cat" class="md-nav__link">
+      Cat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/beat/" title="Beat" class="md-nav__link">
+      Beat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/kibana/" title="Kibana" class="md-nav__link">
+      Kibana
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/cluster/" title="Cluster" class="md-nav__link">
+      Cluster
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/nodes/" title="Nodes" class="md-nav__link">
+      Nodes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/snapshots/" title="Snapshots" class="md-nav__link">
+      Snapshots
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Developer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Developer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      Python
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../developer/python/packages/" title="Packages" class="md-nav__link">
+      Packages
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../developer/ciscoAci/cobra/" title="Cisco ACI" class="md-nav__link">
+      Cisco ACI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      RobotFramework
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        RobotFramework
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../developer/robotframework/gettingstarted/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../developer/robotframework/ddd/" title="Data-Driver" class="md-nav__link">
+      Data-Driver
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../developer/robotframework/pom/" title="Page-Object Model" class="md-nav__link">
+      Page-Object Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../developer/robotframework/robotfile/" title="RobotFile" class="md-nav__link">
+      RobotFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../developer/robotframework/selenium/" title="Selenium" class="md-nav__link">
+      Selenium
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requisites" title="Pre-Requisites" class="md-nav__link">
+    Pre-Requisites
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redhat" title="Redhat" class="md-nav__link">
+    Redhat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" title="Docker" class="md-nav__link">
+    Docker
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redhat_1" title="Redhat" class="md-nav__link">
+    Redhat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu" title="Ubuntu" class="md-nav__link">
+    Ubuntu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#amazon-ami-linux-2" title="Amazon AMI Linux 2" class="md-nav__link">
+    Amazon AMI Linux 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes" title="kubernetes" class="md-nav__link">
+    kubernetes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redhat_2" title="Redhat" class="md-nav__link">
+    Redhat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu_1" title="Ubuntu" class="md-nav__link">
+    Ubuntu
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade" title="Upgrade" class="md-nav__link">
+    Upgrade
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu_2" title="Ubuntu" class="md-nav__link">
+    Ubuntu
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance" title="Maintenance" class="md-nav__link">
+    Maintenance
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evict-pods" title="Evict Pods" class="md-nav__link">
+    Evict Pods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-node" title="Delete Node" class="md-nav__link">
+    Delete Node
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#taint" title="Taint" class="md-nav__link">
+    Taint
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pod-with-toleration" title="Pod with Toleration" class="md-nav__link">
+    Pod with Toleration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autocomplete" title="Autocomplete" class="md-nav__link">
+    Autocomplete
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redhat_3" title="Redhat" class="md-nav__link">
+    Redhat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubectl" title="Kubectl" class="md-nav__link">
+    Kubectl
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install" title="Install" class="md-nav__link">
+    Install
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-remote" title="Set Remote" class="md-nav__link">
+    Set Remote
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insecure" title="Insecure" class="md-nav__link">
+    Insecure
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-resources" title="Api Resources" class="md-nav__link">
+    Api Resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kube-config" title="Kube Config" class="md-nav__link">
+    Kube Config
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate-kube-configs" title="Generate Kube Configs" class="md-nav__link">
+    Generate Kube Configs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#move-kubeconfig-files-to-the-worker-nodes" title="Move kubeconfig files to the worker nodes:" class="md-nav__link">
+    Move kubeconfig files to the worker nodes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#move-kubeconfig-files-to-the-master-nodes" title="Move kubeconfig files to the master nodes:" class="md-nav__link">
+    Move kubeconfig files to the master nodes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-encryption-config" title="Data Encryption Config" class="md-nav__link">
+    Data Encryption Config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loadbalancer" title="LoadBalancer" class="md-nav__link">
+    LoadBalancer
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Administrator</h1>
+                
+                <h2 id="pre-requisites">Pre-Requisites<a class="headerlink" href="#pre-requisites" title="Permanent link">&para;</a></h2>
+<h3 id="redhat">Redhat<a class="headerlink" href="#redhat" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Disable SELinux</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span>sudo setenforce <span class="m">0</span>
+sudo sed -i --follow-symlinks <span class="s1">&#39;s/SELINUX=enforcing/SELINUX=disabled/g&#39;</span> /etc/sysconfig/selinux
+</pre></div>
+
+<ul>
+<li><strong>Enable the br_netfilter module for cluster communication</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span>sudo modprobe br_netfilter
+sudo <span class="nb">echo</span> <span class="s1">&#39;1&#39;</span> &gt; /proc/sys/net/bridge/bridge-nf-call-iptables
+</pre></div>
+
+<ul>
+<li><strong>Disable swap to prevent memory allocation issues</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span>swapoff -a
+sudo vi /etc/fstab -&gt; Comment out the swap line
+</pre></div>
+
+<h2 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
+<h3 id="redhat_1">Redhat<a class="headerlink" href="#redhat_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Install the Docker prerequisites</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span>sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+</pre></div>
+
+<ul>
+<li><strong>Add the Docker repo and install Docker</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span>sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo yum install -y docker-ce
+</pre></div>
+
+<ul>
+<li><strong>Configure the Docker Cgroup Driver to systemd, enable and start Docker</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span>sed -i <span class="s1">&#39;/^ExecStart/ s/$/ --exec-opt native.cgroupdriver=systemd/&#39;</span> /usr/lib/systemd/system/docker.service 
+systemctl daemon-reload
+systemctl <span class="nb">enable</span> docker --now
+</pre></div>
+
+<h3 id="ubuntu">Ubuntu<a class="headerlink" href="#ubuntu" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>curl -fsSL https://download.docker.com/linux/ubuntu/gpg <span class="p">|</span> sudo apt-key add -
+
+sudo add-apt-repository <span class="se">\</span>
+   <span class="s2">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span>
+<span class="s2">   </span><span class="k">$(</span>lsb_release -cs<span class="k">)</span><span class="s2"> \</span>
+<span class="s2">   stable&quot;</span>
+
+sudo apt-get update
+
+sudo apt-get install -y docker-ce<span class="o">=</span><span class="m">18</span>.06.1~ce~3-0~ubuntu
+
+sudo apt-mark hold docker-ce
+</pre></div>
+
+<h3 id="amazon-ami-linux-2">Amazon AMI Linux 2<a class="headerlink" href="#amazon-ami-linux-2" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>sudo amazon-linux-extras install -y docker
+sudo cat &gt; /etc/docker/daemon.json <span class="s">&lt;&lt;EOF</span>
+<span class="s">{</span>
+<span class="s">  &quot;exec-opts&quot;: [&quot;native.cgroupdriver=systemd&quot;],</span>
+<span class="s">  &quot;log-driver&quot;: &quot;json-file&quot;,</span>
+<span class="s">  &quot;log-opts&quot;: {</span>
+<span class="s">    &quot;max-size&quot;: &quot;100m&quot;</span>
+<span class="s">  },</span>
+<span class="s">  &quot;storage-driver&quot;: &quot;overlay2&quot;</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+sudo systemctl daemon-reload
+sudo systemctl <span class="nb">enable</span> docker
+sudo systemctl start docker
+sudo usermod -a -G docker ec2-user
+
+<span class="c1"># Exit e login na sessao</span>
+</pre></div>
+
+<h2 id="kubernetes">kubernetes<a class="headerlink" href="#kubernetes" title="Permanent link">&para;</a></h2>
+<h3 id="redhat_2">Redhat<a class="headerlink" href="#redhat_2" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>cat <span class="s">&lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo</span>
+<span class="s">[kubernetes]</span>
+<span class="s">name=Kubernetes</span>
+<span class="s">baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64</span>
+<span class="s">enabled=1</span>
+<span class="s">gpgcheck=0</span>
+<span class="s">repo_gpgcheck=0</span>
+<span class="s">gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg</span>
+<span class="s">   https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg</span>
+<span class="s">EOF</span>
+
+sudo yum install -y kubelet kubeadm kubectl
+sudo systemctl <span class="nb">enable</span> kubelet
+kubeadm init --pod-network-cidr<span class="o">=</span><span class="m">10</span>.244.0.0/16
+
+<span class="c1"># Exit sudo user</span>
+mkdir -p <span class="nv">$HOME</span>/.kube
+sudo cp -i /etc/kubernetes/admin.conf <span class="nv">$HOME</span>/.kube/config
+sudo chown <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> <span class="nv">$HOME</span>/.kube/config
+</pre></div>
+
+<h3 id="ubuntu_1">Ubuntu<a class="headerlink" href="#ubuntu_1" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg <span class="p">|</span> sudo apt-key add -
+
+cat <span class="s">&lt;&lt; EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list</span>
+<span class="s">deb https://apt.kubernetes.io/ kubernetes-xenial main</span>
+<span class="s">EOF</span>
+
+sudo apt-get update
+
+sudo apt-get install -y <span class="nv">kubelet</span><span class="o">=</span><span class="m">1</span>.12.7-00 <span class="nv">kubeadm</span><span class="o">=</span><span class="m">1</span>.12.7-00 <span class="nv">kubectl</span><span class="o">=</span><span class="m">1</span>.12.7-00
+
+sudo apt-mark hold kubelet kubeadm kubectl
+
+<span class="nb">echo</span> <span class="s2">&quot;net.bridge.bridge-nf-call-iptables=1&quot;</span> <span class="p">|</span> sudo tee -a /etc/sysctl.conf
+
+sudo sysctl -p
+
+mkdir -p <span class="nv">$HOME</span>/.kube
+
+sudo cp -i /etc/kubernetes/admin.conf <span class="nv">$HOME</span>/.kube/config
+
+sudo chown <span class="k">$(</span>id -u<span class="k">)</span>:<span class="k">$(</span>id -g<span class="k">)</span> <span class="nv">$HOME</span>/.kube/config
+</pre></div>
+
+<h2 id="upgrade">Upgrade<a class="headerlink" href="#upgrade" title="Permanent link">&para;</a></h2>
+<h3 id="ubuntu_2">Ubuntu<a class="headerlink" href="#ubuntu_2" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>kubectl version --short
+
+<span class="c1"># Release the hold on versions of kubeadm and kubelet</span>
+sudo apt-mark unhold kubeadm kubelet
+
+sudo apt install -y <span class="nv">kubeadm</span><span class="o">=</span><span class="m">1</span>.14.1-00
+sudo apt-mark hold kubeadm
+kubeadm version
+
+sudo kubeadm upgrade plan
+sudo kubeadm upgrade apply v1.14.1
+
+sudo apt-mark unhold kubectl
+sudo apt install -y <span class="nv">kubectl</span><span class="o">=</span><span class="m">1</span>.14.1-00
+sudo apt-mark hold kubectl
+
+sudo apt-mark unhold kubelet
+sudo apt install -y <span class="nv">kubelet</span><span class="o">=</span><span class="m">1</span>.14.1-00
+sudo apt-mark hold kubelet
+</pre></div>
+
+<h2 id="maintenance">Maintenance<a class="headerlink" href="#maintenance" title="Permanent link">&para;</a></h2>
+<h3 id="evict-pods">Evict Pods<a class="headerlink" href="#evict-pods" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1"># Evict the pods on a node</span>
+kubectl drain <span class="o">[</span>node_name<span class="o">]</span> --ignore-daemonsets
+
+kubectl get nodes -w
+
+<span class="c1"># Rollback - Schedule pods to the node after maintenance is complete</span>
+kubectl uncordon <span class="o">[</span>node_name<span class="o">]</span>
+</pre></div>
+
+<h3 id="delete-node">Delete Node<a class="headerlink" href="#delete-node" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>kubectl delete node <span class="o">[</span>node_name<span class="o">]</span>
+sudo kubeadm token generate
+
+<span class="c1"># Print the kubeadm join command to join a node to the cluster</span>
+sudo kubeadm token create <span class="o">[</span>token_name<span class="o">]</span> --ttl 2h --print-join-command
+</pre></div>
+
+<h3 id="taint">Taint<a class="headerlink" href="#taint" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>kubectl taint node &lt;node_name&gt; node-type<span class="o">=</span>prod:NoSchedule
+</pre></div>
+
+<h4 id="pod-with-toleration">Pod with Toleration<a class="headerlink" href="#pod-with-toleration" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="nt">metadata</span><span class="p">:</span>
+ <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">prod</span>
+<span class="nt">spec</span><span class="p">:</span>
+ <span class="nt">replicas</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+ <span class="nt">selector</span><span class="p">:</span>
+   <span class="nt">matchLabels</span><span class="p">:</span>
+     <span class="nt">app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">prod</span>
+ <span class="nt">template</span><span class="p">:</span>
+   <span class="nt">metadata</span><span class="p">:</span>
+     <span class="nt">labels</span><span class="p">:</span>
+       <span class="nt">app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">prod</span>
+   <span class="nt">spec</span><span class="p">:</span>
+     <span class="nt">containers</span><span class="p">:</span>
+     <span class="p p-Indicator">-</span> <span class="nt">args</span><span class="p">:</span>
+       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sleep</span>
+       <span class="p p-Indicator">-</span> <span class="s">&quot;3600&quot;</span>
+       <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">busybox</span>
+       <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">main</span>
+     <span class="nt">tolerations</span><span class="p">:</span>
+     <span class="p p-Indicator">-</span> <span class="nt">key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">node-type</span>
+       <span class="nt">operator</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Equal</span>
+       <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">prod</span>
+       <span class="nt">effect</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">NoSchedule</span>
+</pre></div>
+
+<h2 id="autocomplete">Autocomplete<a class="headerlink" href="#autocomplete" title="Permanent link">&para;</a></h2>
+<h3 id="redhat_3">Redhat<a class="headerlink" href="#redhat_3" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1"># Enable Epel Repo</span>
+sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo yum-config-manager --enable epel
+
+<span class="c1"># Instal bash completion</span>
+yum install bash-completion bash-completion-extras
+
+vi /.bashrc <span class="c1"># Add Following lines</span>
+<span class="c1"># alias k=kubectl</span>
+<span class="c1"># source &lt;(kubectl completion bash | sed s/kubectl/k/g)</span>
+</pre></div>
+
+<h2 id="kubectl">Kubectl<a class="headerlink" href="#kubectl" title="Permanent link">&para;</a></h2>
+<h3 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>wget https://storage.googleapis.com/kubernetes-release/release/v1.10.2/bin/linux/amd64/kubectl
+chmod +x kubectl
+sudo mv kubectl /usr/local/bin/
+kubectl version --client
+</pre></div>
+
+<h3 id="set-remote">Set Remote<a class="headerlink" href="#set-remote" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>kubectl config set-cluster kubernetes-the-hard-way <span class="se">\</span>
+  --certificate-authority<span class="o">=</span>ca.pem <span class="se">\</span>
+  --embed-certs<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+  --server<span class="o">=</span>https://localhost:6443
+
+kubectl config set-credentials admin <span class="se">\</span>
+  --client-certificate<span class="o">=</span>admin.pem <span class="se">\</span>
+  --client-key<span class="o">=</span>admin-key.pem
+
+kubectl config set-context kubernetes-the-hard-way <span class="se">\</span>
+  --cluster<span class="o">=</span>kubernetes-the-hard-way <span class="se">\</span>
+  --user<span class="o">=</span>admin
+
+kubectl config use-context kubernetes-the-hard-way
+</pre></div>
+
+<h3 id="insecure">Insecure<a class="headerlink" href="#insecure" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>File:</strong> $HOME/.kube/config</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">cluster</span><span class="p">:</span>
+    <span class="nt">insecure-skip-tls-verify</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+
+<h3 id="api-resources">Api Resources<a class="headerlink" href="#api-resources" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>kubectl api-resources -o name
+</pre></div>
+
+<h3 id="kube-config">Kube Config<a class="headerlink" href="#kube-config" title="Permanent link">&para;</a></h3>
+<h4 id="generate-kube-configs">Generate Kube Configs<a class="headerlink" href="#generate-kube-configs" title="Permanent link">&para;</a></h4>
+<p><a href="/containers/kubernetes/admin/security/#tls-certficates">See How Generate TLS Certificates</a></p>
+<div class="codehilite"><pre><span></span><span class="c1"># Create an environment variable to store the address of the Kubernetes API, and set it to the private IP of your load balancer cloud server:</span>
+<span class="nv">KUBERNETES_ADDRESS</span><span class="o">=</span>&lt;load balancer private ip&gt;
+
+<span class="c1"># Generate a kubelet kubeconfig for each worker node:</span>
+<span class="k">for</span> instance in &lt;worker <span class="m">1</span> hostname&gt; &lt;worker <span class="m">2</span> hostname&gt;<span class="p">;</span> <span class="k">do</span>
+  kubectl config set-cluster kubernetes-the-hard-way <span class="se">\</span>
+    --certificate-authority<span class="o">=</span>ca.pem <span class="se">\</span>
+    --embed-certs<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+    --server<span class="o">=</span>https://<span class="si">${</span><span class="nv">KUBERNETES_ADDRESS</span><span class="si">}</span>:6443 <span class="se">\</span>
+    --kubeconfig<span class="o">=</span><span class="si">${</span><span class="nv">instance</span><span class="si">}</span>.kubeconfig
+
+  kubectl config set-credentials system:node:<span class="si">${</span><span class="nv">instance</span><span class="si">}</span> <span class="se">\</span>
+    --client-certificate<span class="o">=</span><span class="si">${</span><span class="nv">instance</span><span class="si">}</span>.pem <span class="se">\</span>
+    --client-key<span class="o">=</span><span class="si">${</span><span class="nv">instance</span><span class="si">}</span>-key.pem <span class="se">\</span>
+    --embed-certs<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+    --kubeconfig<span class="o">=</span><span class="si">${</span><span class="nv">instance</span><span class="si">}</span>.kubeconfig
+
+  kubectl config set-context default <span class="se">\</span>
+    --cluster<span class="o">=</span>kubernetes-the-hard-way <span class="se">\</span>
+    --user<span class="o">=</span>system:node:<span class="si">${</span><span class="nv">instance</span><span class="si">}</span> <span class="se">\</span>
+    --kubeconfig<span class="o">=</span><span class="si">${</span><span class="nv">instance</span><span class="si">}</span>.kubeconfig
+
+  kubectl config use-context default --kubeconfig<span class="o">=</span><span class="si">${</span><span class="nv">instance</span><span class="si">}</span>.kubeconfig
+<span class="k">done</span>
+
+<span class="c1"># Generate a kube-proxy kubeconfig</span>
+<span class="o">{</span>
+  kubectl config set-cluster kubernetes-the-hard-way <span class="se">\</span>
+    --certificate-authority<span class="o">=</span>ca.pem <span class="se">\</span>
+    --embed-certs<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+    --server<span class="o">=</span>https://<span class="si">${</span><span class="nv">KUBERNETES_ADDRESS</span><span class="si">}</span>:6443 <span class="se">\</span>
+    --kubeconfig<span class="o">=</span>kube-proxy.kubeconfig
+
+  kubectl config set-credentials system:kube-proxy <span class="se">\</span>
+    --client-certificate<span class="o">=</span>kube-proxy.pem <span class="se">\</span>
+    --client-key<span class="o">=</span>kube-proxy-key.pem <span class="se">\</span>
+    --embed-certs<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+    --kubeconfig<span class="o">=</span>kube-proxy.kubeconfig
+
+  kubectl config set-context default <span class="se">\</span>
+    --cluster<span class="o">=</span>kubernetes-the-hard-way <span class="se">\</span>
+    --user<span class="o">=</span>system:kube-proxy <span class="se">\</span>
+    --kubeconfig<span class="o">=</span>kube-proxy.kubeconfig
+
+  kubectl config use-context default --kubeconfig<span class="o">=</span>kube-proxy.kubeconfig
+<span class="o">}</span>
+
+<span class="c1"># Generate a kube-controller-manager kubeconfig</span>
+<span class="o">{</span>
+  kubectl config set-cluster kubernetes-the-hard-way <span class="se">\</span>
+    --certificate-authority<span class="o">=</span>ca.pem <span class="se">\</span>
+    --embed-certs<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+    --server<span class="o">=</span>https://127.0.0.1:6443 <span class="se">\</span>
+    --kubeconfig<span class="o">=</span>kube-controller-manager.kubeconfig
+
+  kubectl config set-credentials system:kube-controller-manager <span class="se">\</span>
+    --client-certificate<span class="o">=</span>kube-controller-manager.pem <span class="se">\</span>
+    --client-key<span class="o">=</span>kube-controller-manager-key.pem <span class="se">\</span>
+    --embed-certs<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+    --kubeconfig<span class="o">=</span>kube-controller-manager.kubeconfig
+
+  kubectl config set-context default <span class="se">\</span>
+    --cluster<span class="o">=</span>kubernetes-the-hard-way <span class="se">\</span>
+    --user<span class="o">=</span>system:kube-controller-manager <span class="se">\</span>
+    --kubeconfig<span class="o">=</span>kube-controller-manager.kubeconfig
+
+  kubectl config use-context default --kubeconfig<span class="o">=</span>kube-controller-manager.kubeconfig
+<span class="o">}</span>
+
+<span class="c1"># Generate a kube-scheduler kubeconfig</span>
+<span class="o">{</span>
+  kubectl config set-cluster kubernetes-the-hard-way <span class="se">\</span>
+    --certificate-authority<span class="o">=</span>ca.pem <span class="se">\</span>
+    --embed-certs<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+    --server<span class="o">=</span>https://127.0.0.1:6443 <span class="se">\</span>
+    --kubeconfig<span class="o">=</span>kube-scheduler.kubeconfig
+
+  kubectl config set-credentials system:kube-scheduler <span class="se">\</span>
+    --client-certificate<span class="o">=</span>kube-scheduler.pem <span class="se">\</span>
+    --client-key<span class="o">=</span>kube-scheduler-key.pem <span class="se">\</span>
+    --embed-certs<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+    --kubeconfig<span class="o">=</span>kube-scheduler.kubeconfig
+
+  kubectl config set-context default <span class="se">\</span>
+    --cluster<span class="o">=</span>kubernetes-the-hard-way <span class="se">\</span>
+    --user<span class="o">=</span>system:kube-scheduler <span class="se">\</span>
+    --kubeconfig<span class="o">=</span>kube-scheduler.kubeconfig
+
+  kubectl config use-context default --kubeconfig<span class="o">=</span>kube-scheduler.kubeconfig
+<span class="o">}</span>
+
+<span class="c1"># Generate an admin kubeconfig</span>
+<span class="o">{</span>
+  kubectl config set-cluster kubernetes-the-hard-way <span class="se">\</span>
+    --certificate-authority<span class="o">=</span>ca.pem <span class="se">\</span>
+    --embed-certs<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+    --server<span class="o">=</span>https://127.0.0.1:6443 <span class="se">\</span>
+    --kubeconfig<span class="o">=</span>admin.kubeconfig
+
+  kubectl config set-credentials admin <span class="se">\</span>
+    --client-certificate<span class="o">=</span>admin.pem <span class="se">\</span>
+    --client-key<span class="o">=</span>admin-key.pem <span class="se">\</span>
+    --embed-certs<span class="o">=</span><span class="nb">true</span> <span class="se">\</span>
+    --kubeconfig<span class="o">=</span>admin.kubeconfig
+
+  kubectl config set-context default <span class="se">\</span>
+    --cluster<span class="o">=</span>kubernetes-the-hard-way <span class="se">\</span>
+    --user<span class="o">=</span>admin <span class="se">\</span>
+    --kubeconfig<span class="o">=</span>admin.kubeconfig
+
+  kubectl config use-context default --kubeconfig<span class="o">=</span>admin.kubeconfig
+<span class="o">}</span>
+</pre></div>
+
+<h4 id="move-kubeconfig-files-to-the-worker-nodes">Move kubeconfig files to the worker nodes:<a class="headerlink" href="#move-kubeconfig-files-to-the-worker-nodes" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span>scp &lt;worker <span class="m">1</span> hostname&gt;.kubeconfig kube-proxy.kubeconfig user@&lt;worker <span class="m">1</span> public IP&gt;:~/
+scp &lt;worker <span class="m">2</span> hostname&gt;.kubeconfig kube-proxy.kubeconfig user@&lt;worker <span class="m">2</span> public IP&gt;:~/
+</pre></div>
+
+<h4 id="move-kubeconfig-files-to-the-master-nodes">Move kubeconfig files to the master nodes:<a class="headerlink" href="#move-kubeconfig-files-to-the-master-nodes" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span>scp admin.kubeconfig kube-controller-manager.kubeconfig kube-scheduler.kubeconfig user@&lt;master <span class="m">1</span> public IP&gt;:~/
+scp admin.kubeconfig kube-controller-manager.kubeconfig kube-scheduler.kubeconfig user@&lt;master <span class="m">2</span> public IP&gt;:~/
+</pre></div>
+
+<h2 id="data-encryption-config">Data Encryption Config<a class="headerlink" href="#data-encryption-config" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="c1"># Generate the Kubernetes Data encrpytion config file containing the encrpytion key:</span>
+<span class="nb">export</span> <span class="nv">ENCRYPTION_KEY</span><span class="o">=</span><span class="k">$(</span>head -c <span class="m">32</span> /dev/urandom <span class="p">|</span> base64<span class="k">)</span>
+
+cat &gt; encryption-config.yaml <span class="s">&lt;&lt; EOF</span>
+<span class="s">kind: EncryptionConfig</span>
+<span class="s">apiVersion: v1</span>
+<span class="s">resources:</span>
+<span class="s">  - resources:</span>
+<span class="s">      - secrets</span>
+<span class="s">    providers:</span>
+<span class="s">      - aescbc:</span>
+<span class="s">          keys:</span>
+<span class="s">            - name: key1</span>
+<span class="s">              secret: ${ENCRYPTION_KEY}</span>
+<span class="s">      - identity: {}</span>
+<span class="s">EOF</span>
+
+<span class="c1"># Copy the file to both master servers:</span>
+scp encryption-config.yaml user@&lt;master <span class="m">1</span> public ip&gt;:~/
+scp encryption-config.yaml user@&lt;master <span class="m">2</span> public ip&gt;:~/
+</pre></div>
+
+<h2 id="loadbalancer">LoadBalancer<a class="headerlink" href="#loadbalancer" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Setting UP</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="c1"># Here are the commands you can use to set up the nginx load balancer. Run these on the server that you have designated as your load balancer server:</span>
+sudo apt-get install -y nginx
+sudo systemctl <span class="nb">enable</span> nginx
+sudo mkdir -p /etc/nginx/tcpconf.d
+sudo vi /etc/nginx/nginx.conf
+
+<span class="c1"># Add the following to the end of nginx.conf:</span>
+include /etc/nginx/tcpconf.d/*<span class="p">;</span>
+
+<span class="c1"># Set up some environment variables for the lead balancer config file:</span>
+<span class="nb">export</span> <span class="nv">CONTROLLER0_IP</span><span class="o">=</span>&lt;controller <span class="m">0</span> private ip&gt;
+<span class="nb">export</span> <span class="nv">CONTROLLER1_IP</span><span class="o">=</span>&lt;controller <span class="m">1</span> private ip&gt;
+
+<span class="c1"># Create the load balancer nginx config file:</span>
+cat <span class="s">&lt;&lt; EOF | sudo tee /etc/nginx/tcpconf.d/kubernetes.conf</span>
+<span class="s">stream {</span>
+<span class="s">    upstream kubernetes {</span>
+<span class="s">        server $CONTROLLER0_IP:6443;</span>
+<span class="s">        server $CONTROLLER1_IP:6443;</span>
+<span class="s">    }</span>
+
+<span class="s">    server {</span>
+<span class="s">        listen 6443;</span>
+<span class="s">        listen 443;</span>
+<span class="s">        proxy_pass kubernetes;</span>
+<span class="s">    }</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+
+<span class="c1"># Reload the nginx configuration:</span>
+sudo nginx -s reload
+
+<span class="c1"># You can verify that the load balancer is working like so:</span>
+curl -k https://localhost:6443/version
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../../aws/security/acm/" title="ACM" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                ACM
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../etcd/" title="Etcd" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Etcd
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 Fabio Santos
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../../assets/javascripts/application.dc02f8ce.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
+      
+        <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

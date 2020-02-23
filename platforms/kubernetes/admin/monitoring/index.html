@@ -1,0 +1,2412 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="My Docs">
+      
+      
+      
+        <meta name="author" content="Fábio Santos">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
+    
+    
+      
+        <title>Monitoring - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../../../assets/javascripts/modernizr.01ccdecf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="https://cdn.rawgit.com/knsv/mermaid/0.5.6/dist/mermaid.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#monitoring" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../../.." title="My Docs" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              My Docs
+            </span>
+            <span class="md-header-nav__topic">
+              Monitoring
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../../.." title="Index" class="md-tabs__link">
+        Index
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../aws/compute/ec2/" title="Platforms" class="md-tabs__link">
+          Platforms
+        </a>
+      
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../databases/elasticsearch/search/" title="Databases" class="md-tabs__link">
+          Databases
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../developer/python/packages/" title="Developer" class="md-tabs__link">
+          Developer
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../../.." title="My Docs" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../.." title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Platforms
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Platforms
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      AWS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        AWS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-1" type="checkbox" id="nav-2-1-1">
+    
+    <label class="md-nav__link" for="nav-2-1-1">
+      Compute
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-1">
+        Compute
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/compute/ec2/" title="EC2" class="md-nav__link">
+      EC2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/compute/ebs/" title="EBS" class="md-nav__link">
+      EBS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/compute/elb/" title="ELB" class="md-nav__link">
+      ELB
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-2" type="checkbox" id="nav-2-1-2">
+    
+    <label class="md-nav__link" for="nav-2-1-2">
+      Severless
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-2">
+        Severless
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/serverless/lambda/" title="Lambda" class="md-nav__link">
+      Lambda
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/serverless/cognito/" title="Cognito" class="md-nav__link">
+      Cognito
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-3" type="checkbox" id="nav-2-1-3">
+    
+    <label class="md-nav__link" for="nav-2-1-3">
+      Databases
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-3">
+        Databases
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/databases/rds/" title="RDS" class="md-nav__link">
+      RDS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/databases/dynamodb/" title="DynamoDB" class="md-nav__link">
+      DynamoDB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/databases/elasticache/" title="Elasticache" class="md-nav__link">
+      Elasticache
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/databases/redshift/" title="Redshift" class="md-nav__link">
+      Redshift
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-4" type="checkbox" id="nav-2-1-4">
+    
+    <label class="md-nav__link" for="nav-2-1-4">
+      DevOps
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-4">
+        DevOps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/devops/cloudwatch/" title="CloudWatch" class="md-nav__link">
+      CloudWatch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/devops/cloudformation/" title="Cloudformation" class="md-nav__link">
+      Cloudformation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-5" type="checkbox" id="nav-2-1-5">
+    
+    <label class="md-nav__link" for="nav-2-1-5">
+      Security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-5">
+        Security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/security/acm/" title="ACM" class="md-nav__link">
+      ACM
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Kubernetes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Kubernetes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2-1" type="checkbox" id="nav-2-2-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-2-1">
+      Admin
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-2-1">
+        Admin
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../admin/" title="Administrator" class="md-nav__link">
+      Administrator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../etcd/" title="Etcd" class="md-nav__link">
+      Etcd
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Monitoring
+      </label>
+    
+    <a href="./" title="Monitoring" class="md-nav__link md-nav__link--active">
+      Monitoring
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cluster-components" title="Cluster Components" class="md-nav__link">
+    Cluster Components
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metrics-server" title="Metrics Server" class="md-nav__link">
+    Metrics Server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" title="Applications" class="md-nav__link">
+    Applications
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liveness-probe" title="Liveness Probe" class="md-nav__link">
+    Liveness Probe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readiness-probe" title="Readiness Probe" class="md-nav__link">
+    Readiness Probe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logs" title="Logs" class="md-nav__link">
+    Logs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cluster" title="Cluster" class="md-nav__link">
+    Cluster
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dirs" title="Dirs" class="md-nav__link">
+    Dirs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sidecar-container" title="SideCar Container" class="md-nav__link">
+    SideCar Container
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application" title="Application" class="md-nav__link">
+    Application
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#applications_1" title="Applications" class="md-nav__link">
+    Applications
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-termination-reason" title="Use Termination Reason" class="md-nav__link">
+    Use Termination Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#healthz" title="Healthz" class="md-nav__link">
+    Healthz
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps" title="Steps" class="md-nav__link">
+    Steps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster_1" title="Cluster" class="md-nav__link">
+    Cluster
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worker-node" title="Worker Node" class="md-nav__link">
+    Worker Node
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#networking" title="Networking" class="md-nav__link">
+    Networking
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dns" title="DNS" class="md-nav__link">
+    DNS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kube-proxy" title="Kube-Proxy" class="md-nav__link">
+    Kube-Proxy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-cni-plugin" title="Change CNI Plugin" class="md-nav__link">
+    Change CNI Plugin
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smoke-testing" title="Smoke Testing" class="md-nav__link">
+    Smoke Testing
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-encryption" title="Data Encryption" class="md-nav__link">
+    Data Encryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployments" title="Deployments" class="md-nav__link">
+    Deployments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-forwarding" title="Port Forwarding" class="md-nav__link">
+    Port Forwarding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logs_1" title="Logs" class="md-nav__link">
+    Logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exec" title="Exec" class="md-nav__link">
+    Exec
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services" title="Services" class="md-nav__link">
+    Services
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#untrusted-workloads" title="Untrusted Workloads" class="md-nav__link">
+    Untrusted Workloads
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../networking/" title="Networking" class="md-nav__link">
+      Networking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../hardway/" title="Hardway" class="md-nav__link">
+      Hardway
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kops/" title="Kops" class="md-nav__link">
+      Kops
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2-2" type="checkbox" id="nav-2-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2-2">
+      Developer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-2-2">
+        Developer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/pods/" title="Pods" class="md-nav__link">
+      Pods
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/daemonsets/" title="DaemonSets" class="md-nav__link">
+      DaemonSets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/deployments/" title="Deployments" class="md-nav__link">
+      Deployments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/ingress/" title="Ingress" class="md-nav__link">
+      Ingress
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/jobs/" title="Jobs" class="md-nav__link">
+      Jobs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/volumes/" title="Volumes" class="md-nav__link">
+      Volumes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/replicasets/" title="Replicasets" class="md-nav__link">
+      Replicasets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/secrets_configmaps/" title="Secrets&ConfigMaps" class="md-nav__link">
+      Secrets&ConfigMaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/services/" title="Services" class="md-nav__link">
+      Services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/statefulsets/" title="StatefulSets" class="md-nav__link">
+      StatefulSets
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Unix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        Unix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/commands/" title="Commands" class="md-nav__link">
+      Commands
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/disks/" title="Disks" class="md-nav__link">
+      Disks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/networking/" title="Networking" class="md-nav__link">
+      Networking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/redhat/" title="Redhat" class="md-nav__link">
+      Redhat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/debian/" title="Debian" class="md-nav__link">
+      Debian
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/archlinux/" title="Archlinux" class="md-nav__link">
+      Archlinux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/virsh/" title="Virsh" class="md-nav__link">
+      Virsh
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Databases
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Databases
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      ElasticSearch
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        ElasticSearch
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/search/" title="Search" class="md-nav__link">
+      Search
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/indices/" title="Indices" class="md-nav__link">
+      Indices
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/cat/" title="Cat" class="md-nav__link">
+      Cat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/beat/" title="Beat" class="md-nav__link">
+      Beat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/kibana/" title="Kibana" class="md-nav__link">
+      Kibana
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/cluster/" title="Cluster" class="md-nav__link">
+      Cluster
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/nodes/" title="Nodes" class="md-nav__link">
+      Nodes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/snapshots/" title="Snapshots" class="md-nav__link">
+      Snapshots
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Developer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Developer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      Python
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../developer/python/packages/" title="Packages" class="md-nav__link">
+      Packages
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../developer/ciscoAci/cobra/" title="Cisco ACI" class="md-nav__link">
+      Cisco ACI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      RobotFramework
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        RobotFramework
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../developer/robotframework/gettingstarted/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../developer/robotframework/ddd/" title="Data-Driver" class="md-nav__link">
+      Data-Driver
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../developer/robotframework/pom/" title="Page-Object Model" class="md-nav__link">
+      Page-Object Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../developer/robotframework/robotfile/" title="RobotFile" class="md-nav__link">
+      RobotFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../developer/robotframework/selenium/" title="Selenium" class="md-nav__link">
+      Selenium
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cluster-components" title="Cluster Components" class="md-nav__link">
+    Cluster Components
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metrics-server" title="Metrics Server" class="md-nav__link">
+    Metrics Server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications" title="Applications" class="md-nav__link">
+    Applications
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liveness-probe" title="Liveness Probe" class="md-nav__link">
+    Liveness Probe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readiness-probe" title="Readiness Probe" class="md-nav__link">
+    Readiness Probe
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logs" title="Logs" class="md-nav__link">
+    Logs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cluster" title="Cluster" class="md-nav__link">
+    Cluster
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dirs" title="Dirs" class="md-nav__link">
+    Dirs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sidecar-container" title="SideCar Container" class="md-nav__link">
+    SideCar Container
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application" title="Application" class="md-nav__link">
+    Application
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#applications_1" title="Applications" class="md-nav__link">
+    Applications
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#use-termination-reason" title="Use Termination Reason" class="md-nav__link">
+    Use Termination Reason
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#healthz" title="Healthz" class="md-nav__link">
+    Healthz
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps" title="Steps" class="md-nav__link">
+    Steps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster_1" title="Cluster" class="md-nav__link">
+    Cluster
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worker-node" title="Worker Node" class="md-nav__link">
+    Worker Node
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#networking" title="Networking" class="md-nav__link">
+    Networking
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dns" title="DNS" class="md-nav__link">
+    DNS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kube-proxy" title="Kube-Proxy" class="md-nav__link">
+    Kube-Proxy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-cni-plugin" title="Change CNI Plugin" class="md-nav__link">
+    Change CNI Plugin
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#smoke-testing" title="Smoke Testing" class="md-nav__link">
+    Smoke Testing
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-encryption" title="Data Encryption" class="md-nav__link">
+    Data Encryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployments" title="Deployments" class="md-nav__link">
+    Deployments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-forwarding" title="Port Forwarding" class="md-nav__link">
+    Port Forwarding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logs_1" title="Logs" class="md-nav__link">
+    Logs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exec" title="Exec" class="md-nav__link">
+    Exec
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#services" title="Services" class="md-nav__link">
+    Services
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#untrusted-workloads" title="Untrusted Workloads" class="md-nav__link">
+    Untrusted Workloads
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="monitoring">Monitoring<a class="headerlink" href="#monitoring" title="Permanent link">&para;</a></h1>
+<h2 id="cluster-components">Cluster Components<a class="headerlink" href="#cluster-components" title="Permanent link">&para;</a></h2>
+<h3 id="metrics-server">Metrics Server<a class="headerlink" href="#metrics-server" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>git clone https://github.com/linuxacademy/metrics-server
+kubectl apply -f ~/metrics-server/deploy/1.8+/
+
+<span class="c1"># Get a response from the metrics server API:</span>
+kubectl get --raw /apis/metrics.k8s.io/
+
+kubectl top node
+kubectl top pods
+kubectl top pods --all-namespaces
+kubectl top pods -n kube-system
+kubectl top pod -l <span class="nv">run</span><span class="o">=</span>pod-with-defaults
+kubectl top pod pod-with-defaults
+
+<span class="c1"># Get the CPU and memory of the containers inside the pod</span>
+kubectl top pods group-context --containers
+</pre></div>
+
+<h2 id="applications">Applications<a class="headerlink" href="#applications" title="Permanent link">&para;</a></h2>
+<h3 id="liveness-probe">Liveness Probe<a class="headerlink" href="#liveness-probe" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">liveness</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">containers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">linuxacademycontent/kubeserve</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">kubeserve</span>
+    <span class="nt">livenessProbe</span><span class="p">:</span>
+      <span class="nt">httpGet</span><span class="p">:</span>
+        <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/</span>
+        <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">80</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">my-liveness-pod</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">containers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">myapp-container</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">busybox</span>
+    <span class="nt">command</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;sh&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;-c&#39;</span><span class="p p-Indicator">,</span> <span class="s">&quot;echo</span><span class="nv"> </span><span class="s">Hello,</span><span class="nv"> </span><span class="s">Kubernetes!</span><span class="nv"> </span><span class="s">&amp;&amp;</span><span class="nv"> </span><span class="s">sleep</span><span class="nv"> </span><span class="s">3600&quot;</span><span class="p p-Indicator">]</span>
+    <span class="nt">livenessProbe</span><span class="p">:</span>
+      <span class="nt">exec</span><span class="p">:</span>
+        <span class="nt">command</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">echo</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">testing</span>
+      <span class="nt">initialDelaySeconds</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+      <span class="nt">periodSeconds</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+</pre></div>
+
+<h3 id="readiness-probe">Readiness Probe<a class="headerlink" href="#readiness-probe" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Service</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">LoadBalancer</span>
+  <span class="nt">ports</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">80</span>
+    <span class="nt">targetPort</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">80</span>
+  <span class="nt">selector</span><span class="p">:</span>
+    <span class="nt">app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="nn">---</span>
+<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx</span>
+  <span class="nt">labels</span><span class="p">:</span>
+    <span class="nt">app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">containers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx</span>
+    <span class="nt">readinessProbe</span><span class="p">:</span>
+      <span class="nt">httpGet</span><span class="p">:</span>
+        <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/</span>
+        <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">80</span>
+      <span class="nt">initialDelaySeconds</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+      <span class="nt">periodSeconds</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="nn">---</span>
+<span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginxpd</span>
+  <span class="nt">labels</span><span class="p">:</span>
+    <span class="nt">app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">containers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx:191</span>
+    <span class="nt">readinessProbe</span><span class="p">:</span>
+      <span class="nt">httpGet</span><span class="p">:</span>
+        <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/</span>
+        <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">80</span>
+      <span class="nt">initialDelaySeconds</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+      <span class="nt">periodSeconds</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>
+</pre></div>
+
+<h2 id="logs">Logs<a class="headerlink" href="#logs" title="Permanent link">&para;</a></h2>
+<h3 id="cluster">Cluster<a class="headerlink" href="#cluster" title="Permanent link">&para;</a></h3>
+<h4 id="dirs">Dirs<a class="headerlink" href="#dirs" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>The directory where the continainer logs reside</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span>ls /var/log/containers
+</pre></div>
+
+<ul>
+<li><strong>The directory where kubelet stores its logs</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span>ls /var/log
+</pre></div>
+
+<h4 id="sidecar-container">SideCar Container<a class="headerlink" href="#sidecar-container" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>The YAML for a sidecar container that will tail the logs for each type</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">counter</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">containers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">count</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">busybox</span>
+    <span class="nt">args</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/bin/sh</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-c</span>
+    <span class="p p-Indicator">-</span> <span class="p p-Indicator">&gt;</span>
+      <span class="no">i=0;</span>
+      <span class="no">while true;</span>
+      <span class="no">do</span>
+        <span class="no">echo &quot;$i: $(date)&quot; &gt;&gt; /var/log/1.log;</span>
+        <span class="no">echo &quot;$(date) INFO $i&quot; &gt;&gt; /var/log/2.log;</span>
+        <span class="no">i=$((i+1));</span>
+        <span class="no">sleep 1;</span>
+      <span class="no">done</span>
+    <span class="nt">volumeMounts</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">varlog</span>
+      <span class="nt">mountPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/var/log</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">count-log-1</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">busybox</span>
+    <span class="nt">args</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">/bin/sh</span><span class="p p-Indicator">,</span> <span class="nv">-c</span><span class="p p-Indicator">,</span> <span class="s">&#39;tail</span><span class="nv"> </span><span class="s">-n+1</span><span class="nv"> </span><span class="s">-f</span><span class="nv"> </span><span class="s">/var/log/1.log&#39;</span><span class="p p-Indicator">]</span>
+    <span class="nt">volumeMounts</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">varlog</span>
+      <span class="nt">mountPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/var/log</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">count-log-2</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">busybox</span>
+    <span class="nt">args</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">/bin/sh</span><span class="p p-Indicator">,</span> <span class="nv">-c</span><span class="p p-Indicator">,</span> <span class="s">&#39;tail</span><span class="nv"> </span><span class="s">-n+1</span><span class="nv"> </span><span class="s">-f</span><span class="nv"> </span><span class="s">/var/log/2.log&#39;</span><span class="p p-Indicator">]</span>
+    <span class="nt">volumeMounts</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">varlog</span>
+      <span class="nt">mountPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/var/log</span>
+  <span class="nt">volumes</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">varlog</span>
+    <span class="nt">emptyDir</span><span class="p">:</span> <span class="p p-Indicator">{}</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span>kubectl logs counter count-log-1
+kubectl logs counter count-log-2
+</pre></div>
+
+<h3 id="application">Application<a class="headerlink" href="#application" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1"># Get the logs from a pod:</span>
+kubectl logs nginx
+
+<span class="c1"># Get the logs from a specific container on a pod:</span>
+kubectl logs counter -c count-log-1
+
+<span class="c1"># Get the logs from all containers on the pod:</span>
+kubectl logs counter --all-containers<span class="o">=</span><span class="nb">true</span>
+
+<span class="c1"># Get the logs from containers with a certain label:</span>
+kubectl logs -lapp<span class="o">=</span>nginx
+
+<span class="c1"># Get the logs from a previously terminated container within a pod:</span>
+kubectl logs -p -c nginx nginx
+
+<span class="c1"># Stream the logs from a container in a pod:</span>
+kubectl logs -f -c count-log-1 counter
+
+<span class="c1"># Tail the logs to only view a certain number of lines:</span>
+kubectl logs --tail<span class="o">=</span><span class="m">20</span> nginx
+
+<span class="c1"># View the logs from a previous time duration:</span>
+kubectl logs --since<span class="o">=</span>1h nginx
+
+<span class="c1"># View the logs from a container within a pod within a deployment:</span>
+kubectl logs deployment/nginx -c nginx
+
+<span class="c1"># Redirect the output of the logs to a file:</span>
+kubectl logs counter -c count-log-1 &gt; count.log
+</pre></div>
+
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="applications_1">Applications<a class="headerlink" href="#applications_1" title="Permanent link">&para;</a></h3>
+<h4 id="use-termination-reason">Use Termination Reason<a class="headerlink" href="#use-termination-reason" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pod2</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">containers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">busybox</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">main</span>
+    <span class="nt">command</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sh</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">-c</span>
+    <span class="p p-Indicator">-</span> <span class="s">&#39;echo</span><span class="nv"> </span><span class="s">&quot;I</span><span class="se">&#39;&#39;</span><span class="s">ve</span><span class="nv"> </span><span class="s">had</span><span class="nv"> </span><span class="s">enough&quot;</span><span class="nv"> </span><span class="s">&gt;</span><span class="nv"> </span><span class="s">/var/termination-reason</span><span class="nv"> </span><span class="s">;</span><span class="nv"> </span><span class="s">exit</span><span class="nv"> </span><span class="s">1&#39;</span>
+    <span class="nt">terminationMessagePath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/var/termination-reason</span>
+</pre></div>
+
+<h4 id="healthz">Healthz<a class="headerlink" href="#healthz" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Not all pods have healthz configured</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">liveness</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">containers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">linuxacademycontent/candy-service:2</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">kubeserve</span>
+    <span class="nt">livenessProbe</span><span class="p">:</span>
+      <span class="nt">httpGet</span><span class="p">:</span>
+        <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/healthz</span>
+        <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8081</span>
+</pre></div>
+
+<h4 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">kubectl describe po pod2</span>
+<span class="l l-Scalar l-Scalar-Plain">kubectl logs pod-with-defaults</span>
+<span class="l l-Scalar l-Scalar-Plain">kubectl get po pod-with-defaults -o yaml --export &gt; defaults-pod.yaml</span>
+</pre></div>
+
+<h3 id="cluster_1">Cluster<a class="headerlink" href="#cluster_1" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1"># Check the events in the kube-system namespace for errors</span>
+kubectl get events -n kube-system
+
+kubectl logs <span class="o">[</span>kube_scheduler_pod_name<span class="o">]</span> -n kube-system
+
+<span class="c1"># Check the status of the Docker service:</span>
+sudo systemctl status docker
+sudo systemctl <span class="nb">enable</span> docker <span class="o">&amp;&amp;</span> systemctl start docker
+
+<span class="c1"># Check the status of the kubelet service:</span>
+sudo systemctl status kubelet
+sudo systemctl <span class="nb">enable</span> kubelet <span class="o">&amp;&amp;</span> systemctl start kubelet
+
+<span class="c1"># Turn off swap on your machine</span>
+sudo su -
+swapoff -a <span class="o">&amp;&amp;</span> sed -i <span class="s1">&#39;/ swap / s/^/#/&#39;</span> /etc/fstab
+
+<span class="c1"># Check if you have a firewall running:</span>
+sudo systemctl status firewalld
+sudo systemctl disable firewalld <span class="o">&amp;&amp;</span> systemctl stop firewalld
+</pre></div>
+
+<h3 id="worker-node">Worker Node<a class="headerlink" href="#worker-node" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>kubectl get nodes
+kubectl describe nodes chadcrowell2c.mylabserver.com
+
+<span class="c1"># Create New Worker Server</span>
+<span class="c1"># Generate a new token after spinning up a new server:</span>
+sudo kubeadm token generate
+
+<span class="c1"># Create the kubeadm join command for your new worker node:</span>
+<span class="c1"># sudo kubeadm token create [token_name] --ttl 2h --print-join-command</span>
+
+<span class="c1"># View the journalctl logs:</span>
+sudo journalctl -u kubelet
+
+<span class="c1"># View the syslogs:</span>
+sudo more syslog <span class="p">|</span> tail -120 <span class="p">|</span> grep kubelet
+</pre></div>
+
+<h3 id="networking">Networking<a class="headerlink" href="#networking" title="Permanent link">&para;</a></h3>
+<h4 id="dns">DNS<a class="headerlink" href="#dns" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><span class="c1"># Run an interactive busybox pod:</span>
+kubectl run -it --rm --restart<span class="o">=</span>Never busybox --image<span class="o">=</span>busybox:1.28 sh
+
+<span class="c1"># From the pod, check if DNS is resolving hostnames:</span>
+nslookup hostnames
+
+<span class="c1"># From the pod, cat out the /etc/resolv.conf file:</span>
+cat /etc/resolv.conf
+
+<span class="c1"># From the pod, look up the DNS name of the Kubernetes service:</span>
+nslookup kubernetes.default
+nslookup kube-dns.kube-system.svc.cluster.loca
+
+<span class="c1"># Look up a service in your Kubernetes cluster</span>
+nslookup <span class="o">[</span>pod-ip-address<span class="o">]</span>.default.pod.cluster.local
+
+<span class="c1"># Logs Core Dns</span>
+kubectl logs <span class="o">[</span>coredns-pod-name<span class="o">]</span>
+</pre></div>
+
+<h4 id="kube-proxy">Kube-Proxy<a class="headerlink" href="#kube-proxy" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><span class="c1"># View the endpoints for your service:</span>
+kubectl get ep
+
+<span class="c1"># Communicate with the pod directly (without the service):</span>
+wget -qO- <span class="m">10</span>.244.1.6:9376
+
+<span class="c1"># Check if kube-proxy is running on the nodes:</span>
+ps auxw <span class="p">|</span> grep kube-proxy
+
+<span class="c1"># Check if kube-proxy is writing iptables:</span>
+kubectl get services -o wide
+iptables-save <span class="p">|</span> grep hostnames
+sudo iptables-save <span class="p">|</span> grep KUBE <span class="p">|</span> grep &lt;service-name&gt;
+
+<span class="c1"># View the list of kube-system pods:</span>
+kubectl get pods -n kube-system
+
+<span class="c1"># Connect to your kube-proxy pod in the kube-system namespace:</span>
+kubectl <span class="nb">exec</span> -it kube-proxy-cqptg -n kube-system -- sh
+</pre></div>
+
+<h4 id="change-cni-plugin">Change CNI Plugin<a class="headerlink" href="#change-cni-plugin" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><span class="c1"># Delete the flannel CNI plugin:</span>
+kubectl delete -f https://raw.githubusercontent.com/coreos/flannel/bc79dd1505b0c8681ece4de4c0d86c5cd2643275/Documentation/kube-flannel.yml
+
+<span class="c1"># Apply the Weave Net CNI plugin:</span>
+
+kubectl apply -f <span class="s2">&quot;https://cloud.weave.works/k8s/net?k8s-version=</span><span class="k">$(</span>kubectl version <span class="p">|</span> base64 <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span><span class="k">)</span><span class="s2">&quot;</span>
+</pre></div>
+
+<h2 id="smoke-testing">Smoke Testing<a class="headerlink" href="#smoke-testing" title="Permanent link">&para;</a></h2>
+<h3 id="data-encryption">Data Encryption<a class="headerlink" href="#data-encryption" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1"># Create a test secret:</span>
+kubectl create secret generic kubernetes-the-hard-way --from-literal<span class="o">=</span><span class="s2">&quot;mykey=mydata&quot;</span>
+
+<span class="c1"># Log in to one of your master servers, and get the raw data for the test secret from etcd:</span>
+sudo <span class="nv">ETCDCTL_API</span><span class="o">=</span><span class="m">3</span> etcdctl get <span class="se">\</span>
+  --endpoints<span class="o">=</span>https://127.0.0.1:2379 <span class="se">\</span>
+  --cacert<span class="o">=</span>/etc/etcd/ca.pem <span class="se">\</span>
+  --cert<span class="o">=</span>/etc/etcd/kubernetes.pem <span class="se">\</span>
+  --key<span class="o">=</span>/etc/etcd/kubernetes-key.pem<span class="se">\</span>
+  /registry/secrets/default/kubernetes-the-hard-way <span class="p">|</span> hexdump -C
+
+<span class="c1"># Your output should look something like this:</span>
+
+<span class="m">00000000</span>  2f <span class="m">72</span> <span class="m">65</span> <span class="m">67</span> <span class="m">69</span> <span class="m">73</span> <span class="m">74</span> <span class="m">72</span>  <span class="m">79</span> 2f <span class="m">73</span> <span class="m">65</span> <span class="m">63</span> <span class="m">72</span> <span class="m">65</span> <span class="m">74</span>  <span class="p">|</span>/registry/secret<span class="p">|</span>
+<span class="m">00000010</span>  <span class="m">73</span> 2f <span class="m">64</span> <span class="m">65</span> <span class="m">66</span> <span class="m">61</span> <span class="m">75</span> 6c  <span class="m">74</span> 2f 6b <span class="m">75</span> <span class="m">62</span> <span class="m">65</span> <span class="m">72</span> 6e  <span class="p">|</span>s/default/kubern<span class="p">|</span>
+<span class="m">00000020</span>  <span class="m">65</span> <span class="m">74</span> <span class="m">65</span> <span class="m">73</span> 2d <span class="m">74</span> <span class="m">68</span> <span class="m">65</span>  2d <span class="m">68</span> <span class="m">61</span> <span class="m">72</span> <span class="m">64</span> 2d <span class="m">77</span> <span class="m">61</span>  <span class="p">|</span>etes-the-hard-wa<span class="p">|</span>
+<span class="m">00000030</span>  <span class="m">79</span> 0a 6b <span class="m">38</span> <span class="m">73</span> 3a <span class="m">65</span> 6e  <span class="m">63</span> 3a <span class="m">61</span> <span class="m">65</span> <span class="m">73</span> <span class="m">63</span> <span class="m">62</span> <span class="m">63</span>  <span class="p">|</span>y.k8s:enc:aescbc<span class="p">|</span>
+<span class="m">00000040</span>  3a <span class="m">76</span> <span class="m">31</span> 3a 6b <span class="m">65</span> <span class="m">79</span> <span class="m">31</span>  3a <span class="nb">fc</span> <span class="m">21</span> ee dc e5 <span class="m">84</span> 8a  <span class="p">|</span>:v1:key1:.!.....<span class="p">|</span>
+<span class="m">00000050</span>  <span class="m">53</span> 8e fd a9 <span class="m">72</span> a8 <span class="m">75</span> <span class="m">25</span>  <span class="m">65</span> <span class="m">30</span> <span class="m">55</span> 0e <span class="m">72</span> <span class="m">43</span> 1f <span class="m">20</span>  <span class="p">|</span>S...r.u%e0U.rC. <span class="p">|</span>
+<span class="m">00000060</span>  9f <span class="m">07</span> <span class="m">15</span> 4f <span class="m">69</span> 8a <span class="m">79</span> a4  <span class="m">70</span> <span class="m">62</span> e9 ab f9 <span class="m">14</span> <span class="m">93</span> 2e  <span class="p">|</span>...Oi.y.pb......<span class="p">|</span>
+<span class="m">00000070</span>  e5 <span class="m">59</span> 3f ab a7 b2 d8 d6  <span class="m">05</span> <span class="m">84</span> <span class="m">84</span> aa c3 6f 8d 5c  <span class="p">|</span>.Y?..........o.<span class="se">\|</span>
+<span class="m">00000080</span>  <span class="m">09</span> 7a 2f <span class="m">82</span> <span class="m">81</span> b5 d5 ec  ba c7 <span class="m">23</span> <span class="m">34</span> <span class="m">46</span> d9 <span class="m">43</span> <span class="m">02</span>  <span class="p">|</span>.z/.......#4F.C.<span class="p">|</span>
+<span class="m">00000090</span>  <span class="m">88</span> <span class="m">93</span> <span class="m">57</span> <span class="m">26</span> <span class="m">66</span> da 4e 8e  5c <span class="m">24</span> <span class="m">44</span> 6e 3e ec 9c 8e  <span class="p">|</span>..W<span class="p">&amp;</span>f.N.<span class="se">\$</span>Dn&gt;...<span class="p">|</span>
+000000a0  <span class="m">83</span> ff <span class="m">40</span> 9a fb <span class="m">94</span> <span class="m">07</span> 3c  <span class="m">08</span> <span class="m">52</span> 0e <span class="m">77</span> <span class="m">50</span> <span class="m">81</span> c9 d0  <span class="p">|</span>..@....&lt;.R.wP...<span class="p">|</span>
+000000b0  b7 <span class="m">30</span> <span class="m">68</span> ba b1 b3 <span class="m">26</span> eb  b1 9f 3f f1 d7 <span class="m">76</span> <span class="m">86</span> <span class="m">09</span>  <span class="p">|</span>.0h...<span class="p">&amp;</span>...?..v..<span class="p">|</span>
+000000c0  d8 <span class="m">14</span> <span class="m">02</span> <span class="m">12</span> <span class="m">09</span> <span class="m">30</span> b0 <span class="m">60</span>  b2 ad dc bb cf f5 <span class="m">77</span> e0  <span class="p">|</span>.....0.<span class="sb">`</span>......w.<span class="p">|</span>
+000000d0  4f 0b 1f <span class="m">74</span> <span class="m">79</span> c1 e7 <span class="m">20</span>  1d <span class="m">32</span> b2 <span class="m">68</span> <span class="m">01</span> <span class="m">19</span> <span class="m">93</span> <span class="nb">fc</span>  <span class="p">|</span>O..ty.. .2.h....<span class="p">|</span>
+000000e0  f5 c8 8b 0b <span class="m">16</span> 7b 4f c2  6a 0a                    <span class="p">|</span>.....<span class="o">{</span>O.j.<span class="p">|</span>
+000000ea
+
+<span class="c1"># Look for k8s:enc:aescbc:v1:key1 on the right of the output to verify that the data is stored in an encrypted format!</span>
+</pre></div>
+
+<h3 id="deployments">Deployments<a class="headerlink" href="#deployments" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1"># Create a a simple nginx deployment:</span>
+kubectl run nginx --image<span class="o">=</span>nginx
+
+<span class="c1"># Verify that the deployment created a pod and that the pod is running:</span>
+kubectl get pods -l <span class="nv">run</span><span class="o">=</span>nginx
+
+<span class="c1"># Verify that the output looks something like this:</span>
+NAME                     READY     STATUS    RESTARTS   AGE
+nginx-65899c769f-9xnqm   <span class="m">1</span>/1       Running   <span class="m">0</span>          30s
+</pre></div>
+
+<h3 id="port-forwarding">Port Forwarding<a class="headerlink" href="#port-forwarding" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1"># First, get the pod name of the nginx pod and store it an an environment variable:</span>
+<span class="nv">POD_NAME</span><span class="o">=</span><span class="k">$(</span>kubectl get pods -l <span class="nv">run</span><span class="o">=</span>nginx -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.items[0].metadata.name}&quot;</span><span class="k">)</span>
+
+<span class="c1"># Forward port 8081 to the nginx pod:</span>
+kubectl port-forward <span class="nv">$POD_NAME</span> <span class="m">8081</span>:80
+
+<span class="c1"># Open up a new terminal on the same machine running the kubectl port-forward command and verify that the port forward works.</span>
+curl --head http://127.0.0.1:8081
+
+<span class="c1"># You should get an http 200 OK response from the nginx pod.</span>
+</pre></div>
+
+<h3 id="logs_1">Logs<a class="headerlink" href="#logs_1" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1"># First, let&#39;s set an environment variable to the name of the nginx pod:</span>
+<span class="nv">POD_NAME</span><span class="o">=</span><span class="k">$(</span>kubectl get pods -l <span class="nv">run</span><span class="o">=</span>nginx -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.items[0].metadata.name}&quot;</span><span class="k">)</span>
+
+<span class="c1"># Get the logs from the nginx pod:</span>
+kubectl logs <span class="nv">$POD_NAME</span>
+
+<span class="c1"># This command should return the nginx pod&#39;s logs. It will look something like this (but there could be more lines):</span>
+<span class="m">127</span>.0.0.1 - - <span class="o">[</span><span class="m">10</span>/Sep/2018:19:29:01 +0000<span class="o">]</span> <span class="s2">&quot;GET / HTTP/1.1&quot;</span> <span class="m">200</span> <span class="m">612</span> <span class="s2">&quot;-&quot;</span> <span class="s2">&quot;curl/7.47.0&quot;</span> <span class="s2">&quot;-&quot;</span>
+</pre></div>
+
+<h3 id="exec">Exec<a class="headerlink" href="#exec" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1"># First, let&#39;s set an environment variable to the name of the nginx pod:</span>
+<span class="nv">POD_NAME</span><span class="o">=</span><span class="k">$(</span>kubectl get pods -l <span class="nv">run</span><span class="o">=</span>nginx -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s2">&quot;{.items[0].metadata.name}&quot;</span><span class="k">)</span>
+
+<span class="c1"># To test kubectl exec, execute a simple nginx -v command inside the nginx pod:</span>
+kubectl <span class="nb">exec</span> -ti <span class="nv">$POD_NAME</span> -- nginx -v
+
+<span class="c1"># This command should return the nginx version output, which should look like this:</span>
+nginx version: nginx/1.15.3
+</pre></div>
+
+<h3 id="services">Services<a class="headerlink" href="#services" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1"># First, create a service to expose the nginx deployment:</span>
+kubectl expose deployment nginx --port <span class="m">80</span> --type NodePort
+
+<span class="c1"># Get the node port assigned to the newly-created service and assign it to an environment variable:</span>
+kubectl get svc
+
+<span class="c1"># The output should look something like this:</span>
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT<span class="o">(</span>S<span class="o">)</span>        AGE
+kubernetes   ClusterIP   <span class="m">10</span>.32.0.1    &lt;none&gt;        <span class="m">443</span>/TCP        20d
+nginx        NodePort    <span class="m">10</span>.32.0.81   &lt;none&gt;        <span class="m">80</span>:32642/TCP   2m
+
+<span class="c1"># Look for the service called nginx in that output. Under PORT(S), look for the second port, listed after 80:. In the example above, it is 32642. That is the node port, so make note of that value since you will need it in a moment.</span>
+<span class="c1"># Next, log in to one of your worker servers and make a request to the service using the node port. Be sure to replace the placeholder with the actual node port:</span>
+
+curl -I localhost:&lt;node port&gt;
+
+<span class="c1"># You should get an http 200 OK response.</span>
+</pre></div>
+
+<h3 id="untrusted-workloads">Untrusted Workloads<a class="headerlink" href="#untrusted-workloads" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1"># First, create an untrusted pod:</span>
+cat <span class="s">&lt;&lt; EOF | kubectl apply -f -</span>
+<span class="s">apiVersion: v1</span>
+<span class="s">kind: Pod</span>
+<span class="s">metadata:</span>
+<span class="s">  name: untrusted</span>
+<span class="s">  annotations:</span>
+<span class="s">    io.kubernetes.cri.untrusted-workload: &quot;true&quot;</span>
+<span class="s">spec:</span>
+<span class="s">  containers:</span>
+<span class="s">    - name: webserver</span>
+<span class="s">      image: gcr.io/hightowerlabs/helloworld:2.0.0</span>
+<span class="s">EOF</span>
+
+<span class="c1"># Make sure that the untrusted pod is running:</span>
+kubectl get pods untrusted -o wide
+
+<span class="c1"># Take note of which worker node the untrusted pod is running on, then log into that worker node.</span>
+
+<span class="c1"># On the worker node, list all of the containers running under gVisor:</span>
+sudo runsc --root  /run/containerd/runsc/k8s.io list
+
+<span class="c1"># Get the pod ID of the untrusted pod and store it in an environment variable:</span>
+<span class="nv">POD_ID</span><span class="o">=</span><span class="k">$(</span>sudo crictl -r unix:///var/run/containerd/containerd.sock <span class="se">\</span>
+  pods --name untrusted -q<span class="k">)</span>
+
+<span class="c1"># Get the container ID of the container running in the untrusted pod and store it in an environment variable:</span>
+<span class="nv">CONTAINER_ID</span><span class="o">=</span><span class="k">$(</span>sudo crictl -r unix:///var/run/containerd/containerd.sock <span class="se">\</span>
+  ps -p <span class="si">${</span><span class="nv">POD_ID</span><span class="si">}</span> -q<span class="k">)</span>
+
+<span class="c1"># Get information about the process running in the container:</span>
+sudo runsc --root /run/containerd/runsc/k8s.io ps <span class="si">${</span><span class="nv">CONTAINER_ID</span><span class="si">}</span>
+
+<span class="c1"># Since we were able to get the process info using runsc, we know that the untrusted container is running securely as expected.</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../etcd/" title="Etcd" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Etcd
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../networking/" title="Networking" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Networking
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 Fabio Santos
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../../assets/javascripts/application.dc02f8ce.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
+      
+        <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

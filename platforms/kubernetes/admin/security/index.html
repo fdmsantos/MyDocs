@@ -1,0 +1,2650 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="My Docs">
+      
+      
+      
+        <meta name="author" content="Fábio Santos">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
+    
+    
+      
+        <title>Security - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../../../assets/javascripts/modernizr.01ccdecf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="https://cdn.rawgit.com/knsv/mermaid/0.5.6/dist/mermaid.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#service-accounts" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../../.." title="My Docs" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              My Docs
+            </span>
+            <span class="md-header-nav__topic">
+              Security
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../../.." title="Index" class="md-tabs__link">
+        Index
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../aws/compute/ec2/" title="Platforms" class="md-tabs__link">
+          Platforms
+        </a>
+      
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../databases/elasticsearch/search/" title="Databases" class="md-tabs__link">
+          Databases
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../developer/python/packages/" title="Developer" class="md-tabs__link">
+          Developer
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../../.." title="My Docs" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../.." title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Platforms
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Platforms
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      AWS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        AWS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-1" type="checkbox" id="nav-2-1-1">
+    
+    <label class="md-nav__link" for="nav-2-1-1">
+      Compute
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-1">
+        Compute
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/compute/ec2/" title="EC2" class="md-nav__link">
+      EC2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/compute/ebs/" title="EBS" class="md-nav__link">
+      EBS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/compute/elb/" title="ELB" class="md-nav__link">
+      ELB
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-2" type="checkbox" id="nav-2-1-2">
+    
+    <label class="md-nav__link" for="nav-2-1-2">
+      Severless
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-2">
+        Severless
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/serverless/lambda/" title="Lambda" class="md-nav__link">
+      Lambda
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/serverless/cognito/" title="Cognito" class="md-nav__link">
+      Cognito
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-3" type="checkbox" id="nav-2-1-3">
+    
+    <label class="md-nav__link" for="nav-2-1-3">
+      Databases
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-3">
+        Databases
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/databases/rds/" title="RDS" class="md-nav__link">
+      RDS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/databases/dynamodb/" title="DynamoDB" class="md-nav__link">
+      DynamoDB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/databases/elasticache/" title="Elasticache" class="md-nav__link">
+      Elasticache
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/databases/redshift/" title="Redshift" class="md-nav__link">
+      Redshift
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-4" type="checkbox" id="nav-2-1-4">
+    
+    <label class="md-nav__link" for="nav-2-1-4">
+      DevOps
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-4">
+        DevOps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/devops/cloudwatch/" title="CloudWatch" class="md-nav__link">
+      CloudWatch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/devops/cloudformation/" title="Cloudformation" class="md-nav__link">
+      Cloudformation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-5" type="checkbox" id="nav-2-1-5">
+    
+    <label class="md-nav__link" for="nav-2-1-5">
+      Security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-5">
+        Security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../aws/security/acm/" title="ACM" class="md-nav__link">
+      ACM
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Kubernetes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Kubernetes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2-1" type="checkbox" id="nav-2-2-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-2-1">
+      Admin
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-2-1">
+        Admin
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../admin/" title="Administrator" class="md-nav__link">
+      Administrator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../etcd/" title="Etcd" class="md-nav__link">
+      Etcd
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../monitoring/" title="Monitoring" class="md-nav__link">
+      Monitoring
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../networking/" title="Networking" class="md-nav__link">
+      Networking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Security
+      </label>
+    
+    <a href="./" title="Security" class="md-nav__link md-nav__link--active">
+      Security
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#service-accounts" title="Service Accounts" class="md-nav__link">
+    Service Accounts
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get" title="Get" class="md-nav__link">
+    Get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create" title="Create" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pod-example" title="Pod Example" class="md-nav__link">
+    Pod Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-the-token-file-from-within-a-pod" title="View the token file from within a pod" class="md-nav__link">
+    View the token file from within a pod
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#users" title="Users" class="md-nav__link">
+    Users
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create_1" title="Create" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roles" title="Roles" class="md-nav__link">
+    Roles
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#role" title="Role" class="md-nav__link">
+    Role
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rolebinding" title="RoleBinding" class="md-nav__link">
+    RoleBinding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cluster-roles" title="Cluster Roles" class="md-nav__link">
+    Cluster Roles
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cluster-role" title="Cluster Role" class="md-nav__link">
+    Cluster Role
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-role-binding" title="Cluster Role Binding" class="md-nav__link">
+    Cluster Role Binding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test" title="Test" class="md-nav__link">
+    Test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tls-certficates" title="TLS Certficates" class="md-nav__link">
+    TLS Certficates
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-cfssl" title="Install cfssl" class="md-nav__link">
+    Install cfssl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-certificate-authority-to-kubernetes" title="Create Certificate Authority to Kubernetes" class="md-nav__link">
+    Create Certificate Authority to Kubernetes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-client-certificates" title="Generating Client Certificates" class="md-nav__link">
+    Generating Client Certificates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-the-kubernetes-api-server-certificate" title="Generating the Kubernetes API Server Certificate" class="md-nav__link">
+    Generating the Kubernetes API Server Certificate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-the-service-account-key-pair" title="Generating the Service Account Key Pair" class="md-nav__link">
+    Generating the Service Account Key Pair
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributing-the-certificate-files" title="Distributing the Certificate Files" class="md-nav__link">
+    Distributing the Certificate Files
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#move-certificate-files-to-the-worker-nodes" title="Move certificate files to the worker nodes:" class="md-nav__link">
+    Move certificate files to the worker nodes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#move-certificate-files-to-the-master-nodes" title="Move certificate files to the Master nodes:" class="md-nav__link">
+    Move certificate files to the Master nodes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-tls-for-applications-not-cluster-only-same-pods" title="Create TLS For Applications (Not Cluster, only same pods)" class="md-nav__link">
+    Create TLS For Applications (Not Cluster, only same pods)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-registry" title="Container Registry" class="md-nav__link">
+    Container Registry
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-contexts" title="Security Contexts" class="md-nav__link">
+    Security Contexts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#persistent-key-value-store" title="Persistent Key Value Store" class="md-nav__link">
+    Persistent Key Value Store
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../hardway/" title="Hardway" class="md-nav__link">
+      Hardway
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../kops/" title="Kops" class="md-nav__link">
+      Kops
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2-2" type="checkbox" id="nav-2-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2-2">
+      Developer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-2-2">
+        Developer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/pods/" title="Pods" class="md-nav__link">
+      Pods
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/daemonsets/" title="DaemonSets" class="md-nav__link">
+      DaemonSets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/deployments/" title="Deployments" class="md-nav__link">
+      Deployments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/ingress/" title="Ingress" class="md-nav__link">
+      Ingress
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/jobs/" title="Jobs" class="md-nav__link">
+      Jobs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/volumes/" title="Volumes" class="md-nav__link">
+      Volumes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/replicasets/" title="Replicasets" class="md-nav__link">
+      Replicasets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/secrets_configmaps/" title="Secrets&ConfigMaps" class="md-nav__link">
+      Secrets&ConfigMaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/services/" title="Services" class="md-nav__link">
+      Services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../developer/statefulsets/" title="StatefulSets" class="md-nav__link">
+      StatefulSets
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Unix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        Unix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/commands/" title="Commands" class="md-nav__link">
+      Commands
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/disks/" title="Disks" class="md-nav__link">
+      Disks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/networking/" title="Networking" class="md-nav__link">
+      Networking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/redhat/" title="Redhat" class="md-nav__link">
+      Redhat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/debian/" title="Debian" class="md-nav__link">
+      Debian
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/archlinux/" title="Archlinux" class="md-nav__link">
+      Archlinux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/virsh/" title="Virsh" class="md-nav__link">
+      Virsh
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Databases
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Databases
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      ElasticSearch
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        ElasticSearch
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/search/" title="Search" class="md-nav__link">
+      Search
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/indices/" title="Indices" class="md-nav__link">
+      Indices
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/cat/" title="Cat" class="md-nav__link">
+      Cat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/beat/" title="Beat" class="md-nav__link">
+      Beat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/kibana/" title="Kibana" class="md-nav__link">
+      Kibana
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/cluster/" title="Cluster" class="md-nav__link">
+      Cluster
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/nodes/" title="Nodes" class="md-nav__link">
+      Nodes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../databases/elasticsearch/snapshots/" title="Snapshots" class="md-nav__link">
+      Snapshots
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Developer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Developer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      Python
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../developer/python/packages/" title="Packages" class="md-nav__link">
+      Packages
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../developer/ciscoAci/cobra/" title="Cisco ACI" class="md-nav__link">
+      Cisco ACI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      RobotFramework
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        RobotFramework
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../developer/robotframework/gettingstarted/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../developer/robotframework/ddd/" title="Data-Driver" class="md-nav__link">
+      Data-Driver
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../developer/robotframework/pom/" title="Page-Object Model" class="md-nav__link">
+      Page-Object Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../developer/robotframework/robotfile/" title="RobotFile" class="md-nav__link">
+      RobotFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../developer/robotframework/selenium/" title="Selenium" class="md-nav__link">
+      Selenium
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#service-accounts" title="Service Accounts" class="md-nav__link">
+    Service Accounts
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get" title="Get" class="md-nav__link">
+    Get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create" title="Create" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pod-example" title="Pod Example" class="md-nav__link">
+    Pod Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view-the-token-file-from-within-a-pod" title="View the token file from within a pod" class="md-nav__link">
+    View the token file from within a pod
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#users" title="Users" class="md-nav__link">
+    Users
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create_1" title="Create" class="md-nav__link">
+    Create
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roles" title="Roles" class="md-nav__link">
+    Roles
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#role" title="Role" class="md-nav__link">
+    Role
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rolebinding" title="RoleBinding" class="md-nav__link">
+    RoleBinding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cluster-roles" title="Cluster Roles" class="md-nav__link">
+    Cluster Roles
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cluster-role" title="Cluster Role" class="md-nav__link">
+    Cluster Role
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-role-binding" title="Cluster Role Binding" class="md-nav__link">
+    Cluster Role Binding
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test" title="Test" class="md-nav__link">
+    Test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tls-certficates" title="TLS Certficates" class="md-nav__link">
+    TLS Certficates
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-cfssl" title="Install cfssl" class="md-nav__link">
+    Install cfssl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-certificate-authority-to-kubernetes" title="Create Certificate Authority to Kubernetes" class="md-nav__link">
+    Create Certificate Authority to Kubernetes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-client-certificates" title="Generating Client Certificates" class="md-nav__link">
+    Generating Client Certificates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-the-kubernetes-api-server-certificate" title="Generating the Kubernetes API Server Certificate" class="md-nav__link">
+    Generating the Kubernetes API Server Certificate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generating-the-service-account-key-pair" title="Generating the Service Account Key Pair" class="md-nav__link">
+    Generating the Service Account Key Pair
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributing-the-certificate-files" title="Distributing the Certificate Files" class="md-nav__link">
+    Distributing the Certificate Files
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#move-certificate-files-to-the-worker-nodes" title="Move certificate files to the worker nodes:" class="md-nav__link">
+    Move certificate files to the worker nodes:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#move-certificate-files-to-the-master-nodes" title="Move certificate files to the Master nodes:" class="md-nav__link">
+    Move certificate files to the Master nodes:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-tls-for-applications-not-cluster-only-same-pods" title="Create TLS For Applications (Not Cluster, only same pods)" class="md-nav__link">
+    Create TLS For Applications (Not Cluster, only same pods)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-registry" title="Container Registry" class="md-nav__link">
+    Container Registry
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-contexts" title="Security Contexts" class="md-nav__link">
+    Security Contexts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#persistent-key-value-store" title="Persistent Key Value Store" class="md-nav__link">
+    Persistent Key Value Store
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Security</h1>
+                
+                <h2 id="service-accounts">Service Accounts<a class="headerlink" href="#service-accounts" title="Permanent link">&para;</a></h2>
+<h3 id="get">Get<a class="headerlink" href="#get" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>kubectl get serviceaccounts
+</pre></div>
+
+<h3 id="create">Create<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>kubectl get serviceaccounts
+kubectl get serviceaccounts jenkins -o yaml
+</pre></div>
+
+<h3 id="pod-example">Pod Example<a class="headerlink" href="#pod-example" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">busybox</span>
+  <span class="nt">namespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">serviceAccountName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">jenkins</span>
+  <span class="nt">containers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">busybox:1.28.4</span>
+    <span class="nt">command</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sleep</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;3600&quot;</span>
+    <span class="nt">imagePullPolicy</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">IfNotPresent</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">busybox</span>
+  <span class="nt">restartPolicy</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Always</span>
+</pre></div>
+
+<h3 id="view-the-token-file-from-within-a-pod">View the token file from within a pod<a class="headerlink" href="#view-the-token-file-from-within-a-pod" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>kubectl get pods -n my-ns
+kubectl <span class="nb">exec</span> -it &lt;name-of-pod&gt; -n my-ns sh
+cat /var/run/secrets/kubernetes.io/serviceaccount/token
+</pre></div>
+
+<h2 id="users">Users<a class="headerlink" href="#users" title="Permanent link">&para;</a></h2>
+<h3 id="create_1">Create<a class="headerlink" href="#create_1" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>kubectl config view
+kubectl config set-credentials chad --username<span class="o">=</span>chad --password<span class="o">=</span>password
+<span class="c1"># Create a role binding for anonymous users (not recommended in production):</span>
+kubectl create clusterrolebinding cluster-system-anonymous --clusterrole<span class="o">=</span>cluster-admin --user<span class="o">=</span>system:anonymous
+
+<span class="c1"># Need Copy /etc/kubernetes/pki/ca.crt to remote machine</span>
+<span class="c1"># Remote Machine (Install Kubectl)</span>
+kubectl config set-cluster kubernetes --server<span class="o">=</span>https://172.31.41.61:6443 --certificate-authority<span class="o">=</span>ca.crt --embed-certs<span class="o">=</span><span class="nb">true</span>
+kubectl config set-credentials chad --username<span class="o">=</span>chad --password<span class="o">=</span>password
+kubectl config set-context kubernetes --cluster<span class="o">=</span>kubernetes --user<span class="o">=</span>chad --namespace<span class="o">=</span>default
+kubectl config use-context kubernetes
+</pre></div>
+
+<h2 id="roles">Roles<a class="headerlink" href="#roles" title="Permanent link">&para;</a></h2>
+<h3 id="role">Role<a class="headerlink" href="#role" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Role</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">namespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">web</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">service-reader</span>
+<span class="nt">rules</span><span class="p">:</span>
+<span class="p p-Indicator">-</span> <span class="nt">apiGroups</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;&quot;</span><span class="p p-Indicator">]</span>
+  <span class="nt">verbs</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;get&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;list&quot;</span><span class="p p-Indicator">]</span>
+  <span class="nt">resources</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;services&quot;</span><span class="p p-Indicator">]</span>
+</pre></div>
+
+<h3 id="rolebinding">RoleBinding<a class="headerlink" href="#rolebinding" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">kubectl create rolebinding test --role=service-reader --serviceaccount=web:default -n web</span>
+</pre></div>
+
+<h2 id="cluster-roles">Cluster Roles<a class="headerlink" href="#cluster-roles" title="Permanent link">&para;</a></h2>
+<h3 id="cluster-role">Cluster Role<a class="headerlink" href="#cluster-role" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>kubectl create clusterrole pv-reader --verb<span class="o">=</span>get,list --resource<span class="o">=</span>persistentvolumes
+</pre></div>
+
+<h3 id="cluster-role-binding">Cluster Role Binding<a class="headerlink" href="#cluster-role-binding" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>kubectl create clusterrolebinding pv-test --clusterrole<span class="o">=</span>pv-reader --serviceaccount<span class="o">=</span>web:default
+</pre></div>
+
+<h3 id="test">Test<a class="headerlink" href="#test" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">curlpod</span>
+  <span class="nt">namespace</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">web</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">containers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tutum/curl</span>
+    <span class="nt">command</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;sleep&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;9999999&quot;</span><span class="p p-Indicator">]</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">main</span>
+  <span class="p p-Indicator">-</span> <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">linuxacademycontent/kubectl-proxy</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">proxy</span>
+  <span class="nt">restartPolicy</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Always</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span>kubectl apply -f curl-pod.yaml
+kubectl get pods -n web
+kubectl <span class="nb">exec</span> -it curlpod -n web -- sh
+curl localhost:8001/api/v1/persistentvolumes
+</pre></div>
+
+<h2 id="tls-certficates">TLS Certficates<a class="headerlink" href="#tls-certficates" title="Permanent link">&para;</a></h2>
+<h3 id="install-cfssl">Install cfssl<a class="headerlink" href="#install-cfssl" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1"># Download the binaries for the cfssl tool:</span>
+wget -q --timestamping <span class="se">\</span>
+  https://pkg.cfssl.org/R1.2/cfssl_linux-amd64 <span class="se">\</span>
+  https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
+
+<span class="c1"># Make the binary files executable:</span>
+chmod +x cfssl_linux-amd64 cfssljson_linux-amd64
+sudo mv cfssl_linux-amd64 /usr/local/bin/cfssl
+sudo mv cfssljson_linux-amd64 /usr/local/bin/cfssljson
+</pre></div>
+
+<h3 id="create-certificate-authority-to-kubernetes">Create Certificate Authority to Kubernetes<a class="headerlink" href="#create-certificate-authority-to-kubernetes" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> ~/
+mkdir kthw
+<span class="nb">cd</span> kthw/
+
+<span class="o">{</span>
+
+cat &gt; ca-config.json <span class="s">&lt;&lt; EOF</span>
+<span class="s">{</span>
+<span class="s">  &quot;signing&quot;: {</span>
+<span class="s">    &quot;default&quot;: {</span>
+<span class="s">      &quot;expiry&quot;: &quot;8760h&quot;</span>
+<span class="s">    },</span>
+<span class="s">    &quot;profiles&quot;: {</span>
+<span class="s">      &quot;kubernetes&quot;: {</span>
+<span class="s">        &quot;usages&quot;: [&quot;signing&quot;, &quot;key encipherment&quot;, &quot;server auth&quot;, &quot;client auth&quot;],</span>
+<span class="s">        &quot;expiry&quot;: &quot;8760h&quot;</span>
+<span class="s">      }</span>
+<span class="s">    }</span>
+<span class="s">  }</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+
+cat &gt; ca-csr.json <span class="s">&lt;&lt; EOF</span>
+<span class="s">{</span>
+<span class="s">  &quot;CN&quot;: &quot;Kubernetes&quot;,</span>
+<span class="s">  &quot;key&quot;: {</span>
+<span class="s">    &quot;algo&quot;: &quot;rsa&quot;,</span>
+<span class="s">    &quot;size&quot;: 2048</span>
+<span class="s">  },</span>
+<span class="s">  &quot;names&quot;: [</span>
+<span class="s">    {</span>
+<span class="s">      &quot;C&quot;: &quot;US&quot;,</span>
+<span class="s">      &quot;L&quot;: &quot;Portland&quot;,</span>
+<span class="s">      &quot;O&quot;: &quot;Kubernetes&quot;,</span>
+<span class="s">      &quot;OU&quot;: &quot;CA&quot;,</span>
+<span class="s">      &quot;ST&quot;: &quot;Oregon&quot;</span>
+<span class="s">    }</span>
+<span class="s">  ]</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+
+cfssl gencert -initca ca-csr.json <span class="p">|</span> cfssljson -bare ca
+
+<span class="o">}</span>
+</pre></div>
+
+<h3 id="generating-client-certificates">Generating Client Certificates<a class="headerlink" href="#generating-client-certificates" title="Permanent link">&para;</a></h3>
+<p><strong>will generate the following client certificates: admin, kubelet (one for each worker node), kube-controller-manager, kube-proxy, and kube-scheduler</strong></p>
+<ul>
+<li>Admin Client Certificate</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="o">{</span>
+
+cat &gt; admin-csr.json <span class="s">&lt;&lt; EOF</span>
+<span class="s">{</span>
+<span class="s">  &quot;CN&quot;: &quot;admin&quot;,</span>
+<span class="s">  &quot;key&quot;: {</span>
+<span class="s">    &quot;algo&quot;: &quot;rsa&quot;,</span>
+<span class="s">    &quot;size&quot;: 2048</span>
+<span class="s">  },</span>
+<span class="s">  &quot;names&quot;: [</span>
+<span class="s">    {</span>
+<span class="s">      &quot;C&quot;: &quot;US&quot;,</span>
+<span class="s">      &quot;L&quot;: &quot;Portland&quot;,</span>
+<span class="s">      &quot;O&quot;: &quot;system:masters&quot;,</span>
+<span class="s">      &quot;OU&quot;: &quot;Kubernetes The Hard Way&quot;,</span>
+<span class="s">      &quot;ST&quot;: &quot;Oregon&quot;</span>
+<span class="s">    }</span>
+<span class="s">  ]</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+
+cfssl gencert <span class="se">\</span>
+  -ca<span class="o">=</span>ca.pem <span class="se">\</span>
+  -ca-key<span class="o">=</span>ca-key.pem <span class="se">\</span>
+  -config<span class="o">=</span>ca-config.json <span class="se">\</span>
+  -profile<span class="o">=</span>kubernetes <span class="se">\</span>
+  admin-csr.json <span class="p">|</span> cfssljson -bare admin
+
+<span class="o">}</span>
+</pre></div>
+
+<ul>
+<li>Kubelet Client certificates</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">WORKER0_HOST</span><span class="o">=</span>&lt;Public hostname of your first worker node cloud server&gt;
+<span class="nb">export</span> <span class="nv">WORKER0_IP</span><span class="o">=</span>&lt;Private IP of your first worker node cloud server&gt;
+<span class="nb">export</span> <span class="nv">WORKER1_HOST</span><span class="o">=</span>&lt;Public hostname of your second worker node cloud server&gt;
+<span class="nb">export</span> <span class="nv">WORKER1_IP</span><span class="o">=</span>&lt;Private IP of your second worker node cloud server&gt;
+
+<span class="o">{</span>
+cat &gt; <span class="si">${</span><span class="nv">WORKER0_HOST</span><span class="si">}</span>-csr.json <span class="s">&lt;&lt; EOF</span>
+<span class="s">{</span>
+<span class="s">  &quot;CN&quot;: &quot;system:node:${WORKER0_HOST}&quot;,</span>
+<span class="s">  &quot;key&quot;: {</span>
+<span class="s">    &quot;algo&quot;: &quot;rsa&quot;,</span>
+<span class="s">    &quot;size&quot;: 2048</span>
+<span class="s">  },</span>
+<span class="s">  &quot;names&quot;: [</span>
+<span class="s">    {</span>
+<span class="s">      &quot;C&quot;: &quot;US&quot;,</span>
+<span class="s">      &quot;L&quot;: &quot;Portland&quot;,</span>
+<span class="s">      &quot;O&quot;: &quot;system:nodes&quot;,</span>
+<span class="s">      &quot;OU&quot;: &quot;Kubernetes The Hard Way&quot;,</span>
+<span class="s">      &quot;ST&quot;: &quot;Oregon&quot;</span>
+<span class="s">    }</span>
+<span class="s">  ]</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+
+cfssl gencert <span class="se">\</span>
+  -ca<span class="o">=</span>ca.pem <span class="se">\</span>
+  -ca-key<span class="o">=</span>ca-key.pem <span class="se">\</span>
+  -config<span class="o">=</span>ca-config.json <span class="se">\</span>
+  -hostname<span class="o">=</span><span class="si">${</span><span class="nv">WORKER0_IP</span><span class="si">}</span>,<span class="si">${</span><span class="nv">WORKER0_HOST</span><span class="si">}</span> <span class="se">\</span>
+  -profile<span class="o">=</span>kubernetes <span class="se">\</span>
+  <span class="si">${</span><span class="nv">WORKER0_HOST</span><span class="si">}</span>-csr.json <span class="p">|</span> cfssljson -bare <span class="si">${</span><span class="nv">WORKER0_HOST</span><span class="si">}</span>
+
+cat &gt; <span class="si">${</span><span class="nv">WORKER1_HOST</span><span class="si">}</span>-csr.json <span class="s">&lt;&lt; EOF</span>
+<span class="s">{</span>
+<span class="s">  &quot;CN&quot;: &quot;system:node:${WORKER1_HOST}&quot;,</span>
+<span class="s">  &quot;key&quot;: {</span>
+<span class="s">    &quot;algo&quot;: &quot;rsa&quot;,</span>
+<span class="s">    &quot;size&quot;: 2048</span>
+<span class="s">  },</span>
+<span class="s">  &quot;names&quot;: [</span>
+<span class="s">    {</span>
+<span class="s">      &quot;C&quot;: &quot;US&quot;,</span>
+<span class="s">      &quot;L&quot;: &quot;Portland&quot;,</span>
+<span class="s">      &quot;O&quot;: &quot;system:nodes&quot;,</span>
+<span class="s">      &quot;OU&quot;: &quot;Kubernetes The Hard Way&quot;,</span>
+<span class="s">      &quot;ST&quot;: &quot;Oregon&quot;</span>
+<span class="s">    }</span>
+<span class="s">  ]</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+
+cfssl gencert <span class="se">\</span>
+  -ca<span class="o">=</span>ca.pem <span class="se">\</span>
+  -ca-key<span class="o">=</span>ca-key.pem <span class="se">\</span>
+  -config<span class="o">=</span>ca-config.json <span class="se">\</span>
+  -hostname<span class="o">=</span><span class="si">${</span><span class="nv">WORKER1_IP</span><span class="si">}</span>,<span class="si">${</span><span class="nv">WORKER1_HOST</span><span class="si">}</span> <span class="se">\</span>
+  -profile<span class="o">=</span>kubernetes <span class="se">\</span>
+  <span class="si">${</span><span class="nv">WORKER1_HOST</span><span class="si">}</span>-csr.json <span class="p">|</span> cfssljson -bare <span class="si">${</span><span class="nv">WORKER1_HOST</span><span class="si">}</span>
+
+<span class="o">}</span>
+</pre></div>
+
+<ul>
+<li><strong>Controller Manager Client certificate</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="o">{</span>
+
+cat &gt; kube-controller-manager-csr.json <span class="s">&lt;&lt; EOF</span>
+<span class="s">{</span>
+<span class="s">  &quot;CN&quot;: &quot;system:kube-controller-manager&quot;,</span>
+<span class="s">  &quot;key&quot;: {</span>
+<span class="s">    &quot;algo&quot;: &quot;rsa&quot;,</span>
+<span class="s">    &quot;size&quot;: 2048</span>
+<span class="s">  },</span>
+<span class="s">  &quot;names&quot;: [</span>
+<span class="s">    {</span>
+<span class="s">      &quot;C&quot;: &quot;US&quot;,</span>
+<span class="s">      &quot;L&quot;: &quot;Portland&quot;,</span>
+<span class="s">      &quot;O&quot;: &quot;system:kube-controller-manager&quot;,</span>
+<span class="s">      &quot;OU&quot;: &quot;Kubernetes The Hard Way&quot;,</span>
+<span class="s">      &quot;ST&quot;: &quot;Oregon&quot;</span>
+<span class="s">    }</span>
+<span class="s">  ]</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+
+cfssl gencert <span class="se">\</span>
+  -ca<span class="o">=</span>ca.pem <span class="se">\</span>
+  -ca-key<span class="o">=</span>ca-key.pem <span class="se">\</span>
+  -config<span class="o">=</span>ca-config.json <span class="se">\</span>
+  -profile<span class="o">=</span>kubernetes <span class="se">\</span>
+  kube-controller-manager-csr.json <span class="p">|</span> cfssljson -bare kube-controller-manager
+
+<span class="o">}</span>
+</pre></div>
+
+<ul>
+<li><strong>Kube-proxy Client certificate</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="o">{</span>
+
+cat &gt; kube-proxy-csr.json <span class="s">&lt;&lt; EOF</span>
+<span class="s">{</span>
+<span class="s">  &quot;CN&quot;: &quot;system:kube-proxy&quot;,</span>
+<span class="s">  &quot;key&quot;: {</span>
+<span class="s">    &quot;algo&quot;: &quot;rsa&quot;,</span>
+<span class="s">    &quot;size&quot;: 2048</span>
+<span class="s">  },</span>
+<span class="s">  &quot;names&quot;: [</span>
+<span class="s">    {</span>
+<span class="s">      &quot;C&quot;: &quot;US&quot;,</span>
+<span class="s">      &quot;L&quot;: &quot;Portland&quot;,</span>
+<span class="s">      &quot;O&quot;: &quot;system:node-proxier&quot;,</span>
+<span class="s">      &quot;OU&quot;: &quot;Kubernetes The Hard Way&quot;,</span>
+<span class="s">      &quot;ST&quot;: &quot;Oregon&quot;</span>
+<span class="s">    }</span>
+<span class="s">  ]</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+
+cfssl gencert <span class="se">\</span>
+  -ca<span class="o">=</span>ca.pem <span class="se">\</span>
+  -ca-key<span class="o">=</span>ca-key.pem <span class="se">\</span>
+  -config<span class="o">=</span>ca-config.json <span class="se">\</span>
+  -profile<span class="o">=</span>kubernetes <span class="se">\</span>
+  kube-proxy-csr.json <span class="p">|</span> cfssljson -bare kube-proxy
+
+<span class="o">}</span>
+</pre></div>
+
+<ul>
+<li><strong>Kube Scheduler Client Certificate</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="o">{</span>
+
+cat &gt; kube-scheduler-csr.json <span class="s">&lt;&lt; EOF</span>
+<span class="s">{</span>
+<span class="s">  &quot;CN&quot;: &quot;system:kube-scheduler&quot;,</span>
+<span class="s">  &quot;key&quot;: {</span>
+<span class="s">    &quot;algo&quot;: &quot;rsa&quot;,</span>
+<span class="s">    &quot;size&quot;: 2048</span>
+<span class="s">  },</span>
+<span class="s">  &quot;names&quot;: [</span>
+<span class="s">    {</span>
+<span class="s">      &quot;C&quot;: &quot;US&quot;,</span>
+<span class="s">      &quot;L&quot;: &quot;Portland&quot;,</span>
+<span class="s">      &quot;O&quot;: &quot;system:kube-scheduler&quot;,</span>
+<span class="s">      &quot;OU&quot;: &quot;Kubernetes The Hard Way&quot;,</span>
+<span class="s">      &quot;ST&quot;: &quot;Oregon&quot;</span>
+<span class="s">    }</span>
+<span class="s">  ]</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+
+cfssl gencert <span class="se">\</span>
+  -ca<span class="o">=</span>ca.pem <span class="se">\</span>
+  -ca-key<span class="o">=</span>ca-key.pem <span class="se">\</span>
+  -config<span class="o">=</span>ca-config.json <span class="se">\</span>
+  -profile<span class="o">=</span>kubernetes <span class="se">\</span>
+  kube-scheduler-csr.json <span class="p">|</span> cfssljson -bare kube-scheduler
+
+<span class="o">}</span>
+</pre></div>
+
+<h3 id="generating-the-kubernetes-api-server-certificate">Generating the Kubernetes API Server Certificate<a class="headerlink" href="#generating-the-kubernetes-api-server-certificate" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Note: 10.32.0.1 - Common use this IP. Can be used by the pods in some scenarios</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> ~/kthw
+<span class="nb">export</span> <span class="nv">CERT_HOSTNAME</span><span class="o">=</span><span class="m">10</span>.32.0.1,&lt;controller node <span class="m">1</span> Private IP&gt;,&lt;controller node <span class="m">1</span> hostname&gt;,&lt;controller node <span class="m">2</span> Private IP&gt;,&lt;controller node <span class="m">2</span> hostname&gt;,&lt;API load balancer Private IP&gt;,&lt;API load balancer hostname&gt;,127.0.0.1,localhost,kubernetes.default
+
+<span class="o">{</span>
+
+cat &gt; kubernetes-csr.json <span class="s">&lt;&lt; EOF</span>
+<span class="s">{</span>
+<span class="s">  &quot;CN&quot;: &quot;kubernetes&quot;,</span>
+<span class="s">  &quot;key&quot;: {</span>
+<span class="s">    &quot;algo&quot;: &quot;rsa&quot;,</span>
+<span class="s">    &quot;size&quot;: 2048</span>
+<span class="s">  },</span>
+<span class="s">  &quot;names&quot;: [</span>
+<span class="s">    {</span>
+<span class="s">      &quot;C&quot;: &quot;US&quot;,</span>
+<span class="s">      &quot;L&quot;: &quot;Portland&quot;,</span>
+<span class="s">      &quot;O&quot;: &quot;Kubernetes&quot;,</span>
+<span class="s">      &quot;OU&quot;: &quot;Kubernetes The Hard Way&quot;,</span>
+<span class="s">      &quot;ST&quot;: &quot;Oregon&quot;</span>
+<span class="s">    }</span>
+<span class="s">  ]</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+
+cfssl gencert <span class="se">\</span>
+  -ca<span class="o">=</span>ca.pem <span class="se">\</span>
+  -ca-key<span class="o">=</span>ca-key.pem <span class="se">\</span>
+  -config<span class="o">=</span>ca-config.json <span class="se">\</span>
+  -hostname<span class="o">=</span><span class="si">${</span><span class="nv">CERT_HOSTNAME</span><span class="si">}</span> <span class="se">\</span>
+  -profile<span class="o">=</span>kubernetes <span class="se">\</span>
+  kubernetes-csr.json <span class="p">|</span> cfssljson -bare kubernetes
+
+<span class="o">}</span>
+</pre></div>
+
+<h3 id="generating-the-service-account-key-pair">Generating the Service Account Key Pair<a class="headerlink" href="#generating-the-service-account-key-pair" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> ~/kthw
+
+<span class="o">{</span>
+
+cat &gt; service-account-csr.json <span class="s">&lt;&lt; EOF</span>
+<span class="s">{</span>
+<span class="s">  &quot;CN&quot;: &quot;service-accounts&quot;,</span>
+<span class="s">  &quot;key&quot;: {</span>
+<span class="s">    &quot;algo&quot;: &quot;rsa&quot;,</span>
+<span class="s">    &quot;size&quot;: 2048</span>
+<span class="s">  },</span>
+<span class="s">  &quot;names&quot;: [</span>
+<span class="s">    {</span>
+<span class="s">      &quot;C&quot;: &quot;US&quot;,</span>
+<span class="s">      &quot;L&quot;: &quot;Portland&quot;,</span>
+<span class="s">      &quot;O&quot;: &quot;Kubernetes&quot;,</span>
+<span class="s">      &quot;OU&quot;: &quot;Kubernetes The Hard Way&quot;,</span>
+<span class="s">      &quot;ST&quot;: &quot;Oregon&quot;</span>
+<span class="s">    }</span>
+<span class="s">  ]</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+
+cfssl gencert <span class="se">\</span>
+  -ca<span class="o">=</span>ca.pem <span class="se">\</span>
+  -ca-key<span class="o">=</span>ca-key.pem <span class="se">\</span>
+  -config<span class="o">=</span>ca-config.json <span class="se">\</span>
+  -profile<span class="o">=</span>kubernetes <span class="se">\</span>
+  service-account-csr.json <span class="p">|</span> cfssljson -bare service-account
+
+<span class="o">}</span>
+</pre></div>
+
+<h3 id="distributing-the-certificate-files">Distributing the Certificate Files<a class="headerlink" href="#distributing-the-certificate-files" title="Permanent link">&para;</a></h3>
+<h4 id="move-certificate-files-to-the-worker-nodes">Move certificate files to the worker nodes:<a class="headerlink" href="#move-certificate-files-to-the-worker-nodes" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span>scp ca.pem &lt;worker <span class="m">1</span> hostname&gt;-key.pem &lt;worker <span class="m">1</span> hostname&gt;.pem user@&lt;worker <span class="m">1</span> public IP&gt;:~/
+scp ca.pem &lt;worker <span class="m">2</span> hostname&gt;-key.pem &lt;worker <span class="m">2</span> hostname&gt;.pem user@&lt;worker <span class="m">2</span> public IP&gt;:~/
+</pre></div>
+
+<h4 id="move-certificate-files-to-the-master-nodes">Move certificate files to the Master nodes:<a class="headerlink" href="#move-certificate-files-to-the-master-nodes" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span>scp ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem service-account-key.pem service-account.pem user@&lt;master <span class="m">1</span> public IP&gt;:~/
+scp ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem service-account-key.pem service-account.pem user@&lt;master <span class="m">2</span> public IP&gt;:~/
+</pre></div>
+
+<h3 id="create-tls-for-applications-not-cluster-only-same-pods">Create TLS For Applications (Not Cluster, only same pods)<a class="headerlink" href="#create-tls-for-applications-not-cluster-only-same-pods" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1"># Find the CA certificate on a pod in your cluster:</span>
+kubectl <span class="nb">exec</span> busybox -- ls /var/run/secrets/kubernetes.io/serviceaccount
+
+cfssl version
+<span class="c1"># Create a CSR file - Need instal cfssl tool</span>
+cat <span class="s">&lt;&lt;EOF | cfssl genkey - | cfssljson -bare server</span>
+<span class="s">{</span>
+<span class="s">  &quot;hosts&quot;: [</span>
+<span class="s">    &quot;my-svc.my-namespace.svc.cluster.local&quot;,</span>
+<span class="s">    &quot;my-pod.my-namespace.pod.cluster.local&quot;,</span>
+<span class="s">    &quot;172.168.0.24&quot;,</span>
+<span class="s">    &quot;10.0.34.2&quot;</span>
+<span class="s">  ],</span>
+<span class="s">  &quot;CN&quot;: &quot;my-pod.my-namespace.pod.cluster.local&quot;,</span>
+<span class="s">  &quot;key&quot;: {</span>
+<span class="s">    &quot;algo&quot;: &quot;ecdsa&quot;,</span>
+<span class="s">    &quot;size&quot;: 256</span>
+<span class="s">  }</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+
+<span class="c1"># Create a CertificateSigningRequest API object:</span>
+cat <span class="s">&lt;&lt;EOF | kubectl create -f -</span>
+<span class="s">apiVersion: certificates.k8s.io/v1beta1</span>
+<span class="s">kind: CertificateSigningRequest</span>
+<span class="s">metadata:</span>
+<span class="s">  name: pod-csr.web</span>
+<span class="s">spec:</span>
+<span class="s">  groups:</span>
+<span class="s">  - system:authenticated</span>
+<span class="s">  request: $(cat server.csr | base64 | tr -d &#39;\n&#39;)</span>
+<span class="s">  usages:</span>
+<span class="s">  - digital signature</span>
+<span class="s">  - key encipherment</span>
+<span class="s">  - server auth</span>
+<span class="s">EOF</span>
+
+<span class="c1"># View the CSRs in the cluster:</span>
+kubectl get csr
+
+<span class="c1"># View additional details about the CSR:</span>
+kubectl describe csr pod-csr.web
+
+<span class="c1"># Approve the CSR:</span>
+kubectl certificate approve pod-csr.web
+
+<span class="c1"># View the certificate within your CSR:</span>
+kubectl get csr pod-csr.web -o yaml
+
+<span class="c1"># Extract and decode your certificate to use in a file:</span>
+kubectl get csr pod-csr.web -o <span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.status.certificate}&#39;</span> <span class="se">\</span>
+    <span class="p">|</span> base64 --decode &gt; server.crt
+</pre></div>
+
+<h2 id="container-registry">Container Registry<a class="headerlink" href="#container-registry" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Create</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="c1"># Create a new docker-registry secret:</span>
+kubectl create secret docker-registry acr --docker-server<span class="o">=</span>https://podofminerva.azurecr.io --docker-username<span class="o">=</span>podofminerva --docker-password<span class="o">=</span><span class="s1">&#39;otj701c9OucKZOCx5qrRblofcNRf3W+e&#39;</span> --docker-email<span class="o">=</span>user@example.com
+
+<span class="c1"># Modify the default service account to use your new docker-registry secret:</span>
+kubectl patch sa default -p <span class="s1">&#39;{&quot;imagePullSecrets&quot;: [{&quot;name&quot;: &quot;acr&quot;}]}&#39;</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">acr-pod</span>
+  <span class="nt">labels</span><span class="p">:</span>
+    <span class="nt">app</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">busybox</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">containers</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">busybox</span>
+      <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">podofminerva.azurecr.io/busybox:latest</span>
+      <span class="nt">command</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&#39;sh&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;-c&#39;</span><span class="p p-Indicator">,</span> <span class="s">&#39;echo</span><span class="nv"> </span><span class="s">Hello</span><span class="nv"> </span><span class="s">Kubernetes!</span><span class="nv"> </span><span class="s">&amp;&amp;</span><span class="nv"> </span><span class="s">sleep</span><span class="nv"> </span><span class="s">3600&#39;</span><span class="p p-Indicator">]</span>
+      <span class="nt">imagePullPolicy</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Always</span>
+</pre></div>
+
+<h2 id="security-contexts">Security Contexts<a class="headerlink" href="#security-contexts" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>The YAML for a container that runs as a user</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">alpine-user-context</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">containers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">main</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">alpine</span>
+    <span class="nt">command</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;/bin/sleep&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;999999&quot;</span><span class="p p-Indicator">]</span>
+    <span class="nt">securityContext</span><span class="p">:</span>
+      <span class="nt">runAsUser</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">405</span>
+</pre></div>
+
+<ul>
+<li><strong>The YAML for a pod that runs the container as non-root</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">alpine-nonroot</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">containers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">main</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">alpine</span>
+    <span class="nt">command</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;/bin/sleep&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;999999&quot;</span><span class="p p-Indicator">]</span>
+    <span class="nt">securityContext</span><span class="p">:</span>
+      <span class="nt">runAsNonRoot</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+
+<ul>
+<li><strong>The YAML for a privileged container pod</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">privileged-pod</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">containers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">main</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">alpine</span>
+    <span class="nt">command</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;/bin/sleep&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;999999&quot;</span><span class="p p-Indicator">]</span>
+    <span class="nt">securityContext</span><span class="p">:</span>
+      <span class="nt">privileged</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+
+<ul>
+<li><strong>The YAML for a container that will allow you to change the time</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">kernelchange-pod</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">containers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">main</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">alpine</span>
+    <span class="nt">command</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;/bin/sleep&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;999999&quot;</span><span class="p p-Indicator">]</span>
+    <span class="nt">securityContext</span><span class="p">:</span>
+      <span class="nt">capabilities</span><span class="p">:</span>
+        <span class="nt">add</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">SYS_TIME</span>
+</pre></div>
+
+<ul>
+<li><strong>The YAML for a container that removes capabilities</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">remove-capabilities</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">containers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">main</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">alpine</span>
+    <span class="nt">command</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;/bin/sleep&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;999999&quot;</span><span class="p p-Indicator">]</span>
+    <span class="nt">securityContext</span><span class="p">:</span>
+      <span class="nt">capabilities</span><span class="p">:</span>
+        <span class="nt">drop</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CHOWN</span>
+</pre></div>
+
+<ul>
+<li><strong>The YAML for a pod container that can’t write to the local filesystem</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">readonly-pod</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">containers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">main</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">alpine</span>
+    <span class="nt">command</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;/bin/sleep&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;999999&quot;</span><span class="p p-Indicator">]</span>
+    <span class="nt">securityContext</span><span class="p">:</span>
+      <span class="nt">readOnlyRootFilesystem</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+    <span class="nt">volumeMounts</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">my-volume</span>
+      <span class="nt">mountPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/volume</span>
+      <span class="nt">readOnly</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="nt">volumes</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">my-volume</span>
+    <span class="nt">emptyDir</span><span class="p">:</span>
+</pre></div>
+
+<ul>
+<li><strong>The YAML for a pod that has different group permissions for different pods</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">group-context</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">securityContext</span><span class="p">:</span>
+    <span class="nt">fsGroup</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">555</span>
+    <span class="nt">supplementalGroups</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">666</span><span class="p p-Indicator">,</span> <span class="nv">777</span><span class="p p-Indicator">]</span>
+  <span class="nt">containers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">first</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">alpine</span>
+    <span class="nt">command</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;/bin/sleep&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;999999&quot;</span><span class="p p-Indicator">]</span>
+    <span class="nt">securityContext</span><span class="p">:</span>
+      <span class="nt">runAsUser</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1111</span>
+    <span class="nt">volumeMounts</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">shared-volume</span>
+      <span class="nt">mountPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/volume</span>
+      <span class="nt">readOnly</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">second</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">alpine</span>
+    <span class="nt">command</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="s">&quot;/bin/sleep&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;999999&quot;</span><span class="p p-Indicator">]</span>
+    <span class="nt">securityContext</span><span class="p">:</span>
+      <span class="nt">runAsUser</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2222</span>
+    <span class="nt">volumeMounts</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">shared-volume</span>
+      <span class="nt">mountPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/volume</span>
+      <span class="nt">readOnly</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="nt">volumes</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">shared-volume</span>
+    <span class="nt">emptyDir</span><span class="p">:</span>
+</pre></div>
+
+<h2 id="persistent-key-value-store">Persistent Key Value Store<a class="headerlink" href="#persistent-key-value-store" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="c1"># Generate a key for your https server:</span>
+openssl genrsa -out https.key <span class="m">2048</span>
+
+<span class="c1"># Generate a certificate for the https server:</span>
+openssl req -new -x509 -key https.key -out https.cert -days <span class="m">3650</span> -subj /CN<span class="o">=</span>www.example.com
+
+<span class="c1"># Create an empty file to create the secret:</span>
+touch file
+
+<span class="c1"># Create a secret from your key, cert, and file:</span>
+kubectl create secret generic example-https --from-file<span class="o">=</span>https.key --from-file<span class="o">=</span>https.cert --from-file<span class="o">=</span>file
+</pre></div>
+
+<ul>
+<li><strong>Create the configMap that will mount to your pod</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ConfigMap</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">config</span>
+<span class="nt">data</span><span class="p">:</span>
+  <span class="nt">my-nginx-config.conf</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+    <span class="no">server {</span>
+        <span class="no">listen              80;</span>
+        <span class="no">listen              443 ssl;</span>
+        <span class="no">server_name         www.example.com;</span>
+        <span class="no">ssl_certificate     certs/https.cert;</span>
+        <span class="no">ssl_certificate_key certs/https.key;</span>
+        <span class="no">ssl_protocols       TLSv1 TLSv1.1 TLSv1.2;</span>
+        <span class="no">ssl_ciphers         HIGH:!aNULL:!MD5;</span>
+
+        <span class="no">location / {</span>
+            <span class="no">root   /usr/share/nginx/html;</span>
+            <span class="no">index  index.html index.htm;</span>
+        <span class="no">}</span>
+
+    <span class="no">}</span>
+  <span class="nt">sleep-interval</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+    <span class="no">25</span>
+</pre></div>
+
+<ul>
+<li><strong>The YAML for a pod using the new secret</strong></li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="nt">apiVersion</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="nt">metadata</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example-https</span>
+<span class="nt">spec</span><span class="p">:</span>
+  <span class="nt">containers</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">linuxacademycontent/fortune</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">html-web</span>
+    <span class="nt">env</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">INTERVAL</span>
+      <span class="nt">valueFrom</span><span class="p">:</span>
+        <span class="nt">configMapKeyRef</span><span class="p">:</span>
+          <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">config</span>
+          <span class="nt">key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sleep-interval</span>
+    <span class="nt">volumeMounts</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">html</span>
+      <span class="nt">mountPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/var/htdocs</span>
+  <span class="p p-Indicator">-</span> <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">nginx:alpine</span>
+    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">web-server</span>
+    <span class="nt">volumeMounts</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">html</span>
+      <span class="nt">mountPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/usr/share/nginx/html</span>
+      <span class="nt">readOnly</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">config</span>
+      <span class="nt">mountPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/etc/nginx/conf.d</span>
+      <span class="nt">readOnly</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">certs</span>
+      <span class="nt">mountPath</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/etc/nginx/certs/</span>
+      <span class="nt">readOnly</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+    <span class="nt">ports</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">containerPort</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">80</span>
+    <span class="p p-Indicator">-</span> <span class="nt">containerPort</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">443</span>
+  <span class="nt">volumes</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">html</span>
+    <span class="nt">emptyDir</span><span class="p">:</span> <span class="p p-Indicator">{}</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">config</span>
+    <span class="nt">configMap</span><span class="p">:</span>
+      <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">config</span>
+      <span class="nt">items</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">my-nginx-config.conf</span>
+        <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https.conf</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">certs</span>
+    <span class="nt">secret</span><span class="p">:</span>
+      <span class="nt">secretName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example-https</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="c1"># Use port forwarding on the pod to server traffic from 443:</span>
+kubectl port-forward example-https <span class="m">8443</span>:443 <span class="p">&amp;</span>
+
+<span class="c1"># Curl the web server to get a response:</span>
+curl https://localhost:8443 -k
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../networking/" title="Networking" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Networking
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../hardway/" title="Hardway" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Hardway
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 Fabio Santos
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../../assets/javascripts/application.dc02f8ce.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
+      
+        <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
