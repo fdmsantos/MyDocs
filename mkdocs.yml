@@ -129,6 +129,9 @@ nav:
           - Cluster: databases/elasticsearch/cluster.md
           - Nodes:  databases/elasticsearch/nodes.md
           - Snapshots: databases/elasticsearch/snapshots.md
+      - MySQL:
+          - Galera: databases/mysql/galera-cluster.md
+
   - Developer:
       - Python:
           - Packages: developer/python/packages.md
