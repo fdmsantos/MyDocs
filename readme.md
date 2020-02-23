@@ -13,10 +13,11 @@ mkdocs build -d docs
 # Deploy
 
 ```sh
-docker run -d -it -p 8000:8000 -v ${PWD}:/docs --name MyDocs squidfunk/mkdocs-material
+python -m mkdocs gh-deploy
 ```
 
 # Link
-[Link](http://127.0.0.1:8000)
 
-[GithubPages](https://fdmsantos.github.io/MyDocs/docs/)
+[Local Link](http://127.0.0.1:8000)
+
+[GithubPages](https://fdmsantos.github.io/MyDocs/)
