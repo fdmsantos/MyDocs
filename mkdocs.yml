@@ -117,6 +117,8 @@ nav:
           - Debian: platforms/unix/debian.md
           - Archlinux: platforms/unix/archlinux.md
           - Virsh: platforms/unix/virsh.md
+  - DevOps:
+      - Packer: devops/packer.md
   - Databases:
       - ElasticSearch:
           - Search: databases/elasticsearch/search.md
