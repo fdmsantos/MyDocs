@@ -1,54 +1,4 @@
-## Cluster
-
-### Health
-
-```json
-GET /_cluster/health
-```
-
-### Allocation Errors Explain
-
-```json
-GET /_cluster/allocation/explain
-```
-
-## Nodes
-
-### Stats
-
-```json
-GET /_nodes/stats
-```
-
-## Indices
-
-### List
-
-```json
-GET /_cat/indices?v
-```
-
-### List with selected Column
-
-```json
-GET /_cat/indices?h=creation.date.string
-```
-
-### Create
-
-```json
-POST /{index}/_open
-```
-
-### Close
-
-```json
-POST /_all/_close
-```
-
-## Search
-
-### All
+## All
 
 ```json
 GET /vspherebeat/_search
@@ -59,7 +9,7 @@ GET /vspherebeat/_search
 }
 ```
 
-### Field Match string
+## Field Match string
 
 ```json
 GET /vspherebeat/_search
@@ -73,7 +23,7 @@ GET /vspherebeat/_search
 
 ```
 
-### Field doesn't match string
+## Field doesn't match string
 
 ```json
 GET /vspherebeat/_search
@@ -93,7 +43,7 @@ GET /vspherebeat/_search
 
 ```
 
-### Bool Query (Match and Not Match)
+## Bool Query (Match and Not Match)
 
 ```json
 GET /vspherebeat/_search
@@ -124,7 +74,7 @@ GET /vspherebeat/_search
 }
 ```
 
-### Exists Specified Field
+## Exists Specified Field
 
 ```json
 GET /vspherebeat/_search
@@ -137,7 +87,7 @@ GET /vspherebeat/_search
 }
 ```
 
-### Unique Values from a field
+## Unique Values from a field
 
 ```json
 GET vspherebeat/_search
@@ -151,7 +101,7 @@ GET vspherebeat/_search
 }
 ```
 
-### Total of unique values from a field
+## Total of unique values from a field
 
 ```json
 GET /vspherebeat/_search
@@ -165,15 +115,6 @@ GET /vspherebeat/_search
         }
     }
 }
-
 ```
  
-## Help
-
-### Get Indices Columns
-
-```json
-GET /_cat/indices?help
-```
-
 

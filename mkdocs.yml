@@ -99,7 +99,7 @@ nav:
 
   - Databases:
       - ElasticSearch:
-          #           - Search: databases/elasticsearch/search.md
+          - Search: databases/elasticsearch/search.md
           - Indices: databases/elasticsearch/indices.md
           - Cat: databases/elasticsearch/cat.md
           - Beat: databases/elasticsearch/beat.md
