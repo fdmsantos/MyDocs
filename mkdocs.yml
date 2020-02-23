@@ -1,109 +1,115 @@
-site_name: MyDocs
-site_url: https://fdmsantos.github.io/MyDocs/
-site_description: My Personal Docs
+# Project information
+site_name: My Docs
+site_description: My Docs
 site_author: Fábio Santos
-repo_url: https://github.com/fdmsantos/MyDocs
-theme: yeti
+docs_dir: docs
 
+# Copyright
+copyright: 'Copyright &copy; 2018 Fabio Santos'
+
+# Configuration
+theme:
+  name: material
+
+  # 404 page
+  static_templates:
+    - 404.html
+
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+
+  # Default values, taken from mkdocs_theme.yml
+  language: en
+  feature:
+    tabs: true
+  palette:
+    primary: indigo
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/images/favicon.png
+  logo:
+    icon: "\uE80C"
+
+# Extensions
+markdown_extensions:
+  - codehilite
+  - markdown.extensions.admonition
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Page tree
 nav:
-  - Home: 'index.md'
-  - AWS:
-      - Networking:
-          - VPC: 'aws/networking/vpc.md'
-          - VPN: 'aws/networking/vpn.md'
-      - Compute:
-          - EC2: 'aws/compute/ec2.md'
-          - EBS: 'aws/compute/ebs.md'
-          - ELB: 'aws/compute/elb.md'
-          - Lambda: 'aws/compute/lambda.md'
-      - Application Integration:
-          - Step Functions: 'aws/applicationIntegration/stepfunctions.md'
-      - Management:
-          - Cloudformation: 'aws/management/cloudformation.md'
-      - Developer:
-          - CodeCommit: 'aws/developer/codecommit.md'
-          - CodeBuild: 'aws/developer/codebuild.md'
-          - CodeDeploy: 'aws/developer/codedeploy.md'
-      - Database:
-          - RDS: 'aws/database/rds.md'
-          - Elasticache: 'aws/database/elasticache.md'
-          - Redshift: 'aws/database/redshift.md'
-          - DynamoDB: 'aws/database/dynamoDb.md'
-      - Storage:
-          - EFS: 'aws/storage/efs.md'
-      - Security:
-          - ACM: 'aws/security/acm.md'
-  - Containers:
-      - Kubernetes:
-          - Admin:
-              - Admin: 'containers/kubernetes/admin/admin.md'
-              - Etcd: 'containers/kubernetes/admin/etcd.md'
-              - Control Plane: 'containers/kubernetes/admin/controlplane.md'
-              - Networking: 'containers/kubernetes/admin/networking.md'
-              - Nodes: 'containers/kubernetes/admin/nodes.md'
-              - Security: 'containers/kubernetes/admin/security.md'
-              - Taint: 'containers/kubernetes/admin/taint.md'
-              - Monitoring: 'containers/kubernetes/admin/monitoring.md'
-              - Kops:  'containers/kubernetes/admin/kops.md'
+  - Index: 'index.md'
+  - Platforms:
+      - AWS:
+          - Compute:
+              - EC2: platforms/aws/compute/ec2.md
+              - EBS: platforms/aws/compute/ebs.md
+              - ELB: platforms/aws/compute/elb.md
+          - Severless:
+              - Lambda: platforms/aws/serverless/lambda.md
+              - Cognito: platforms/aws/serverless/cognito.md
+          - Databases:
+              - RDS: platforms/aws/databases/rds.md
+              - DynamoDB: platforms/aws/databases/dynamodb.md
+              - Elasticache: platforms/aws/databases/elasticache.md
+              - Redshift: platforms/aws/databases/redshift.md
+          - DevOps:
+              - CloudWatch: platforms/aws/devops/cloudwatch.md
+              - Cloudformation: platforms/aws/devops/cloudformation.md
+          - Security:
+              - ACM: platforms/aws/security/acm.md
+      - Unix:
+          - Commands: platforms/unix/commands.md
+          - Disks: platforms/unix/disks.md
+          - Know Errors: platforms/unix/knowerrors.md
+          - Redhat: platforms/unix/redhat.md
+          - Archlinux: platforms/unix/archlinux.md
+          - Virsh: platforms/unix/virsh.md
 
-          - Development:
-              - Pods: 'containers/kubernetes/development/pods.md'
-              - Deployments: 'containers/kubernetes/development/deployments.md'
-              - Services: 'containers/kubernetes/development/services.md'
-              - PersistentVolumes: 'containers/kubernetes/development/persistentvolumes.md'
-              - Ingress: 'containers/kubernetes/development/ingress.md'
-              - ReplicaSets: 'containers/kubernetes/development/replicasets.md'
-              - DaemonSets: 'containers/kubernetes/development/daemonsets.md'
-              - Secrets&ConfigMaps: 'containers/kubernetes/development/secrets_configmaps.md'
-              - StatefulSets: 'containers/kubernetes/development/statefulsets.md'
-              - Jobs: 'containers/kubernetes/development/jobs.md'
 
-          - Deploy AWS KubeAdm:
-              - IAM: 'containers/kubernetes/deploy_aws_kubeadm/iam.md'
-              - VPC: 'containers/kubernetes/deploy_aws_kubeadm/vpc.md'
-              - Route53: 'containers/kubernetes/deploy_aws_kubeadm/route53.md'
-  - DevOps:
-      - IAAS:
-          - Packer: 'devops/iaas/packer.md'
-          - Terraform:
-              - Design Patterns: 'devops/iaas/terraform/designpatterns.md'
   - Databases:
-      - ELK Stack:
-         - ESQueries: 'elk/queries.md'
-         - Administration: 'elk/admin.md'
-         - Kibana: 'elk/kibana.md'
-         - Beats: 'elk/beats.md'
-         - Snapshots&Restore: 'elk/snapshotsAndRestore.md'
-  - Unix:
-      - Commands:
-             - Disks: 'unix/commands/disks.md'
-             - Filesystem: 'unix/commands/filesystem.md'
-             - Logging: 'unix/commands/logging.md'
-             - Kernel: 'unix/commands/kernel.md'
-             - Networking: 'unix/commands/networking.md'
-             - Security: 'unix/commands/security.md'
-      - Software:
-          - Mail:
-              - Postfix: 'unix/software/mail/postfix.md'
-          - Programming:
-              - PHP: 'unix/software/programming/php.md'
-          - Virtualization:
-              - Virsh: 'unix/software/virtualization/virsh.md'
-          - Python:
-              - Install Packages: 'unix/software/python/installPackages.md'
-      - OperationSystems:
-          - Redhat: 'unix/os/redhat.md'
-          - Debian: 'unix/os/debian.md'
-          - Archlinux: 'unix/os/archlinux.md'
-  - Developer:
-      - Testing:
-          - RobotFramework:
-              - GettingStarted: 'developer/testing/robotframework/gettingstarted.md'
-              - RobotFile: 'developer/testing/robotframework/robotfile.md'
-              - PageObjectModel: 'developer/testing/robotframework/pom.md'
-              - SeleniumLibrary: 'developer/testing/robotframework/seleniumLibrary.md'
-              - RestApi: 'developer/testing/robotframework/restApi.md'
-              - DataDrivenTest: 'developer/testing/robotframework/ddd.md'
-  - SDN:
-     -  Cisco ACI:
-          - Cobra: 'sdn/ciscoAci/cobra.md'
+      - ElasticSearch:
+          #           - Search: databases/elasticsearch/search.md
+          - Indices: databases/elasticsearch/indices.md
+          - Cat: databases/elasticsearch/cat.md
+          - Beat: databases/elasticsearch/beat.md
+          - Kibana: databases/elasticsearch/kibana.md
+          - Cluster: databases/elasticsearch/cluster.md
+          - Nodes:  databases/elasticsearch/nodes.md
+          - Snapshots: databases/elasticsearch/snapshots.md
+
+extra_css:
+  - https://cdn.rawgit.com/knsv/mermaid/0.5.6/dist/mermaid.css
+
+extra_javascript:
+  - https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js

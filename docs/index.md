@@ -1,23 +1,17 @@
-# Deploy
+## Documentation
 
-## Localhost
+| Topic | Link |
+| -- | -- |
+| Markdown | https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet |
+| Mkdocs | https://www.mkdocs.org/ |
+| Material | https://squidfunk.github.io/mkdocs-material/ |
+| Mermaid | https://mermaidjs.github.io/ |
+| phpdoc | http://phpdoc2cheatsheet.com/#mult_types |
 
-```bash
-python -m mkdocs serve
-```
 
-## Github Pages
+## Commands
 
-```bash
-python -m mkdocs gh-deploy
-```
-
-## URL
-
-[MyDocs](https://fdmsantos.github.io/MyDocs/)
-
-# Cheatseets
-
-## Markdown
-
-[Markdown](https://yakworks.github.io/mkdocs-material-components/cheat-sheet/)
+* `py -m mkdocs new [dir-name]` - Create a new project.
+* `py -m mkdocs serve` - Start the live-reloading docs server.
+* `py -m mkdocs build` - Build the documentation site.
+* `py -m mkdocs help` - Print this help message.
