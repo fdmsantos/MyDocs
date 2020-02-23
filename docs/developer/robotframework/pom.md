@@ -1,6 +1,6 @@
-# Locators
+## Locators
 
-File: PageObjects/Locators.py
+* File: PageObjects/Locators.py
 
 ```python
 # Login Page Elements
@@ -26,9 +26,9 @@ txt_conformedPassword="name:confirmPassword"
 btn_submit="xpath://input[@name='register']"
 ```
 
-# Resources
+## Resources
 
-File: Resources/LoginKeywords.robot
+* File: Resources/LoginKeywords.robot
 
 ```robottestfile
 *** Settings ***
@@ -60,7 +60,7 @@ Close my browsers
     close all browsers
 ```
 
-File: Resources/Registration.robot
+* File: Resources/Registration.robot
 
 ```robottestfile
 *** Settings ***
@@ -140,9 +140,9 @@ Close my browsers
     close all browsers
 ```
 
-# Tests
+## Tests
 
-File: TestCases/LoginTest.robot
+* File: TestCases/LoginTest.robot
 
 ```robotframework
 *** Settings ***
@@ -167,7 +167,7 @@ LoginTest
     Close my browsers
 ```
 
-File: TestCases/RegistrationTest.robot
+* File: TestCases/RegistrationTest.robot
 
 ```robottestfile
 *** Settings ***

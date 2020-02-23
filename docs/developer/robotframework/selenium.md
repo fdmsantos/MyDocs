@@ -1,4 +1,4 @@
-# Install
+## Install
 
 ```bash
 pip install -U selenium
@@ -6,7 +6,7 @@ pip install robotframework-seleniumlibrary
 # Download Browser Drivers
 ```
 
-# Input Text and Click
+## Input Text and Click
 
 ```robottestfile
 *** Test Cases ***
@@ -24,7 +24,7 @@ loginToApplication
 ```
 
 
-# Radio Buttons and Check Boxes
+## Radio Buttons and Check Boxes
 
 ```robottestfile
 Testing Radio Buttons and Check Boxes
@@ -38,7 +38,7 @@ Testing Radio Buttons and Check Boxes
     Close Browser
 ```
 
-# Dropdown and Lists
+## Dropdown and Lists
 
 ```robottestfile
 Handling DropDownds and Lists
@@ -54,7 +54,7 @@ Handling DropDownds and Lists
 
 ```
 
-# HTML Table
+## HTML Table
 
 ```robottestfile
 TableValidations
@@ -78,7 +78,7 @@ TableValidations
     close browser
 ```
 
-# Speed
+## Speed
 
 ```robottestfile
 RegTest
@@ -98,7 +98,7 @@ RegTest
     Close Browser
 ```
 
-# Timeouts
+## Timeouts
 
 ```robottestfile
 Timeouts
@@ -115,7 +115,7 @@ Timeouts
     Close Browser
 ```
 
-# Implict Wait
+## Implict Wait
 
 ```robottestfile
 Implict Wait Test
@@ -131,7 +131,7 @@ Implict Wait Test
     Close Browser
 ```
 
-# Multiple Browsers
+## Multiple Browsers
 
 ```robottestfile
 MultipleBrowsers
@@ -155,7 +155,7 @@ MultipleBrowsers
     Close All Browsers
 ```
 
-# Tabbed Windows
+## Tabbed Windows
 
 ```robottestfile
 TabbedWindowsTest
@@ -167,7 +167,7 @@ TabbedWindowsTest
     Close All Browsers
 ```
 
-# Navigation Keywords
+## Navigation Keywords
 
 ```robottestfile
 Navigation Test
@@ -186,7 +186,7 @@ Navigation Test
     close browser
 ```
 
-# Handling Alerts
+## Handling Alerts
 
 ```robottestfile
 Handling Alerts
@@ -197,7 +197,7 @@ Handling Alerts
     Handle Alert  accept
 ```
 
-# Handling Frames
+## Handling Frames
 
 ```robottestfile
 Testing Frames
@@ -216,7 +216,7 @@ Testing Frames
     Close Browser
 ```
 
-# Scroll And Executing Javascript
+## Scroll And Executing Javascript
 
 ```robottestfile
 ScrollingTest

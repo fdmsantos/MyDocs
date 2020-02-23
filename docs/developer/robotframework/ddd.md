@@ -1,10 +1,10 @@
-# Install
+## Install
 
 ```bash
 pip install robotframework-datadriver
 ```
 
-# Resources
+## Resources
 
 ```robottestfile
 *** Settings ***
@@ -41,7 +41,7 @@ Error message should be visible
     page should contain  Login was unsuccessful
 ```
 
-# Robot File with Data
+## Robot File with Data
 
 ```robottestfile
 *** Settings ***

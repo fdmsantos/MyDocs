@@ -108,6 +108,15 @@ nav:
           - Nodes:  databases/elasticsearch/nodes.md
           - Snapshots: databases/elasticsearch/snapshots.md
 
+  - Developer:
+      - RobotFramework:
+          - Getting Started: developer/robotframework/gettingstarted.md
+          - Data-Driver: developer/robotframework/ddd.md
+          - Page-Object Model: developer/robotframework/pom.md
+          - RobotFile: developer/robotframework/robotfile.md
+          - Selenium: developer/robotframework/selenium.md
+
+
 extra_css:
   - https://cdn.rawgit.com/knsv/mermaid/0.5.6/dist/mermaid.css
 

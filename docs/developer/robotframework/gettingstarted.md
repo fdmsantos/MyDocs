@@ -1,17 +1,11 @@
-# Install
+## Install
 
 ```bash
 pip install robotframework
 ```
+     
+## Structure
 
-## Pycharm
-
-* Plugins
-
-    * IntelliBot
-    
-   
-# Structure
 * SCALAR
     * ${VARIABLE NAME}  value
 * LIST
@@ -22,7 +16,7 @@ pip install robotframework
     * %{USERNAME}
 * BUILT-IN
 
-# Robot Commands
+## Robot Commands
 
 ```bash
 # Run One Test
@@ -41,7 +35,7 @@ robot -e regression Setup_TearDown.robot
 robot -i sanity -e regression Setup_TearDown.robot
 ```
 
-# Pabot Commands
+## Pabot Commands
 
 ```bash
 pip install -U robotframework-pabot
