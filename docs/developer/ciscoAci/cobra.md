@@ -1,4 +1,4 @@
-# Create Session
+## Create Session
 
 ```python
 from credentials import *
@@ -10,7 +10,7 @@ session = cobra.mit.access.MoDirectory(auth)
 session.login()
 ```
 
-# DN Query
+## DN Query
 
 ```python
 import cobra.mit.request
@@ -20,7 +20,7 @@ heroes = heroes_tenant[0]
 dir(heroes)
 ```
 
-# Class Query
+## Class Query
 
 * propFilter (query-target-filter) filters the results based on class attributes.
 * queryTarget (query-target) specifies what part of the MIT to query:
@@ -41,14 +41,14 @@ dir(heroes)
         * faults,no-scoped
     * health
 
-## Make a Class Query for All App Profiles
+### Make a Class Query for All App Profiles
 
  ```python
 app_query = cobra.mit.request.ClassQuery('fvAp')
 apps = session.query(app_query)
 ```
 
-## Scope the Query to Applications Named "Save_The_Planet"
+### Scope the Query to Applications Named "Save_The_Planet"
 
 ```python
 # set the property filter to only return the app named "Save_The_Planet"
@@ -56,9 +56,9 @@ app_query.propFilter = 'eq(fvAp.name, "Save_The_Planet")'
 save_the_planet_app = session.query(app_query)
 ```
     
-# Child Objects
+## Child Objects
 
-## Have the Query Return Child Objects
+### Have the Query Return Child Objects
 
 ```python
 # set the scope to subtree full
@@ -79,7 +79,7 @@ app_query.options
 save_the_planet_app_subtree = session.query(app_query)
 ```
 
-## View the Child Objects for the Query
+### View the Child Objects for the Query
 
 ```python
 save_the_planet_app_subtree
@@ -95,8 +95,7 @@ uni/tn-Heroes/ap-Save_The_Planet/epg-app
 uni/tn-Heroes/ap-Save_The_Planet/epg-db
 ```
 
-
-# Submitting Configurations
+## Submitting Configurations
 
 ```python
 # submit staged configuration to APIC
@@ -109,18 +108,16 @@ session.commit(config_request)
 # <Response [200]>
 ```
 
+## Lookups
 
-# Lookups
-
-## LookupbyDn
+### LookupbyDn
 
 ```python
 # set top level universe directory
 uniMo = moDir.lookupByDn('uni')
 ```
 
-
-## lookupByClass
+### lookupByClass
 
 ```python
 # use the "lookupByClass" method to find all endpoints (fvCEp)
@@ -129,4 +126,3 @@ endpoints = md.lookupByClass('fvCEp')
 
 print([str(ep.dn) for ep in endpoints]) 
 ```
-
