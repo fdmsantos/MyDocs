@@ -1,9 +1,12 @@
-# Config
+# Networking
 
-## ifconfig
+## Configuration
+
+### ifconfig
 
 ```bash
 ip addr
+ip addr show
 ifconfig
 ifconfig -a
 ifdown enp0s3
@@ -17,13 +20,6 @@ ifconfig enp0s3 192.168.0.150/24 # Not Permanent
 
 ```bash
 ifconfig eth0:1 172.31.81.196 netmask 255.255.240.0 up # Not Permanent
-```
-
-## ip
-
-```bash
-ip a 
-ip addr show
 ```
 
 ### Remove Secondary Ip
@@ -45,7 +41,7 @@ nmcli connection show STATIC
 sudo nmcli connection modify  STATIC +ipv4.routes "172.16.0.0/16 192.168.58.254" ipv4.dns 172.16.58.254
 ```
 
-## route
+## Routes
 
 ```bash
 route
@@ -71,16 +67,27 @@ sudo service networking restart
 cat /etc/network/interfaces
 ```
 
-# Connectivity
+## IP Tables
 
-## Netstat
+* Nat
+
+```bash
+sudo iptables -t nat -L | grep 100.66.20.131
+
+sudo iptables -t nat -L | grep nginx-service
+```
+
+
+## Troubleshooting
+
+### Netstat
 
 ```bash
 $ sudo netstat -nl -p tcp  | grep 8123
 $ sudo netstat -nl -p tcp  | head
 ```
 
-## Get open ports
+### Get open ports
 
 ```bash
 nmap localhost
@@ -88,7 +95,7 @@ netstat -at
 
 ```
 
-## SS
+### SS
 
 ```bash
 ss -an | grep -i listen
@@ -97,13 +104,13 @@ sudo ss -ntlp # To get process
 
 ```
 
-## Who listen on Port
+### Who listen on Port
 
 ```bash
 sudo lsof -i :8000
 ```
 
-## Test Remote Connection to port
+### Test Remote Connection to port
 
 ```bash
 nc -v 10.240.100.18  2049
@@ -111,36 +118,26 @@ nc -v 10.240.100.18  2049
 netcat -l 12345 # To listen a Port
 ```
 
-## Get Ports than services are listen
+### Get Ports than services are listen
 
 ```bash
 cat /etc/services
 ```
 
-## MTR
+### MTR
 
 ```bash
 mtr acloud.com
 ```
 
-## DNS
+### DNS
 
 ```bash
 host google.com
 dig google.com
 ```
 
-## IP Tables
-
-### Nat
-
-```bash
-sudo iptables -t nat -L | grep 100.66.20.131
-
-sudo iptables -t nat -L | grep nginx-service
-```
-
-# TCP Dump
+### TCP Dump
 
 ```bash
 sudo tcpdump -v -l -i any 'host 100.65.17.226'

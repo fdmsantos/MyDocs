@@ -14,9 +14,9 @@ cat /etc/hosts.deny # Hosts not allowed to access
 touch /etc/nologin # Denies login to all users (except root). Need remove the file
 ```
 
-# SE Linux
+## SE Linux
 
-## Install Ubuntu
+### Ubuntu
 
 ```bash
 # Need remove apparmor in ubuntu systems
@@ -41,7 +41,7 @@ apt-get install selinux-basics
 selinux-activate
 ```
 
-## Config
+### Config
 
 ```bash
 # Config file
@@ -54,7 +54,7 @@ ps -Z
 
 ```
 
-## Contexts
+### Contexts
 
 ```bash
 # List
@@ -64,7 +64,7 @@ semanage fcontext -l | grep httpd_sys_content_t
 chcon -t user_home_dir_t /etc/shadow
 ```
 
-## Booleans
+### Booleans
 
 ```bash
 getsebool -a
@@ -72,7 +72,7 @@ semanage boolean -l | sort | less
 semanage boolean -m -1 httpd_enable_homedirs # or setsebool -P httpd_enable_homedirs=1
 ```
 
-## Troubleshooting
+### Troubleshooting
 
 ```bash
 grep http /var/log/audit/audit.log

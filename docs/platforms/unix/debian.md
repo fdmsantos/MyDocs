@@ -1,6 +1,8 @@
-# Know Errors (Ubuntu)
+# Debian
 
-## Unable to lock the administration directory
+## Know Errors
+
+### Unable to lock the administration directory
 
 **Desc:** Unable to lock the administration directory (/var/lib/dpkg/) is another process using it? [Solution](https://askubuntu.com/questions/15433/unable-to-lock-the-administration-directory-var-lib-dpkg-is-another-process)
 
@@ -8,7 +10,7 @@
 sudo rm /var/lib/apt/lists/lock
 ```
 
-# dpkg
+## Dpkg
 
 ```bash
 # To list all installed packages
@@ -21,7 +23,7 @@ sudo dpkg -i dlocate_1.02+nmu3_all.deb
 sudo dpkg --purge dlocate
 ```
 
-# Apt
+## Apt
 
 ```bash
 # Sources file

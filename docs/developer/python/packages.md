@@ -1,6 +1,8 @@
-# Install With No Internet Access and No Root
+# Python Packages
 
-## With no PIP
+## No Internet Access and No Root
+
+### No PIP
 
 ```bash
 export PYTHONPATH=~/lib/python
@@ -10,12 +12,11 @@ cd package-name
 python3.6 setup.py install --home ~
 ```
 
-## With PIP
+### PIP
 
 * This process install all dependencies
 
-https://stackoverflow.com/questions/36725843/installing-python-packages-without-internet-and-using-source-code-as-tar-gz-and
-
+[Stackoverflow](https://stackoverflow.com/questions/36725843/installing-python-packages-without-internet-and-using-source-code-as-tar-gz-and)
 
 ```bash
 # Machine with Internet Access
@@ -30,8 +31,8 @@ cd keystone-deps
 pip install --target=~/lib/python keystone-deps.whl -f ./ --no-index
 ```
 
-## With PIP but not installed
+### PIP but not installed
 
-https://stackoverflow.com/questions/36132350/install-python-wheel-file-without-using-pip
+[Stackoverflow](https://stackoverflow.com/questions/36132350/install-python-wheel-file-without-using-pip)
 
 

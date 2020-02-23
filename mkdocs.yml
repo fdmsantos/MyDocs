@@ -68,7 +68,7 @@ markdown_extensions:
 
 # Page tree
 nav:
-  - Index: 'index.md'
+  - Index: index.md
   - Platforms:
       - AWS:
           - Compute:
@@ -91,12 +91,12 @@ nav:
       - Unix:
           - Commands: platforms/unix/commands.md
           - Disks: platforms/unix/disks.md
-          - Know Errors: platforms/unix/knowerrors.md
+          - Networking: platforms/unix/networking.md
+          - Security: platforms/unix/security.md
           - Redhat: platforms/unix/redhat.md
+          - Debian: platforms/unix/debian.md
           - Archlinux: platforms/unix/archlinux.md
           - Virsh: platforms/unix/virsh.md
-
-
   - Databases:
       - ElasticSearch:
           - Search: databases/elasticsearch/search.md
@@ -107,8 +107,9 @@ nav:
           - Cluster: databases/elasticsearch/cluster.md
           - Nodes:  databases/elasticsearch/nodes.md
           - Snapshots: databases/elasticsearch/snapshots.md
-
   - Developer:
+      - Python:
+          - Packages: developer/python/packages.md
       - Cisco ACI: developer/ciscoAci/cobra.md
       - RobotFramework:
           - Getting Started: developer/robotframework/gettingstarted.md
