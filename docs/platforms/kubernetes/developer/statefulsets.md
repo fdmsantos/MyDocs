@@ -1,5 +1,3 @@
-# Example File
-
 ```yaml
 apiVersion: apps/v1
 kind: StatefulSet
@@ -33,12 +31,4 @@ spec:
       resources:
         requests:
           storage: 1Gi
-```
-
-# Commands
-
-```bash
-kubectl get statefulsets
-kubectl describe statefulsets
-
 ```

@@ -1,5 +1,3 @@
-# Example File
-
 ```bash
 apiVersion: extensions/v1beta1
 kind: Ingress
@@ -24,13 +22,4 @@ spec:
       - backend:
           serviceName: httpd
           servicePort: 80
-```
-
-
-# Useful Commands
-
-```bash
-kubectl edit ingress
-
-kubectl describe ingress
 ```

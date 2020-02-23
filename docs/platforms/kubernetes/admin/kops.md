@@ -1,4 +1,4 @@
-# Install
+# Kops
 
 ```bash
 # Install Kops

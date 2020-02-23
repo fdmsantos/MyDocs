@@ -1,5 +1,3 @@
-# Example File
-
 ```yaml
 apiVersion: apps/v1beta2
 kind: DaemonSet

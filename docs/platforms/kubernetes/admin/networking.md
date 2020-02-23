@@ -1,12 +1,12 @@
-# Flannel
+## Flannel
 
-## Redhat
+### Redhat
 
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
 
-## Ubuntu
+### Ubuntu
 
 * **On all nodes**
 
@@ -21,9 +21,9 @@ sudo sysctl -p
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/bc79dd1505b0c8681ece4de4c0d86c5cd2643275/Documentation/kube-flannel.yml
 ```
 
-# Weave Net
+## Weave Net
 
-## Set up
+* Setting up
 
 ```bash
 # First, log in to both worker nodes and enable IP forwarding:
@@ -103,15 +103,15 @@ nginx        ClusterIP   10.32.0.54   <none>        80/TCP    53m
 kubectl exec $POD_NAME -- curl <nginx service IP address>
 ```
 
-# Network Policies
+## Network Policies
 
-## Plugin Canal
+### Plugin Canal
 
 ```bash
 wget -O canal.yaml https://docs.projectcalico.org/v3.5/getting-started/kubernetes/installation/hosted/canal/canal.yaml
 ```
 
-## Deny All
+### Deny All
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -124,7 +124,7 @@ spec:
   - Ingress
 ```
 
-## Pod Selector
+### Pod Selector
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -144,7 +144,7 @@ spec:
     - port: 5432
 ```
 
-## Namespace Policy
+### Namespace Policy
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -164,7 +164,7 @@ spec:
     - port: 5432
 ```
 
-## Block IP
+### Block IP
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -181,7 +181,7 @@ spec:
         cidr: 192.168.1.0/24
 ```
 
-## Egress Policy
+### Egress Policy
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -201,9 +201,9 @@ spec:
     - port: 5432
 ```
 
-# DNS
+## DNS
 
-## Kube-Dns
+### Kube-Dns
 
 ```bash
 kubectl create -f https://storage.googleapis.com/kubernetes-the-hard-way/kube-dns.yaml
@@ -233,7 +233,7 @@ Address 1: 10.32.0.1 kubernetes.default.svc.cluster.local
 
 ```
 
-## Custom DNS
+### Custom DNS
 
 ```yaml
 apiVersion: v1

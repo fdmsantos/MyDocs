@@ -1,12 +1,12 @@
-# Service Accounts
+## Service Accounts
 
-## Get
+### Get
 
 ```bash
 kubectl get serviceaccounts
 ```
 
-## Create 
+### Create 
 
 ```bash
 kubectl get serviceaccounts
@@ -14,7 +14,7 @@ kubectl get serviceaccounts jenkins -o yaml
 
 ```
 
-## Pod Example
+### Pod Example
 
 ```yaml
 apiVersion: v1
@@ -34,7 +34,7 @@ spec:
   restartPolicy: Always
 ```
 
-## View the token file from within a pod
+### View the token file from within a pod
 
 ```bash
 kubectl get pods -n my-ns
@@ -42,9 +42,9 @@ kubectl exec -it <name-of-pod> -n my-ns sh
 cat /var/run/secrets/kubernetes.io/serviceaccount/token
 ```
 
-# Users
+## Users
 
-## Create
+### Create
 
 ```bash
 kubectl config view
@@ -60,9 +60,9 @@ kubectl config set-context kubernetes --cluster=kubernetes --user=chad --namespa
 kubectl config use-context kubernetes
 ```
 
-# Roles
+## Roles
 
-## Role 
+### Role 
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -76,27 +76,27 @@ rules:
   resources: ["services"]
 ```
 
-## RoleBinding
+### RoleBinding
 
 ```yaml
 kubectl create rolebinding test --role=service-reader --serviceaccount=web:default -n web
 ```
 
-# Cluster Roles
+## Cluster Roles
 
-## Cluster Role
+### Cluster Role
 
 ```bash
 kubectl create clusterrole pv-reader --verb=get,list --resource=persistentvolumes
 ```
 
-## Cluster Role Binding
+### Cluster Role Binding
 
 ```bash
 kubectl create clusterrolebinding pv-test --clusterrole=pv-reader --serviceaccount=web:default
 ```
 
-## Test
+### Test
 
 ```yaml
 apiVersion: v1
@@ -121,9 +121,9 @@ kubectl exec -it curlpod -n web -- sh
 curl localhost:8001/api/v1/persistentvolumes
 ```
 
-# TLS Certficates
+## TLS Certficates
 
-## Install cfssl
+### Install cfssl
 
 ```bash
 # Download the binaries for the cfssl tool:
@@ -137,7 +137,7 @@ sudo mv cfssl_linux-amd64 /usr/local/bin/cfssl
 sudo mv cfssljson_linux-amd64 /usr/local/bin/cfssljson
 ```
 
-## Create Certificate Authority to Kubernetes
+### Create Certificate Authority to Kubernetes
 
 ```bash
 cd ~/
@@ -186,7 +186,7 @@ cfssl gencert -initca ca-csr.json | cfssljson -bare ca
 }
 ```
 
-## Generating Client Certificates
+### Generating Client Certificates
 
 **will generate the following client certificates: admin, kubelet (one for each worker node), kube-controller-manager, kube-proxy, and kube-scheduler**
 
@@ -393,7 +393,7 @@ cfssl gencert \
 }
 ```
 
-## Generating the Kubernetes API Server Certificate
+### Generating the Kubernetes API Server Certificate
 
 * **Note: 10.32.0.1 - Common use this IP. Can be used by the pods in some scenarios**
 
@@ -433,7 +433,7 @@ cfssl gencert \
 }
 ```
 
-## Generating the Service Account Key Pair
+### Generating the Service Account Key Pair
 
 ```bash
 cd ~/kthw
@@ -469,25 +469,23 @@ cfssl gencert \
 }
 ```
 
-## Distributing the Certificate Files
+### Distributing the Certificate Files
 
-### Move certificate files to the worker nodes:
+#### Move certificate files to the worker nodes:
     
 ```bash
 scp ca.pem <worker 1 hostname>-key.pem <worker 1 hostname>.pem user@<worker 1 public IP>:~/
 scp ca.pem <worker 2 hostname>-key.pem <worker 2 hostname>.pem user@<worker 2 public IP>:~/
 ```
     
-### Move certificate files to the Master nodes:
+#### Move certificate files to the Master nodes:
 
 ```bash
 scp ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem service-account-key.pem service-account.pem user@<master 1 public IP>:~/
 scp ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem service-account-key.pem service-account.pem user@<master 2 public IP>:~/
 ```   
 
-    
-
-## Create TLS For Applications (Not Cluster, only same pods)
+### Create TLS For Applications (Not Cluster, only same pods)
 
 ```bash
 # Find the CA certificate on a pod in your cluster:
@@ -544,9 +542,9 @@ kubectl get csr pod-csr.web -o jsonpath='{.status.certificate}' \
     | base64 --decode > server.crt
 ```
 
-# Container Registry
+## Container Registry
 
-## Create
+* Create
 
 ```bash
 # Create a new docker-registry secret:
@@ -571,7 +569,7 @@ spec:
       imagePullPolicy: Always
 ```
 
-# Security Contexts
+## Security Contexts
 
 * **The YAML for a container that runs as a user**
 
@@ -716,7 +714,7 @@ spec:
     emptyDir:
 ```
 
-# Persistent Key Value Store
+## Persistent Key Value Store
 
 ```bash
 # Generate a key for your https server:

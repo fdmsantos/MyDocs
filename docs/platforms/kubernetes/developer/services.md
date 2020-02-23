@@ -1,4 +1,4 @@
-# Cluster IP
+## Cluster IP
 
 ```yaml
 kind: Service
@@ -15,7 +15,7 @@ spec:
     targetPort: 80
 ```
 
-# NodePort
+## NodePort
 
 ```bash
 kind: Service
@@ -33,7 +33,7 @@ spec:
     nodePort: 30080 # Node Port
 ```
 
-# LoadBalancer
+## LoadBalancer
 
 ```bash
 apiVersion: v1
@@ -58,7 +58,7 @@ kubectl annotate service kubeserve2 externalTrafficPolicy=Local
 # https://kubernetes.io/docs/tutorials/services/source-ip/#source-ip-for-services-with-type-clusterip
 ```
 
-## Headless
+### Headless
 [Test](https://medium.com/faun/kubernetes-headless-service-vs-clusterip-and-traffic-distribution-904b058f0dfd)
 
 ```yaml

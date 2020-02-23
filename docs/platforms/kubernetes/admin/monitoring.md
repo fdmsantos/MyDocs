@@ -112,11 +112,11 @@ spec:
 
 ```
 
-# Logs
+## Logs
 
-## Cluster
+### Cluster
 
-### Dirs
+#### Dirs
 
 * **The directory where the continainer logs reside**
 
@@ -131,7 +131,7 @@ ls /var/log/containers
 ls /var/log
 ```
 
-### SideCar Container
+#### SideCar Container
 
 * **The YAML for a sidecar container that will tail the logs for each type**
 
@@ -182,7 +182,7 @@ kubectl logs counter count-log-1
 kubectl logs counter count-log-2
 ```
 
-## Application
+### Application
 
 ```bash
 # Get the logs from a pod:
@@ -216,11 +216,11 @@ kubectl logs deployment/nginx -c nginx
 kubectl logs counter -c count-log-1 > count.log
 ```
 
-# Troubleshooting
+## Troubleshooting
 
-## Applications
+### Applications
 
-### Use Termination Reason
+#### Use Termination Reason
 
 ```yaml
 apiVersion: v1
@@ -238,7 +238,7 @@ spec:
     terminationMessagePath: /var/termination-reason
 ```
 
-### Healthz
+#### Healthz
 
 * **Not all pods have healthz configured**
 
@@ -257,7 +257,7 @@ spec:
         port: 8081
 ```
 
-### Steps
+#### Steps
 
 ```yaml
 kubectl describe po pod2
@@ -265,7 +265,7 @@ kubectl logs pod-with-defaults
 kubectl get po pod-with-defaults -o yaml --export > defaults-pod.yaml
 ```
 
-## Cluster
+### Cluster
 
 ```bash
 # Check the events in the kube-system namespace for errors
@@ -290,7 +290,7 @@ sudo systemctl status firewalld
 sudo systemctl disable firewalld && systemctl stop firewalld
 ```
 
-## Worker Node
+### Worker Node
 
 ```bash
 kubectl get nodes
@@ -310,9 +310,9 @@ sudo journalctl -u kubelet
 sudo more syslog | tail -120 | grep kubelet
 ```
 
-## Networking
+### Networking
 
-### DNS
+#### DNS
 
 ```bash
 # Run an interactive busybox pod:
@@ -335,7 +335,7 @@ nslookup [pod-ip-address].default.pod.cluster.local
 kubectl logs [coredns-pod-name]
 ```
 
-### Kube-Proxy
+#### Kube-Proxy
 
 ```bash
 # View the endpoints for your service:
@@ -359,7 +359,7 @@ kubectl get pods -n kube-system
 kubectl exec -it kube-proxy-cqptg -n kube-system -- sh
 ```
 
-### Change CNI Plugin
+#### Change CNI Plugin
 
 ```bash
 # Delete the flannel CNI plugin:
@@ -370,9 +370,9 @@ kubectl delete -f https://raw.githubusercontent.com/coreos/flannel/bc79dd1505b0c
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
 ```
 
-# Smoke Testing
+## Smoke Testing
 
-## Data Encryption
+### Data Encryption
 
 ```bash
 # Create a test secret:
@@ -408,7 +408,7 @@ sudo ETCDCTL_API=3 etcdctl get \
 # Look for k8s:enc:aescbc:v1:key1 on the right of the output to verify that the data is stored in an encrypted format!
 ```
 
-## Deployments
+### Deployments
 
 ```bash
 # Create a a simple nginx deployment:
@@ -422,7 +422,7 @@ NAME                     READY     STATUS    RESTARTS   AGE
 nginx-65899c769f-9xnqm   1/1       Running   0          30s
 ```
 
-## Port Forwarding
+### Port Forwarding
 
 ```bash
 # First, get the pod name of the nginx pod and store it an an environment variable:
@@ -437,7 +437,7 @@ curl --head http://127.0.0.1:8081
 # You should get an http 200 OK response from the nginx pod.
 ```
 
-## Logs
+### Logs
 
 ```bash
 # First, let's set an environment variable to the name of the nginx pod:
@@ -450,7 +450,7 @@ kubectl logs $POD_NAME
 127.0.0.1 - - [10/Sep/2018:19:29:01 +0000] "GET / HTTP/1.1" 200 612 "-" "curl/7.47.0" "-"
 ```
 
-## Exec
+### Exec
 
 ```bash
 # First, let's set an environment variable to the name of the nginx pod:
@@ -464,7 +464,7 @@ nginx version: nginx/1.15.3
 
 ```
 
-## Services
+### Services
 
 ```bash
 # First, create a service to expose the nginx deployment:
@@ -486,7 +486,7 @@ curl -I localhost:<node port>
 # You should get an http 200 OK response.
 ```
 
-## Untrusted Workloads
+### Untrusted Workloads
 
 ```bash
 # First, create an untrusted pod:

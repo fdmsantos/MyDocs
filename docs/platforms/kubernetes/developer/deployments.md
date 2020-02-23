@@ -1,6 +1,4 @@
-# Examples
-
-## Simple Example
+## Example
 
 ```yaml
 apiVersion: apps/v1
@@ -66,13 +64,13 @@ spec:
 
 ```
 
-# Update Image
+## Update Image
 
 ```bash
 kubectl set image deployment.v1.apps/example-deployment nginx=darealmc/nginx-k8s:v2
 ```
 
-# MicroServices Example
+## MicroServices Example
 
 ```bash
 cd ~/
@@ -83,9 +81,9 @@ kubectl get pods -n robot-shop -w
 # Access in http://$kube_server_public_ip:30080
 ```
 
-# Application LifeCycle Manager
+## Application LifeCycle Manager
 
-## Update
+### Update
 
 ```bash
 kubectl apply -f kubeserve-deployment.yaml
@@ -93,13 +91,13 @@ kubectl apply -f kubeserve-deployment.yaml
 kubectl replace -f kubeserve-deployment.yaml
 ```
 
-## Rolling Update
+### Rolling Update
 
 ```bash
 kubectl set image deployments/kubeserve app=linuxacademycontent/kubeserve:v2 --v 6
 ```
 
-## Rollback
+### Rollback
 
 ```bash
 # Use --record flag to create the deployment - kubectl create -f kubeserve-deployment.yaml --record
@@ -108,14 +106,14 @@ kubectl rollout history deployment kubeserve
 kubectl rollout undo deployment kubeserve --to-revision=2
 ```
 
-## Pause / Resume
+### Pause / Resume
 
 ```bash
 kubectl rollout undo deployment kubeserve --to-revision=2
 kubectl rollout resume deployment kubeserve
 ```
 
-## Readiness Probe
+### Readiness Probe
 
 ```bash
 apiVersion: apps/v1

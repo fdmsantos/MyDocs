@@ -1,6 +1,6 @@
-# Pre-Requisites
+## Pre-Requisites
 
-## Redhat
+### Redhat
 
 * **Disable SELinux**
 
@@ -23,9 +23,9 @@ swapoff -a
 sudo vi /etc/fstab -> Comment out the swap line
 ```
 
-# Docker
+## Docker
 
-## Redhat
+### Redhat
 
 * **Install the Docker prerequisites**
 
@@ -48,7 +48,7 @@ systemctl daemon-reload
 systemctl enable docker --now
 ```
 
-## Ubuntu
+### Ubuntu
 
 ```bash
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -65,7 +65,7 @@ sudo apt-get install -y docker-ce=18.06.1~ce~3-0~ubuntu
 sudo apt-mark hold docker-ce
 ```
 
-## Amazon AMI Linux 2
+### Amazon AMI Linux 2
 
 ```bash
 sudo amazon-linux-extras install -y docker
@@ -88,9 +88,9 @@ sudo usermod -a -G docker ec2-user
 
 ```
 
-# kubernetes
+## kubernetes
 
-## Redhat
+### Redhat
 
 ```bash
 cat <<EOF > /etc/yum.repos.d/kubernetes.repo
@@ -114,7 +114,7 @@ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
-## Ubuntu
+### Ubuntu
 
 ```bash
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
@@ -140,9 +140,9 @@ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
-# Upgrade
+## Upgrade
 
-## Ubuntu
+### Ubuntu
 
 ```bash
 kubectl version --short
@@ -166,9 +166,9 @@ sudo apt install -y kubelet=1.14.1-00
 sudo apt-mark hold kubelet
 ```
 
-# Maintenance
+## Maintenance
 
-## Evict Pods
+### Evict Pods
 
 ```bash
 # Evict the pods on a node
@@ -180,7 +180,7 @@ kubectl get nodes -w
 kubectl uncordon [node_name]
 ```
 
-## Delete Node
+### Delete Node
 
 ```bash
 kubectl delete node [node_name]
@@ -190,9 +190,45 @@ sudo kubeadm token generate
 sudo kubeadm token create [token_name] --ttl 2h --print-join-command
 ```
 
-# Autocomplete
+### Taint
 
-## Redhat
+```bash
+kubectl taint node <node_name> node-type=prod:NoSchedule
+```
+
+#### Pod with Toleration
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: prod
+spec:
+ replicas: 1
+ selector:
+   matchLabels:
+     app: prod
+ template:
+   metadata:
+     labels:
+       app: prod
+   spec:
+     containers:
+     - args:
+       - sleep
+       - "3600"
+       image: busybox
+       name: main
+     tolerations:
+     - key: node-type
+       operator: Equal
+       value: prod
+       effect: NoSchedule
+```
+
+## Autocomplete
+
+### Redhat
 
 ```bash
 # Enable Epel Repo
@@ -207,15 +243,9 @@ vi /.bashrc # Add Following lines
 # source <(kubectl completion bash | sed s/kubectl/k/g)
 ```
 
-# Geral Commands
+## Kubectl
 
-```bash
-kubectl api-resources -o name
-```
-
-# Kubectl
-
-## Install
+### Install
 
 ```bash
 wget https://storage.googleapis.com/kubernetes-release/release/v1.10.2/bin/linux/amd64/kubectl
@@ -224,7 +254,7 @@ sudo mv kubectl /usr/local/bin/
 kubectl version --client
 ```
 
-## Set Remote
+### Set Remote
 
 ```bash
 kubectl config set-cluster kubernetes-the-hard-way \
@@ -243,7 +273,7 @@ kubectl config set-context kubernetes-the-hard-way \
 kubectl config use-context kubernetes-the-hard-way
 ```
 
-## Insecure
+### Insecure
 
 * **File:** $HOME/.kube/config
 
@@ -252,9 +282,15 @@ kubectl config use-context kubernetes-the-hard-way
     insecure-skip-tls-verify: true
 ```
 
-# Kube Configs
+### Api Resources
 
-## Generate Kube Configs
+```bash
+kubectl api-resources -o name
+```
+
+### Kube Config
+
+#### Generate Kube Configs
 
 [See How Generate TLS Certificates](/containers/kubernetes/admin/security/#tls-certficates)
 
@@ -374,23 +410,21 @@ done
 
 ```
 
-##  Distributing the Kubeconfig Files
-
-### Move kubeconfig files to the worker nodes:
+#### Move kubeconfig files to the worker nodes:
 
 ```bash
 scp <worker 1 hostname>.kubeconfig kube-proxy.kubeconfig user@<worker 1 public IP>:~/
 scp <worker 2 hostname>.kubeconfig kube-proxy.kubeconfig user@<worker 2 public IP>:~/
 ```
 
-### Move kubeconfig files to the master nodes:
+#### Move kubeconfig files to the master nodes:
 
 ```bash
 scp admin.kubeconfig kube-controller-manager.kubeconfig kube-scheduler.kubeconfig user@<master 1 public IP>:~/
 scp admin.kubeconfig kube-controller-manager.kubeconfig kube-scheduler.kubeconfig user@<master 2 public IP>:~/
 ```
 
-# Data Encryption Config
+## Data Encryption Config
 
 ```bash
 # Generate the Kubernetes Data encrpytion config file containing the encrpytion key:
@@ -416,9 +450,9 @@ scp encryption-config.yaml user@<master 2 public ip>:~/
 
 ```
 
-# LoadBalancer
+## LoadBalancer
 
-## Setting UP
+* Setting UP
 
 ```bash
 # Here are the commands you can use to set up the nginx load balancer. Run these on the server that you have designated as your load balancer server:

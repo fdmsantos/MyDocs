@@ -1,6 +1,6 @@
-# PV
+## PV
 
-## HostPath
+### HostPath
 
 ```yaml
 apiVersion: v1
@@ -17,7 +17,7 @@ spec:
     path: "/mnt/data"
 ```
 
-# PV Claim
+## PV Claim
 
 ```yaml
 apiVersion: v1
@@ -33,7 +33,7 @@ spec:
   storageClassName: "local-storage"
 ```
 
-# Deploy Pod
+## Deploy Pod
 
 ```yaml
 apiVersion: v1
@@ -56,7 +56,7 @@ spec:
       claimName: mongodb-pvc
 ```
 
-# Storage Class
+## Storage Class
 
 ```yaml
 apiVersion: storage.k8s.io/v1
@@ -68,7 +68,7 @@ parameters:
   type: pd-ssd
 ```
 
-# Empty Dir
+## Empty Dir
 
 ```yaml
 apiVersion: v1

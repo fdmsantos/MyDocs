@@ -10,7 +10,7 @@ kubectl get pods --namespace=podexample -o wide
 kubectl get pods -o custom-columns=POD:metadata.name,NODE:spec.nodeName --sort-by spec.nodeName -n kube-system
 ```
 
-## Example File
+## Example
 
 ```yaml
 apiVersion: v1
@@ -78,30 +78,10 @@ spec:
         memory: 20Mi
 ```
 
-## Create
-
-* **From File**
-
-```bash
-kubectl create -f ./pod-example.yaml
-```
-
-## Delete
-
-```bash
-kubectl --namespace=podexample delete pod examplepod
-```
-
 ## Get Containers Name inside a pod
 
 ```bash
 kubectl get pods examplepod -n podexample -o jsonpath='{.spec.containers[*].name}*'
-```
-
-## Exec in Container
-
-```bash
-kubectl exec -ti examplepod -c webcontainer -n podexample /bin/bash
 ```
 
 ## Use port forwarding to access a pod directly
@@ -109,20 +89,3 @@ kubectl exec -ti examplepod -c webcontainer -n podexample /bin/bash
 ```bash
 kubectl port-forward $pod_name 8081:80
 ```
-
-# Namespaces
-
-## Get
-
-```bash
-kubectl get namespaces
-```
-
-## Create
-
-```bash
-kubectl create namespace podexample
-```
-
-
-kubectl get pods examplepod -n podexample -o jsonpath='{.spec.containers[*].name}*'

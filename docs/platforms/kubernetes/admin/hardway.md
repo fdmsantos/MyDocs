@@ -1,6 +1,6 @@
-# Master
+## Master
 
-## Install Binaries
+* Install
 
 ```bash
 # You can install the control plane binaries on each master node like this:
@@ -14,9 +14,9 @@ chmod +x kube-apiserver kube-controller-manager kube-scheduler kubectl
 sudo mv kube-apiserver kube-controller-manager kube-scheduler kubectl /usr/local/bin/
 ```
 
-## API-Server
+### API-Server
 
-### Setting Up
+* Setting Up
 
 ```bash
 # You can configure the Kubernetes API server like so:
@@ -84,9 +84,9 @@ sudo systemctl status kube-apiserver
 
 ```
 
-## Controller Manager
+### Controller Manager
 
-### Setting Up
+* Setting Up
 
 ```bash
 # You can configure the Kubernetes Controller Manager like so:
@@ -127,9 +127,9 @@ sudo systemctl status kube-controller-manager
 
 ```
 
-## Scheduler
+### Scheduler
 
-### Setting Up
+* Setting Up
 
 ```bash
 # Copy kube-scheduler.kubeconfig into the proper location:
@@ -169,7 +169,7 @@ sudo systemctl start kube-scheduler
 sudo systemctl status kube-scheduler
 ```
 
-### Default Scheduler
+#### Default Scheduler
 
 1. Does the node have adequate hardware resources?
 2. Is the node running out of resources?
@@ -180,9 +180,9 @@ sudo systemctl status kube-scheduler
 7. Does the pod tolerate the taints of the node?
 8. Does the pod specify node or pod affinity?
 
-### Custom Scheduler
+#### Custom Scheduler
 
-#### ClusterRole
+##### ClusterRole
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1beta1
@@ -195,7 +195,7 @@ rules:
   verbs: ["get", "watch", "list"]
 ```
 
-#### ClusterRoleBinding
+##### ClusterRoleBinding
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -212,7 +212,7 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
-#### Role
+##### Role
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -231,7 +231,7 @@ rules:
   - watch
 ```
 
-#### RoleBinding
+##### RoleBinding
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -249,7 +249,7 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
-#### My-scheduler
+##### Custom-scheduler
 
 ```yaml
 apiVersion: v1
@@ -321,7 +321,7 @@ spec:
       volumes: []
 ```
 
-#### Deploy
+##### Deploy
 
 ```bash
 kubectl create -f clusterrole.yaml
@@ -359,13 +359,13 @@ kubectl create -f my-scheduler.yaml
 kubectl get pods -n kube-system
 ```
 
-### Get config
+#### Get config
 
 ```bash
 kubectl get endpoints kube-scheduler -n kube-system -o yaml
 ```
 
-### Troubleshooting
+#### Troubleshooting
 
 ```bash
 kubectl describe pods [scheduler_pod_name] -n kube-system
@@ -373,9 +373,9 @@ kubectl logs [kube_scheduler_pod_name] -n kube-system
 cat /var/log/kube-scheduler.log
 ```
 
-## RBAC
+### RBAC
 
-### Setting UP
+* Setting UP
 
 ```bash
 # Create a role with the necessary permissions:
@@ -420,9 +420,9 @@ subjects:
 EOF
 ```
 
-# Nodes
+## Nodes
 
-## Install Binaries
+### Install
 
 ```bash
 # You can install the worker binaries like so. Run these commands on both worker nodes:
@@ -454,7 +454,7 @@ sudo tar -xvf cni-plugins-amd64-v0.6.0.tgz -C /opt/cni/bin/
 sudo tar -xvf containerd-1.1.0.linux-amd64.tar.gz -C /
 ```
 
-## ContainerD
+### ContainerD
 
 ```bash
 # You can configure the containerd service like so. Run these commands on both worker nodes:
@@ -506,7 +506,7 @@ sudo systemctl status containerd
 
 ```
 
-## Kubelet
+### Kubelet
 
 ```bash
 # Set a HOSTNAME environment variable that will be used to generate your config files. Make sure you set the HOSTNAME appropriately for each worker node:
@@ -572,7 +572,7 @@ sudo systemctl status kubelet
 
 ```
 
-## Kube-Proxy
+### Kube-Proxy
 
 ```bash
 # You can configure the kube-proxy service like so. Run these commands on both worker nodes:
@@ -612,9 +612,9 @@ sudo systemctl status kube-proxy
 
 ```
 
-# Commands
+## Commands
 
-## Components Status
+### Components Status
 
 ```bash
 # Use kubectl to check componentstatuses:
@@ -630,9 +630,9 @@ etcd-0               Healthy   {"health": "true"}
 etcd-1               Healthy   {"health": "true"}
 ```
 
-# Enable HTTP Health Checks
+## Enable HTTP Health Checks
 
-## Using Nginx Load Balancer
+### Using Nginx Load Balancer
 
 * **On Master Nodes**
 

@@ -1,12 +1,12 @@
-# Config Maps
+## Config Maps
 
-## Create
+### Create
 
 ```bash
 kubectl create configmap appconfig --from-literal=key1=value1 --from-literal=key2=value2
 ```
 
-## Deploy Pods
+### Deploy Pods
 
 * **Env Vars**
 
@@ -49,7 +49,7 @@ spec:
         name: appconfig
 ```
 
-## Get
+### Get
 
 ```bash
 kubectl get configmaps --all-namespaces
@@ -59,9 +59,9 @@ kubectl describe configmaps/kube-flannel-cfg -n kube-system
 kubectl get configmap appconfig -o yaml
 ```
 
-# Secrets
+## Secrets
 
-## Create
+### Create
 
 ```yaml
 apiVersion: v1
@@ -73,7 +73,7 @@ stringData:
   key: value
 ```
 
-## Deploy Pods
+### Deploy Pods
 
 * **Env Vars**
 

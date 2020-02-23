@@ -88,6 +88,26 @@ nav:
               - Cloudformation: platforms/aws/devops/cloudformation.md
           - Security:
               - ACM: platforms/aws/security/acm.md
+      - Kubernetes:
+          - Admin:
+              - Administrator: platforms/kubernetes/admin/admin.md
+              - Etcd: platforms/kubernetes/admin/etcd.md
+              - Monitoring: platforms/kubernetes/admin/monitoring.md
+              - Networking: platforms/kubernetes/admin/networking.md
+              - Security: platforms/kubernetes/admin/security.md
+              - Hardway: platforms/kubernetes/admin/hardway.md
+              - Kops: platforms/kubernetes/admin/kops.md
+          - Developer:
+              - Pods: platforms/kubernetes/developer/pods.md
+              - DaemonSets: platforms/kubernetes/developer/daemonsets.md
+              - Deployments: platforms/kubernetes/developer/deployments.md
+              - Ingress: platforms/kubernetes/developer/ingress.md
+              - Jobs: platforms/kubernetes/developer/jobs.md
+              - Volumes: platforms/kubernetes/developer/volumes.md
+              - Replicasets: platforms/kubernetes/developer/replicasets.md
+              - Secrets&ConfigMaps: platforms/kubernetes/developer/secrets_configmaps.md
+              - Services: platforms/kubernetes/developer/services.md
+              - StatefulSets: platforms/kubernetes/developer/statefulsets.md
       - Unix:
           - Commands: platforms/unix/commands.md
           - Disks: platforms/unix/disks.md

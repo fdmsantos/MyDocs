@@ -1,4 +1,4 @@
-# Job
+## Job
 
 ```yaml
 apiVersion: batch/v1
@@ -16,7 +16,7 @@ spec:
   backoffLimit: 4
 ```
 
-# CronJob
+## CronJob
 
 ```yaml
 apiVersion: batch/v1beta1
