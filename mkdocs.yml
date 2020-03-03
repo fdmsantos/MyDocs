@@ -147,7 +147,7 @@ nav:
       - Kubernetes:
           - CKAD: certifications/kubernetes/ckad.md
       - AWS:
-          - Security-Specialty: security-specialty.md
+          - Security-Specialty: certifications/aws/security-specialty.md
 
 
 extra_css:
