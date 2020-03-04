@@ -593,6 +593,26 @@
     CDK
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apppy" title="app.py" class="md-nav__link">
+    app.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stackpy" title="Stack.py" class="md-nav__link">
+    Stack.py
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1595,6 +1615,26 @@
     CDK
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apppy" title="app.py" class="md-nav__link">
+    app.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stackpy" title="Stack.py" class="md-nav__link">
+    Stack.py
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1645,6 +1685,21 @@
                 
                 <h2 id="cdk">CDK<a class="headerlink" href="#cdk" title="Permanent link">&para;</a></h2>
 <p><a href="https://cdkworkshop.com/">Workshop</a></p>
+<h3 id="apppy">app.py<a class="headerlink" href="#apppy" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">App</span><span class="p">()</span>
+<span class="n">SecurityGroupsStack</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="s2">&quot;security-groups&quot;</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="p">{</span>
+    <span class="s1">&#39;account&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CDK_DEFAULT_ACCOUNT&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;CDK_DEFAULT_REGION&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">synth</span><span class="p">()</span>
+</pre></div>
+
+<h3 id="stackpy">Stack.py<a class="headerlink" href="#stackpy" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1"># Reference a outside VPC</span>
+<span class="n">vpc</span> <span class="o">=</span> <span class="n">ec2</span><span class="o">.</span><span class="n">Vpc</span><span class="o">.</span><span class="n">from_lookup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;VPC&quot;</span><span class="p">,</span> <span class="n">vpc_id</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;VPC_ID&#39;</span><span class="p">])</span>
+</pre></div>
+
 <h2 id="cloudformation">CloudFormation<a class="headerlink" href="#cloudformation" title="Permanent link">&para;</a></h2>
 <h3 id="deploy">Deploy<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>aws cloudformation package 
