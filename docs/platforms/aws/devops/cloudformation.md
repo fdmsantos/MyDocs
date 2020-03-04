@@ -2,6 +2,25 @@
 
 [Workshop](https://cdkworkshop.com/)
 
+### app.py
+
+```python
+app = core.App()
+SecurityGroupsStack(app, "security-groups", env={
+    'account': os.environ['CDK_DEFAULT_ACCOUNT'],
+    'region': os.environ['CDK_DEFAULT_REGION']
+})
+
+app.synth()
+```
+
+### Stack.py
+
+```python
+# Reference a outside VPC
+vpc = ec2.Vpc.from_lookup(self, id="VPC", vpc_id=config['VPC_ID'])
+```
+
 ## CloudFormation
 
 ### Deploy
