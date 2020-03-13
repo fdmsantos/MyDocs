@@ -122,6 +122,7 @@ nav:
       - Terraform: devops/terraform.md
       - Packer: devops/packer.md
       - Git: devops/git.md
+      - Jenkins: devops/jenkins.md
   - Databases:
       - ElasticSearch:
           - Search: databases/elasticsearch/search.md
@@ -149,6 +150,8 @@ nav:
           - CKAD: certifications/kubernetes/ckad.md
       - AWS:
           - Security-Specialty: certifications/aws/security-specialty.md
+      - Google:
+          - Associate-Cloud-Engineer: certifications/google/associate-cloud-engineer.md
 
 
 extra_css:
