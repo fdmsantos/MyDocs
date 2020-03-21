@@ -78,6 +78,7 @@ nav:
           - Severless:
               - Lambda: platforms/aws/serverless/lambda.md
               - Cognito: platforms/aws/serverless/cognito.md
+              - StepFunctions: platforms/aws/serverless/stepfunctions.md
           - Databases:
               - RDS: platforms/aws/databases/rds.md
               - DynamoDB: platforms/aws/databases/dynamodb.md
