@@ -1,4 +1,6 @@
-## Lambda Task
+## Task
+
+### Invoke Lambda
 
 ```json
 "GetLinks": {
@@ -12,6 +14,34 @@
   },
   "OutputPath": "$.Payload",
   "Next": "SendLinkToSQSQueue"
+}
+```
+
+### DynamoDB
+
+#### Put Item
+
+```json
+"StoreDeviceInDynamoDB": {
+  "Type": "Task",
+  "Resource": "arn:aws:states:::dynamodb:putItem",
+  "Parameters": {
+    "TableName": "Devices",
+    "Item": {
+      "DeviceID": {
+        "N.$": "$.DeviceID"
+      },
+      "Name": {
+        "S.$": "$.Name"
+      }
+    }
+  },
+  "Retry": [ {
+     "ErrorEquals": [ "States.Timeout" ],
+     "IntervalSeconds": 3,
+     "MaxAttempts": 2,
+     "BackoffRate": 1.5
+  } ]
 }
 ```
 
