@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#lambda-task" tabindex="1" class="md-skip">
+      <a href="#task" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -481,9 +481,42 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#lambda-task" title="Lambda Task" class="md-nav__link">
-    Lambda Task
+  <a href="#task" title="Task" class="md-nav__link">
+    Task
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invoke-lambda" title="Invoke Lambda" class="md-nav__link">
+    Invoke Lambda
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamodb" title="DynamoDB" class="md-nav__link">
+    DynamoDB
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#put-item" title="Put Item" class="md-nav__link">
+    Put Item
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -640,10 +673,46 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-5" type="checkbox" id="nav-2-1-5">
     
     <label class="md-nav__link" for="nav-2-1-5">
-      Security
+      Storage
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
       <label class="md-nav__title" for="nav-2-1-5">
+        Storage
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../storage/s3/" title="S3" class="md-nav__link">
+      S3
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-6" type="checkbox" id="nav-2-1-6">
+    
+    <label class="md-nav__link" for="nav-2-1-6">
+      Security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-6">
         Security
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -657,6 +726,42 @@
   <li class="md-nav__item">
     <a href="../../security/acm/" title="ACM" class="md-nav__link">
       ACM
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-7" type="checkbox" id="nav-2-1-7">
+    
+    <label class="md-nav__link" for="nav-2-1-7">
+      Migrate
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-7">
+        Migrate
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../migrate/vmware/" title="VmWare" class="md-nav__link">
+      VmWare
     </a>
   </li>
 
@@ -1643,9 +1748,42 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#lambda-task" title="Lambda Task" class="md-nav__link">
-    Lambda Task
+  <a href="#task" title="Task" class="md-nav__link">
+    Task
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invoke-lambda" title="Invoke Lambda" class="md-nav__link">
+    Invoke Lambda
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamodb" title="DynamoDB" class="md-nav__link">
+    DynamoDB
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#put-item" title="Put Item" class="md-nav__link">
+    Put Item
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1675,7 +1813,8 @@
                 
                   <h1>StepFunctions</h1>
                 
-                <h2 id="lambda-task">Lambda Task<a class="headerlink" href="#lambda-task" title="Permanent link">&para;</a></h2>
+                <h2 id="task">Task<a class="headerlink" href="#task" title="Permanent link">&para;</a></h2>
+<h3 id="invoke-lambda">Invoke Lambda<a class="headerlink" href="#invoke-lambda" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="s2">&quot;GetLinks&quot;</span><span class="err">:</span> <span class="p">{</span>
   <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;Task&quot;</span><span class="p">,</span>
   <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:states:::lambda:invoke&quot;</span><span class="p">,</span>
@@ -1687,6 +1826,31 @@
   <span class="p">},</span>
   <span class="nt">&quot;OutputPath&quot;</span><span class="p">:</span> <span class="s2">&quot;$.Payload&quot;</span><span class="p">,</span>
   <span class="nt">&quot;Next&quot;</span><span class="p">:</span> <span class="s2">&quot;SendLinkToSQSQueue&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3 id="dynamodb">DynamoDB<a class="headerlink" href="#dynamodb" title="Permanent link">&para;</a></h3>
+<h4 id="put-item">Put Item<a class="headerlink" href="#put-item" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><span class="s2">&quot;StoreDeviceInDynamoDB&quot;</span><span class="err">:</span> <span class="p">{</span>
+  <span class="nt">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;Task&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;Resource&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:states:::dynamodb:putItem&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;Parameters&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;TableName&quot;</span><span class="p">:</span> <span class="s2">&quot;Devices&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;Item&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;DeviceID&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;N.$&quot;</span><span class="p">:</span> <span class="s2">&quot;$.DeviceID&quot;</span>
+      <span class="p">},</span>
+      <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;S.$&quot;</span><span class="p">:</span> <span class="s2">&quot;$.Name&quot;</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;Retry&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="p">{</span>
+     <span class="nt">&quot;ErrorEquals&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;States.Timeout&quot;</span> <span class="p">],</span>
+     <span class="nt">&quot;IntervalSeconds&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+     <span class="nt">&quot;MaxAttempts&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+     <span class="nt">&quot;BackoffRate&quot;</span><span class="p">:</span> <span class="mf">1.5</span>
+  <span class="p">}</span> <span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
 
