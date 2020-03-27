@@ -143,4 +143,7 @@ dig google.com
 sudo tcpdump -v -l -i any 'host 100.65.17.226'
 
 tcpdump -n port 6443
+
+tcpdump port 443 and '(tcp-syn|tcp-ack)!=0'
+
 ```

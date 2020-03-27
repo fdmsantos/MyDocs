@@ -87,8 +87,12 @@ nav:
           - DevOps:
               - CloudWatch: platforms/aws/devops/cloudwatch.md
               - Cloudformation: platforms/aws/devops/cloudformation.md
+          - Storage:
+              - S3: platforms/aws/storage/s3.md
           - Security:
               - ACM: platforms/aws/security/acm.md
+          - Migrate:
+              - VmWare: platforms/aws/migrate/vmware.md
       - Kubernetes:
           - Admin:
               - Administrator: platforms/kubernetes/admin/admin.md
