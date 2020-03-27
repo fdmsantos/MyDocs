@@ -28,7 +28,7 @@ docker run --rm -it -v $(pwd):/tmp ovftool --noSSLVerify vi://<user>@<ip>/LAB/vm
 
     * Use Multipart Upload 
 
-[MultiPart Upload](../storage/s3.md)
+    * [MultiPart Upload](../storage/s3.md)
 
 ### Import Image
 

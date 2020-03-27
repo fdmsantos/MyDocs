@@ -77,7 +77,6 @@ sudo iptables -t nat -L | grep 100.66.20.131
 sudo iptables -t nat -L | grep nginx-service
 ```
 
-
 ## Troubleshooting
 
 ### Netstat
@@ -147,3 +146,9 @@ tcpdump -n port 6443
 tcpdump port 443 and '(tcp-syn|tcp-ack)!=0'
 
 ```
+
+## VPN
+
+### Permanent VPN Connection
+
+[Article](https://mamchenkov.net/wordpress/2016/11/20/automate-openvpn-client-on-centos-7/)
