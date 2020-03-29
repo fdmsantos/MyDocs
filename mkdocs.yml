@@ -77,6 +77,7 @@ nav:
               - ELB: platforms/aws/compute/elb.md
           - Severless:
               - Lambda: platforms/aws/serverless/lambda.md
+              - ApiGateway:  platforms/aws/serverless/apigateway.md
               - Cognito: platforms/aws/serverless/cognito.md
               - StepFunctions: platforms/aws/serverless/stepfunctions.md
           - Databases:
