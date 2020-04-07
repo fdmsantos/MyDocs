@@ -161,7 +161,7 @@ nav:
       - Google:
           - Associate-Cloud-Engineer: certifications/google/associate-cloud-engineer.md
       - Azure:
-          - Fundamentals: certifications/azure/
+          - Fundamentals: certifications/azure/fundamentals.md
 
 
 extra_css:
