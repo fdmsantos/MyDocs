@@ -113,4 +113,78 @@ packer validate
 }
 ```
 
+### Vsphere
 
+```json
+{
+  "variables": {
+    "vcenter": "",
+    "username": "",
+    "password": "",
+    "insecure": "true",
+    "datacenter": "",
+    "cluster": "",
+    "host": "",
+    "vm_name": "",
+    "datastore": "",
+    "cpus": "",
+    "ram": "",
+    "network": "",
+    "guest_os": "",
+    "disk_size": "",
+    "iso": "",
+    "ip": "",
+    "netmask": "",
+    "gateway": "",
+    "localIp": ""
+  },
+  "sensitive-variables": ["password"],
+  "builders": [
+    {
+      "type": "vsphere-iso",
+
+      "vcenter_server": "{{user `vcenter`}}",
+      "username": "{{user `username`}}",
+      "password": "{{user `password`}}",
+      "insecure_connection": "{{user `insecure`}}",
+
+      "datacenter": "{{user `datacenter`}}",
+      "cluster": "{{user `cluster`}}",
+      "host": "{{user `host`}}",
+      "datastore": "{{user `datastore`}}",
+
+      "vm_name":  "{{user `vm_name`}}",
+
+      "CPUs": "{{user `cpus`}}",
+      "ram": "{{user `ram`}}",
+      "network": "{{user `network`}}",
+      "network_card": "vmxnet3",
+      "guest_os_type": "{{user `guest_os`}}",
+      "disk_size": "{{user `disk_size`}}",
+      "iso_paths": [
+        "{{user `iso`}}"
+      ],
+      "cdrom_type": "sata",
+      "ssh_username": "jenkins",
+      "ssh_password": "jenkins",
+      "http_directory": "http",
+      "boot_wait": "5s",
+      "boot_command": [
+        "<up><wait><tab> ip={{user `ip`}} netmask={{user `netmask`}} gateway={{user `gateway`}} text ks=http://{{user `localIp`}}:{{ .HTTPPort}}/ks.cfg <enter>"
+      ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "dnf -y update",
+        "dnf install -y java-1.8.0-openjdk-devel",
+        "sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo",
+        "sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key",
+        "sudo yum install jenkins -y"
+      ]
+    }
+  ]
+}
+```
