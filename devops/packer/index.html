@@ -398,6 +398,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../platforms/aws/compute/eks/" title="EKS" class="md-nav__link">
+      EKS
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1230,6 +1242,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#vsphere" title="Vsphere" class="md-nav__link">
+    Vsphere
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1738,6 +1757,42 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
+    
+    <label class="md-nav__link" for="nav-6-4">
+      Azure
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-4">
+        Azure
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../certifications/azure/fundamentals/" title="Fundamentals" class="md-nav__link">
+      Fundamentals
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1793,6 +1848,13 @@
           <li class="md-nav__item">
   <a href="#docker" title="Docker" class="md-nav__link">
     Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vsphere" title="Vsphere" class="md-nav__link">
+    Vsphere
   </a>
   
 </li>
@@ -1923,6 +1985,80 @@ packer validate
       <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;docker-tag&quot;</span><span class="p">,</span>
       <span class="nt">&quot;repository&quot;</span><span class="p">:</span> <span class="s2">&quot;{{user `repository`}}&quot;</span><span class="p">,</span>
       <span class="nt">&quot;tag&quot;</span><span class="p">:</span> <span class="s2">&quot;{{user `tag`}}&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+
+<h3 id="vsphere">Vsphere<a class="headerlink" href="#vsphere" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;variables&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;vcenter&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;insecure&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;datacenter&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;cluster&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;vm_name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;datastore&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;cpus&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;ram&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;network&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;guest_os&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;disk_size&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;iso&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;ip&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;netmask&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;gateway&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;localIp&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;sensitive-variables&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;password&quot;</span><span class="p">],</span>
+  <span class="nt">&quot;builders&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;vsphere-iso&quot;</span><span class="p">,</span>
+
+      <span class="nt">&quot;vcenter_server&quot;</span><span class="p">:</span> <span class="s2">&quot;{{user `vcenter`}}&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;{{user `username`}}&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;{{user `password`}}&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;insecure_connection&quot;</span><span class="p">:</span> <span class="s2">&quot;{{user `insecure`}}&quot;</span><span class="p">,</span>
+
+      <span class="nt">&quot;datacenter&quot;</span><span class="p">:</span> <span class="s2">&quot;{{user `datacenter`}}&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;cluster&quot;</span><span class="p">:</span> <span class="s2">&quot;{{user `cluster`}}&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;host&quot;</span><span class="p">:</span> <span class="s2">&quot;{{user `host`}}&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;datastore&quot;</span><span class="p">:</span> <span class="s2">&quot;{{user `datastore`}}&quot;</span><span class="p">,</span>
+
+      <span class="nt">&quot;vm_name&quot;</span><span class="p">:</span>  <span class="s2">&quot;{{user `vm_name`}}&quot;</span><span class="p">,</span>
+
+      <span class="nt">&quot;CPUs&quot;</span><span class="p">:</span> <span class="s2">&quot;{{user `cpus`}}&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;ram&quot;</span><span class="p">:</span> <span class="s2">&quot;{{user `ram`}}&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;network&quot;</span><span class="p">:</span> <span class="s2">&quot;{{user `network`}}&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;network_card&quot;</span><span class="p">:</span> <span class="s2">&quot;vmxnet3&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;guest_os_type&quot;</span><span class="p">:</span> <span class="s2">&quot;{{user `guest_os`}}&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;disk_size&quot;</span><span class="p">:</span> <span class="s2">&quot;{{user `disk_size`}}&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;iso_paths&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;{{user `iso`}}&quot;</span>
+      <span class="p">],</span>
+      <span class="nt">&quot;cdrom_type&quot;</span><span class="p">:</span> <span class="s2">&quot;sata&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;ssh_username&quot;</span><span class="p">:</span> <span class="s2">&quot;jenkins&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;ssh_password&quot;</span><span class="p">:</span> <span class="s2">&quot;jenkins&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;http_directory&quot;</span><span class="p">:</span> <span class="s2">&quot;http&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;boot_wait&quot;</span><span class="p">:</span> <span class="s2">&quot;5s&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;boot_command&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;&lt;up&gt;&lt;wait&gt;&lt;tab&gt; ip={{user `ip`}} netmask={{user `netmask`}} gateway={{user `gateway`}} text ks=http://{{user `localIp`}}:{{ .HTTPPort}}/ks.cfg &lt;enter&gt;&quot;</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;provisioners&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;shell&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;inline&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;dnf -y update&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;dnf install -y java-1.8.0-openjdk-devel&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sudo yum install jenkins -y&quot;</span>
+      <span class="p">]</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span>
