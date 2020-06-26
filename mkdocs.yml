@@ -153,11 +153,14 @@ nav:
           - Page-Object Model: developer/robotframework/pom.md
           - RobotFile: developer/robotframework/robotfile.md
           - Selenium: developer/robotframework/selenium.md
+      - CSS:
+          - VOM: developer/css/vom.md
   - Certifications:
       - Kubernetes:
           - CKAD: certifications/kubernetes/ckad.md
       - AWS:
           - Security-Specialty: certifications/aws/security-specialty.md
+          - Big-Data:  certifications/aws/bigdata-specialty.md
       - Google:
           - Associate-Cloud-Engineer: certifications/google/associate-cloud-engineer.md
       - Azure:
