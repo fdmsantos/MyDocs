@@ -155,6 +155,8 @@ nav:
           - Selenium: developer/robotframework/selenium.md
       - CSS:
           - VOM: developer/css/vom.md
+          - Flexbox: developer/css/flexbox.md
+          - Grid: developer/css/cssgrid.md
   - Certifications:
       - Kubernetes:
           - CKAD: certifications/kubernetes/ckad.md
