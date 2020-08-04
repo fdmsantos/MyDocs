@@ -34,11 +34,16 @@
 [Quiz 3](https://www.aws.training/Details/Video?id=37284)
 [Quiz 4](https://www.aws.training/Details/Video?id=37293)
 
-Falta do Cloud Guru
+[Exame Sample Questions](https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Speciality_Sample-Questions.pdf)
 
-## Security 101
+* Cloud Guru
+* Linux Academy
 
-### Security Basics - Models
+## Introduction
+
+### Security 101
+
+#### Security Basics - Models
 
 * CIA
     * Confidentiality - IAM, MFA
@@ -52,7 +57,7 @@ Falta do Cloud Guru
 
 * Non-repudiation (Can't deny you did something)
 
-### Shared Responsibility Model
+#### Shared Responsibility Model
 
 * Infrastructure (EC2, EBS, VPC)
 
@@ -60,7 +65,7 @@ Falta do Cloud Guru
 
 * Abstracted (S3, Glacier, DynamoDB, SQS, SES)
 
-### Security IN AWS
+#### Security IN AWS
 
 * Visibility
 
@@ -89,16 +94,16 @@ Falta do Cloud Guru
     
     
 
-## IAM, S3 & Security Policies
+### IAM, S3 & Security Policies
 
-### Resetting Root Users
+#### Resetting Root Users
 
 * Create a new root user password and strong password policy
 * Delete previous 2 factor authentication and re-create
 * Check if the root user has an Access Key Id and Secret Access Key. If so delete these immediately
 * Check other user accounts. Verify they are legitimate and if not, delete these
 
-### IAM Policies
+#### IAM Policies
 
 * IAM is global. Applies to all areas of AWS, not just S3
 * Three different types os IAM Policies
@@ -107,7 +112,7 @@ Falta do Cloud Guru
     * Inline Policies
     
 
-### S3 Bucket Policies
+#### S3 Bucket Policies
 
 * S3 Bucket policies are attached only to S3 Buckets. S3 Bucket policies specify what actions are allowed or denied on the bucket. They can be broken down to a user level, So Alice can PUT but not DELETE and John can READ but not PUT.
 * Bucket level only, S3 only
@@ -116,12 +121,12 @@ Falta do Cloud Guru
         * IAM Policies bump up against the size limit (up to 2kb for users, 5 kb for groups and 10kb for roles). S3 supports bucket policies of up 20kb
         
 
-### S3 ACL's
+#### S3 ACL's
 
 * Are Legacy access control. AWS recommend IAm Policies and S3 Bucket Policies
 * Use them if you need apply policies on the objects themselves. Bucket policies can be applied at bucket level, and S3 ACLS can be applied to individual files (Objects)
 
-### Policy Conflicts - Visual Diagram
+#### Policy Conflicts - Visual Diagram
 
 ![Visial Diagram](../images/policy-conflicts-visual-diagram.jpg)
 
@@ -130,7 +135,7 @@ Falta do Cloud Guru
 * If no method specifies an ALLOW, then the request will be denied by default
 * Only if no method specifies as DENY and one or more methods specify an ALLOW will the request be allowed
 
-### Forcing Encryption using S3
+#### Forcing Encryption using S3
 
 * aws:SecureTransport
 
@@ -143,7 +148,7 @@ Falta do Cloud Guru
 }
 ```
 
-### Cross Region Replication
+#### Cross Region Replication
 
 * Requirements
     * Do not need to use a bucket policy with aws:SecureTransport to replicate objects using SSL. It is done by default
@@ -167,7 +172,7 @@ Falta do Cloud Guru
     * Delete markers are replicated, deleted versions of files are NOT
     
 
-### S3 with CloudFront
+#### S3 with CloudFront
 
 * Forcing S3 to Use cloudfront
     * It's necessary check "Restrict Bucket Access" option
@@ -179,14 +184,14 @@ Falta do Cloud Guru
         * Custom SSL certificates must be stored in either ACM in the us-east-1 (North Virgina) or you can also store them in IAM using the IAM Cli.
         
 
-### S3 Pre-Signed URLs
+#### S3 Pre-Signed URLs
 
 * You can access objects using pre-signed URL's
 * Typically these are done via the SDK but can also be done using the CLI
 * They exist for a certain length of time in seconds. Default is 1 Hour.
 * You can change this using "--expires-in" followed by the number of seconds
 
-### Security Token Service (STS)
+#### Security Token Service (STS)
 
 Grants users limited and temporary access to AWS resources. Users can come from three sources:
 
@@ -218,7 +223,7 @@ Use Case
 
 ![Diagram](../images/screenshot.154.jpg)
 
-### Web Identity Federation
+#### Web Identity Federation
 
 * Federation allows users to authenticate with a web identity provider (Google, Facebook, Amazon)
 * The User authenticates first with the Web ID Provider and receives an authentication token, which is exchanged for temporary AWS credentials
@@ -231,7 +236,8 @@ allowing them to assume an IAM role
         * Cognito brokers between the app and Facebook or Google to provide temporary credentials which map to an IAM role allowing access to the required resources
         * No need for the application to embed or store AWS credentials locally on the device and it gives users a seamless experience across all mobile devices
     
-### Cognito
+
+#### Cognito
 
 * User Pools
     * User pools are user directories used to manage sign-up and sign-in functionallity for mobile and web applications
@@ -242,7 +248,7 @@ allowing them to assume an IAM role
     * Enable you to create unique identities for your users and authenticate them with identity providers. With an identity, you can obtain temporary, limited-privilege AWS credentials to access other AWS Services
     
 
-### Glacier Vault
+#### Glacier Vault
 
 * Glacier is low-cost storage for archiving and long-term backup
 * Files are stored as Archives (Single of Multiple files a .tar or .zip file), Archives are stored in Vaults
@@ -257,8 +263,7 @@ allowing them to assume an IAM role
         
 * Enforce regulatory and compliance controls
 
-
-### AWS Organizations
+#### AWS Organizations
 
 * Allows you to organize your accounts into groups / OUs for access control and centralized billing
 * Attach policy based controls - Service Control Policies
@@ -270,7 +275,7 @@ allowing them to assume an IAM role
     * Restricting the actions the users, groups, roles in those accounts can do - including root
     * SCPs can deny access only, then cannot allow
 
-### IAM Credential Report
+#### IAM Credential Report
 
 * Credential Report
     * List all users in your account and the status of their various credentials, including password, access keys, and MFA devices
@@ -281,7 +286,198 @@ allowing them to assume an IAM role
     * aws iam get-credential-report
    
 
-## Logging And Monitoring
+## Domain 1 - Incident Response
+
+### Given an AWS abuse notice, evaluate the suspected compromised instance or exposed access keys
+
+* AWS Acceptable Use Policy
+
+* Compromised Resources and Abuse
+    * Abuse Activities: Externally observed behavior of AWS customer instances or resources that are malicious, offensive, illegal, or cloud harm other internet sites
+    * AWS will shut down malicious abusers, but many of the abuse complaints are about customers conducting legitimate business on AWS
+    * Example causes of abuse that are not intentional
+        * Compromised Resource:
+            * EC2 instance becoming part of a botnet then attacking other hosts on the internet. This traffic could be going to other AWS Accounts as well
+        * Secondary abuse
+            * One of your end-users posts an infected file on your resources. When that file calls "home", it is going to appear to be traffic generated in your account
+        * Application Function
+            * If you are using applications such as web crawlers, it can sometimes appear as DoS attack and AWS will react accordingly
+        * False complaints
+            * Other AWS users can report your activity to AWS. The complaint might appear legitimate, and AWS will react accordingly   
+* Responding to Abuse Notifications - There is a chance that the investigation of abuse will turn out be a compromised account or resource. If this is the case, the following AWS recommendations can help:
+    * Change the root password ant the password for all IAM users
+    * Add MFA to all admin users and anyone who access the AWS Console
+    * Create a new EC2 Key pair and update instances (deleting the compromised key)
+        * Create an AMI and Relaunch
+        * Edit the .ssh/authorized_keys file
+    * Delete for rotate potentially compromised IAM access keys
+    * Delete unrecognized or unauthorized resources
+        * Instances
+        * IAM Users
+        * Spot bids
+    * Contact AWs Support
+        * Respond to the notification
+        * Important: Do not ignore AWS abuse communications and make sure they have the most effective email address on file
+* Be Proactive: Avoid being Compromised
+    * Vault root credentials and remove access keys if they exist
+    * Require a strong password and MFA on all IAM accounts
+    * Use roles whenever possible, do not trust humans
+    * Do NOT copy EC2 key pairs to instances and protect them on admin machines
+    * Rotate IAM access keys regularly
+    * There are People scanning repositories like Github for access keys, EC2 Key pairs, and other sensitive information. AWS has created a tool to hel prevent spillage:
+        * Git-secrets: Prevents committing secrets and sensitive information to gir repositories
+
+### Verify that the Incident Response plan includes relevant AWS services
+
+* Incident Response Framework
+    * Preparation Phase - Doing everything we can to prevent breaches and failures. Eventually some type of security event will happen, it always does. We are building walls and fortifying barricades here
+        * Be Proactive - Best Practices
+            * Risk Management - Determine where the different levels of risk are
+            * Principle of least privilege
+            * Architect for failure - High availability and fault tolerance always
+            * Train for the real thing - Test and simulate; a real incident is a horrible place to learn lessons
+            * Clear ownership and governance - Tag all resources so no time is wasted finding who or what group to contact
+            * Data classification - Tagging data stores with classification can quickly identify spilage
+            * AWs Services involved - IAM, VPC, Route 53, EC2, EFS, RDS, etc ....
+        * Limit the Blast - Carefull planning can reduce the "blast radius" of any attack. The ideia here is to segment/section off resources from each other
+            * Organizations - We can add accounts under our main account
+                * Benefits
+                    * If there is a breach, it will not affect multiple accounts
+                    * Service Control, Policies can be set so "child" accounts can be limited
+            * Using multiple Regions and VPCs can have a similiar affect
+            * Services involved: Organizations and VPC
+        * Log Everything - Logging is the best way to collect information about our environments.
+            * Centralized logging - Collect all the logs from the organization in one place
+                * Encrypt and protect (logs contain sensitive data that should not be clear text)
+            * It all starts with logs. The following pattern applies
+                * Logs => Events => Alerts => Response
+            * Services Involved: CloudTrail, VPC Flow Logs, EC2 OS & Apps Logs, S3, Cloudwatch Logs, Config, Lambda
+        * Encrypt All - Two Ways
+            * Server Side encryption  (data-at-rest)
+            * Client Side encryption (data-in-transit)
+            * Important - Treat your data as if everyone is looking at it all the time because they might be
+            * Services Involved: KMS, S3, Certificate Manager, ELB, Route 53
+    * Identification Phase - AKa detection phase, this is where we discover an incident is ocurring. We can do this through behavior-based rules we configure to help detect breaches. We must then determine the following:
+        * Intention - Knowing this can help us fin compromised resources quickly
+        * Blast Radius - What resources where effected? How deep did the attach go?
+        * Data Loss Protection - A combination of encryption and access control. What did they get»
+        * Resources needing clean up - What resources do we need to mitigate or isolate
+        * This phase can be very difficult, and we should be heavily dependent on automation to help us with detection. We can then react accordingly or even automate responses. There are also stealth techniques we can use to observe user behaviour without being detected if there is questionable behavior
+        * Services involved: Cloudwatch, S3 Events, Third Party tools 
+    * Containment Phase - Removing the threat. There sould be tools and processes ready to make changes to isolate any compromised resources. The ideal situation would be CLI or SDK scripts we can deploy very quickly when needed. For fast isolation, we need to have following created or have scripts ready:
+        * A security group that restricts egress traffic and only allows management ports in
+        * A separate subnet with restrictive NACL we can move resources to
+        * An S3 Bucket policy that is designed to immediately stop spillage
+        * An explicit deny policy created in IAM (Deny *), quick removal of privileges
+        * A key policy that denies all decryption
+        * In addition there may be additional activities we should perform
+            * Snapshot volumes of compromised instances
+            * Stopping instances
+            * Disabling encryption keys in KMS
+            * Change Route 53 record sets
+        * Services Involved: VPC, S3, KMS, Route 53
+    * Investigation Phase
+        * Investigation involves event correlation and forensics. We need to determine exactly what happened and when. We also need to determine if the threat is still viable.
+        * As soon as we start our investigation, forensics can begin. Whether we use live box, or dead box forensics here, proceed with caution and make sure it is in a safe, sandboxed environment.
+        * Services Involved: VPC, Flow Logs, EC2, Cloudtrail, Cloudwatch
+    * Eradication Phase - Try to remove all the infections and compromises in our resources. In most cases, we can just delete the resources. There are some additional concerns whe dealing with data
+        * If encryption was implemented correctly, data that was accessed should not be legible. In this case, we can do the following
+            * Delete/disable any KMS Keys
+            * For EBS, delete splilled files, create a new encrypted volume, copy all good files
+            * For S3 with S3 managed encryption, delete the object
+            * For S3 with KMS managed keys or customer keys, delete the object and the CMKs
+            * Secure wipe any affected files
+        * If our data was not encrypted on EBS, we can attempt to sanitize the volume
+            * Not recommended
+            * Create new columes or instances with clean files or restore them from "Last know good" backups
+        * Services Involved: KMS, EBS, S3
+    * Recovery Phase - We need to put everything back to normal. This normally includes verifying eradicated resources and reversing the steps taken in the containment phase
+        * Restore resources one at time (or group)
+        * Use new encryption keys
+        * Restore network access
+        * Monitor, monitor, monitor
+        * Have the containment phase tools ready
+        * This phase can be potentially dangerous as the forensic process may not have revealed everything
+    * Follow-up Phase
+        * Testing and simulations are vital
+        * Must strive for efficiency (tagging, automation)
+        * Teams need experience
+        
+### Evaluate the Configuration of Automated Alerting and Execute Possible Remediation of Security-Related Incidents and Emerging Issues    
+
+* Automated Alerting
+    * The services we use in the cloud make scalability and reliability easy. These concepts should apply to our logging, monitoring and alerting as well
+    * Architecture
+        * Logging (CloudTrail, VPC Flow Logs, Route 53 DNS Logs, EC2) => Cloudwatch Logs => cloudWatch Metric Filters => Alarms => Targets (SNS Topic, AutoScaling)
+* Automated Response
+    * Once we get alerts generated in Cloudwatch, there are a log of target services we can trigger with those alerts. We can configure these target services to automatically remediate our resources
+        * CloudWatch Event Rules => Targets:
+            * Lambda - Function
+            * Systems Manager - Patch or Run command
+            * SNS Topic - Message or application
+            * SQS - Application Queue
+    
+------
+
+## Domain 2 - Logging And Monitoring
+
+### S3 Events
+
+* Work at Object Level
+* Events:
+    * RRSObjectLost
+    * Put
+    * Post
+    * Copy
+    * Complete Multipart Upload
+    * Delete
+    * Delete marker Created
+    * ObjectCreate (All)
+    * ObjectDelete(All)
+* Then we send notification to three services
+    * SNS Topic
+    * SQS Queue
+    * Lambda Function
+    
+### S3 Access Logs
+
+* The default storage for CloudTrail is S3
+* Cloudwatch Logs can be exported to S3
+* S3 can help cost savings while still assisting with compliance
+    * Lifecycle policies to reduce storage costs
+    * Archive older logs to glacier
+* S3 Access Logs
+    * Tracks access requests to buckets
+    * Each log event contains one access request
+    * Log events contain
+        * Requester
+        * Bucket Name
+        * Request Time
+        * Request action
+        * Response Status
+        * Error code
+* Important features of s3 access logging
+    * The log delivery group must be granted write permission on the target bucket
+    * Not near-real-time logging
+    * Logs are delivered on a best effort basis
+        * Newly enable access logs might not be displayed in the target bucket for up to an hour
+        * Changes to the target bucket might take up to an hour propagate
+        
+        
+### Centralized Logging
+
+* The Multi-Account Strategy
+    * Use Organizations and set up accounts by environments or function
+        * Production, Development, Staging, etc
+        * Security, Administration
+    * Will help reduce the blast radius of any incident
+    * An additional layer of security
+        * Cross-account roles
+* Centralized logging
+    * Logs should be contained in one location (the complete picture)
+    * Logs should be read-only for most job functions ( including security)
+    * Logs should be encrypted (KMS Preferred)
+    * Roles Can provide cross account access
 
 ### Cloud Trail
 
@@ -291,6 +487,7 @@ allowing them to assume an IAM role
     * Industry & regulatory compliance
 * Provides
     * Logs API call details (for supported services)
+    * Entries can be viewed using Event History (past 90 days)
 * Validating CloudTrail Log File Integrity
     * Was the log file modified, or deleted?
     * CloudTail log file integrity validation:
@@ -314,6 +511,20 @@ allowing them to assume an IAM role
     * Notifications Available
 * Setup
     * Enabled by default (For 7 Days)
+    * Trail - A configuration allowing for logs to be sent to an S3 bucket
+        * Single region or multi-region trails can be configured
+        * trails can make multi-account logging possible
+        * Configuration Options
+            * Management events - Enabling will log control plane events, such as
+                * User login events
+                * Configuring Security
+                * Setting up logging
+            * Data Events which include
+                * Object Level events in S3
+                * Function level events in Lambda
+            * Encryption flexibility
+                * Encrypted in S3 server side by default, can be changed to KMS
+            * The logs can be sent to an S3 bucket of choice and even prefixed (folders)
 * Security
     * Protect you CloudTrail logs, they contain everything that you are doing in your AWS account and may contain PII
     * Allow your security people admin access to Cloudtrail, auditors read only access to CloudTrail using IAM
@@ -335,26 +546,68 @@ allowing them to assume an IAM role
     * CloudWatch
     * CloudWatch logs
     * Cloudwatch Events
-* Real Time
-* Metrics
-* Alarms
 * Notifications
-* Custom metrics
 * CloudWatch Logs
     * Pushed from AWS services (including CloudTrail)
     * Pushed from your applications/systems
-    * Metrics from log entry matches
     * Stored indefinitely (not user S3)
+    * Can stream log data to lambda and Elasticsearch service
+    * Components
+        * Log Events - Record of activity recorded by the monitored resource
+        * Log Streams - Sequence of logs events from the same source/application
+        * Log Groups - A collection of logs streams with same access control, monitoring, and retention settings
+        * Metric Filters - Assigned to a log groups, it extracts data from the group's log streams and converts that data into Metric data point
+        * Retention Settings - Period of time logs are kept. Assigned to log groups, but applies to all the streams in a group (q day to never expire)
+    * Use cloudwatch logs to monitor, store, and access your log files from:
+        * Cloudtrail 
+        * VPC flow logs
+            * Sent to cloudwatch per default
+        * Cloudwatch Agent
+        * DNS Logs
+            * DNS Query Logs can be enabled on Route53 hosted zones and sent to CloudWatch. Route 53 uses common DNS return codes in the log and includes the edge location (based on airport codes)
+            * These logs can be used to determine when there is a DNS problem in an application
+            * These logs are only available for hosted zones where Route53 is the endpoint (no outside hosting). Also, the logs are not available for private hosted zones
+            
+* Cloudwatch Metrics    
+    * Metric Filters: Used to create a custom metric from log data
+        * Assigned at the log group level
+            * Will filter all the streams in that group
+        * Uses a filter and pattern syntax
+            * Example: { $.eventName = "createUser" }
+    * Metric Namespace: The Folder or category the custom metric will appear in
+    * Metric Name: The name given to the custom metric
+    * Alarms: Assigned to the filter
+        * Alarms can trigger:
+            * SNS Topics
+            * Autoscaling Actions
+            * EC2 actions (if the metric chosen is related)
+            
 * Cloudwatch Events
+    * Are similiar to alarms, Instead of configuring tresholds and alarming on metrics, CloudWatch Events are matching event Patterns
     * Near real-time stream of system events
-    * Events
-        * AWS Resources state change
-        * AWS CloudTrail (API Calls)
-        * Custom Events (code)
-        * Scheduled
-    * Rules - match incoming events and route them to one or more targets
-    * Targets - Lambda functions, SNS topics, SQS queues, Kinesis streams
+    * Common issues: Permissions, Wrong ARN, Typos
+    * Three Parts
+        * Event Source
+            * AWS Resources state change
+            * AWS CloudTrail (API Calls)
+            * Custom Events (code)
+            * Scheduled
+        * Rules - match incoming events and route them to one or more targets
+        * Targets - Lambda functions, SNS topics, SQS queues, Kinesis streams
+            * There can be more than one
+    * Examples
+        * Alerting on object uploads in S3 (can trigger automatic ACL remediation)
+        * Alerting on EC2 instance state changes (can trigger actions on the instances)
+        * Alerting on user creation in IAM
+        
+* Cloudwatch Buses
+    * Allows different AWS accounts to share Cloudwatch Events
+    * Can collect events from all your accounts together in one account
+    * Must grant an account permission by adding and then sending the account number to the receiving account bus configuration
+        * The sending account send an event to an Event bus target
+    * The CloudWatch Event Bus process requires two event rules, one event rule on either end of the event bus.
     
+
 ### AWS Config
 
 * Enables
@@ -364,6 +617,11 @@ allowing them to assume an IAM role
 * Provides
     * Configuration snapshots and logs config changes of AWS resources
     * Automated compliance checking
+    * Evaluate resource configurations for desired settings
+    * Retrieve configurations of resources in your account
+    * Retrieve historical configurations
+    * Receive a notification for creations, deletions, and modifications
+    * View relationships between resources ( members of a security group)
 * Config Rules - A rule represents the desired value for resources. There are two types:
     * AWS Managed Rules - Pre-built and managed by AWS. You simply choose the rule you want to enable, then supply a few configuration parameters to get started
     * Customer Managed Rules - These are custom rules, defined and built by you. You can create a function in AWS Lambda that can be invoked as part of a custom rule and these functions execute in your account
@@ -387,7 +645,20 @@ allowing them to assume an IAM role
 * Monitoring Config
     * Use CloudTrail with Config to provide deeper insight into resources
     * Use Cloudtrail to monitor access to config such as someone stopping the config recorder
+* Uses cases
+    * Administering resources
+        * Notification when a resource violates configuration rules
+    * Auditing and compliance
+        * Historical records of configurations are sometimes needed in auditing
+    * Configuration management and troubleshooting
+        * Configuration changes on one resource might affect others
+        * Can help find these issues quickly and can restore last know good configurations
+    * Security Analysis
+        * Allows for historical records of IAM policies
+            * For example, what permissions a user had at the time of an issue
+        * Allows for historical records of security group configurations
     
+
 ### Cloud HSM
 
 The AWS CloudHSM service helps you meet corporate, contractual and regulatory compliance requirements for data security by using dedicated hardware security module (HSM) appliances within the AWS cloud
@@ -444,6 +715,7 @@ The AWS CloudHSM service helps you meet corporate, contractual and regulatory co
 
 ![Roles](../images/screenshot.185.jpg)
     
+
 ### AWS Inspector 
 
 Amazon Inspector is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS
@@ -475,10 +747,29 @@ These findings can be reviewed directly or as part of detailed assessment report
     * Compare what it 'sees' to security rules
     * Report on security Issues observed within target during run
     * Report findings and advise remediation
+    * Analyzing the behaviour of your AWS resources
+    * Identifying potential security issues
   
 * It Will not
     * Relive you of your responsibility under the share responsibility model
     * Perform miracles
+    
+* Components
+    * Target: A collection of AWs resources
+    * Assesment Template: Made up of security rules and produces a list of findings
+    * Assessment Run: Applying the assessment template to a target
+    
+* Features
+    * Configuration Scanning and Activity Monitoring Engine
+        * Determines what target looks like, its behavior, and any dependencies it may have
+        * Identifies security and compliance issues
+    * Built-in content library
+        * Rules and reports built into inspector
+        * Best practice, common compliance standard, and vulnerability evaluations
+    * Detailed recommendations for resolving issues
+        * Api Automation
+        * Allows for security Testing to be included in the development and design stages
+        
 
 ### AWS Trusted Advisor
 
@@ -500,6 +791,7 @@ Advisor will advise you on Cost Optimization, Performance, Security, Fault Toler
 * Questions about Security => If needs instal agent/create reports => Inspector
     * But if question is only about security groups open, IAM => Trusted advisor
     
+
 ### Logging
 
 * AWS CloudTrail
@@ -1394,7 +1686,19 @@ AWS Artifact enables you
     * Does the IAm user have the correct permissions to allow them to read the coudwatch dashboard?
     * Check that cloudwatch events has permission to invoke the event target
     * Check the lambda has permissions to terminate EC2
-    
+* CloudWatch Events - Common issues
+    * General configuration issues
+        * Wrong resource name when connection resources
+    * Typos - This should be checked during configuration, but we all make mistakes
+        * Huge with API calls, filter patterns, and lambda functions
+    * Not waiting long enough after making changes or new configurations
+    * Roles do not have sufficient permissions (AWS does not always tell you with an error)
+        * This includes targets and subscriptions to encrypted resources - must include KMS policies
+* CloudEvents
+    * With Cloudwatch, we can create an alarm on Events Metrics. We can use FailedInvocations to notify us when our Cloudwatch Events rules are broken
+* Lambda functions
+    * Lambda delivers logs to cloudwatch logs. It will log errors with invocations. We can then alarm on this using a metric filter and notify via SNS
+
 ### Trouleshooting Logging
 
 * Cloudtrail logs not appearing in S3? Check the Cloudtrail is enabled
@@ -1423,7 +1727,6 @@ AWS Artifact enables you
 
 ### Troubleshooting Cross Account Roles
 
-
 * Using STS:AssumeRole - Common Issues
     * Check the external account has permission to call STS:AssumeRole - Dev Account IAM Policy
     * Check the external account is trusted AND has permission to perform the action you are attempting - Prod Account, Role
@@ -1434,6 +1737,7 @@ AWS Artifact enables you
 * Tips
     * For cross account access to S3: check that the account is trusted, the iam policy the external account needs to allow the user to call STS:AssumeRole, The iam policy in the trusting account needs allow the action
     * Cross account access to kms, check you have configured the key policy to allow access to the external account as well as the iam policy in the local account
+    
     
 ### Troubleshooting Lambda Access
 
