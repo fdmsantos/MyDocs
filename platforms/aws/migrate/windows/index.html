@@ -1903,6 +1903,15 @@
 <h2 id="lab-trust-relationship-between-aws-managed-ad-and-on-premise-ad-with-fsx">Lab - Trust Relationship between AWS Managed AD and On-Premise AD with FSX<a class="headerlink" href="#lab-trust-relationship-between-aws-managed-ad-and-on-premise-ad-with-fsx" title="Permanent link">&para;</a></h2>
 <p><a href="https://winonaws.cloud/migratewindows/en/">Lab Guide</a></p>
 <p>AWS Support Contact: Hans Moser - <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#97;&#110;&#115;&#109;&#111;&#115;&#101;&#64;&#97;&#109;&#97;&#122;&#111;&#110;&#46;&#99;&#104;">&#104;&#97;&#110;&#115;&#109;&#111;&#115;&#101;&#64;&#97;&#109;&#97;&#122;&#111;&#110;&#46;&#99;&#104;</a></p>
+<ul>
+<li>
+<p>Hans Moser - Info About D: Drive</p>
+<ul>
+<li>Regarding D: Drive: In our ‘source Fileserver’ we have the files on C:, hence the first export also include the directory paths to C:</li>
+<li>But on FSX, our target, the data drive is D:  So to make the import work, we’ve to change the paths, so that we target the correct folder paths on the destination (our FSX).</li>
+</ul>
+</li>
+</ul>
 <h3 id="cloudformation">Cloudformation<a class="headerlink" href="#cloudformation" title="Permanent link">&para;</a></h3>
 <h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
 <table>

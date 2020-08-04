@@ -3820,7 +3820,6 @@ allowing them to assume an IAM role</li>
 </ul>
 </li>
 </ul>
-<hr />
 <h2 id="domain-2-logging-and-monitoring">Domain 2 - Logging And Monitoring<a class="headerlink" href="#domain-2-logging-and-monitoring" title="Permanent link">&para;</a></h2>
 <h3 id="s3-events">S3 Events<a class="headerlink" href="#s3-events" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3869,7 +3868,7 @@ allowing them to assume an IAM role</li>
 </li>
 <li>Important features of s3 access logging<ul>
 <li>The log delivery group must be granted write permission on the target bucket</li>
-<li>Not near-real-time logging</li>
+<li>Not near-real-time logging - Can take one hour to propagate</li>
 <li>Logs are delivered on a best effort basis<ul>
 <li>Newly enable access logs might not be displayed in the target bucket for up to an hour</li>
 <li>Changes to the target bucket might take up to an hour propagate</li>
@@ -3981,6 +3980,7 @@ allowing them to assume an IAM role</li>
 <li>Check the integrity of your log files using digest files</li>
 </ul>
 </li>
+<li>Json and CSV file formats to export</li>
 </ul>
 <h3 id="cloudwatch">Cloudwatch<a class="headerlink" href="#cloudwatch" title="Permanent link">&para;</a></h3>
 <ul>
