@@ -96,6 +96,7 @@ nav:
               - ACM: platforms/aws/security/acm.md
           - Migrate:
               - VmWare: platforms/aws/migrate/vmware.md
+              - Windoes: platforms/aws/migrate/windows.md
       - Kubernetes:
           - Admin:
               - Administrator: platforms/kubernetes/admin/admin.md

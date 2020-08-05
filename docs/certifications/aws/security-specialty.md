@@ -6,6 +6,8 @@
 
 [White Paper: Introduction to AWS Security Processes](https://docs.aws.amazon.com/whitepapers/latest/aws-overview-security-processes/welcome.html?did=wp_card&trk=wp_card)
 
+[Linux academy Guide](https://app.lucidchart.com/documents/view/42bca91d-ad59-4835-8f3a-cf0fa41a0cd4)
+
 * WhitePapers
     * KMS best Practices
     * KMS Cryptographic Details
@@ -13,7 +15,7 @@
     * Logging in AWS
     * Well-Architected framework - Security Pillar
     
-* Re:invent Videos
+* Re:invent Videos (2017) - NET 3XX - Medium level , NET 4XX - Advanced
     * KMS best Practices
     * AWS Encryption Deepdive
     * Become an IAM Policy Master
@@ -21,20 +23,22 @@
     * VPC fundamentals & Connectivity options
     * Logging in AWS
     * Advanced security best practices masterclass
+    * Advancer VPC Design and New captabilities for Amazon VPC
     
 * FAQs
     * https://aws.amazon.com/faqs/ Security, identity & Compliance
     
 ## Exams
- 
+
+[Exam Guide](https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS_Certified_Security_Specialty_Exam_Guide_v1.5.pdf)
 [AWS Practice Exam](https://rise.articulate.com/share/AMkmIRlYT4b8xsWXcOYEhqw3H_OMeoSM#/lessons/Ra5P0ix3pErElmpDy_ZQn8SXNcn6dMHx) => DONE
- 
+[AWS Practice Exam 2](https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS_Certified_SC-S_Sample%20Questions_v1.0_FINAL.pdf) 
 [Quiz 1](https://www.twitch.tv/aws/video/467770461) => Done
 [Quiz 2](https://www.aws.training/Details/Video?id=37283)
 [Quiz 3](https://www.aws.training/Details/Video?id=37284)
 [Quiz 4](https://www.aws.training/Details/Video?id=37293)
 
-[Exame Sample Questions](https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Speciality_Sample-Questions.pdf)
+[Exam Sample Questions](https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Speciality_Sample-Questions.pdf)
 
 * Cloud Guru
 * Linux Academy
@@ -110,24 +114,24 @@
     * AWS Managed Policies
     * Customer Managed Policies
     * Inline Policies
-    
+* Components
+    * Version: current lastest is 2012-10-17 - check this is correct
+    * Statement: Enclosed {}, and deliminated by commas . make sure the formatting is good
+    * Effect: Needs to be Allow or Deny
+    * Principal: The entity which the statement applies to, invalid for IAM user policies since it's implied - be careful to make sure it exists and is correct for resource policies
+    * Action: The api Actions which the statement refers to. Make sure the actions and resources match.
+    * Resource: One or more ARNs or wildcards which refert to AWS objects
+    * Condition (optional): Conditions for the statement. Check for validity. sourceIP won't work with endpoints
+   
+   
+#### Permissions Boundaries
 
-#### S3 Bucket Policies
+* A permissions policy allows or denies, actions on resources. Policies are applied to identities (Users, Groups, Or Roles) in the case of identity policies, or resources in the case of resources policies
+* Permissions boundary is a set of access which an entity (user, role, organisation) can never exceed
+* It can act as a safety net to ensure adherence to organizational policies, or it can act as delegation tools
+* A permissions boundary on its own grants no permissions, it only restricts 
 
-* S3 Bucket policies are attached only to S3 Buckets. S3 Bucket policies specify what actions are allowed or denied on the bucket. They can be broken down to a user level, So Alice can PUT but not DELETE and John can READ but not PUT.
-* Bucket level only, S3 only
-* Explicit Deny always Overrides an Allow
-    * Use Cases
-        * IAM Policies bump up against the size limit (up to 2kb for users, 5 kb for groups and 10kb for roles). S3 supports bucket policies of up 20kb
-        
-
-#### S3 ACL's
-
-* Are Legacy access control. AWS recommend IAm Policies and S3 Bucket Policies
-* Use them if you need apply policies on the objects themselves. Bucket policies can be applied at bucket level, and S3 ACLS can be applied to individual files (Objects)
-
-#### Policy Conflicts - Visual Diagram
-
+#### Policy Evaluation
 ![Visial Diagram](../images/policy-conflicts-visual-diagram.jpg)
 
 * With least-privilege, decisions ALWAYS default to DENY
@@ -135,61 +139,10 @@
 * If no method specifies an ALLOW, then the request will be denied by default
 * Only if no method specifies as DENY and one or more methods specify an ALLOW will the request be allowed
 
-#### Forcing Encryption using S3
-
-* aws:SecureTransport
-
-```json
-# Deny This
-"Condition": {
-  "Bool": {
-    "aws:SecureTransport": false
-  }
-}
-```
-
-#### Cross Region Replication
-
-* Requirements
-    * Do not need to use a bucket policy with aws:SecureTransport to replicate objects using SSL. It is done by default
-    * Versioning must be enabled (In two buckets)
-    * Source and destination buckets must be in different AWS Regions
-    * S3 must have permissions to replicate objects from that source bucket to the destination bucket on your behalf
-    * It's possible to use CRR from one AWS account to another. The IAM role must have permissions ro replicate objects in the destination bucket.
-    * If the object owner is different than source bucket owner, the object owner must grant the bucket owner the READ and READ_ACP permissions via the object ACL   
-* In the replication configuration, can optionally direct Amazon S3 to change the ownership of object replica to the AWs account that owns the destination bucket
-* What is Replicated
-    * Any objects created after add a replication configuration
-    * In addition to unencrypted objects, S3 replicates objects encrypted using S3 managed keys (SSE-S3) or AWS KMS managed keys (SSE-KMS)
-    * Object metadata , ACL Updates, Tags
-    * Replicates only objects in the source bucket for which the bucket owner has permissions to read objects and read access control lists (ACL)
-    * If you just use a delete marker, then that delete marker is replicated
-* What is NOT Replicated
-    * Anything created before CRR is turned on
-    * Objects created with Server-side encryption using customer-provided (SSE-C) encryption keys
-    * Objects created with server-side encryption using AWS KMS - managed encryption (SSE-KMS) unless you explicitly enable this option
-    * Objects in the source bucket for which the bucket owner does not have permissions. This can happen when the object owner is different from the bucket owner
-    * Delete markers are replicated, deleted versions of files are NOT
-    
-
-#### S3 with CloudFront
-
-* Forcing S3 to Use cloudfront
-    * It's necessary check "Restrict Bucket Access" option
-    * It's necessary create a (or reuse) Origin Access Identity (something like a cloudfront user to access to bucket)
-        * It's necessary update Bucket Policy to give permissions to Origin Access identity access to Bucket 
-* CloudFront SSL Certificates
-    * If you are happy for users to access your content using *.cloudfront.net domain name, then select the default CloudFront Certificate
-    * If you want to use a domain name that you already own, you will need to use a custom SSL certificate
-        * Custom SSL certificates must be stored in either ACM in the us-east-1 (North Virgina) or you can also store them in IAM using the IAM Cli.
-        
-
-#### S3 Pre-Signed URLs
-
-* You can access objects using pre-signed URL's
-* Typically these are done via the SDK but can also be done using the CLI
-* They exist for a certain length of time in seconds. Default is 1 Hour.
-* You can change this using "--expires-in" followed by the number of seconds
+* Evaluation Order
+    * Boundaries are always processed first, starting with organizational and then identity (User or Role)
+    * Then AWS checks if you have chosen a subset of permissions for sts:AssumeRole
+    * Final effective permissions are a merge of identity, resource, and ACL
 
 #### Security Token Service (STS)
 
@@ -223,19 +176,6 @@ Use Case
 
 ![Diagram](../images/screenshot.154.jpg)
 
-#### Web Identity Federation
-
-* Federation allows users to authenticate with a web identity provider (Google, Facebook, Amazon)
-* The User authenticates first with the Web ID Provider and receives an authentication token, which is exchanged for temporary AWS credentials
-allowing them to assume an IAM role
-* Cognito is an Identity Broker which handles interaction between your applications and the Web ID provider (You don't need to write you own code to do this)
-    * Provides sign-up, sign-in, and guest user access
-    * Syncs user data for a seamless experience across your devices
-    * Cognito is the AWS recommended approach for Web ID federation particularly for mobile apps
-    * Use Cases
-        * Cognito brokers between the app and Facebook or Google to provide temporary credentials which map to an IAM role allowing access to the required resources
-        * No need for the application to embed or store AWS credentials locally on the device and it gives users a seamless experience across all mobile devices
-    
 
 #### Cognito
 
@@ -268,6 +208,7 @@ allowing them to assume an IAM role
 * Allows you to organize your accounts into groups / OUs for access control and centralized billing
 * Attach policy based controls - Service Control Policies
 * Centrally manage permissions for OUs - groups of accounts or individual accounts
+* Access to accounts created in Organizations is initially via a role OrganizationAccountAccessRole, which is created automatically
 * SCP is used to centrally control the use of AWS Serices across multiple accounts
     * Like a filter which restricts access to AWS services
     * The SCP applies to all OUs and accounts below the OU to which it is attached
@@ -403,6 +344,7 @@ allowing them to assume an IAM role
         * Must strive for efficiency (tagging, automation)
         * Teams need experience
         
+
 ### Evaluate the Configuration of Automated Alerting and Execute Possible Remediation of Security-Related Incidents and Emerging Issues    
 
 * Automated Alerting
@@ -417,7 +359,6 @@ allowing them to assume an IAM role
             * SNS Topic - Message or application
             * SQS - Application Queue
     
-------
 
 ## Domain 2 - Logging And Monitoring
 
@@ -439,6 +380,7 @@ allowing them to assume an IAM role
     * SQS Queue
     * Lambda Function
     
+
 ### S3 Access Logs
 
 * The default storage for CloudTrail is S3
@@ -458,12 +400,13 @@ allowing them to assume an IAM role
         * Error code
 * Important features of s3 access logging
     * The log delivery group must be granted write permission on the target bucket
-    * Not near-real-time logging
+    * Not near-real-time logging - Can take one hour to propagate
     * Logs are delivered on a best effort basis
         * Newly enable access logs might not be displayed in the target bucket for up to an hour
         * Changes to the target bucket might take up to an hour propagate
         
         
+
 ### Centralized Logging
 
 * The Multi-Account Strategy
@@ -533,6 +476,7 @@ allowing them to assume an IAM role
     * Use SSE-S3 or SSE-KMS to encrypt the logs
     * Use lifecycle rules to move data to Glacier or to delete it
     * Check the integrity of your log files using digest files
+* Json and CSV file formats to export
 
 ### Cloudwatch
 
@@ -659,61 +603,7 @@ allowing them to assume an IAM role
         * Allows for historical records of security group configurations
     
 
-### Cloud HSM
 
-The AWS CloudHSM service helps you meet corporate, contractual and regulatory compliance requirements for data security by using dedicated hardware security module (HSM) appliances within the AWS cloud
-
-* Enables
-    * Control of data
-    * Evidence of control
-    * Meet tough compliance controls
-* Provides
-    * Secure Key Storage
-    * Cryptographic operations
-    * Tamper-resistant Hardware Security Model
-* Setup
-    * Inside a VPC, in the region required
-    * A private subnet for the HSM
-    * An EC2 instance (control instance) with the cloudhsm_mgmt_util & key_mgmt_util
-    * Needs to be accessible by you
-    * Create a cluster & HSM
-        * Create a VPC
-        * Create a Private & Public subnet
-        * Create the Cluster
-        * Verify HSM identity
-        * Initialize the Cluster
-        * Launch a client instance
-        * Install and configure the client
-        * Activate the cluster
-        * Setup Users
-        * Generate Keys
-* Key Control
-    * AWS does not have access to your keys
-    * Separation of duties and role-based access control is part of the design of the HSM
-    * AWS can only administer the appliance, not the HSM partitions where the keys are stored
-    * AWS can (but probably won't) destroy your keys, but otherwise have no access
-* Tampering
-    * If the CloudHSM detects physical tampering the keys will be destroyed
-    * If the CloudHSM detects five unsuccessful attempts to access an HSM partition as Crypto Officer the HSM appliance erases itself
-    * If the CloudHSM detects five unsuccessful attempts to access an HSM with Crypto User (CU) credentials, the user will be locked and must be unlocked by a CO
-* Monitoring
-    * Use CloudTrail to log API calls including those made to CloudHSM
-* 4 Main User Types
-    * Precrypto Officer (PRECO)
-    * Crypto Officer (CO)
-        * Performs user management operations
-        * For example, a CO can create and delete users and change user password
-    * Crypto Users (CU)
-        * Key management - Create, delete, share, import and export cryptographic keys
-        * Cryptographic operations - Use cryptographic keys for encryption, decryption, signing, verifying and more
-    * Appliance User (AU)
-        * The appliance User (AU) can perform cloning and synchronization operations. AWS CloudHSM uses the AU to synchronize the HSMs in an AWS CloudHSM cluster
-        * The AU exists on all HSMs provided by AWS CloudHSM and has limited permissions 
-
-
-![HSM vs KMS](../images/screenshot.184.jpg)
-
-![Roles](../images/screenshot.185.jpg)
     
 
 ### AWS Inspector 
@@ -829,14 +719,253 @@ Advisor will advise you on Cost Optimization, Performance, Security, Fault Toler
             
             
 
-## Infrastructure Security
+## Domain 3 - Infrastructure Security
+
+### CloudFront
+
+Cloudfront is a global CDN operating from AWS Edge Locations. Connections to a cloudfront distribution can utilize HTTP or HTTPs.
+Connections From Cloudfront to your content (origin server) can occur using HTTP or HTTPs. It also removes many invalid HTTP requests at the edge-basic filtering
+
+* Dedicated IP Vs Shared IP (SNI - Server Name Identifier) 
+    * Dedicated IP SSL is supported in ALL Browsers, but costs extra. 
+    * SNI has no extra cost, but browsers need to support it
+    * To Support Old browsers, we need choose dedicated IP
+* Viewer protocol policy
+    * HTTP and HTTPS -> default selected
+    * Redirect HTTP to HTTPS
+    * HTTPS only
+* Advanced Security Features
+    * Integrates with AWS WAF
+    * Supports full access control and signed URLs/cookies
+    * Provides basic white/blacklist geo-restriction per distribution
+    * Can integrate with 3 party solution using signed URLS/Cookies
+    * Field-Level Encryption - help protect sensitive data (Encrypted End-to-End) - (Credit card ,.... )
+    * Supports Lambda at the edge
+* Custom Origin
+    * Origin SSL Protocols
+        * TLSv1.2 - Default selected
+        * TLSv1.1 - Default selected
+        * TLSv1 - Default selected
+        * SSLv3 - Disabled
+    * Origin Protocol Policy
+        * HTTP Only - Default selected
+        * HTTPS Only
+        * Match Viewer
+     * Can configure HTTP/HTTPS Ports
+* Restrict Viewer Access (Use Signed URLs or Signed Cookies)
+    * Yes/No options. No is default
+    * If select yes, users must use signed urls or signed cookies
+* Lambda Edge
+    * Inspect cookies to rewrite URLS to different versions of a site for A/B Testing
+    * Send different objects to your users based on the User Agent Header
+    * Inspect headers or authorized tokens, inserting a corresponding header and allowing access control before forwarding a request to the oring
+    * Add, delete modify headers, and rewrite URL path to direct users to different objects in the cache
+    * Generate new HTTP responses to do things like redirect unauthenticated users to login pages, or create and deliver static webpages right from the edge
+* CloudFront SSL Certificates
+    * If you are happy for users to access your content using *.cloudfront.net domain name, then select the default CloudFront Certificate
+    * If you want to use a domain name that you already own, you will need to use a custom SSL certificate
+        * Custom SSL certificates must be stored in either ACM in the us-east-1 (North Virgina) or you can also store them in IAM using the IAM Cli.
+        * Signed Certificates Don't work
+        * Must match the custom origin name if custom origin is used
+    * Can configure alternate domain names
+* Restricting S3 to Use cloudfront
+    * By default, when using cloudfront with  s3, cloudfront is optional, and S3 can be acessed directly. This can be changed
+ 
+    * It's necessary check "Restrict Bucket Access" option
+    * It's necessary create a (or reuse) Origin Access Identity (OAI) (something like a cloudfront user to access to bucket)
+        * What is? - Is a virtual identity. A distribution can be configured to use it, so when accessing S3, cloudfront assumes this identity
+        * It's necessary update Bucket Policy to give permissions to Origin Access identity access to Bucket
+        * Why use? - To use on OAI, public permissions are removed from your S3 bucket policy and permissions for the OAI are added. Only the cloudfront using that OAI can access your S3 bucket
+* Supports Logging
+* Geo Restriction
+    * CloudFront can restrict content in one of two ways
+        * Using Cloudfront Geo Restriction
+            * Simple implement
+            * Whitelist or blacklist and it works on country restrictions only
+            * Location is based on IP country location - backed by a GeoIP Database ( ~ 99.8% accuracy)
+            * No restrictions on ANYTHING ELSE - session/cookie/content/browser etc
+        * Using a third-party GeoLocation Service
+            * Third-Party Geo Restriction needs a server/serveless application - Signed URLs are used
+            * A thrid Party Geolocation service is used... extra accuracy
+            * Your application can apply additional restriction - session/browser/account level/os
+            * Location can be much more accurate ... city, locale, LAT/Long in some cases
+            * The application can apply any logic it wants
+            * Needs to be this option with need anything beyond IP Location whitelist/blacklist
+
+### Pre-Signed URLs and Cookies
+
+* Signed URLs allow an entity (generally an application) to create a URL which includes the necessary information to provide the holder of that url read/write access to an object, even if they have no permissions to that object
+* Cookies extend this, allowing access to an object type or area/folder and don't need a specifically formatted url
+* You can access objects using pre-signed URL's
+* Typically these are done via the SDK but can also be done using the CLI
+* Features/Limits
+    * Signed URLs/Cookies are linked to an existing identity (Role/User), and they have the permissions of that entity
+    * They exist for a certain length of time in seconds. Default is 1 Hour.
+        * You can change this using "--expires-in" followed by the number of seconds
+        * They expire either at the end of the period or until the entity on which they are based expires
+    * Anyone can create a signed URL, even if they don't have permissions on the object
+    * With Cloudfront you defined the accounts which can sign; the key pair TrustedSigners is needed for cloudfront
+        * Signed cookies (Cloudfront feature) don't work with RTMP distributions
+
+### Forcing Encryption using S3
+
+* S3 doesn't encrypt bucket, objects are encrypted and the settings are defined at an object level
+* Historically, it wasn't possible to define encryption at bucket level, but you can now set S3 Default Encryption on bucket level
+    * If set, then any objects put into a bucket without encryption headers are encrypted using the bucket level default settings
+
+* aws:SecureTransport
+```json
+# Deny This
+"Condition": {
+  "Bool": {
+    "aws:SecureTransport": false
+  }
+}
+```
+
+* Additionally, bucket policies can be used to deny attempts to put objects into a bucket with individual encryption methods
+
+### Cross Region Replication
+
+* Is configured at bucket level
+* Requirements
+    * Do not need to use a bucket policy with aws:SecureTransport to replicate objects using SSL. It is done by default
+    * Versioning must be enabled (In two buckets)
+    * Source and destination buckets must be in different AWS Regions
+    * S3 must have permissions to replicate objects from that source bucket to the destination bucket on your behalf
+    * It's possible to use CRR from one AWS account to another. The IAM role must have permissions ro replicate objects in the destination bucket.
+    * If the object owner is different than source bucket owner, the object owner must grant the bucket owner the READ and READ_ACP permissions via the object ACL   
+* In the replication configuration, can optionally direct Amazon S3 to change the ownership of object replica to the AWs account that owns the destination bucket
+* What is Replicated
+    * Any objects created after add a replication configuration
+    * In addition to unencrypted objects, S3 replicates objects encrypted using S3 managed keys (SSE-S3) or AWS KMS managed keys (SSE-KMS)
+    * Object metadata , ACL Updates, Tags, Ownership, StorageClass
+    * Replicates only objects in the source bucket for which the bucket owner has permissions to read objects and read access control lists (ACL)
+    * If you just use a delete marker, then that delete marker is replicated
+* What is NOT Replicated
+    * Anything created before CRR is turned on
+    * Objects created with Server-side encryption using customer-provided (SSE-C) encryption keys
+    * Objects created with server-side encryption using AWS KMS - managed encryption (SSE-KMS) unless you explicitly enable this option
+    * Objects in the source bucket for which the bucket owner does not have permissions. This can happen when the object owner is different from the bucket owner
+    * Delete markers are replicated, deleted versions of files are NOT
+    * Lifecycle events are not replicated
+
+* Standard Replication - Region A to Region B
+    * Configure IAM Role with permissions to get Objects from Region A and replicate ro Region B
+* Other Account repplication
+    * Need add bucket policy in Account B to account A have permissions to replicate
+* Owner Change
+    * Need add Replication Configuration
+* KMS
+    * Need Replication Configuration
+    * Need KMS config updates
+
+### AWS WAF Vs AWS Shield
+
+AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to Amazon CloudFront or and Application Load Balanacer.
+AWS WAF also lets you control access to your content
+
+You can configure conditions such as what IP addresses are allowed to make this request or what query string parameters need to be passed for the request to be allowed and then the application load balancer or cloudfront will either allow this content to be received or to give a HTTP 403 Status Code
+
+At it's most basic level, AWS WAF allows 3 different behaviours:
+* Allow all requests except the ones that you specify
+* Block all requests except the ones that you specify
+* Count the requests that match the properties that you specify
+
+What is AWS WAF?
+
+Additional protection against web attacks using conditions that you specify. 
+You can define conditions by using characteristics of web requests such as the following:
+
+* IP addresses that requests originate from
+* Country that requests originate from
+* Values in request headers
+* Strings that appear in requests, either specific strings or string that match regular expression (regex) patterns
+* Length of requests
+* Presence of SQL code that is likely to be malicious (Known as SQL injection)
+* Presence of a script that is likely to be malicious (Knows as cross-site scripting)
+* When multiple conditions exist om a rule, the result must include all conditions
+    * Example Rule: Block requests from 2.2.0.0/16 that appear to have SQL Code
+    * Both conitions must match for a block
+
+* Application Load Balancers integrate with WAF at a regional level, Cloudfront at a Global Level
+* You need to associate your rules to AWS resources in order to be able to make it work
+* You can use AWS WAF to protect web sites not hosted in AWS via Cloudfront. Cloudfront supports customs origins outside of AWS
+* IP's can be blocked at a /8, /16, /24 and /32 level
+* IPv4 and IPv6 are supported
+
+
+
+AWS Shield
+
+* Turned on by default
+* Standard
+    * The basic level of DDoS protection for your web applications
+    * Included with WAF with no additional cost
+* Advanced
+    * Expands services protected to include Elastic Load balancers, cloudfront Distributions, Route 53 hosted zones, and resources with EIPs
+    * Some of the advantages
+        * Contact 24x7 DDoS Response Team (DRT) for assistance during an attack
+        * You won't pay if you are a victim of an attack
+        *A dvanced gives you an incident response team and in depth reporting
+        * Expanded protection against many types of attacks
+    * WAF is included in Advanced pricing
+        * 3000 a month if you want the advanced option
+        * Plus Data Transfer Out usage fees
+
+### Serverless
+
+* Lambda Function Policy
+    * Controls who or what can invoke it
+* For poll-based services (Kinesis, DynamoDB) or SQS - lambda polls on your behalf, and so permissions are granted via its execution role
+* For anything else, for for external entities or accounts, the PUSH model is used
+    * Change to the function policy will be required
+* Execution Role
+    * Ensure it has enough permissions to log to cloudwatch logs
+    * To access any resources it needs to PULL from or PUSH too
+    * For event-driven invocation, the execution role doesn't need permissions to access it
+    * For poll based sources such as DynamoDb, SQS, Kinesis it does
+
+### Egress Only Internet Gateway
+
+With IPv4, all AWS resources have a private IP. Some can be provided with a public IP and connectivity using an Internet Gateway.
+With IPv4 a NAT Instance/gateway can be utilized to provide outgoing only access
+
+IPv6 addressing is globally unique and publically routable. Supported resources in AWS are all publically addressable, so a NAT gateway isn't an option.
+Egress-Only internet gateway provides a feature limited internet gateway, specifically for IPv6, and only allowing outbound connections and return traffic.
+No incoming IPv6 connections can be initiated to VPC resources using an Egress-Only gateway
+
+### Systems Manager
+
+* Insights
+    * Two insight features, inventory and Compliacy. Both supported by SSM state manager
+    * Inventory periodically scans EC2 intances, or on-premise servers, retrieving details of installed applications, AWS components, network config, windows updates, detailed information on an instance/VM, details on running services, windows roles, and opitonal custom data SSM can collect on your behalf
+    * Compliance allows that data to be compared against a baseline, provding a compliant or non-compliant state to a resource. Compliance uses state manager, SSM patching and custom compliant types
+* Actions
+    * Are the operational engine part of systems manager. Actions is the part of systems manager which performs collections, runs commands, controls patching and manages the general state of managed instances
+    * Automation
+    * Run Command
+    * Patch Manager
+    * State manager is a desired state engine. You define the desired state in the form of a systems manager document. A document can be a command document or a policy doccument.
+        * A command document is used by running command and state manager
+        * A policy document defines desired states and is only used by State Manager
+        * A document is associated with one or more managed instances
+* Shared tooling - Several services
+    * Managed Instances
+    * Activations
+        * The method used to activate non EC2 instances withing Systems manager. Activation generates a code to activate the external machine
+    * Document
+        * Think of these are scripts or lists of commands that can be run against a managed instance
+    * ParameterStore
+        * AWS provided services to store configuration data and secrets
 
 ### KMS
 
 AWS Key Management Service (KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data, and uses Hardware Security Models (HSMs) to protect the security of your keys.
 AWS KMS is integrated with other AWS Services including, EBS, S3, Redshift, Amazon Elastic Transcoder, Amazon WorkMail, Amazon RDS and others to make it simple to encrypt your data with encryption keys that you manage
+KMS uses FIPS 140-2 (Level 2) compliant hardware modules
 
-* CMK 
+* CMK - Logical representation of a key. Keys can be generated by KMS or imported
     * Provides
         * alias
         * creation date
@@ -844,7 +973,8 @@ AWS KMS is integrated with other AWS Services including, EBS, S3, Redshift, Amaz
         * key state
         * key material (either customer provided or AWS provided)
     * Can never be exported
-    
+    * CMKs never leave KMS and never leave a region
+    * CMKS can encrypt or decrypt data up to 4kb in size
     * AWS-managed CMK for each service that is integrated with AWS KMS
     * Or you can have customer managed CMK that you generate by providing AWS with key material
 
@@ -855,27 +985,28 @@ AWS KMS is integrated with other AWS Services including, EBS, S3, Redshift, Amaz
             * IAm Users/roles that can administer (but not use) the key through the KMS API
         * Define Key Usage Permissions
             * IAM users/roles that can use the key to encrypt and decrypt data
-        
+    * GeneratedDataKey creates encrypted and plaintext data key. The plaintext version is used to encrypt and then discarded. Its never stored in plaintext. The encrypted version is stored along with the encrypted data; this is envelope encryption
+            * KMS is used  to decrypt the encrypted key, returning plaintext, and data is decrypted. Encrypt and Decrypt perform those functions, and are handled by kms
     * Key Material Options
         * Use KMS generated key material
         * Your Own key material
             * You can import a symmetric 256-bit key from your key management infrastructure into KMS and use it like any other customer master key
-    * Why import your own key material
-        * Prove that randomness meets your requirements (Compliance)
-        * Extend your existing processes to AWS
-        * To be able to delete key material without a 7-30 days wait. Then be able to import them again
-        * to be resilient to AWS failures by storing keys outside AWS 
-    * How to Import your own key material
-        * Create a CMK with no key material
-        * Download a public key (wrapping key) and import token
-        * Encrypt key material
-        * Import the key material
-    * Considerations for imported key material
-        * Availability and durability is different
-        * Secure key generation is up to you
-        * No automatic rotation
-        * Ciphertexts are not portable between CMKs
-        
+        * Why import your own key material
+            * Prove that randomness meets your requirements (Compliance)
+            * Extend your existing processes to AWS
+            * To be able to delete key material without a 7-30 days wait. Then be able to import them again
+            * to be resilient to AWS failures by storing keys outside AWS 
+        * How to Import your own key material
+            * Create a CMK with no key material
+            * Download a public key (wrapping key) and import token
+            * Encrypt key material
+            * Import the key material
+        * Considerations for imported key material
+            * Availability and durability is different
+            * Secure key generation is up to you
+            * No automatic rotation
+            * Ciphertexts are not portable between CMKs
+     
 #### KMS Key Rotation Options
 
 * Extensive re-use of encryption keys is not recommended
@@ -912,6 +1043,162 @@ AWS KMS is integrated with other AWS Services including, EBS, S3, Redshift, Amaz
     
 ![Resume](../images/screenshot.179.jpg)
 
+#### KMS Key Policy
+
+KMS Key policies are resource policies which control access to the Customer Master Keys (CMKs). Unlike most AWS Services, without specifically being
+allowed, the root user has no access to CMKs. In cases where nobody has access to CMKs, only AWS can restore access
+
+* If removed Key Policy, nothing can use the key. AWS support is required
+* Key Administrators are permitted (via he key policy) to perform admin actions on the key, but not the ability to use the key. Operations include
+    * kms:Create*
+    * kms:Describe*
+    * kms:Enable
+    * kms:Put
+    * kms:Update
+    * Kms:Delete
+    * and more
+    * CAn't perform cryptography operations
+* Need give another account permissions to CMK to use it
+
+#### KMS Key Usage
+
+KMS has specific operations which are used to utilise CMK. CMKs generally aren't used to encrypt data. They generate data keys which perform the encryption and decryption
+
+* Operations
+    * kms:Encrypt
+    * kms:Decrypt
+    * kms:ReEncrypt
+    * kms:GenerateDataKey
+    * kms:DescribeKey
+    
+#### KMS Grants
+
+Grants are an alternative access control mechanism to a key policy
+
+* Programmatically delegate the use of KMS CMKs to other AWS principals - e.g a user in either your account or another account
+* Temporary, granular permissions (encrypt, decrypt, re-encrypt, describekey etc)
+* Grants allow access, not deny
+* Use Key Policies for relatively static permissions & for explicit deny
+
+
+* CLI Commands
+    * Grants are configured programatically using the AWS CLI
+    * create-grant - adds a grant to the CMK, specifies who can use it and a list of operations the grantee can perform
+    * list-grants - lists the grants
+    * revoke-grant - to remove a grant
+    * A grant token is generated & can be passed as an argument to KMS APi
+    
+#### Data At Rest KMS
+    
+* EBS
+    * EBS Vol is encrypted using DataKey generated from a CMK
+    * Encrypted data key is stored with volume
+    * Used by the hypervisor to decrypt upon detaching
+    * IO, Snapshots and persisted data is encrypted
+* DynamoDB
+    * For any encrypted table created in a region, DynamoDB uses KMS to create an AWS/DynamoDB service default CMK (in each region)
+    * When a table is created and set to be encrypted, this CMK is used to create a data key unique to that tabled, called a table key
+        * This key is managed by DynamoDB and stored with the table in encrypted form
+     * Every Item encrypted by DynamoDB is encrypted with a data encrypted key, which is encrypted with this table key and stored with the data
+     * Table keys are cached for up to 12 hours in plaintext by DynamoDB, but a request is sent to KMS after 5 minutes of table key inactivity to check for permissions changes
+* RDS
+    * RDS utilizes EBS for its encryption.
+    * RDS Instances are managed versions of EC2 instances, configured to act as managed DB cluster.
+    * In Similiar way to ec2, encrypted volumes attached to RDS are handled by the host, with persistent data, snapshots, and IO encrypted and decrypted using KMS
+* S3
+    * Every object in a bucket is encrypted by S3 using a DataKey provided by KMS
+    * The DataKey is generated from a CMK
+    * ChiperText DataKey is stored with the object as metadata. When decryption is needed, it's passed to KMS, Decrypted, and used by S3 to Decrypt the Object
+
+
+
+#### KMS Cross Account Access
+
+Access to KMS CMKs is controlled using
+
+* The Key policy
+* IAM Policies
+* If you want to enable another external account to encrypt or decrypt using your CMK, you need to enable cross account access
+    * Enable access in the Key Policy for the account which owns the CMK
+    * Enable access to KMS in the IAM Policy for the external account
+    * Both steps are necessary otherwise it will not work
+    
+Access to KMS CMKs is controlled using
+* The key Policy - add the root user, not individual IAM users / roles
+* IAM Policies - define the allowed actions and the CMK ARN
+* If you want to enable cross account access
+    * Enable access in the Key Policy for the account which owns the CMK
+    * Enable access to KMS in the IAM Policy for the external account
+    * Both steps are necessary otherwise it will not work
+    
+* KMS in a multi-account configuration
+    * The key won't appear in the external account, but if it is configured using a key policy, that account can interact with the key for cryptographic functions
+    * Key usage and Key admin are not the same thing
+    
+    
+### Cloud HSM
+
+The AWS CloudHSM service helps you meet corporate, contractual and regulatory compliance requirements for data security by using dedicated hardware security module (HSM) appliances within the AWS cloud
+
+* AWS manages and maintains hardware, but has no access to the cryptographic component
+* Interaction is via industry standard APIs, no normal AWS APIs
+* Keys can be transfered betwwen CloudHSM and other HArdware solutions (on premises)
+* Keys are shared between cluster members. NO HA unless multiple HSM's are provisioned
+* Applications can be outside the VPC - Direct Connect, Peered or VPN
+* On-Premises HSM - for if you really need to control your own physical hardware
+* Enables
+    * Control of data
+    * Evidence of control
+    * Meet tough compliance controls
+* Provides
+    * Secure Key Storage
+    * Cryptographic operations
+    * Tamper-resistant Hardware Security Model
+* Setup
+    * Inside a VPC, in the region required
+    * A private subnet for the HSM
+    * An EC2 instance (control instance) with the cloudhsm_mgmt_util & key_mgmt_util
+    * Needs to be accessible by you
+    * Create a cluster & HSM
+        * Create a VPC
+        * Create a Private & Public subnet
+        * Create the Cluster
+        * Verify HSM identity
+        * Initialize the Cluster
+        * Launch a client instance
+        * Install and configure the client
+        * Activate the cluster
+        * Setup Users
+        * Generate Keys
+* Key Control
+    * AWS does not have access to your keys
+    * Separation of duties and role-based access control is part of the design of the HSM
+    * AWS can only administer the appliance, not the HSM partitions where the keys are stored
+    * AWS can (but probably won't) destroy your keys, but otherwise have no access
+* Tampering
+    * If the CloudHSM detects physical tampering the keys will be destroyed
+    * If the CloudHSM detects five unsuccessful attempts to access an HSM partition as Crypto Officer the HSM appliance erases itself
+    * If the CloudHSM detects five unsuccessful attempts to access an HSM with Crypto User (CU) credentials, the user will be locked and must be unlocked by a CO
+* Monitoring
+    * Use CloudTrail to log API calls including those made to CloudHSM
+* 4 Main User Types
+    * Precrypto Officer (PRECO)
+    * Crypto Officer (CO)
+        * Performs user management operations
+        * For example, a CO can create and delete users and change user password
+    * Crypto Users (CU)
+        * Key management - Create, delete, share, import and export cryptographic keys
+        * Cryptographic operations - Use cryptographic keys for encryption, decryption, signing, verifying and more
+    * Appliance User (AU)
+        * The appliance User (AU) can perform cloning and synchronization operations. AWS CloudHSM uses the AU to synchronize the HSMs in an AWS CloudHSM cluster
+        * The AU exists on all HSMs provided by AWS CloudHSM and has limited permissions
+* FIPS 140-2 Level 3
+
+
+![HSM vs KMS](../images/screenshot.184.jpg)
+
+![Roles](../images/screenshot.185.jpg)
+
 ### AWS EC2 Encryption
 
 * We can use KMS to encrypt EBS volumes, but we cannot use KMS to generate a public key/private to log in EC2
@@ -935,50 +1222,13 @@ AWS KMS is integrated with other AWS Services including, EBS, S3, Redshift, Amaz
         * Because you cannot export keys from KMS and because Amazon in involved the generation of keys, you cannot use KMS with SSH for EC2
         * With CloudHSM you can however because can export keys from CloudHSM
         
+
 ### AWS EC2 - Marketplace
 
 * Can purchase security products from third party vendors on the AWS Market Place
 * Firewalls, Hardened OS's, WAF's, Antivirus, Security Monitoring etc
 * Free, Hourly, Monthly, Annual, BYOL etc
 * CIS OS Hardening
-
-### AWS WAF Vs AWS Shield
-
-AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to Amazon CloudFront or and Application Load Balanacer.
-AWS WAF also lets you control access to your content
-
-You can configure conditions such as what IP addresses are allowed to make this request or what query string parameters need to be passed for the request to be allowed and then the application load balancer or cloudfront will either allow this content to be received or to give a HTTP 403 Status Code
-
-At it's most basic level, AWS WAF allows 3 different behaviours:
-* Allow all requests except the ones that you specify
-* Block all requests except the ones that you specify
-* Count the requests that match the properties that you specify
-
-What is AWS WAF?
-
-Additional protection against web attacks using conditions that you specify. 
-You can define conditions by using characteristics of web requests such as the following:
-
-* IP addresses that requests originate from
-* Country that requests originate from
-* Values in request headers
-* Strings that appear in requests, either specific strings or string that match regular expression (regex) patterns
-* Length of requests
-* Presence of SQL code that is likely to be malicious (Known as SQL injection)
-* Presence of a script that is likely to be malicious (Knows as cross-site scripting)
-
-* Application Load Balancers integrate with WAF at a regional level, Cloudfront at a Global Level
-* You need to associate your rules to AWS resources in order to be able to make it work
-* You can use AWS WAF to protect web sites not hosted in AWS via Cloudfront. Cloudfront supports customs origins outside of AWS
-* IP's can be blocked at a /8, /16, /24 and /32 level
-* IPv4 and IPv6 are supported
-
-AWS Shield
-
-* Turned on by default
-* 3000 a month if you want the advanced option
-* Advanced gives you an incident response team and in depth reporting
-* You won't pay if you are a victim of an attack
 
 ### EC2 Dedicated Instances vs Dedicated Hosts
 
@@ -999,6 +1249,7 @@ AWS Shield
     * Dedicated instances may share the same hardware with other AWS instances from the same account that are not dedicated
     * Dedicated hosts give you much better visibility in to things like sockets, cores and host id
     
+
 ### AWS Hypervisors
 
 A hypervisor or virtual machine monitor (VMM) is a computer software, firmware or hardware that creates and runs virtual machines.
@@ -1038,7 +1289,11 @@ A computer on which a hypervisor runs one or more virtual machines is called a h
     * EBS automatically resets every block of storage used by yhe customer, so that one customer's data is never unintentionally exposed to another
     * Also memory allocated to guests is scrubbed (set to zero) by the hypervisor when it is unallocated to a guest
     * The memory is not returned to the poll of free memory available for new allocations until the memory scrubbing is complete
-
+    
+* Disk
+    * EBS volumes are provided to instances in a Zero'd state - this zeroing occurs immediately before reuse
+    * If you have specific deletion requirements, you need to do this before terminating the instance/deleting the volume
+    
 * Exam Tips
     * Choose HVM over PV where is possible
     * PV is isolated by layers, Guest OS sits on Layer 1, Applications Layer 3
@@ -1046,23 +1301,27 @@ A computer on which a hypervisor runs one or more virtual machines is called a h
     * AWS staff do not have access to EC2, that is your responsibility as a customer
     * All storage memory and RAM memory is scrubbed before it's delivered to you
 
-### KMS Grants
+### Host Proxy Servers
 
-Grants are an alternative access control mechanism to a key policy
+Filtering within AWS is perfomed at two points: Security groups attached to network interfaces and NACLs attached to subnets within VPCs.
+Security Groups and NACLs have viability of protocols, IPs, CIDRs, and ports. The cannot filter on DNS Names, nor can they decide between allowing and denying traffic based on any form of authentication
 
-* Programmatically delegate the use of KMS CMKs to other AWS principals - e.g a user in either your account or another account
-* Temporary, granular permissions (encrypt, decrypt, re-encrypt, describekey etc)
-* Grants allow access, not deny
-* Use Key Policies for relatively static permissions & for explicit deny
+If authentication or additional intelligence beyond IP/CIDR/PORT/PROTOCOL is needed, a proxy server or an enchanced NAT architecture is required
 
+### Packet capture on EC2
 
-* CLI Commands
-    * Grants are configured programatically using the AWS CLI
-    * create-grant - adds a grant to the CMK, specifies who can use it and a list of operations the grantee can perform
-    * list-grants - lists the grants
-    * revoke-grant - to remove a grant
-    * A grant token is generated & can be passed as an argument to KMS APi
-    
+Packet capture or packet sniffing is a process where network traffic can be intercepted, analyzed and logged.
+Sniffed packets are captured in their entirety and unlike VPC flow logs can be inspected at data level - providing they are not encrypted
+
+* Common Scenarios
+    * Review data flows between components to identify networking problems
+    * Support IDS/IPS systems - help detect and remediate intrusion attempts
+    * Debug connections between clients and the edge components of an environment
+    * Debug communications between tiers of your applications
+    * Verify the functionality of other networking components such as firewalls, NATs, and proxies
+* VPC flow logs meet a subset of the above scenarios but don't allow traffic capture - only metadata
+* Important: Traditionally packe sniffing was done in a promiscuous way - a network interface listened for all traffic - even that not destined for the interface. This isn't supported in AWS
+
 ### Key Policy Conditions
 
 Policy conditions can be used to specify a condition within a key policy or IAM policy. The condition must be tru for the policy statement to take effect
@@ -1080,25 +1339,7 @@ Policy conditions can be used to specify a condition within a key policy or IAM 
     * ViaService can be used in Key Policies and IAM policies which control access to KMS resources
     * The services that you specify must be integrated with KMS e.g S3, EBS, Systems Manager, SQS, Lambda
     
-### KMS Cross Account Access
 
-Access to KMS CMKs is controlled using
-
-* The Key policy
-* IAM Policies
-* If you want to enable another external account to encrypt or decrypt using your CMK, you need to enable cross account access
-    * Enable access in the Key Policy for the account which owns the CMK
-    * Enable access to KMS in the IAM Policy for the external account
-    * Both steps are necessary otherwise it will not work
-    
-Access to KMS CMKs is controlled using
-* The key Policy - add the root user, not individual IAM users / roles
-* IAM Policies - define the allowed actions and the CMK ARN
-* If you want to enable cross account access
-    * Enable access in the Key Policy for the account which owns the CMK
-    * Enable access to KMS in the IAM Policy for the external account
-    * Both steps are necessary otherwise it will not work
-    
 ### Microservices
 
 * Microservices Run in Containers
@@ -1162,10 +1403,11 @@ Access to KMS CMKs is controlled using
 * Scale automatically up to 100 Gbps
 * No need to patch
 * Not associated with security groups
-* Automatically assigned a public ip address
+* Automatically assigned a public ip address (EIP)
 * Remember to update your route table
 * No need to disable Source/Destination checks
 * More secure than a NAT Instance
+* Cannot have SGs attached
 
 ### Network ACLS
 
@@ -1177,6 +1419,8 @@ Access to KMS CMKs is controlled using
 * Network ACLs have separate inbound and outbound rules, and each rule can either allow or deny traffic
 * Network ACls are stateless; responses to allowed inbound traffic are subject to rules for outbound traffic (and vice versa)
 * Block IP Addresses using network ACLs not Security Groups
+* NACLs are processes only when data enters or leaves subnets, before security groups
+* NACLs work on IP and CIDR only. You can' reference AWS services
 
 ### TLS/SSL Termination Options
 
@@ -1199,6 +1443,7 @@ Access to KMS CMKs is controlled using
     * If you need to terminate traffic at the EC2 instance, then you'll need to use the TCP protocol with Network or Classic Load Balancer
     * Application Load Balancers is HTTP/HTTPS only - for other protocols like TCP, use Network or Classic
     
+
 ### VPC Flow Logs
 
 VPC Flow Logs is a feature that enables you to capture information about the IP traffic going to and from network interfaces in your VPC.
@@ -1285,6 +1530,102 @@ Any connected VPC is automatically available to every other connected network. R
     * Secure - AWS private network
         * Traffic between VPCs does not use the public internet. Inter-region traffic encrypted
         
+        
+### S3
+        
+* S3 Bucket Policies
+    * S3 Bucket policies are attached only to S3 Buckets. S3 Bucket policies specify what actions are allowed or denied on the bucket. They can be broken down to a user level, So Alice can PUT but not DELETE and John can READ but not PUT.
+    * Bucket level only, S3 only
+    * Explicit Deny always Overrides an Allow
+    * Use Cases
+        * IAM Policies bump up against the size limit (up to 2kb for users, 5 kb for groups and 10kb for roles). S3 supports bucket policies of up 20kb
+    
+* S3 ACL's
+    * Are Legacy access control. AWS recommend IAm Policies and S3 Bucket Policies
+    * Access Control only
+    * Use them if you need apply policies on the objects themselves. Bucket policies can be applied at bucket level, and S3 ACLS can be applied to individual files (Objects)
+
+* Cross-Account Access To S3 Buckets and Objects
+    * ACL
+        * Objects are owned by the identity who puts them
+        * If account B put objects in Bucket of Account A, the owner is Account B
+    * Bucket Policy
+        * Account B users are the owner of any objects created (Simniliar ACL)
+        * Permission control is handled within S3. There is no IAM involvement
+        * Bucket policies can require Account A (Bucket Owner) be the owner for objects as they are put in the bucket
+        * Utilize if want maintain permissions control inside S3
+        * Can utilize anonymous and authenticated access. Utilize bucket polices to this
+```json
+{
+  "Statement":[
+    {
+      "Effect":"Allow",
+      "Principal":{"AWS":"311407276115"}, # Account B
+      "Action":"s3:PutObject",
+      "Resource":["arn:aws:s3:::la-permissionsdemo/*"]
+    },
+    {
+      "Effect":"Deny",
+      "Principal":{"AWS":"311407276115"}, # Account B
+      "Action":"s3:PutObject",
+      "Resource":"arn:aws:s3:::la-permissionsdemo/*",
+      "Condition": {
+        "StringNotEquals": {"s3:x-amz-acl":"bucket-owner-full-control"}
+      }
+    }
+  ]
+```
+    * IAM Role
+        * Users of account B assume a rule in account A (sts:AssumeRole)
+        * Objects are owned by that role so Account A
+        * Permissions are managed by IAM, not S3
+        * Prefer option, best pratices
+
+* Data at Rest: S3 Customer Provided Encryption Keys (SSE-C)
+    * SSE-C is a feature of Server side Encryption where S3 still handles the cryptographic operations, but does so with keys that you as the customer manage and supply every object operation
+    * x-amz-server-side-encryption-customer-key allows the key to be provided. The is used for encryption and then discarded. The customes is 100% responsible for key management and rotation. Versions can have alternative keys
+    * x-amz-server-side-encryption-customer-key-MD5 allows S3 to validate the key (for damage is transit)
+    * x-amz-server-sode-encryption-customer-algorithm = AES256 informs S3 that a customer managed key will be supplied as part of the putObject request
+
+### Identity Federation
+
+* AWS Supports federation with IdPs (identity Providers) which are OpenID connect (OIDC) Or Saml 2.0 compatible
+* Identity federation is generally grouped into three types
+    * Web identity Federation
+    * SAML 2.0 identity Federation
+    * Custom ID Broker Federation (used when SAML2.0 compatability isn't available)
+* Web Identity Federation
+    * Federation allows users to authenticate with a web identity provider (Google, Facebook, Amazon)
+    * The User authenticates first with the Web ID Provider and receives an authentication token, which is exchanged for temporary AWS credentials allowing them to assume an IAM role
+    * Cognito is an Identity Broker which handles interaction between your applications and the Web ID provider (You don't need to write you own code to do this)
+        * Provides sign-up, sign-in, and guest user access
+        * Syncs user data for a seamless experience across your devices
+        * Cognito is the AWS recommended approach for Web ID federation particularly for mobile apps
+        * Use Cases
+            * Cognito brokers between the app and Facebook or Google to provide temporary credentials which map to an IAM role allowing access to the required resources
+            * No need for the application to embed or store AWS credentials locally on the device and it gives users a seamless experience across all mobile devices
+* SAML 2.0 Federation
+    * Enterprise Solution
+    * Use your own ID Provider (Not AWs provider)
+    * IP Provider, normally AD
+    * Authenticate in AD , returns SAML Assertion (similiar token in web identity), connects to AWS SSO enpoint and validate SAML assertion, and STS generates credentials and opens Console
+    * AssumeRoleWithSAML operations
+
+### System Manager Parameter Store
+
+* Confidential information such as password, database connection string, and license codes can be stored in SSM Parameter store
+* You can store values as plain text or you can encrypt the data (Using KMS)
+* You can then reference these values by using their names
+* You can use this service with , cloudformation, lambda, EC2 Run Command etc
+* Key Features
+    * Configuration and data is separated from code - no chance of leakage via git
+    * Data is stored hierarchically - aids management
+    * Data is versioned, and access can controlled and audited
+    * Parameter store integrates with many AWS services - EC2, ECs, Lambda, CodeBuild/Deploy, and many more
+    * Can also be used for automated deployment using cloudformation
+    * Serverless, resilient and scalable
+    
+
 
 ## Incident Response & AWS in The real world
 
@@ -1360,6 +1701,7 @@ Any connected VPC is automatically available to every other connected network. R
         * Autoscaling (use for both WAFs and Web servers)
         * Cloudwatch
   
+
 ### WAF Integration
 
 WAF (Web application Firewall) integrates with both Application Load balancers and CloudFront. It does not integrate with EC2 directly, nor Route53 or any other services
@@ -1396,14 +1738,18 @@ Allowed without approve in:
 
 * To run Penetration testing on AWs go to AWS Marketplace and search for a penetration testing tool like kali linux
 
+### AWS Certificate Manager - Data in Transit
 
-### AWS Certificate Manager
-
-* SSL Certificates renew automatically, provided you purchased the domain name from Route 53 and it's not for an Route 53 private hosted zone
-* You can use Amazon SSL certificates with both load balancers and cloudfront
+* Managed service providing X509 v3 SSL/TLS Certificates. The certificates are Asymmetric.
+    * One half is private and stored on resources (Servers, LoadBalancers etc) and the other half is public
+* SSL Certificates renew automatically (Valid for 13 months)
+* provided you purchased the domain name from Route 53 and it's not for an Route 53 private hosted zone
+* Integrates with Route53 to perform DNS checks as part of certificate issuing process
+* You can use Amazon SSL certificates with both load balancers and cloudfront, beanstalk and API Gateway
 * You cannot export the certificates
-
-### Perfect Forward Secrecy
+* No cost
+* Regional
+* KMS is used - certificates are never stored unencrypted
 
 ### Api Gateway
 
@@ -1418,13 +1764,6 @@ Allowed without approve in:
     * When you enable caching for a stage, API Gateway caches responses from your endpoint for a specified time-to-live (TTL) period, in seconds.
     * APi Gateway then responds to the request by looking up the endpoint response from the cache instead of making a request to your endpoint
     * The default TTL value for API caching is 300 seconds. The maximum TTL value is 3600 seconds. TTL=0  means caching is disabled
-
-### System Manager Parameter Store
-
-* Confidential information such as password, database connection string, and license codes can be stored in SSM Parameter store
-* Tou can store values as plain text or you can encrypt the data
-* You can then reference these values by using their names
-* You can use this service with , cloudformation, lambda, EC2 Run Command etc
 
 ### System Manager EC2 Run Command
 
@@ -1522,6 +1861,7 @@ Exam Tips
     * Includes dasboards, Reports and alerting
     * Great for PCS-DSS compliance and preventing ID theft
     
+
 ### GuardDuty
 
 Guardduty is a threat detection service which uses ML to continuously monitor malicious behaviour
@@ -1584,7 +1924,6 @@ Tips
 * When enabled, Secrets manager will rotate credentials immediately
 * Make sure all your application instances are configured to use Secrets manager before enabling credential rotation
 
-
 ### SES
 
 SES is a cloud based email service, which supports both sending and receiving email
@@ -1597,7 +1936,6 @@ Configuring Access to SES for EC2 instances
 * Configure the security group associated with your ec2 instances to allow connections to the SES smtp endpoint
 * Port 25 is the default but EC2 throttles email traffic over port 25
 * To avoid timeouts use either port 587 or 2587
-
 
 ### Security Hub
 
@@ -1620,6 +1958,7 @@ Configuring Access to SES for EC2 instances
 * From cloudwatch cand send the events to lambda/chat/SIEM/notification/...
   
   
+
 ### Network Packet Inspection
 
 Inspects packet headers and data content of the packet
@@ -1638,6 +1977,13 @@ Inspects packet headers and data content of the packet
     * Use a third party solution
     * AWS does not provide a solution for Network packet inspection, IDS/IPS
     * You will need to run host based solution in EC2 - Alert Logic, Trend Micro, Mcafee
+* A host based IDS solution compliments the features available within AWS
+    * WAF - Provides edge security before a threat arrives at your environment edge
+    * IDS Appliance - Monitor and analyses data as it moves in your plafform
+    * AWs Config - Ensures a stable and compliant configuration of account level aspects
+    * SSM - Ensures compute resources are compliant with patch levels
+    * Inspector - Reviews resources for know exploits and questionable OS/Software configurations
+    * Host Based IDS - Handles everything else
 
 ### Active Directory Federation with AWS
 
@@ -1664,6 +2010,7 @@ Inspects packet headers and data content of the packet
         * No need to create duplicate accounts in AWS
         * ADFS it the trusted ID provider, AWS is the Trusted Relying Party
         
+
 ### Artifact
 
 Central resource for compliance & security related information
@@ -1677,6 +2024,12 @@ AWS Artifact enables you
 * Demonstrate compliance to regulators
 * Evaluate your own cloud architecture
 * Assess the effectiveness of your company's internal controls
+
+#### AWS Encryption SDK
+
+Is an encryption library that helps make it easier for you implement encryption best practices in your application
+
+* Data Key Caching
 
 ## Troubleshooting & Monitoring & Alerting
 
@@ -1698,13 +2051,35 @@ AWS Artifact enables you
     * With Cloudwatch, we can create an alarm on Events Metrics. We can use FailedInvocations to notify us when our Cloudwatch Events rules are broken
 * Lambda functions
     * Lambda delivers logs to cloudwatch logs. It will log errors with invocations. We can then alarm on this using a metric filter and notify via SNS
+* Cloudtrail
+    * Trail and logging enabled
+    * Cloudwatch logs configured
+    * Role for Cloudwatch logs
+    * Log group name
+* VPC Flow Flogs
+    * Flows enabled on VPC or Subnet
+    * Check Filter
+    * Role for cloudwatch logs
+    * Log group name
+* Route 53 DNS Logs
+    * Query loggin configured
+    * New or existing log group
+    * Log group name
+* EC2
+    * Agent installation and config
+    * Agent must be started
+    * Role For cloudwatch logs
+    
+    
 
-### Trouleshooting Logging
+### Trouleshooting CloudTrail
 
-* Cloudtrail logs not appearing in S3? Check the Cloudtrail is enabled
+* S3 Bucket Problems
+    * Cloudtrail logs not appearing in S3? Check the Cloudtrail is enabled
+    * Check you have provided the correct S3 bucket name
 * Important to remember that S3 and lambda data events are high volume so they are not enabled by default
-* Check you have provided the correct S3 bucket name
 * Touble accessing the cloudtrail logs? Check your user has read access to cloudtrail: AWSCloutRailReadOnlyAccess Policy
+* Check All Regions Enabled
 
 ### Troubleshooting Secure Network Infra
 
@@ -1727,6 +2102,8 @@ AWS Artifact enables you
 
 ### Troubleshooting Cross Account Roles
 
+* Cross-Account Roles are IAM Roles in an account A which are accessed by identities in account B
+    * Like all roles, they consist of two parts: a trust policy, and a permissions policy
 * Using STS:AssumeRole - Common Issues
     * Check the external account has permission to call STS:AssumeRole - Dev Account IAM Policy
     * Check the external account is trusted AND has permission to perform the action you are attempting - Prod Account, Role
@@ -1739,15 +2116,52 @@ AWS Artifact enables you
     * Cross account access to kms, check you have configured the key policy to allow access to the external account as well as the iam policy in the local account
     
     
+
 ### Troubleshooting Lambda Access
 
 * Lambda cannot perform some action e.g. write to S3, Log to Cloudwatch, terminate instances, use a CMK, etc - Check the Lambda execution role has the correct permissions
 * Remember that some services have their own resource based policies which will also impact who or what can access them - S3 bucket policies, key policies
 * If cloudwatch events or some other event source cannot invoke lambda function, double check that the function policy allows it
 
-### Troubleshooting Access to CMKs in KMS
+### Troubleshooting Access to KMS CMKs
 
 * Access to use KMS CMKs is defined by:
     * Key Policy - Resource based policy attached to the CMK, defines key users and key administrators and trusted external accounts
     * IAM Policy - Assigned to User, Group Or Role, defines the allowed actions e.g. kms:ListKeys, kms:Encrypt, kms:Decrypt
+* Important : There is no hard truste between a CMK and an account. The permission can be removed, resulting in unusable key and a requirement to involve AWS Support
+* Key admins can admin keys, not use them. Permissions granted via IAM Policy, or Key Policy or both
 
+### Troubleshooting KMS
+
+* KMS Permissions
+    * Permissions within KMS are centered around Customer Master Key (CMKs)
+    * A default policy to a CMK trusts the account the key is created within, and this trust can be provided to IAM users via IDENTITY policies, or, on the KEY policy itself
+    * Permissions within KMS are either ADMIN permissions or Usage Permissions
+    * You can Lock out a CMK making it unusable to everyone
+* KMS Limits
+    * Simple Limits
+        * 1000 (customer managed) CMKS per region - in Any state
+        * 1100 Aliases per account
+        * 2500 Grants per CMK - e.g max of 2500 EBS Volumes using CMK
+    * Breaching the shared, or per operation limits result in KMS throttling the requests
+    * Rate Limit 
+        * There is a 5500 Shared API limit shared across a number of operations relating KMS - the high volume operations
+        * Actions With rate Limit: Decrypt, Encrypt, GenerateDataKey, GenerateDataKeyWithoutPlainText, GenerateRandom, ReEncrypt
+
+### Troubleshooting S3 Access Logs
+
+* Confusion over source and destination buckets
+* Log delivery group permissions
+
+### Troubleshoot Multi-Account logging
+
+* CloudTrail logging across multiple accounts
+    * S3 bucket policy for accounts sending logs
+    * Bucket names should be double-checked for accuracy
+* CloudWatch Logs across multiple accounts
+    * Cloudwatch does not send logs directly to another account
+    * S3 access issues blocking exports (scheduled or manual)
+    * Kinesis stream is not setup properly (only target for real-time logs)
+* Common Issues with Multi-Account Logging
+    * Issues will mostly be around permissions (roles and resource policies)
+    * Make sure all permissions only grant read-only access

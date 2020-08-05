@@ -10,12 +10,16 @@
 ![Diagram](../../../img/screenshot.201.jpg)
 
 
-
 ## Lab - Trust Relationship between AWS Managed AD and On-Premise AD with FSX
 
 [Lab Guide](https://winonaws.cloud/migratewindows/en/)
 
 AWS Support Contact: Hans Moser - hansmose@amazon.ch
+
+* Hans Moser - Info About D: Drive
+
+    * Regarding D: Drive: In our ‘source Fileserver’ we have the files on C:, hence the first export also include the directory paths to C:
+    * But on FSX, our target, the data drive is D:  So to make the import work, we’ve to change the paths, so that we target the correct folder paths on the destination (our FSX).
 
 ### Cloudformation
  
@@ -5310,3 +5314,8 @@ Outputs:
 
 
 ```
+
+
+## Lab CLoud Endure
+
+[Guide](https://winonaws.cloud/cloudendure/en/)
