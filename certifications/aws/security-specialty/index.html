@@ -2090,8 +2090,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#encryption-context" title="Encryption Context" class="md-nav__link">
+    Encryption Context
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#data-at-rest-kms" title="Data At Rest KMS" class="md-nav__link">
     Data At Rest KMS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kms-hierarchy" title="KMS Hierarchy" class="md-nav__link">
+    KMS Hierarchy
   </a>
   
 </li>
@@ -3001,8 +3015,22 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#encryption-context" title="Encryption Context" class="md-nav__link">
+    Encryption Context
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#data-at-rest-kms" title="Data At Rest KMS" class="md-nav__link">
     Data At Rest KMS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kms-hierarchy" title="KMS Hierarchy" class="md-nav__link">
+    KMS Hierarchy
   </a>
   
 </li>
@@ -3468,14 +3496,14 @@
 <li>
 <p>Re:invent Videos (2017) - NET 3XX - Medium level , NET 4XX - Advanced</p>
 <ul>
-<li>KMS best Practices</li>
-<li>AWS Encryption Deepdive</li>
-<li>Become an IAM Policy Master</li>
-<li>DDOS Best Practices</li>
+<li>KMS best Practices = Watched</li>
+<li>AWS Encryption Deepdive =&gt; Watched</li>
+<li>Become an IAM Policy Master =&gt; Watched</li>
+<li>DDOS Best Practices =&gt; Watched</li>
 <li>VPC fundamentals &amp; Connectivity options</li>
 <li>Logging in AWS</li>
 <li>Advanced security best practices masterclass</li>
-<li>Advancer VPC Design and New captabilities for Amazon VPC</li>
+<li>Advanced VPC Design and New captabilities for Amazon VPC</li>
 </ul>
 </li>
 <li>
@@ -4867,6 +4895,30 @@ Don't support Java Cryptography Extensions (JCE)</p>
 </li>
 </ul>
 </li>
+<li>
+<p>Best Practices Tips</p>
+<ul>
+<li>Segment Keys based upon business unit, data classification, environment, etc</li>
+<li>Create Keys within the account where the data exists if possible</li>
+<li>Rotate the keys</li>
+<li>Key Polcies<ul>
+<li>IAM Polcies are Not sufficient to allow access to a CMK</li>
+<li>Edit the default CMK policy to align with your organization's best parctices for least privilege</li>
+</ul>
+</li>
+<li>CMK - Least Privilege<ul>
+<li>Separate keys per business unit and data classification</li>
+<li>Separate CMK admins from users</li>
+<li>Limit KMS actions within IAM policies (No kms:*)</li>
+<li>Cross Account Delegation<ul>
+<li>Account Root Principal -&gt; Allows target account to further delegate permissions</li>
+<li>Explicit management of principals within key policy</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h4 id="kms-key-rotation-options">KMS Key Rotation Options<a class="headerlink" href="#kms-key-rotation-options" title="Permanent link">&para;</a></h4>
 <ul>
@@ -4960,6 +5012,7 @@ allowed, the root user has no access to CMKs. In cases where nobody has access t
 <h4 id="kms-grants">KMS Grants<a class="headerlink" href="#kms-grants" title="Permanent link">&para;</a></h4>
 <p>Grants are an alternative access control mechanism to a key policy</p>
 <ul>
+<li>Delegate a subset of permissions to AWS services/other principals so that they can use the CMK on the customer behalfs</li>
 <li>Programmatically delegate the use of KMS CMKs to other AWS principals - e.g a user in either your account or another account</li>
 <li>Temporary, granular permissions (encrypt, decrypt, re-encrypt, describekey etc)</li>
 <li>Grants allow access, not deny</li>
@@ -4976,6 +5029,13 @@ allowed, the root user has no access to CMKs. In cases where nobody has access t
 <li>A grant token is generated &amp; can be passed as an argument to KMS APi</li>
 </ul>
 </li>
+</ul>
+<h4 id="encryption-context">Encryption Context<a class="headerlink" href="#encryption-context" title="Permanent link">&para;</a></h4>
+<p>Key value pair of additional data that you want associated with AWS KMS-Protected information</p>
+<ul>
+<li>Enforce tighter controls for your encrypted resources</li>
+<li>Insight into the usage of your keys from an audit perspective</li>
+<li>Is logged in clear text within CloudTrail</li>
 </ul>
 <h4 id="data-at-rest-kms">Data At Rest KMS<a class="headerlink" href="#data-at-rest-kms" title="Permanent link">&para;</a></h4>
 <ul>
@@ -5009,6 +5069,22 @@ allowed, the root user has no access to CMKs. In cases where nobody has access t
 </ul>
 </li>
 </ul>
+<h4 id="kms-hierarchy">KMS Hierarchy<a class="headerlink" href="#kms-hierarchy" title="Permanent link">&para;</a></h4>
+<ol>
+<li>KMS-Managed - Keys on HSAs in a Region<ul>
+<li>All Haderneded Security appliances (HSA) in a Region self-generate keys in memory when provisioned. Private Keys never leave HSA</li>
+</ul>
+</li>
+<li>Customer Managed - Customer Master Key<ul>
+<li>254-bit symmetric Customer Master key generated in HSA or imported by customer</li>
+<li>Stored in encrypted form in several locations by KMS. Plaintext version used only in memory on HSAs on demand</li>
+</ul>
+</li>
+<li>Data Key - Customer-managed or AWS service managed<ul>
+<li>235-bit symmetric key returned to client by KMS to use for encrypting bulk data</li>
+</ul>
+</li>
+</ol>
 <h4 id="kms-cross-account-access">KMS Cross Account Access<a class="headerlink" href="#kms-cross-account-access" title="Permanent link">&para;</a></h4>
 <p>Access to KMS CMKs is controlled using</p>
 <ul>
@@ -5290,6 +5366,7 @@ Sniffed packets are captured in their entirety and unlike VPC flow logs can be i
 <li>
 <p>Kms:ViaService</p>
 <ul>
+<li>Scope down API calls to a CMK based on the AWS service from which it is called</li>
 <li>Is a condition key which can allow or deny access to your CMK depending on which service originated the request</li>
 <li>Possibilities<ul>
 <li>Allow access to the CMK only for requests which come from S3</li>
@@ -5781,6 +5858,17 @@ After you've created a flow log, you can view and retrieve its data in Amazon Cl
 </li>
 </ul>
 </li>
+<li>Web Application Layer Attacks<ul>
+<li>Mitigate using a WAF<ul>
+<li>Block using a WAF</li>
+<li>Rate-based blacklisting</li>
+</ul>
+</li>
+<li>Invest ime in limiting query string and header fowarding - Eliminates many common attacks</li>
+<li>deploy HTTP-&gt;HTTPs redirect at the edge - shields the origin from redirect floods</li>
+<li>Implement an SNI-based infrastructure - Many DDoS toolkits fail TLS handshake</li>
+</ul>
+</li>
 <li>Tips<ul>
 <li>Read white paper
     <a href="https://d0.awsstatic.com/whitepapers/Security/DDoS_White_Papper.pdf">https://d0.awsstatic.com/whitepapers/Security/DDoS_White_Papper.pdf</a></li>
@@ -5848,6 +5936,13 @@ After you've created a flow log, you can view and retrieve its data in Amazon Cl
 <li>No cost</li>
 <li>Regional</li>
 <li>KMS is used - certificates are never stored unencrypted</li>
+<li>AWS handles the painful parts of PKI<ul>
+<li>Key pair and certificates signing request feneration</li>
+<li>Encryption and secure storage of private keys</li>
+<li>Managed renewal and deployment</li>
+</ul>
+</li>
+<li>Domain validation (DV) through DNS validation/email</li>
 </ul>
 <h3 id="api-gateway">Api Gateway<a class="headerlink" href="#api-gateway" title="Permanent link">&para;</a></h3>
 <ul>
