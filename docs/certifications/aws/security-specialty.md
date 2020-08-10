@@ -16,14 +16,14 @@
     * Well-Architected framework - Security Pillar
     
 * Re:invent Videos (2017) - NET 3XX - Medium level , NET 4XX - Advanced
-    * KMS best Practices
-    * AWS Encryption Deepdive
-    * Become an IAM Policy Master
-    * DDOS Best Practices
+    * KMS best Practices = Watched
+    * AWS Encryption Deepdive => Watched
+    * Become an IAM Policy Master => Watched
+    * DDOS Best Practices => Watched
     * VPC fundamentals & Connectivity options
     * Logging in AWS
     * Advanced security best practices masterclass
-    * Advancer VPC Design and New captabilities for Amazon VPC
+    * Advanced VPC Design and New captabilities for Amazon VPC
     
 * FAQs
     * https://aws.amazon.com/faqs/ Security, identity & Compliance
@@ -92,9 +92,6 @@
 
     * AWS OpsWorks
     * AWS CodeDeploy
-    
-    
-    
     
 
 ### IAM, S3 & Security Policies
@@ -1017,6 +1014,21 @@ Don't support Java Cryptography Extensions (JCE)
         * AWS KMS never provides option to export key material
         * CAn reimport the key material however the key material must be the same
         * AWS kms update-alias - to update the alias
+        
+* Best Practices Tips
+    * Segment Keys based upon business unit, data classification, environment, etc
+    * Create Keys within the account where the data exists if possible
+    * Rotate the keys
+    * Key Polcies
+        * IAM Polcies are Not sufficient to allow access to a CMK
+        * Edit the default CMK policy to align with your organization's best parctices for least privilege
+    * CMK - Least Privilege
+        * Separate keys per business unit and data classification
+        * Separate CMK admins from users
+        * Limit KMS actions within IAM policies (No kms:*)
+        * Cross Account Delegation
+            * Account Root Principal -> Allows target account to further delegate permissions
+            * Explicit management of principals within key policy
      
 #### KMS Key Rotation Options
 
@@ -1089,6 +1101,7 @@ KMS has specific operations which are used to utilise CMK. CMKs generally aren't
 
 Grants are an alternative access control mechanism to a key policy
 
+* Delegate a subset of permissions to AWS services/other principals so that they can use the CMK on the customer behalfs
 * Programmatically delegate the use of KMS CMKs to other AWS principals - e.g a user in either your account or another account
 * Temporary, granular permissions (encrypt, decrypt, re-encrypt, describekey etc)
 * Grants allow access, not deny
@@ -1101,7 +1114,15 @@ Grants are an alternative access control mechanism to a key policy
     * list-grants - lists the grants
     * revoke-grant - to remove a grant
     * A grant token is generated & can be passed as an argument to KMS APi
-    
+
+#### Encryption Context
+
+Key value pair of additional data that you want associated with AWS KMS-Protected information
+
+* Enforce tighter controls for your encrypted resources
+* Insight into the usage of your keys from an audit perspective
+* Is logged in clear text within CloudTrail
+ 
 #### Data At Rest KMS
     
 * EBS
@@ -1124,7 +1145,15 @@ Grants are an alternative access control mechanism to a key policy
     * The DataKey is generated from a CMK
     * ChiperText DataKey is stored with the object as metadata. When decryption is needed, it's passed to KMS, Decrypted, and used by S3 to Decrypt the Object
 
+#### KMS Hierarchy 
 
+1. KMS-Managed - Keys on HSAs in a Region
+    * All Haderneded Security appliances (HSA) in a Region self-generate keys in memory when provisioned. Private Keys never leave HSA
+2. Customer Managed - Customer Master Key
+    * 254-bit symmetric Customer Master key generated in HSA or imported by customer
+    * Stored in encrypted form in several locations by KMS. Plaintext version used only in memory on HSAs on demand
+3. Data Key - Customer-managed or AWS service managed
+    * 235-bit symmetric key returned to client by KMS to use for encrypting bulk data
 
 #### KMS Cross Account Access
 
@@ -1348,7 +1377,7 @@ Policy conditions can be used to specify a condition within a key policy or IAM 
 * Predefined condition keys
 
 * Kms:ViaService
-
+    * Scope down API calls to a CMK based on the AWS service from which it is called
     * Is a condition key which can allow or deny access to your CMK depending on which service originated the request
     * Possibilities
         * Allow access to the CMK only for requests which come from S3
@@ -1711,6 +1740,13 @@ Any connected VPC is automatically available to every other connected network. R
         * Always-on, flow-based monitoring of network traffic and active application monitoring to provide near real-time notifications of DDoS attacks
         * DDos Response Team (DRT) 24x7 to manage and mitigate application layer DDoS attacks
         * Protects your AWS bill against higher fees due to ELB, cloudfront and Route53 usage spikes during DDoS attack 
+* Web Application Layer Attacks
+    * Mitigate using a WAF
+        * Block using a WAF
+        * Rate-based blacklisting
+    * Invest ime in limiting query string and header fowarding - Eliminates many common attacks
+    * deploy HTTP->HTTPs redirect at the edge - shields the origin from redirect floods
+    * Implement an SNI-based infrastructure - Many DDoS toolkits fail TLS handshake
 * Tips
     * Read white paper
         https://d0.awsstatic.com/whitepapers/Security/DDoS_White_Papper.pdf
@@ -1771,6 +1807,11 @@ Allowed without approve in:
 * No cost
 * Regional
 * KMS is used - certificates are never stored unencrypted
+* AWS handles the painful parts of PKI
+    * Key pair and certificates signing request feneration
+    * Encryption and secure storage of private keys
+    * Managed renewal and deployment
+* Domain validation (DV) through DNS validation/email
 
 ### Api Gateway
 
