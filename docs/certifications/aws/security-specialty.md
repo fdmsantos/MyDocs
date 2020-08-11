@@ -32,7 +32,7 @@
 
 [Exam Guide](https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS_Certified_Security_Specialty_Exam_Guide_v1.5.pdf)
 [AWS Practice Exam](https://rise.articulate.com/share/AMkmIRlYT4b8xsWXcOYEhqw3H_OMeoSM#/lessons/Ra5P0ix3pErElmpDy_ZQn8SXNcn6dMHx) => DONE
-[AWS Practice Exam 2](https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS_Certified_SC-S_Sample%20Questions_v1.0_FINAL.pdf) 
+[AWS Practice Exam 2](https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS_Certified_SC-S_Sample%20Questions_v1.0_FINAL.pdfhttps://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS_Certified_SC-S_Sample%20Questions_v1.0_FINAL.pdf) => Done
 [Quiz 1](https://www.twitch.tv/aws/video/467770461) => Done
 [Quiz 2](https://www.aws.training/Details/Video?id=37283)
 [Quiz 3](https://www.aws.training/Details/Video?id=37284)
@@ -154,6 +154,7 @@ Grants users limited and temporary access to AWS resources. Users can come from 
     * Let's users from one AWS account access resources in another
     
 Key Terms
+
 * Federation: combining or joining a list of users in one domain (such as IAM) with a list of users in another domain (such as Active Directory, Facebook etc)
 * Identity Broker: a service that allows you to take an identity from point A and join it (federate it) to point B
 * Identity store: services like Active Directory, Facebook, Google etc
@@ -807,6 +808,13 @@ Connections From Cloudfront to your content (origin server) can occur using HTTP
     * Anyone can create a signed URL, even if they don't have permissions on the object
     * With Cloudfront you defined the accounts which can sign; the key pair TrustedSigners is needed for cloudfront
         * Signed cookies (Cloudfront feature) don't work with RTMP distributions
+        
+* Use Pre Signed URLS when
+    * When wants restrict access to individual files
+* USe Pre Signed Cookies when
+    * You don't want change URL
+    * Provide access to multiple restrict files, for example all files for a video in HLS format or all files in subscribe are in Website area
+    
 
 ### Forcing Encryption using S3
 
@@ -869,6 +877,7 @@ AWS WAF also lets you control access to your content
 You can configure conditions such as what IP addresses are allowed to make this request or what query string parameters need to be passed for the request to be allowed and then the application load balancer or cloudfront will either allow this content to be received or to give a HTTP 403 Status Code
 
 At it's most basic level, AWS WAF allows 3 different behaviours:
+
 * Allow all requests except the ones that you specify
 * Block all requests except the ones that you specify
 * Count the requests that match the properties that you specify
@@ -1167,6 +1176,7 @@ Access to KMS CMKs is controlled using
     * Both steps are necessary otherwise it will not work
     
 Access to KMS CMKs is controlled using
+
 * The key Policy - add the root user, not individual IAM users / roles
 * IAM Policies - define the allowed actions and the CMK ARN
 * If you want to enable cross account access
@@ -1707,7 +1717,7 @@ Any connected VPC is automatically available to every other connected network. R
     * Scaling has the added benefit of providing you with additional levels of redundancy
 * Safeguard Exposed Resources
     * In situations where you cannot eliminate internet entry points to your applications, you will need to take additional measures to restrict access and protect those entry points without interrupting legitimate end user traffic
-    * Three resources that can provide this control and flexibility are Amazon cloudFront, Amazon Route 43 and Web Apllication Firewalls (WAFs)
+    * Three resources that can provide this control and flexibility are Amazon cloudFront, Amazon Route 53 and Web Apllication Firewalls (WAFs)
     * CloudFront
         * Geo Restriction/Blocking - Restrict access to users in specific countries (Using whitelists or blacklists)
         * Origin Access identity - Restrict access to your S3 bucket so that people can only access S3 using Cloudfront URLS
@@ -1927,6 +1937,7 @@ Exam Tips
 ### GuardDuty
 
 Guardduty is a threat detection service which uses ML to continuously monitor malicious behaviour
+
 * Unusual API calls, calls from a know malicious IP
 * Attempts to disable CloudTrail logging
 * Unauthorized deployments
@@ -1935,6 +1946,7 @@ Guardduty is a threat detection service which uses ML to continuously monitor ma
 * Port scanning, failed logins
 
 Features
+
 * Alerts appear in the Guardduty console & Cloudwatch events
 * Receives feed from third parties like Proofpoint, Crowdstrike and AWS Security - know malicious domains / IP addresses
 * Monitors cloudtrail logs, VPC flow logs, DNS logs
@@ -1943,6 +1955,7 @@ Features
 * Machine learning and anomaly detection
 
 Setting up
+
 * 7-14 days to set a baseline - What is normal behaviour on your account
 * Once active you will see findings on the GuardDuty console and in cloudwatch events only if GuardDuty detects behaviour it considers a threat
 * 30 days free. Charges based on
@@ -1950,6 +1963,7 @@ Setting up
     * volume of DNS and VPC flow log data
     
 Tips
+
 * Uses AI to learn what normal behaviour looks like in your account and to alert you of any abnormal or malicious behaviour
 * Updates a database of know malicious domains using external feeds from third parties
 * Monitor cloudtrail logs, VPC flow logs, DNS logs
@@ -1958,6 +1972,7 @@ Tips
 ### Secrets Manager
 
 Secrets Manager is a service which securely stores, encrypts and rotates your DB credentials and other secrets
+
 * Encryption in-transit and at rest using KMS
 * Automatically rotates credentials
 * Apply fine grained access control using IAM Policies
@@ -1966,12 +1981,13 @@ Secrets Manager is a service which securely stores, encrypts and rotates your DB
 
 * Rotation Options
     * Multi-User Rotation
-        * Separate master user credentials are used for secret rotation. The old version of secret continues to operate and hangle service requests, while the new version is prepared and tested. The old version isn't deleted until after the clients switch to the new version. There is no downtime while changing between versions
+        * Separate master user credentials are used for secret rotation. The old version of secret continues to operate and handle service requests, while the new version is prepared and tested. The old version isn't deleted until after the clients switch to the new version. There is no downtime while changing between versions
     * Single-user Rotation
         * Secrets master uses a single user to rotate its own credentials. Sign-in failures can occur between the moment when the old password is removed by rotation and the moment when the updated password is made accessible as a  new version of the secret. This time window should be very short, but it can happen
         * To avoid this, use Multi-User Rotation or exponential back-off
 
 What Can Store
+
 * RDS credentials
 * Credentials for non-RDS databases
 * Any other type of secret provided you can store it as a key value pair (SSH keys, API keys)
@@ -1987,6 +2003,7 @@ Enabling Secrets manager Automatic Rotation
 * Enable Rotation - recommended setting if your applications are not already using embedded credentials i.e. they are not going to try to connect to the database using old credentials
 
 Tips
+
 * Secrets Manager can be used to securely store your application secrets: DB credentials, API keys, SSH keys, passwords etc
 * Applications use the secrets manager API
 * Rotating credentials is super easy - but be careful
