@@ -3496,10 +3496,10 @@
 <li>
 <p>Re:invent Videos (2017) - NET 3XX - Medium level , NET 4XX - Advanced</p>
 <ul>
-<li>KMS best Practices = Watched</li>
-<li>AWS Encryption Deepdive =&gt; Watched</li>
-<li>Become an IAM Policy Master =&gt; Watched</li>
-<li>DDOS Best Practices =&gt; Watched</li>
+<li>KMS best Practices</li>
+<li>AWS Encryption Deepdive</li>
+<li>Become an IAM Policy Master</li>
+<li>DDOS Best Practices</li>
 <li>VPC fundamentals &amp; Connectivity options</li>
 <li>Logging in AWS</li>
 <li>Advanced security best practices masterclass</li>
@@ -3515,13 +3515,14 @@
 </ul>
 <h2 id="exams">Exams<a class="headerlink" href="#exams" title="Permanent link">&para;</a></h2>
 <p><a href="https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS_Certified_Security_Specialty_Exam_Guide_v1.5.pdf">Exam Guide</a>
-<a href="https://rise.articulate.com/share/AMkmIRlYT4b8xsWXcOYEhqw3H_OMeoSM#/lessons/Ra5P0ix3pErElmpDy_ZQn8SXNcn6dMHx">AWS Practice Exam</a> =&gt; DONE
-<a href="https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS_Certified_SC-S_Sample%20Questions_v1.0_FINAL.pdf">AWS Practice Exam 2</a> 
-<a href="https://www.twitch.tv/aws/video/467770461">Quiz 1</a> =&gt; Done
+<a href="https://rise.articulate.com/share/AMkmIRlYT4b8xsWXcOYEhqw3H_OMeoSM#/lessons/Ra5P0ix3pErElmpDy_ZQn8SXNcn6dMHx">AWS Practice Exam</a>
+<a href="https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS_Certified_SC-S_Sample%20Questions_v1.0_FINAL.pdfhttps://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS_Certified_SC-S_Sample%20Questions_v1.0_FINAL.pdf">AWS Practice Exam 2</a>
+<a href="https://www.twitch.tv/aws/video/467770461">Quiz 1</a>
 <a href="https://www.aws.training/Details/Video?id=37283">Quiz 2</a>
 <a href="https://www.aws.training/Details/Video?id=37284">Quiz 3</a>
 <a href="https://www.aws.training/Details/Video?id=37293">Quiz 4</a>
-<a href="https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Speciality_Sample-Questions.pdf">Exam Sample Questions</a> =&gt; DONE</p>
+<a href="https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Speciality_Sample-Questions.pdf">Exam Sample Questions</a>
+<a href="https://www.examtopics.com/exams/amazon/aws-certified-security-specialty/">ExamTopics</a></p>
 <ul>
 <li>Cloud Guru</li>
 <li>Linux Academy</li>
@@ -3669,11 +3670,13 @@
 </ul>
 </li>
 </ul>
-<p>Key Terms
-* Federation: combining or joining a list of users in one domain (such as IAM) with a list of users in another domain (such as Active Directory, Facebook etc)
-* Identity Broker: a service that allows you to take an identity from point A and join it (federate it) to point B
-* Identity store: services like Active Directory, Facebook, Google etc
-* Identities: a user of a service like Facebook etc</p>
+<p>Key Terms</p>
+<ul>
+<li>Federation: combining or joining a list of users in one domain (such as IAM) with a list of users in another domain (such as Active Directory, Facebook etc)</li>
+<li>Identity Broker: a service that allows you to take an identity from point A and join it (federate it) to point B</li>
+<li>Identity store: services like Active Directory, Facebook, Google etc</li>
+<li>Identities: a user of a service like Facebook etc</li>
+</ul>
 <p>Use Case
 1. Employee enters their username and password
 2. The application calls an identity broker. The broker captures the username and password
@@ -4602,7 +4605,9 @@ Connections From Cloudfront to your content (origin server) can occur using HTTP
 <li>Cookies extend this, allowing access to an object type or area/folder and don't need a specifically formatted url</li>
 <li>You can access objects using pre-signed URL's</li>
 <li>Typically these are done via the SDK but can also be done using the CLI</li>
-<li>Features/Limits<ul>
+<li>
+<p>Features/Limits</p>
+<ul>
 <li>Signed URLs/Cookies are linked to an existing identity (Role/User), and they have the permissions of that entity</li>
 <li>They exist for a certain length of time in seconds. Default is 1 Hour.<ul>
 <li>You can change this using "--expires-in" followed by the number of seconds</li>
@@ -4615,6 +4620,17 @@ Connections From Cloudfront to your content (origin server) can occur using HTTP
 <li>Signed cookies (Cloudfront feature) don't work with RTMP distributions</li>
 </ul>
 </li>
+</ul>
+</li>
+<li>
+<p>Use Pre Signed URLS when</p>
+<ul>
+<li>When wants restrict access to individual files</li>
+</ul>
+</li>
+<li>USe Pre Signed Cookies when<ul>
+<li>You don't want change URL</li>
+<li>Provide access to multiple restrict files, for example all files for a video in HLS format or all files in subscribe are in Website area</li>
 </ul>
 </li>
 </ul>
@@ -4697,10 +4713,12 @@ Connections From Cloudfront to your content (origin server) can occur using HTTP
 <p>AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to Amazon CloudFront or and Application Load Balanacer.
 AWS WAF also lets you control access to your content</p>
 <p>You can configure conditions such as what IP addresses are allowed to make this request or what query string parameters need to be passed for the request to be allowed and then the application load balancer or cloudfront will either allow this content to be received or to give a HTTP 403 Status Code</p>
-<p>At it's most basic level, AWS WAF allows 3 different behaviours:
-* Allow all requests except the ones that you specify
-* Block all requests except the ones that you specify
-* Count the requests that match the properties that you specify</p>
+<p>At it's most basic level, AWS WAF allows 3 different behaviours:</p>
+<ul>
+<li>Allow all requests except the ones that you specify</li>
+<li>Block all requests except the ones that you specify</li>
+<li>Count the requests that match the properties that you specify</li>
+</ul>
 <p>What is AWS WAF?</p>
 <p>Additional protection against web attacks using conditions that you specify. 
 You can define conditions by using characteristics of web requests such as the following:</p>
@@ -5097,15 +5115,21 @@ allowed, the root user has no access to CMKs. In cases where nobody has access t
 </ul>
 </li>
 </ul>
-<p>Access to KMS CMKs is controlled using
-* The key Policy - add the root user, not individual IAM users / roles
-* IAM Policies - define the allowed actions and the CMK ARN
-* If you want to enable cross account access
-    * Enable access in the Key Policy for the account which owns the CMK
-    * Enable access to KMS in the IAM Policy for the external account
-    * Both steps are necessary otherwise it will not work</p>
+<p>Access to KMS CMKs is controlled using</p>
 <ul>
-<li>KMS in a multi-account configuration<ul>
+<li>The key Policy - add the root user, not individual IAM users / roles</li>
+<li>IAM Policies - define the allowed actions and the CMK ARN</li>
+<li>
+<p>If you want to enable cross account access</p>
+<ul>
+<li>Enable access in the Key Policy for the account which owns the CMK</li>
+<li>Enable access to KMS in the IAM Policy for the external account</li>
+<li>Both steps are necessary otherwise it will not work</li>
+</ul>
+</li>
+<li>
+<p>KMS in a multi-account configuration</p>
+<ul>
 <li>The key won't appear in the external account, but if it is configured using a key policy, that account can interact with the key for cryptographic functions</li>
 <li>Key usage and Key admin are not the same thing</li>
 </ul>
@@ -5801,7 +5825,7 @@ After you've created a flow log, you can view and retrieve its data in Amazon Cl
 </li>
 <li>Safeguard Exposed Resources<ul>
 <li>In situations where you cannot eliminate internet entry points to your applications, you will need to take additional measures to restrict access and protect those entry points without interrupting legitimate end user traffic</li>
-<li>Three resources that can provide this control and flexibility are Amazon cloudFront, Amazon Route 43 and Web Apllication Firewalls (WAFs)</li>
+<li>Three resources that can provide this control and flexibility are Amazon cloudFront, Amazon Route 53 and Web Apllication Firewalls (WAFs)</li>
 <li>CloudFront<ul>
 <li>Geo Restriction/Blocking - Restrict access to users in specific countries (Using whitelists or blacklists)</li>
 <li>Origin Access identity - Restrict access to your S3 bucket so that people can only access S3 using Cloudfront URLS</li>
@@ -6093,42 +6117,56 @@ After you've created a flow log, you can view and retrieve its data in Amazon Cl
 </li>
 </ul>
 <h3 id="guardduty">GuardDuty<a class="headerlink" href="#guardduty" title="Permanent link">&para;</a></h3>
-<p>Guardduty is a threat detection service which uses ML to continuously monitor malicious behaviour
-* Unusual API calls, calls from a know malicious IP
-* Attempts to disable CloudTrail logging
-* Unauthorized deployments
-* Compromised instances
-* Reconnaissance by would be attackers
-* Port scanning, failed logins</p>
-<p>Features
-* Alerts appear in the Guardduty console &amp; Cloudwatch events
-* Receives feed from third parties like Proofpoint, Crowdstrike and AWS Security - know malicious domains / IP addresses
-* Monitors cloudtrail logs, VPC flow logs, DNS logs
-* Centralize threat detection across multiple AWS accounts
-* Automated response using cloudwatch events and lambda
-* Machine learning and anomaly detection</p>
-<p>Setting up
-* 7-14 days to set a baseline - What is normal behaviour on your account
-* Once active you will see findings on the GuardDuty console and in cloudwatch events only if GuardDuty detects behaviour it considers a threat
-* 30 days free. Charges based on
-    * Quantity of cloudtrail events
-    * volume of DNS and VPC flow log data</p>
-<p>Tips
-* Uses AI to learn what normal behaviour looks like in your account and to alert you of any abnormal or malicious behaviour
-* Updates a database of know malicious domains using external feeds from third parties
-* Monitor cloudtrail logs, VPC flow logs, DNS logs
-* Findings appear in the Guarduty dashboard, cloudwatch events can be used to trigger a lambda function to address a threat</p>
-<h3 id="secrets-manager">Secrets Manager<a class="headerlink" href="#secrets-manager" title="Permanent link">&para;</a></h3>
-<p>Secrets Manager is a service which securely stores, encrypts and rotates your DB credentials and other secrets
-* Encryption in-transit and at rest using KMS
-* Automatically rotates credentials
-* Apply fine grained access control using IAM Policies
-* Your application makes an API call to secrets Manager to retrieve the secret programmatically
-* Reduces the risk of credentials being compromised</p>
+<p>Guardduty is a threat detection service which uses ML to continuously monitor malicious behaviour</p>
 <ul>
-<li>Rotation Options<ul>
+<li>Unusual API calls, calls from a know malicious IP</li>
+<li>Attempts to disable CloudTrail logging</li>
+<li>Unauthorized deployments</li>
+<li>Compromised instances</li>
+<li>Reconnaissance by would be attackers</li>
+<li>Port scanning, failed logins</li>
+</ul>
+<p>Features</p>
+<ul>
+<li>Alerts appear in the Guardduty console &amp; Cloudwatch events</li>
+<li>Receives feed from third parties like Proofpoint, Crowdstrike and AWS Security - know malicious domains / IP addresses</li>
+<li>Monitors cloudtrail logs, VPC flow logs, DNS logs</li>
+<li>Centralize threat detection across multiple AWS accounts</li>
+<li>Automated response using cloudwatch events and lambda</li>
+<li>Machine learning and anomaly detection</li>
+</ul>
+<p>Setting up</p>
+<ul>
+<li>7-14 days to set a baseline - What is normal behaviour on your account</li>
+<li>Once active you will see findings on the GuardDuty console and in cloudwatch events only if GuardDuty detects behaviour it considers a threat</li>
+<li>30 days free. Charges based on<ul>
+<li>Quantity of cloudtrail events</li>
+<li>volume of DNS and VPC flow log data</li>
+</ul>
+</li>
+</ul>
+<p>Tips</p>
+<ul>
+<li>Uses AI to learn what normal behaviour looks like in your account and to alert you of any abnormal or malicious behaviour</li>
+<li>Updates a database of know malicious domains using external feeds from third parties</li>
+<li>Monitor cloudtrail logs, VPC flow logs, DNS logs</li>
+<li>Findings appear in the Guarduty dashboard, cloudwatch events can be used to trigger a lambda function to address a threat</li>
+</ul>
+<h3 id="secrets-manager">Secrets Manager<a class="headerlink" href="#secrets-manager" title="Permanent link">&para;</a></h3>
+<p>Secrets Manager is a service which securely stores, encrypts and rotates your DB credentials and other secrets</p>
+<ul>
+<li>Encryption in-transit and at rest using KMS</li>
+<li>Automatically rotates credentials</li>
+<li>Apply fine grained access control using IAM Policies</li>
+<li>Your application makes an API call to secrets Manager to retrieve the secret programmatically</li>
+<li>
+<p>Reduces the risk of credentials being compromised</p>
+</li>
+<li>
+<p>Rotation Options</p>
+<ul>
 <li>Multi-User Rotation<ul>
-<li>Separate master user credentials are used for secret rotation. The old version of secret continues to operate and hangle service requests, while the new version is prepared and tested. The old version isn't deleted until after the clients switch to the new version. There is no downtime while changing between versions</li>
+<li>Separate master user credentials are used for secret rotation. The old version of secret continues to operate and handle service requests, while the new version is prepared and tested. The old version isn't deleted until after the clients switch to the new version. There is no downtime while changing between versions</li>
 </ul>
 </li>
 <li>Single-user Rotation<ul>
@@ -6139,10 +6177,12 @@ After you've created a flow log, you can view and retrieve its data in Amazon Cl
 </ul>
 </li>
 </ul>
-<p>What Can Store
-* RDS credentials
-* Credentials for non-RDS databases
-* Any other type of secret provided you can store it as a key value pair (SSH keys, API keys)</p>
+<p>What Can Store</p>
+<ul>
+<li>RDS credentials</li>
+<li>Credentials for non-RDS databases</li>
+<li>Any other type of secret provided you can store it as a key value pair (SSH keys, API keys)</li>
+</ul>
 <p><img alt="SecretsManagerVsParameterStore" src="../../images/screenshot.191.jpg" /></p>
 <p>Enabling Secrets manager Automatic Rotation</p>
 <ul>
@@ -6154,12 +6194,14 @@ After you've created a flow log, you can view and retrieve its data in Amazon Cl
 </li>
 <li>Enable Rotation - recommended setting if your applications are not already using embedded credentials i.e. they are not going to try to connect to the database using old credentials</li>
 </ul>
-<p>Tips
-* Secrets Manager can be used to securely store your application secrets: DB credentials, API keys, SSH keys, passwords etc
-* Applications use the secrets manager API
-* Rotating credentials is super easy - but be careful
-* When enabled, Secrets manager will rotate credentials immediately
-* Make sure all your application instances are configured to use Secrets manager before enabling credential rotation</p>
+<p>Tips</p>
+<ul>
+<li>Secrets Manager can be used to securely store your application secrets: DB credentials, API keys, SSH keys, passwords etc</li>
+<li>Applications use the secrets manager API</li>
+<li>Rotating credentials is super easy - but be careful</li>
+<li>When enabled, Secrets manager will rotate credentials immediately</li>
+<li>Make sure all your application instances are configured to use Secrets manager before enabling credential rotation</li>
+</ul>
 <h3 id="ses">SES<a class="headerlink" href="#ses" title="Permanent link">&para;</a></h3>
 <p>SES is a cloud based email service, which supports both sending and receiving email</p>
 <ul>
