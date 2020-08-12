@@ -16,10 +16,10 @@
     * Well-Architected framework - Security Pillar
     
 * Re:invent Videos (2017) - NET 3XX - Medium level , NET 4XX - Advanced
-    * KMS best Practices = Watched
-    * AWS Encryption Deepdive => Watched
-    * Become an IAM Policy Master => Watched
-    * DDOS Best Practices => Watched
+    * KMS best Practices
+    * AWS Encryption Deepdive
+    * Become an IAM Policy Master
+    * DDOS Best Practices
     * VPC fundamentals & Connectivity options
     * Logging in AWS
     * Advanced security best practices masterclass
@@ -31,13 +31,14 @@
 ## Exams
 
 [Exam Guide](https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS_Certified_Security_Specialty_Exam_Guide_v1.5.pdf)
-[AWS Practice Exam](https://rise.articulate.com/share/AMkmIRlYT4b8xsWXcOYEhqw3H_OMeoSM#/lessons/Ra5P0ix3pErElmpDy_ZQn8SXNcn6dMHx) => DONE
-[AWS Practice Exam 2](https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS_Certified_SC-S_Sample%20Questions_v1.0_FINAL.pdfhttps://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS_Certified_SC-S_Sample%20Questions_v1.0_FINAL.pdf) => Done
-[Quiz 1](https://www.twitch.tv/aws/video/467770461) => Done
+[AWS Practice Exam](https://rise.articulate.com/share/AMkmIRlYT4b8xsWXcOYEhqw3H_OMeoSM#/lessons/Ra5P0ix3pErElmpDy_ZQn8SXNcn6dMHx)
+[AWS Practice Exam 2](https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS_Certified_SC-S_Sample%20Questions_v1.0_FINAL.pdfhttps://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS_Certified_SC-S_Sample%20Questions_v1.0_FINAL.pdf)
+[Quiz 1](https://www.twitch.tv/aws/video/467770461)
 [Quiz 2](https://www.aws.training/Details/Video?id=37283)
 [Quiz 3](https://www.aws.training/Details/Video?id=37284)
 [Quiz 4](https://www.aws.training/Details/Video?id=37293)
-[Exam Sample Questions](https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Speciality_Sample-Questions.pdf) => DONE
+[Exam Sample Questions](https://d1.awsstatic.com/training-and-certification/docs-security-spec/AWS-Certified-Security-Speciality_Sample-Questions.pdf)
+[ExamTopics](https://www.examtopics.com/exams/amazon/aws-certified-security-specialty/)
 
 * Cloud Guru
 * Linux Academy
