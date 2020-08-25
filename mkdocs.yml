@@ -89,7 +89,7 @@ nav:
               - Redshift: platforms/aws/databases/redshift.md
           - DevOps:
               - CloudWatch: platforms/aws/devops/cloudwatch.md
-              - Cloudformation: platforms/aws/devops/cloudformation.md
+              - Deploy: platforms/aws/devops/deploy.md
           - Storage:
               - S3: platforms/aws/storage/s3.md
           - Security:
