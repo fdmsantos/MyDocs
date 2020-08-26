@@ -46,6 +46,7 @@ aws cloudformation delete-stack --stack-name ${stack_name}
 ### Init
 
 [Samples](https://github.com/widdix/aws-cf-templates)
+[Complete Example](https://s3.amazonaws.com/cloudformation-templates-us-east-1/AutoScalingMultiAZWithNotifications.template)
 
 Logs are stored in:
 
@@ -176,16 +177,16 @@ Resources:
                   Fn::Join:
                     - ''
                     - - "[cfn-auto-reloader-hook]\n"
-                      - 'triggers=post.update'
-                      - 'path=Resources.WebLaunchConfig.Metadata.AWS::CloudFormation::Init'
-                      - 'action=/opt/aws/bin/cfn-init -v '
+                      - "triggers=post.update\n"
+                      - "path=Resources.WebLaunchConfig.Metadata.AWS::CloudFormation::Init\n"
+                      - "action=/opt/aws/bin/cfn-init -v "
                       - "         --stack "
                       - Ref: AWS::StackName
                       - "         --resource WebLaunchConfig "
                       - "         --region "
                       - Ref: AWS::Region
                       - "\n"
-                      - 'runas=root'
+                      - "runas=root"
                 mode: '000400'
                 owner: root
                 group: root
@@ -212,8 +213,8 @@ Resources:
             Fn::Join:
               - ''
               - - "#!/bin/bash -xe\n"
-                - 'yum update -y aws-cfn-bootstrap'
-                - 'yum update -y aws-cli'
+                - "yum update -y aws-cfn-bootstrap\n"
+                - "yum update -y aws-cli\n"
                 - "/opt/aws/bin/cfn-init -v "
                 - "         --stack "
                 - Ref: AWS::StackName

@@ -97,8 +97,7 @@ nav:
           - Migrate:
               - VmWare: platforms/aws/migrate/vmware.md
               - Windows: platforms/aws/migrate/windows.md
-              - SqlServer: platforms/aws/migrate/sqlserver.md
-              - Aspnet: platforms/aws/migrate/apsnet.net
+              - Windows-Workshops: platforms/aws/migrate/windows-workshops.md
       - Kubernetes:
           - Admin:
               - Administrator: platforms/kubernetes/admin/admin.md
