@@ -165,6 +165,7 @@ nav:
       - AWS:
           - Security-Specialty: certifications/aws/security-specialty.md
           - Big-Data:  certifications/aws/bigdata-specialty.md
+          - Networking: certifications/aws/networking-specialty.md
       - Google:
           - Associate-Cloud-Engineer: certifications/google/associate-cloud-engineer.md
       - Azure:

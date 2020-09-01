@@ -1,3 +1,13 @@
+## Monitoring
+
+### Key Metrics
+
+[Key metrics for EC2 monitoring](https://www.datadoghq.com/blog/ec2-monitoring/)
+
+### Monitor Custom Applications with Custom Metrics
+
+[How Monitor Application](https://aws.amazon.com/blogs/devops/new-how-to-better-monitor-your-custom-application-metrics-using-amazon-cloudwatch-agent/)
+
 ## Restore Snapshots
 
 **Read all blocks to eliminate penalty in production**

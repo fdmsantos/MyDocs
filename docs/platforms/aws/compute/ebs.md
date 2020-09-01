@@ -18,6 +18,8 @@
 
 ## Monitoring
 
+### Metrics
+
 * VolumeReadOps
     * Total number of IOPS in a specific period of time. To 1000 in 1 minute = 1000/60 IOPS - Change IOPS based off of usage.
 * VolumeWriteOps
@@ -39,3 +41,15 @@
 * Reach IOPS limit of your volume will result in:
     * Will start to get your IO requests queuing
     * Depending on your applications sensitivity to IOPS and latency, you may see your applications becaming slow
+    
+### Totals IOPS / Total Throughput / Total Network 
+
+[StackOverflow](https://stackoverflow.com/questions/60900782/cloudwatch-metrics-for-volume-iops-volume-throughput-mib-s-and-network-gbps)
+
+### Key Metrics
+
+[Key Metrics](https://www.datadoghq.com/blog/amazon-ebs-monitoring/)
+
+### Anomaly Detection
+
+[Anomaly Detection](https://www.bluematador.com/blog/how-to-monitor-amazon-ebs-with-cloudwatch)
