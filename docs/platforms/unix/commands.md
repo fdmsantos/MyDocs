@@ -1,5 +1,22 @@
 # Commands
 
+## SSL Certificates
+
+### Verify
+
+```bash
+openssl verify cert.pem
+openssl verify -untrusted ca-bundle cert.pem
+```
+
+### Certbot
+
+[WildCard Certificates](https://medium.com/@saurabh6790/generate-wildcard-ssl-certificate-using-lets-encrypt-certbot-273e432794d7)
+
+[AMI2 Certificates Automation](https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html)
+
+[Issue - No module named cryptography](https://stackoverflow.com/questions/57891591/how-to-fix-importerror-no-module-named-cryptography)
+
 ## Folders
 
 * Create Multiple Folders

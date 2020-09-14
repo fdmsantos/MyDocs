@@ -129,7 +129,7 @@
 * A permissions boundary on its own grants no permissions, it only restricts 
 
 #### Policy Evaluation
-![Visial Diagram](../images/policy-conflicts-visual-diagram.jpg)
+![Visual Diagram](../images/policy-conflicts-visual-diagram.jpg)
 
 * With least-privilege, decisions ALWAYS default to DENY
 * ALSO an explicit DENY ALWAYS trumps an ALLOW
