@@ -610,8 +610,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aws/devops/cloudformation/" title="Cloudformation" class="md-nav__link">
-      Cloudformation
+    <a href="../../aws/devops/deploy/" title="Deploy" class="md-nav__link">
+      Deploy
     </a>
   </li>
 
@@ -742,20 +742,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../aws/migrate/sqlserver/" title="SqlServer" class="md-nav__link">
-      SqlServer
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../aws/migrate/apsnet.net" title="Aspnet" class="md-nav__link">
-      Aspnet
+    <a href="../../aws/migrate/windows-workshops/" title="Windows-Workshops" class="md-nav__link">
+      Windows-Workshops
     </a>
   </li>
 
@@ -1112,6 +1100,33 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ssl-certificates" title="SSL Certificates" class="md-nav__link">
+    SSL Certificates
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verify" title="Verify" class="md-nav__link">
+    Verify
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certbot" title="Certbot" class="md-nav__link">
+    Certbot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#folders" title="Folders" class="md-nav__link">
     Folders
   </a>
@@ -1319,6 +1334,18 @@
   <li class="md-nav__item">
     <a href="../virsh/" title="Virsh" class="md-nav__link">
       Virsh
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../wordpress/" title="Wordpress" class="md-nav__link">
+      Wordpress
     </a>
   </li>
 
@@ -1899,6 +1926,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../certifications/aws/networking-specialty/" title="Networking" class="md-nav__link">
+      Networking
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -2000,6 +2039,33 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ssl-certificates" title="SSL Certificates" class="md-nav__link">
+    SSL Certificates
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verify" title="Verify" class="md-nav__link">
+    Verify
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#certbot" title="Certbot" class="md-nav__link">
+    Certbot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#folders" title="Folders" class="md-nav__link">
@@ -2136,6 +2202,16 @@
                 
                 
                 <h1 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h1>
+<h2 id="ssl-certificates">SSL Certificates<a class="headerlink" href="#ssl-certificates" title="Permanent link">&para;</a></h2>
+<h3 id="verify">Verify<a class="headerlink" href="#verify" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>openssl verify cert.pem
+openssl verify -untrusted ca-bundle cert.pem
+</pre></div>
+
+<h3 id="certbot">Certbot<a class="headerlink" href="#certbot" title="Permanent link">&para;</a></h3>
+<p><a href="https://medium.com/@saurabh6790/generate-wildcard-ssl-certificate-using-lets-encrypt-certbot-273e432794d7">WildCard Certificates</a></p>
+<p><a href="https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html">AMI2 Certificates Automation</a></p>
+<p><a href="https://stackoverflow.com/questions/57891591/how-to-fix-importerror-no-module-named-cryptography">Issue - No module named cryptography</a></p>
 <h2 id="folders">Folders<a class="headerlink" href="#folders" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Create Multiple Folders</li>

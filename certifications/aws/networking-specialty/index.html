@@ -1,0 +1,3441 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="My Docs">
+      
+      
+      
+        <meta name="author" content="Fábio Santos">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
+    
+    
+      
+        <title>Networking - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.01ccdecf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="https://cdn.rawgit.com/knsv/mermaid/0.5.6/dist/mermaid.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#aws-certified-networking-specialty" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="My Docs" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              My Docs
+            </span>
+            <span class="md-header-nav__topic">
+              Networking
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." title="Index" class="md-tabs__link">
+        Index
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../platforms/aws/compute/ec2/" title="Platforms" class="md-tabs__link">
+          Platforms
+        </a>
+      
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../devops/terraform/" title="DevOps" class="md-tabs__link">
+          DevOps
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../databases/elasticsearch/search/" title="Databases" class="md-tabs__link">
+          Databases
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../developer/python/packages/" title="Developer" class="md-tabs__link">
+          Developer
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../kubernetes/ckad/" title="Certifications" class="md-tabs__link">
+          Certifications
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="My Docs" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Platforms
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Platforms
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      AWS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        AWS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-1" type="checkbox" id="nav-2-1-1">
+    
+    <label class="md-nav__link" for="nav-2-1-1">
+      Compute
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-1">
+        Compute
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/compute/ec2/" title="EC2" class="md-nav__link">
+      EC2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/compute/ebs/" title="EBS" class="md-nav__link">
+      EBS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/compute/elb/" title="ELB" class="md-nav__link">
+      ELB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/compute/eks/" title="EKS" class="md-nav__link">
+      EKS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-2" type="checkbox" id="nav-2-1-2">
+    
+    <label class="md-nav__link" for="nav-2-1-2">
+      Severless
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-2">
+        Severless
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/serverless/lambda/" title="Lambda" class="md-nav__link">
+      Lambda
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/serverless/apigateway/" title="ApiGateway" class="md-nav__link">
+      ApiGateway
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/serverless/amplify/" title="Amplify" class="md-nav__link">
+      Amplify
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/serverless/cognito/" title="Cognito" class="md-nav__link">
+      Cognito
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/serverless/stepfunctions/" title="StepFunctions" class="md-nav__link">
+      StepFunctions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-3" type="checkbox" id="nav-2-1-3">
+    
+    <label class="md-nav__link" for="nav-2-1-3">
+      Databases
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-3">
+        Databases
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/databases/rds/" title="RDS" class="md-nav__link">
+      RDS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/databases/dynamodb/" title="DynamoDB" class="md-nav__link">
+      DynamoDB
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/databases/elasticache/" title="Elasticache" class="md-nav__link">
+      Elasticache
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/databases/redshift/" title="Redshift" class="md-nav__link">
+      Redshift
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-4" type="checkbox" id="nav-2-1-4">
+    
+    <label class="md-nav__link" for="nav-2-1-4">
+      DevOps
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-4">
+        DevOps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/devops/cloudwatch/" title="CloudWatch" class="md-nav__link">
+      CloudWatch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/devops/deploy/" title="Deploy" class="md-nav__link">
+      Deploy
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-5" type="checkbox" id="nav-2-1-5">
+    
+    <label class="md-nav__link" for="nav-2-1-5">
+      Storage
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-5">
+        Storage
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/storage/s3/" title="S3" class="md-nav__link">
+      S3
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-6" type="checkbox" id="nav-2-1-6">
+    
+    <label class="md-nav__link" for="nav-2-1-6">
+      Security
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-6">
+        Security
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/security/acm/" title="ACM" class="md-nav__link">
+      ACM
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1-7" type="checkbox" id="nav-2-1-7">
+    
+    <label class="md-nav__link" for="nav-2-1-7">
+      Migrate
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-7">
+        Migrate
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/migrate/vmware/" title="VmWare" class="md-nav__link">
+      VmWare
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/migrate/windows/" title="Windows" class="md-nav__link">
+      Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/aws/migrate/windows-workshops/" title="Windows-Workshops" class="md-nav__link">
+      Windows-Workshops
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Kubernetes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Kubernetes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2-1" type="checkbox" id="nav-2-2-1">
+    
+    <label class="md-nav__link" for="nav-2-2-1">
+      Admin
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-2-1">
+        Admin
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/admin/admin/" title="Administrator" class="md-nav__link">
+      Administrator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/admin/etcd/" title="Etcd" class="md-nav__link">
+      Etcd
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/admin/kubecontrollermanager/" title="KubeControllerManager" class="md-nav__link">
+      KubeControllerManager
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/admin/monitoring/" title="Monitoring" class="md-nav__link">
+      Monitoring
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/admin/networking/" title="Networking" class="md-nav__link">
+      Networking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/admin/security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/admin/hardway/" title="Hardway" class="md-nav__link">
+      Hardway
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/admin/kops/" title="Kops" class="md-nav__link">
+      Kops
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2-2" type="checkbox" id="nav-2-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2-2">
+      Developer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-2-2">
+        Developer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/developer/pods/" title="Pods" class="md-nav__link">
+      Pods
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/developer/daemonsets/" title="DaemonSets" class="md-nav__link">
+      DaemonSets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/developer/deployments/" title="Deployments" class="md-nav__link">
+      Deployments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/developer/ingress/" title="Ingress" class="md-nav__link">
+      Ingress
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/developer/jobs/" title="Jobs" class="md-nav__link">
+      Jobs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/developer/volumes/" title="Volumes" class="md-nav__link">
+      Volumes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/developer/replicasets/" title="Replicasets" class="md-nav__link">
+      Replicasets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/developer/secrets_configmaps/" title="Secrets&ConfigMaps" class="md-nav__link">
+      Secrets&ConfigMaps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/developer/services/" title="Services" class="md-nav__link">
+      Services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/kubernetes/developer/statefulsets/" title="StatefulSets" class="md-nav__link">
+      StatefulSets
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Unix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        Unix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/unix/commands/" title="Commands" class="md-nav__link">
+      Commands
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/unix/disks/" title="Disks" class="md-nav__link">
+      Disks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/unix/networking/" title="Networking" class="md-nav__link">
+      Networking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/unix/security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/unix/redhat/" title="Redhat" class="md-nav__link">
+      Redhat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/unix/debian/" title="Debian" class="md-nav__link">
+      Debian
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/unix/archlinux/" title="Archlinux" class="md-nav__link">
+      Archlinux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/unix/virsh/" title="Virsh" class="md-nav__link">
+      Virsh
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../platforms/unix/wordpress/" title="Wordpress" class="md-nav__link">
+      Wordpress
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      DevOps
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        DevOps
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../devops/terraform/" title="Terraform" class="md-nav__link">
+      Terraform
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../devops/packer/" title="Packer" class="md-nav__link">
+      Packer
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../devops/git/" title="Git" class="md-nav__link">
+      Git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../devops/jenkins/" title="Jenkins" class="md-nav__link">
+      Jenkins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Databases
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Databases
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      ElasticSearch
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        ElasticSearch
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../databases/elasticsearch/search/" title="Search" class="md-nav__link">
+      Search
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../databases/elasticsearch/indices/" title="Indices" class="md-nav__link">
+      Indices
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../databases/elasticsearch/cat/" title="Cat" class="md-nav__link">
+      Cat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../databases/elasticsearch/beat/" title="Beat" class="md-nav__link">
+      Beat
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../databases/elasticsearch/kibana/" title="Kibana" class="md-nav__link">
+      Kibana
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../databases/elasticsearch/cluster/" title="Cluster" class="md-nav__link">
+      Cluster
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../databases/elasticsearch/nodes/" title="Nodes" class="md-nav__link">
+      Nodes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../databases/elasticsearch/snapshots/" title="Snapshots" class="md-nav__link">
+      Snapshots
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      MySQL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        MySQL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../databases/mysql/galera-cluster/" title="Galera" class="md-nav__link">
+      Galera
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Developer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Developer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Python
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developer/python/packages/" title="Packages" class="md-nav__link">
+      Packages
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developer/ciscoAci/cobra/" title="Cisco ACI" class="md-nav__link">
+      Cisco ACI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
+    
+    <label class="md-nav__link" for="nav-5-3">
+      RobotFramework
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        RobotFramework
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developer/robotframework/gettingstarted/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developer/robotframework/ddd/" title="Data-Driver" class="md-nav__link">
+      Data-Driver
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developer/robotframework/pom/" title="Page-Object Model" class="md-nav__link">
+      Page-Object Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developer/robotframework/robotfile/" title="RobotFile" class="md-nav__link">
+      RobotFile
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developer/robotframework/selenium/" title="Selenium" class="md-nav__link">
+      Selenium
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4">
+    
+    <label class="md-nav__link" for="nav-5-4">
+      CSS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-4">
+        CSS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developer/css/vom/" title="VOM" class="md-nav__link">
+      VOM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developer/css/flexbox/" title="Flexbox" class="md-nav__link">
+      Flexbox
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developer/css/cssgrid/" title="Grid" class="md-nav__link">
+      Grid
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      Certifications
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Certifications
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-1" type="checkbox" id="nav-6-1">
+    
+    <label class="md-nav__link" for="nav-6-1">
+      Kubernetes
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-1">
+        Kubernetes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../kubernetes/ckad/" title="CKAD" class="md-nav__link">
+      CKAD
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2" checked>
+    
+    <label class="md-nav__link" for="nav-6-2">
+      AWS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        AWS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../security-specialty/" title="Security-Specialty" class="md-nav__link">
+      Security-Specialty
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bigdata-specialty/" title="Big-Data" class="md-nav__link">
+      Big-Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Networking" class="md-nav__link md-nav__link--active">
+      Networking
+    </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+    
+    <label class="md-nav__link" for="nav-6-3">
+      Google
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        Google
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../google/associate-cloud-engineer/" title="Associate-Cloud-Engineer" class="md-nav__link">
+      Associate-Cloud-Engineer
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-4" type="checkbox" id="nav-6-4">
+    
+    <label class="md-nav__link" for="nav-6-4">
+      Azure
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-4">
+        Azure
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../azure/fundamentals/" title="Fundamentals" class="md-nav__link">
+      Fundamentals
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="aws-certified-networking-specialty">AWS Certified Networking Specialty<a class="headerlink" href="#aws-certified-networking-specialty" title="Permanent link">&para;</a></h1>
+<h1 id="chapter-1-general-networking-fundamentals">Chapter 1 - General Networking Fundamentals<a class="headerlink" href="#chapter-1-general-networking-fundamentals" title="Permanent link">&para;</a></h1>
+<h2 id="osi-model">OSI Model<a class="headerlink" href="#osi-model" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Layer 1 - Physical</p>
+<ul>
+<li>Responsible for physical connectivity to the network, and transmission of data</li>
+<li>Ethernet Cables, Hubs + Repeaters</li>
+</ul>
+</li>
+<li>
+<p>Layer 2 - Data Link</p>
+<ul>
+<li>Moves information between computers and networks. It0s responsible for transmission, format, and error correction</li>
+<li>Switches, Mac Address, Bridges</li>
+</ul>
+</li>
+<li>
+<p>Layer 3 - Network</p>
+<ul>
+<li>Responsible for routing. It splits the data into packets and adds destination and routing information</li>
+<li>Network Routers, IP, ICMP</li>
+</ul>
+</li>
+<li>
+<p>Layer 4 - Transport</p>
+<ul>
+<li>Ensures data is sent to the right destination, across networks, and manages error handling</li>
+<li>TCP + UDP</li>
+</ul>
+</li>
+<li>
+<p>Layer 5 - Sessions</p>
+<ul>
+<li>Defines and manages the rules for communication between two computers</li>
+<li>Appletalk, Winsock</li>
+</ul>
+</li>
+<li>
+<p>Layer 6 - Presentation</p>
+<ul>
+<li>Defines the format that will be used for data transmission. The data may also be compressed or encrypted at this layer</li>
+<li>JPG, GIF, MPEG</li>
+</ul>
+</li>
+<li>
+<p>Layer 7 - Application</p>
+<ul>
+<li>Where the user interacts with software like web browsers, social media apps, email</li>
+<li>Web browser, Email</li>
+</ul>
+</li>
+</ul>
+<h3 id="osi-model-inside-aws">OSI Model Inside AWS<a class="headerlink" href="#osi-model-inside-aws" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Layer 2<ul>
+<li>We have switches and Mac Address</li>
+<li>In AWS we have subnets, instances communicate in layer 2 inside subnets</li>
+</ul>
+</li>
+<li>Layer 3<ul>
+<li>For instances communicate inside subnet, uses router (layer 3)</li>
+<li>To communicate with internet uses internet gateway (layer 3)</li>
+</ul>
+</li>
+<li>Layer 7<ul>
+<li>ELB - ALB</li>
+</ul>
+</li>
+</ul>
+<h2 id="chapter-2-general-networking-fundamentals">Chapter 2 - General Networking Fundamentals<a class="headerlink" href="#chapter-2-general-networking-fundamentals" title="Permanent link">&para;</a></h2>
+<h3 id="ipv4">IpV4<a class="headerlink" href="#ipv4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Operates at Layer 3</li>
+<li>Ip address are 32 bit numbers separated into 4 bytes</li>
+<li>Are made up two parts: the network ID and the host ID</li>
+<li>Each subnet is limited to a maximum number of hosts based on the subnet mask</li>
+<li>Subnets have reserved addresses that cannot be assigned: The subnet address (represeting the network ID), and the broadcast address</li>
+</ul>
+<h3 id="private-ip-ranges-rfc-1918">Private IP Ranges: RFC 1918<a class="headerlink" href="#private-ip-ranges-rfc-1918" title="Permanent link">&para;</a></h3>
+<ul>
+<li>They are non-Routable IP Addresses</li>
+<li>Network Address Translation (NAT) is used to facilitate internet access for hosts using private IP Addresses</li>
+<li>Private IPs<ul>
+<li>Class A - 10.0.0.0/8</li>
+<li>Class B - 172.16.0.0/12</li>
+<li>Class C 192.168.0.0/16</li>
+</ul>
+</li>
+</ul>
+<h2 id="chapter-3-ipv6">Chapter 3 - IPv6<a class="headerlink" href="#chapter-3-ipv6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>All IPv6 Addresses are public IP addresses. NAT is not used</li>
+<li>IPv6 uses 128-bit addresses</li>
+<li>IPv4 and IPv6 are not communication compatible</li>
+<li>Dual stacking allows use of IPv4 and IPv6 on the same host</li>
+<li>IPv6 IP addresses are hexadecimal<ul>
+<li>They contain eight groups of four hexadecimal numbers, separated by colons</li>
+<li>IPv6 addresses can be abbreviated by removing one or more leading zeros from any the hexadecimal groups</li>
+<li>Consecutive sections of zeros are replaced with a :: to represent the omitted zeros</li>
+<li>The (::) double colon can only be used once in an address<ul>
+<li>IPv6 equialent to IPv4 127.0.0.1 is ::1</li>
+</ul>
+</li>
+<li>Link-local address<ul>
+<li>IPv4 169.254.x.x</li>
+<li>IPv6 fe80::/10</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="ipv6-on-aws">IPv6 On AWS<a class="headerlink" href="#ipv6-on-aws" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>When you set IPv6 on AWs , you need add it to your VPC as additional CIDR</p>
+<ul>
+<li>AWS assigned /56 to your VPC</li>
+<li>It's recommended you assing /64 to your subnets</li>
+</ul>
+</li>
+<li>
+<p>Cannot create a VPC limited to IPv6</p>
+</li>
+</ul>
+<h3 id="services-support-ipv6">Services Support Ipv6<a class="headerlink" href="#services-support-ipv6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>VPC<ul>
+<li>Internet Gateways</li>
+<li>Security Groups</li>
+<li>NACLs</li>
+<li>Route Tables</li>
+<li>VPC peering</li>
+<li>VPC Flow Logs</li>
+</ul>
+</li>
+<li>Route 53<ul>
+<li>Supports AAAA records and health checks of IPv6 Endpoints</li>
+</ul>
+</li>
+<li>EC2<ul>
+<li>Supports IPv6 via dual stack</li>
+</ul>
+</li>
+<li>CloudFront<ul>
+<li>Nativately supports IPv6, but legacy cloudfront distributions may require upgrade</li>
+</ul>
+</li>
+<li>S3<ul>
+<li>Supports S3 buckets and S3 Transfer Acceleration using Stack Endpoints</li>
+</ul>
+</li>
+<li>Direct Connect<ul>
+<li>Supports single and dual stack configurations on public and private virtual interfaces (VIFs)</li>
+</ul>
+</li>
+<li>Web Application Firewall<ul>
+<li>Inspects incoming traffic requests for IPv4 and IPv6</li>
+</ul>
+</li>
+<li>Elastic Load Balancers<ul>
+<li>Resolves IPv6 addresses to the AAAA DNS record for clients, and supports security group configuration for IPv6 traffic when configured to use dual stack IP address</li>
+</ul>
+</li>
+</ul>
+<h2 id="chapter-4-key-switching-fundamentals">Chapter 4 - Key Switching Fundamentals<a class="headerlink" href="#chapter-4-key-switching-fundamentals" title="Permanent link">&para;</a></h2>
+<h3 id="switching">Switching<a class="headerlink" href="#switching" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Layer 2 Switching is the Data Link Layer of OSI Model</li>
+<li>Switches operate at layer 2, and are used to break collision domains into smaller ones<ul>
+<li>Each pot on a switch is a collision domain which avoids collisions from multiple devices attempting to talk at once</li>
+</ul>
+</li>
+<li>Network adapters have MAC addresses assigned, and switches use the MAC addresses to send frames between devices</li>
+<li>Devices send ARP requests to learn the MAC address of other devices</li>
+<li>Switches store learned MAC addresses in a MAC address table</li>
+<li>All devices connected to the same switch are considered a broadcast domain</li>
+<li>Trunk port pass traffic for multiple VLANS</li>
+<li>LACP (Link Aggregation Control Protocol) - logically bundles ports together to increase network throughput and add redundancy. The bundling of ports is often referred to as port channel</li>
+<li>VLANs are a logical group of devices the same broadcast domain</li>
+<li>VLAN tagging tells the port on the switch VLAN(s) it belongs to</li>
+<li>Trunk ports are used to allow multiple VLANs to communicate across the same physical switch port</li>
+<li>VLANS is AWS Subnets, but instead have a Layer 2 Switch, have Layer 3 Router</li>
+</ul>
+<h2 id="chapter-5-key-routing-fundamentals">Chapter 5 - Key Routing Fundamentals<a class="headerlink" href="#chapter-5-key-routing-fundamentals" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Routers and IP addresses function at Layer 3</li>
+<li>A router is responsible for forwarding IP Packets between different IP Networks, based on the best path from the routing table</li>
+<li>A NAT device is required for routing between private IPv4 address and internet traffic</li>
+<li>ALL IPv6 addresses are public, so NAT is not required</li>
+<li>Sending traffic between different  VLANs is routing (inter-vlan routing)</li>
+<li>Layer 3 switches are often used for inter-VLAN routing</li>
+<li>When traffic leaves a network, it is forwarded to the router at the next hop<ul>
+<li>The next hop router is the closest router that gives the shortest path to the destination</li>
+</ul>
+</li>
+<li>Routing protocols are standards for how routers will communicate with each other<ul>
+<li>Commom routing protocols include RIP, IGRP, EIGRP, OSPF and BGP</li>
+</ul>
+</li>
+</ul>
+<h3 id="bgp">BGP<a class="headerlink" href="#bgp" title="Permanent link">&para;</a></h3>
+<ul>
+<li>It is the routing protocol that is used to determine the best route for internet-based traffic</li>
+<li>BGP is a path vector protocol. BGP looks at available paths and calculates the best path for the data to travel</li>
+<li>BGP uses a specified criteria to determine which router should be the next-hop router. That criteria includes standards, rules, path, weight, and priority</li>
+<li>AS_Path prepending is an example of how to influence routing path selection. By using prepending, you can make a particular route more preferred or less preferred</li>
+<li>Autonomous Systems (AS) are a collection of routers with prefixes and policies under administrative control of a single entity</li>
+<li>Autonomous Systems are typically operated by ISPs</li>
+<li>To exchange routing information using BGP, a registered autonomous system number (ASN) is required</li>
+<li>Multi-Exit Discriminator (MED) is used to tell neighboring Autonomous Systems which link is preferred for receiving traffic. The Lower the MED value the higher the preference for that link</li>
+</ul>
+<h3 id="autonomous-systems">Autonomous Systems<a class="headerlink" href="#autonomous-systems" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Autonomous Systems (AS) are a collection of routers with prefixes and policies under administrative control of a single entity</li>
+<li>Each AS has globally unique identifier assigned</li>
+<li>Private ASNs must not be exposed to the internet</li>
+<li>Public AS Numbers(ASNs) are assigned by IANA. InOrder to get a public ASN the following is required: A multi-homed network, a BGP4 capable router, and a fully functioning IGP on your network</li>
+<li>BGP uses Keep-Alive signals and a configurable timer to detect if a peer is down. If a peer goes down, it will remove that peer's route from its advertisements</li>
+<li>AS use exterior gateway protocols (BGP) to communicate with other AS</li>
+<li>Networks within an AS use interior gateway protocols (IGPs) like OSPF, IS-IS, RIP, or EIGRP</li>
+</ul>
+<h3 id="ibgp-and-ebgp">IBGP and EBGP<a class="headerlink" href="#ibgp-and-ebgp" title="Permanent link">&para;</a></h3>
+<ul>
+<li>IBGP is interior Border Gateway Protocol. IGBP is used on border routers (routers in the same AS)</li>
+<li>Interior routers (ie core, or backbone routers) forward data destined for exterior networks to the border routers (the routers that make up the AS)</li>
+<li>Full Mesh is required between BGP peers to support IBGP, because routes are not re-advertised if they are learned via iBGP from a different peer</li>
+<li>EBGP is Exterior Border Gateway Protocol. EBGP is used to exchange routes with external ASes</li>
+</ul>
+<h3 id="influencing-bgp-path-selection">Influencing BGP PATH selection<a class="headerlink" href="#influencing-bgp-path-selection" title="Permanent link">&para;</a></h3>
+<p>Influencing routes for BGP can be done with several configuration options by making a route appear to be less preferred</p>
+<ul>
+<li>AS_Path preprending is used to artificially inflate the "cost" of a particular path<ul>
+<li>Essentially, a prefix is added manually to make a path seem "less attractive" so that an alternate path is selected instead</li>
+</ul>
+</li>
+<li>Weight can be used to set a preference for a particular path on the local router<ul>
+<li>This metric is not propagated to other routes</li>
+<li>Consider if there are two paths, but one path has a slower link or a higher cost to use that link. The higher metric is set on the preferred route</li>
+</ul>
+</li>
+<li>Local Preference (LOCAL_PREF) allows routers in an Autonomous System to influence which route is used to enter the AS.<ul>
+<li>This metric is replicated to then next-hop neighbor so that it is aware of a particular route being preferred. The higher metric is set on the preferred route</li>
+</ul>
+</li>
+<li>Multi-Exit Discriminator (MED) is used when local preference settings and the AS path "cost" are the same between two or more routes<ul>
+<li>MED is essentially used as a tie breaker</li>
+<li>MED influences path selection by applying a metric that sets preference for how other ASes enter the target AS to reach a certain prefix</li>
+<li>The MED metric is only propagated to adjacent ASes externally, but is also propagated internally within the AS</li>
+<li>The lower the metric, the higher the priority for the preferred route</li>
+</ul>
+</li>
+</ul>
+<h2 id="use-case-1-design-and-implement-an-aws-network-architecture-based-on-the-given-scenario">Use Case 1 - Design and Implement an AWS Network Architecture Based on the Given Scenario<a class="headerlink" href="#use-case-1-design-and-implement-an-aws-network-architecture-based-on-the-given-scenario" title="Permanent link">&para;</a></h2>
+<h3 id="vpc-reserved-ip-addresses">VPC Reserved IP Addresses<a class="headerlink" href="#vpc-reserved-ip-addresses" title="Permanent link">&para;</a></h3>
+<p>AWS Reserves the following IP addresses that include the first our IP addresses and the last IP address of every subnet. The reserved IP addresses are based on the CIDR assigned to the subnet.
+For example, the following IP addresses would be reserved on the 192.168.0.0/24 subnet</p>
+<ul>
+<li>Subnet Address: 192.168.0.0</li>
+<li>Broadcast Address: 192.168.0.255</li>
+<li>Subnet Router: 192.168.0.1</li>
+<li>DNS Server: 192.168.0.2</li>
+<li>Future Used by AWS: 192.168.0.3</li>
+</ul>
+<h3 id="dhcp">DHCP<a class="headerlink" href="#dhcp" title="Permanent link">&para;</a></h3>
+<ul>
+<li>DHCP, or Dynamic Host Configuration Protocol, is used to automatically assign IP addresses and other network settings to a device.</li>
+<li>DHCP assigns IP addresses, subnet masks, and gateways, and it can also assign settings for NTP servers, domain names and DNS</li>
+<li>AWS DHCP options also include NetBIOS settings, but NetBIOS is another type of name resolution service. Most organizations no longer use NetBIOS</li>
+<li>DHCP assigned IP addresses are leased by the client<ul>
+<li>When released, the IP address goes back into a pool of unassigned addresses</li>
+<li>It's possible to create a DHCP reservation, which removes a specific IP address from the pool so that it does not get assigned to more than one host</li>
+<li>An IP address conflict will occur if two or more hosts have the same IP address</li>
+</ul>
+</li>
+<li>All EC2 instances are assigned private IP addresses. Public IP addresses are optional, and can be assigned when the instance is launched<ul>
+<li>Static IP addresses are assigned using Elastic IP Address</li>
+<li>When an Elastic IP address is assigned, the DHCP assigned IP address is release back to the DHCP pool</li>
+</ul>
+</li>
+<li>Options Sets<ul>
+<li>Once created, DHCP options cannot be changed. Instead, a new option set would have to be created</li>
+<li>DHCP options are automatically applied to instances every few hours, based on the DHCP lease renewal</li>
+<li>Private instances in a nondefault VPC receive an unresolvable host name, like ip-10-0-0-202</li>
+<li>The default DNS option is AmazonProvidedDNS</li>
+<li>Custom Domain name and DNS servers may be specified, and up to 4 custom DNS servers are supported</li>
+<li>Custom values are specified in the DHCP Option set</li>
+<li>NET servers may also be set, based on section 8.3 of RFC2132</li>
+<li>NetBIOS name servers and node types are also supported</li>
+</ul>
+</li>
+</ul>
+<h3 id="vpc-and-subnet-requirements">VPC and Subnet Requirements<a class="headerlink" href="#vpc-and-subnet-requirements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Private subnets with virtual private gateway for Site-to-Site VPN are called VPN-Only subnets</li>
+<li>VPCs are allowed block sizes between /16 and /28</li>
+<li>AWS recommends the following CIDR blocks from RFS1918<ul>
+<li>10.0.0.0 - 10.255.255.255 (10/8 prefix)</li>
+<li>172.16.0.0 - 172.31.255.255 (172.16/12 prefix)</li>
+<li>192.168.0.0 - 192.168.255.255 (102.168/16 prefix)</li>
+</ul>
+</li>
+<li>Requirements for adding additional CIDRs to a VPC (Subnets)<ul>
+<li>Network mask must be between /16 and /28</li>
+<li>CIDR must not overlap with existing CIDRs associated with the VPC or VPC peers, VPN or Direct Connect</li>
+<li>Secondary CIDRs may be detached from the VPC</li>
+<li>The size of CIDR blocks is fixed, and cannot be altered</li>
+<li>Currently, it is only possible to add 4 additional CIDRS to an existing VPC (5 Total)</li>
+<li>The CIDR must be smaller than the CIDR range of current routes within the VPC<ul>
+<li>If the CIDR is a /24, you cannot add a CIDR with a lower CIDR number (ex: /23)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>IPv6 VPC associations use the /56 CIDR block, and you cannot choose the range of addresses or size of the block<ul>
+<li>Remember, all IPv6 addresses are public</li>
+</ul>
+</li>
+<li>You can assign a /64 IPv6 CIDR block to a subnet</li>
+<li>Just like with IPv4, Ipv6 reserves five IP addresses: The first 4 IP addresses and the multicast address</li>
+<li>IPv6 does not use nat, as all IPv6 addresses are public</li>
+</ul>
+<h3 id="route-tables-and-igws">Route Tables and IGWs<a class="headerlink" href="#route-tables-and-igws" title="Permanent link">&para;</a></h3>
+<ul>
+<li>After adding an Internet Gateway, egress-only internet gateway, virtual private gateway, NAT device, peering connection, or VPC endpoint, you must update the route table for any subnet using these connections</li>
+<li>IPv6 does not use NAT. Private IPv6 instances use an egress-only internet gateway that only allows traffic outbound</li>
+<li>IMPORTANT: the most specific route is used for priority (Ex: 192.168.2.100/32 is used as a priority over 192.168.2.0/24)</li>
+</ul>
+<h3 id="nat-instance-vs-nat-gateway">NAT Instance Vs NAT Gateway<a class="headerlink" href="#nat-instance-vs-nat-gateway" title="Permanent link">&para;</a></h3>
+<ul>
+<li>NAT Instance<ul>
+<li>Based on an Amazon Linux AMI</li>
+<li>Accepts and forwards traffic from private subnets to public IPv4 addresses</li>
+<li>Customer maintained, limited scalability and HA</li>
+</ul>
+</li>
+<li>NAT Gateway<ul>
+<li>AWS Managed</li>
+<li>Can be configured for a highly-available and scalable environment</li>
+<li>Security Groups not supported - must use NACLs</li>
+<li>Associates an Elastic IP address with the NAT Gateway</li>
+<li>Scale NAT Gateway by splitting resources into multiple subnets and adding a NAT Gateway<ul>
+<li>NAT Gateways scales from 5 Gbps to 45 Gbps</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="resizing-the-vpc">Resizing the VPC<a class="headerlink" href="#resizing-the-vpc" title="Permanent link">&para;</a></h3>
+<ul>
+<li>We can add additional CIDR to the VPC</li>
+<li>There are limitations, maximum of 5 CIDRs are allowed per VPC</li>
+<li>VPC block size must be between /28 and /16 and the block must be smaller than the CIDR range of existing routes within the VPC</li>
+<li>The new CIDR cannot overlap CIDRs in the VPC, on VPC peers, or on Direct Connect</li>
+</ul>
+<h2 id="use-case-2-implement-vpc-endpoints-within-an-aws-infrastructure">Use Case 2: Implement VPC EndPoints within an AWS Infrastructure<a class="headerlink" href="#use-case-2-implement-vpc-endpoints-within-an-aws-infrastructure" title="Permanent link">&para;</a></h2>
+<h3 id="gateway-endpoints">Gateway Endpoints<a class="headerlink" href="#gateway-endpoints" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Multiple endpoint routes can be included to different services in a route a table</li>
+<li>Multiple endpoints to the same service must reside in separate route tables</li>
+<li>Routes for Endpoints can only can be changed by modifying the endpoint</li>
+<li>Endpoint routes are automatically deleted when either the endpoint itself is deleted, or the associate route table is removed from the endpoint (again this must be modified at the point)</li>
+<li>Gateways only support IPv4, not IPv6</li>
+<li>Endpoints cannot be transferred between VPCs, or moved to different services</li>
+<li>Cross-region access is not supported. Endpoints must be in the same region as the AWS service being access</li>
+<li>VPC connections, VPC peers, and Direct connect cannot use the endpoint</li>
+<li>Proper DNS resolution is required. Use AWS DNS, or ensure proper name resolution with your private DNS</li>
+</ul>
+<h3 id="interface-endpoints">Interface Endpoints<a class="headerlink" href="#interface-endpoints" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Endpoint-specific DNS hostnames are created for the EndPoint. Private DNS can optionally be enabled for AWS Services<ul>
+<li>A private hosted zone will be created that contains a record set for the default DNS name associated with the service</li>
+<li>The DNS name will resolve to the private IP address of the Endpoint network interface in your VPC</li>
+</ul>
+</li>
+<li>When and Endpoint exists, communication is automatically sent using the private IP of the endpoint<ul>
+<li>Any existing public communication to the EndPoint gets moved to Private Link</li>
+</ul>
+</li>
+<li>Interface EndPoints may be accessed across AWS VPN, Direct Connections, and VPC Peers</li>
+<li>Only One subnet in AZ may use an Interface Endpoint</li>
+<li>All services mat not be available in all AZs through an Interface Endpoint</li>
+<li>Interface Endpoints support up to 10 Gbps of bandwidth per AZ by default<ul>
+<li>Additional capacity may be added automatically based on use</li>
+</ul>
+</li>
+<li>Check the NACL configuration for your subnet, to ensure that it will not block EndPoint traffic</li>
+<li>EndPoints only support TCP IPv4 traffic</li>
+<li>Endpoints may only connect within the same regions as the VPC, and cannot be transferred</li>
+<li>Can use Security Groups</li>
+</ul>
+<h2 id="use-case-3-implement-an-aws-management-network-infrastructure">Use Case 3: Implement an AWS Management Network Infrastructure<a class="headerlink" href="#use-case-3-implement-an-aws-management-network-infrastructure" title="Permanent link">&para;</a></h2>
+<h3 id="elastic-ips">Elastic IPS<a class="headerlink" href="#elastic-ips" title="Permanent link">&para;</a></h3>
+<ul>
+<li>When an EIP is removed from an interface, the instance will automatically lease a new IPv4 address from the DHCP server within a few minutes (This does not apply to secondary ENIS)</li>
+<li>Small fee is is billed per non-used Elastic IPs or Elastic IPs associated to stopped instances</li>
+<li>EIPS are accessible via the Internet Gateway and will not be accessible via AWS VPN.</li>
+<li>If an Elastic IP address is removed from an account, it can be recovered it from AWS CLI, assuming that it has not already assigned to a different account</li>
+</ul>
+<h3 id="elastic-network-interfaces">Elastic Network Interfaces<a class="headerlink" href="#elastic-network-interfaces" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Can have the following attributes<ul>
+<li>Private Ipv4 address assigned by DHCP in your VPC</li>
+<li>One or more secondary private IPv4 addresses</li>
+<li>One Elastic IP address (IPv4) per private IPv4 (Max 5 total EIPs per region)</li>
+<li>Public IPv4 and/or IPv6 addresses</li>
+<li>Security Group assignments</li>
+<li>MAC address</li>
+<li>Source/destination check flag</li>
+<li>Description</li>
+</ul>
+</li>
+<li>Can be attached/detached from an instance (except eth0)<ul>
+<li>Eth0 is the primary network interface on an instance and cannot be detached</li>
+</ul>
+</li>
+<li>The number of IP address per network interface per instance varies based on instance type</li>
+<li>All ENIS must have IPv4 address. IPv6 addresses are optional</li>
+<li>ENIS use the eni-xxxxx identifier</li>
+<li>A network interface may be assigned multiple IPv4 addresses</li>
+<li>Use cases for attaching multiple network interfaces to an instance<ul>
+<li>Adding network and security appliances within a VPC</li>
+<li>Dual-homed instances with workloads in different subnets - Same AZ</li>
+<li>Failover Scenario: Move the ENI to a new Instance and all associated traffic follows the instance. This is a low cost failover option</li>
+<li>Create a distinct management network: Monitoring and management tools are used from the management network</li>
+</ul>
+</li>
+<li>Elastic Network Adapters<ul>
+<li>Elastic Network interfaces are different from Elastic Network Adapters (ENAs)</li>
+<li>An ENA is a custom interface used to optimize network performance on some instance types</li>
+</ul>
+</li>
+<li>Linux and Windows Server instances will automatically configure the private IPv4 address and gateway on he operation system when dual-homed</li>
+<li>Adding an ENI cannot be used to aggregate bandwidth. NIC teaming or port-channel bandwidth aggregation is not supported</li>
+<li>Attaching dual-homed network interfaces to the same subnet may produce unanticipated issues, such as asymmetric routing. Consider using a secondary private IP address on the eth0 interface instead</li>
+<li>AMIs may have a script preinstalled by AWS called ec2-net-utils, which can automate configuration of network interfaces</li>
+</ul>
+<h2 id="use-case-4-implement-placement-groups-to-resolve-a-network-latency-issue-between-servers">Use case 4: Implement Placement Groups to Resolve a Network Latency issue Between servers<a class="headerlink" href="#use-case-4-implement-placement-groups-to-resolve-a-network-latency-issue-between-servers" title="Permanent link">&para;</a></h2>
+<h3 id="placement-groups">Placement Groups<a class="headerlink" href="#placement-groups" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Is a logical grouping of instances to provide optimized network throughput and performance</li>
+<li>No cost associated with creating a placement group</li>
+<li>3 Types<ul>
+<li>Cluster - A low latency instance group in a single AZ. Best when performance is the primary concern</li>
+<li>Partition - Spreads instances across logical partitions, ensuring that instances do not share underlying hardware with instances in other partitions</li>
+<li>Spread - Spreads instances across underlying hardware. Spread placement groups are designed for high availability</li>
+</ul>
+</li>
+</ul>
+<h4 id="cluster-placement-group">Cluster Placement Group<a class="headerlink" href="#cluster-placement-group" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Recommended for applications that benefit from low-network latency, high-network throughput (or both) and where the majority of the traffic is between instances within the group</li>
+<li>Cannot span multiple AZs</li>
+<li>As best practice, instances in a placement group should all be deployed together<ul>
+<li>Adding an instance to a placement group later could cause the new instance to be deployed on a different host</li>
+</ul>
+</li>
+<li>When an instance in a placement group gets stopped, there is no guarantee that it can be restarted on the same hardware, due to insufficient capacity<ul>
+<li>To alleviate this issue, it's best to stop and start all of the instances, so that they will be forced to new hardware with adequate capacity for entire group</li>
+</ul>
+</li>
+<li>All nodes can talk to all other nodes within the placement group, at a full line rate of 10 Gbps and 25 Gpbs aggregate</li>
+<li>Instances that support enhanced networking will see the lowest latency and highest packet-per-second network performance</li>
+<li>The types of instances that can be launched into a cluster placement group is limited</li>
+<li>Traffic to and from S3 buckets in the same region, over the public IP or VPC endpoint can use all available instace aggregated bandwidth</li>
+<li>Mixed instance types are supported, but AWS recommends using the same instance type for all instances, to minimize the risk of the required capacity not being available</li>
+<li>Network traffic to the internet, and over Direct Connect connections, to on.premises locations is limited to 5 Gpbs</li>
+</ul>
+<h4 id="partition-placement-group">Partition Placement Group<a class="headerlink" href="#partition-placement-group" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Instances in different partitions do not share underlying hardware with instances in other partitions. This minimizes the impact of hardware failures to only one partition</li>
+<li>Partition groups may be used to spread large distributed workloads across distinct hardware, to reduce the likelihood of correlated failures</li>
+<li>EC2 will attempt to distribute instances evenly across the number of specified partitions. It's possible, instead, to specify a particular partition</li>
+<li>A partition group can only have seven partitions per AZ. Partition group can span multiple AZS within the same region</li>
+<li>Partition group are currently only available using CLI or API</li>
+</ul>
+<h3 id="spread-placement-group">Spread Placement Group<a class="headerlink" href="#spread-placement-group" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Places each EC2 instance on distinct underlying hardware</li>
+<li>Recommended for apps having a small number of critical instances that need to be kept separate from each other</li>
+<li>Spread Groups reduce the risk of simultaneous failures that would occur if all instances were on the same hardware</li>
+<li>Mixing instance types is acceptable, as each instance is on distinct hardware</li>
+<li>Spread Groups are not supported on dedicated instances</li>
+<li>Up 7 running instances per AZ</li>
+</ul>
+<h3 id="enhanced-networking">Enhanced Networking<a class="headerlink" href="#enhanced-networking" title="Permanent link">&para;</a></h3>
+<ul>
+<li>ENA (Enhanced Networking Adapter) drivers provide fast packet processing and are licensed under the open source Data Plate Development kit.</li>
+<li>Enhanced networking can not be managed from the AWS console</li>
+<li>The available bandwidth will vary based on the instance type, and not all instance types support enhanced networking<ul>
+<li>The latest AMI (Amazon Linux 2), already have enchanced networking enable on the instances</li>
+</ul>
+</li>
+<li>ENAs can utilize up 25 Gbps of bandwidth, depending on the instance type</li>
+<li>ENAs cannot be configured from the AWS Console<ul>
+<li>They must be configured using the AWS cli, or AWS Tools for EC2 for Powershell</li>
+</ul>
+</li>
+<li>Intel 82599 Virtual Function (VF) interface<ul>
+<li>Use AWS Ec2 describe-instance-attribute to verify if SR-IOV support is enabled</li>
+<li>SR-IOV (Single-Root Input/Output virtualization) offers higher I/O performance and lower CPU utilization than traditional virtualized network interfacces<ul>
+<li>SR-IOV allows a physical PCI adapter to be shared in a virtual environment</li>
+<li>The PCI adapter looks like multiple virtual network interfaces to the host hypervisor, allowing multiple virtual machines to utilize the adapter</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Jumbo frames are Ethernet frames with payloads larger than 1500 bytes, which can improve network performance.<ul>
+<li>Jumbo frames (MTU 9001) can be used within the VPC, but traffic leaving the VPC is set to MTU 1500</li>
+<li>Jumbo Frames can be used between VPC Peers</li>
+</ul>
+</li>
+</ul>
+<h2 id="use-case-5-design-an-aws-vpc-using-ipv6">Use case 5: Design an AWS VPC using IPv6<a class="headerlink" href="#use-case-5-design-an-aws-vpc-using-ipv6" title="Permanent link">&para;</a></h2>
+<h3 id="enable-ipv6-on-a-vpc">Enable IPv6 on a VPC<a class="headerlink" href="#enable-ipv6-on-a-vpc" title="Permanent link">&para;</a></h3>
+<ul>
+<li>An IPv6 address may be assigned during the creation of a VPC, using VPC creation wizard</li>
+<li>IPv6 may be manually enable on an existing VPC</li>
+<li>Instances launched with an IPv6 address associate the IPv6 address with eth0</li>
+<li>IPv6 address persist with the instance and are removed when instance is terminated</li>
+<li>All assigned IPv6 addresses are globally unique and public so they are reachable over the internet</li>
+<li>Security Groups and NACLs may be used for controlling access to an instance with an IPv6 address</li>
+<li>IPv6 Addresses are assigned as an additional address on an instance. The IPv4 address cannot be removed. The IPv4 address can be a private address</li>
+<li>To use IPv6 addresses, the VPC and subnet must have an Ipv6 CIDR assigned</li>
+</ul>
+<h3 id="migrating-to-ipv6">Migrating to IPv6<a class="headerlink" href="#migrating-to-ipv6" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Step 1: Associate an Ipv6 CIDR block with your VPC and subnets. You cannot disable IPv4. The VPc will operate in dual-stack mode</li>
+<li>Step 2: Update your route tables with routes for IPv6 Traffic. For public routes to a default gateway, you will need a route for ::/0 as default route</li>
+<li>Step 3: Update security group and NACL rules to include Ipv6 addresses</li>
+<li>Step 4: Verify and change your instance type if necessary</li>
+<li>Step 5: Assign Ipv6 addresses to your instance, ensuring they are within the range assigned to the subnet</li>
+<li>Step 6: It may be necessary to manually configure the instance if the AMI was not initially configured to use DHCPv6</li>
+</ul>
+<h3 id="private-ipv6-subnets">Private IPv6 Subnets<a class="headerlink" href="#private-ipv6-subnets" title="Permanent link">&para;</a></h3>
+<p>Configuring IPv6 for private use requires additional configuration. To keep an instance private, you will need to consider the following</p>
+<ul>
+<li>Configure security and NACLs that restrict access to the instance</li>
+<li>Create an egress-ony internet gateway</li>
+<li>Add a route that directs the appropriate traffic to the egress-only gateway</li>
+<li>Egress-only internet gateway key facts<ul>
+<li>Egress-only internet gateway are stateful</li>
+<li>Security groups cannot be associated with an egress-only internet gateway</li>
+</ul>
+</li>
+</ul>
+<h2 id="use-case-6-review-select-and-implement-a-vpc-peering-solution">Use case 6: Review, Select, and implement a VPC Peering Solution<a class="headerlink" href="#use-case-6-review-select-and-implement-a-vpc-peering-solution" title="Permanent link">&para;</a></h2>
+<h3 id="vpc-peering">VPC Peering<a class="headerlink" href="#vpc-peering" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Can communicate both IPv4 and IPv6</li>
+<li>Can made between same region (infra-region), different regions (inter-region), on the same AWS account or different AWS account</li>
+<li>Uses existing infra, and does not require a gateway or VPN connection</li>
+<li>One-to-one relationship</li>
+<li>Active VPC peering are limited to 50, and outstanding VPC peer connection requests limited to 25</li>
+<li>Enabling DNS resolution for VPC peering allows the public DNS name of the instance to resolve to the instance private IP address</li>
+<li>Inter-region VPC peering limitations<ul>
+<li>Security group rules cannot reference peer VPC security groups</li>
+<li>IPv6 is not supported</li>
+<li>MTU maximum is 1500</li>
+</ul>
+</li>
+<li>Inter-region peer traffic is encrypted and sent across the AWS private network</li>
+<li>A security group may be updated with the security group of the peer VPC, if it is in the same region, or the CIDR block block of a peer VPC if it is in different region</li>
+<li>Routes are required for VPC peer communication, and have target id of pcx-xxxxx</li>
+<li>The most specific route takes priority if routes to different VPC peers overlap</li>
+<li>Support for PrivateLink access over VPC peers was recently added, which allows access to VPC endpoints</li>
+<li>Transit Gateway makes VPC peering easier</li>
+</ul>
+<h4 id="vpc-peer-connection-lifecycle">VPC Peer Connection Lifecycle<a class="headerlink" href="#vpc-peer-connection-lifecycle" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Initiation request state: can fail or go to pending-acceptance</li>
+<li>Pending-acceptance: Expires in 7 days</li>
+<li>Expired: Expired request visible for 2 days</li>
+<li>Rejected</li>
+<li>Provisioning</li>
+<li>Active: Once active, connection can be deleted but not rejected</li>
+</ul>
+<h4 id="mutiple-vpc-peers">Mutiple VPC Peers<a class="headerlink" href="#mutiple-vpc-peers" title="Permanent link">&para;</a></h4>
+<ul>
+<li>HUB and Spoke: A single VPC in the center (with access to all other VPCS), this is typical when using management VPC, or a central file storage VPC</li>
+<li>Full Mesh: All VPCs have direct connection to all other VPCs</li>
+<li>Not supported<ul>
+<li>Overlapping CIDR Blocs</li>
+<li>Transitive peering -Need Use transit gateway. Not supported Native</li>
+<li>Edge-To-Edge routing through a gateway or private connection<ul>
+<li>VPN or Direct connection</li>
+<li>Internet Gateway</li>
+<li>Private subnet through a NAT device</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="vpn-design-and-implement-vpn-solution">VPN - Design and Implement VPN Solution<a class="headerlink" href="#vpn-design-and-implement-vpn-solution" title="Permanent link">&para;</a></h2>
+<h3 id="vpn-overview">VPN Overview<a class="headerlink" href="#vpn-overview" title="Permanent link">&para;</a></h3>
+<ul>
+<li>AWS Site-to-Site VPN: IPsec VPN communication between a VPC and remote Work. The AWS side of the connection uses a virtual private gateway (VGW). The VGW provides two VPN endpoints (tunnels) for automatic failover</li>
+<li>AWS Client VPN: Client-managed, client based VPN service used to securely access AWS resources from your on-premises network. Sessions are connected using secure TLS VPN session and an OpenVPN based client</li>
+<li>AWS VPN CloudHub: If there are multiple remote networks, the VGW can function as a hub for site-to-site communication between the networks</li>
+<li>Third party software VPN appliance: An EC2 Instance in the VPC running a 3<sup>rd</sup> party software VPN Appliance. VPN appliances may be found in AWS Marketplace.</li>
+<li>VPN can be used to connect a VPC and on-premise data center, two different VPCs in the same or different Regions</li>
+<li>VPN termination endpoints are required both sites. The endpoint is responsible for the VPN protocols being used, processing packets including encapsulation and encryption</li>
+<li>VPC termination points can be an EC2 Instance, or a VGW</li>
+</ul>
+<h3 id="aws-managed-site-to-site-vpn">AWS Managed Site-to-Site VPN<a class="headerlink" href="#aws-managed-site-to-site-vpn" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Internet Key Exchange (IKEv2)</li>
+<li>NAT traversal</li>
+<li>2 and 4-byte ASN</li>
+<li>Cloudwatch metrics for monitoring</li>
+<li>Reusable IP addresses for customer gateways</li>
+<li>Encryption options, including AWS 256-bit encryption, SHA-2 hasshing and Diffie-Helman groups</li>
+<li>Configurable Tunnel options</li>
+<li>Customer private ASN for Amazon side of BGP sessions</li>
+<li>2 separate tunnel to different AZs (AWS Side)</li>
+</ul>
+<p><img alt="Diagram" src="../../images/screenshot.246.jpg" /></p>
+<h4 id="site-to-site-vpn-routing">Site-to-Site VPN Routing<a class="headerlink" href="#site-to-site-vpn-routing" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The type of device you use for your on-premises VPN will determine if you will use static or dynamic routing<ul>
+<li>You cannot create static routes when using BGP</li>
+<li>The preferred mechanism is dynamic routing, featuring BGP. If the on-premises device supports it</li>
+<li>BGP advertises the routes to the Virtual private gateway</li>
+</ul>
+</li>
+<li>Routes must be added to the route table, in order to direct any traffic destined for the customer gateway to use the VGW as the target<ul>
+<li>You can also enable route propagation to automatically propagate the routes to the route table for you (so you don't have to create the route manually)</li>
+<li>The VGW only recognizes IP prefixes that have been added statically, or via BGP</li>
+<li>There is a hard limit of 100 BGP route advertisements per route table. Use route summarization if you have more than 100 prefixes<ul>
+<li>Static routes are limited to 50 per route table</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The VGW advertises the IP ranges of the VPC to which it is attached via BGP advertisements to your VPN termination endpoint<ul>
+<li>The VGW uses BGP over TCP port 179 and supports BGP configuration options, like AS prepends and Multi-Exit Discriminator (MED)</li>
+</ul>
+</li>
+<li>Path Selection after route propagation<ul>
+<li>The longest prefix match (the most direct route/route with the longest subnet mask) is used as the priority route</li>
+<li>If propagated routes from Site-to-Site VPN or AWS Direct Connect overlap with the local VPC route, the local route is preferred. This is true even if the propagated route is more specific</li>
+<li>Propagated routes from Site-to-Site VPN or AWS Direct connecting with the same destination CIDR as other existing routes are, then the static routes whose target is an IGW, VGW, network interface, Instance ID, VPC peer connection, NAt Gateway, or a VPC endpoint is selected</li>
+</ul>
+</li>
+<li>If routes overlap within a Site-to-Site VPN and longest prefix match cannot be applied, then routes are prioritized as follows<ul>
+<li>BGP propagated routes from AWS Direct Connection</li>
+<li>Manually added static routes</li>
+<li>BGP propagated routes from a Site-to-Site VPN</li>
+</ul>
+</li>
+</ul>
+<h4 id="customer-gateway">Customer Gateway<a class="headerlink" href="#customer-gateway" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Customer Side from AWS Site-to-Site VPN</li>
+<li>May be configured with static routing or dynamic routing (BGP)</li>
+<li>Tunnel configuration cannot be modified once it's set</li>
+<li>Configuration four primary components<ul>
+<li>IKE security Association: Used to exchange keys used to establish the IPsec security<ul>
+<li>32-bit (8-64 characters) pre-shared key (PSK) to establish the initial IKE association</li>
+<li>IPSEC: IPSec Security Association: Handles the tunnel's encryption and authentication</li>
+<li>Tunnel interface: Receives traffic going to and from the tunnel<ul>
+<li>A /30 CIDR block from the 169.254.0.0/16 range for use inside the VPN tunnel (there are some excluded ranges that cannot be used)</li>
+</ul>
+</li>
+<li>BGP: BGP peering optional but preferred, and is used to exchange routes between the Customer Gateway and Virtual Private Gateway</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>NOTE: The VPN connection is not active until traffic is generated from the customer side of the VPN Connection<ul>
+<li>To keep the tunnel active, initiate regular traffic, i.e ICMP ping. The tunnel will close if idle for 10 seconds</li>
+</ul>
+</li>
+</ul>
+<h4 id="vgw-and-vpn-high-availability">VGW and VPN High Availability<a class="headerlink" href="#vgw-and-vpn-high-availability" title="Permanent link">&para;</a></h4>
+<ul>
+<li>AWS side of the site-to-site VPN Connection</li>
+<li>VGW will have an assigned BGP ASN, but can specify an alternative private ASN number<ul>
+<li>Private ASNs range from 64512-65534</li>
+<li>Use AS_Path prepending to influence route selection and avoid asymmetric routing</li>
+</ul>
+</li>
+<li>The VGW is redundant device with endpoints in two different AZs<ul>
+<li>Customer Gateway is not redundant</li>
+<li>HA and redundancy may be achieved by adding a second Customer Gateway</li>
+</ul>
+</li>
+<li>Using BGP dynamic routing is also recommended, instead of manually created static routes<ul>
+<li>BGP has inherent failover capability and functionality that allows for streamlined selection of preferred path and failover</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Diagram" src="../../images/screenshot.243.jpg" />    </p>
+<h3 id="software-vpn">Software VPN<a class="headerlink" href="#software-vpn" title="Permanent link">&para;</a></h3>
+<ul>
+<li>EC2 with software VPN</li>
+</ul>
+<p><img alt="Diagram" src="../../images/screenshot.244.jpg" />    </p>
+<h3 id="aws-client-to-site-vpn">AWS Client-to-Site VPN<a class="headerlink" href="#aws-client-to-site-vpn" title="Permanent link">&para;</a></h3>
+<ul>
+<li>based OpenVPN software</li>
+<li>client establish client VPN Endpoint<ul>
+<li>AWS Recommends associate at least two subnets in different AZs to client establish client VPN Endpoint</li>
+</ul>
+</li>
+<li>Can apply security groups to restrict access to client vpn endpoints</li>
+</ul>
+<p><img alt="Diagram" src="../../images/screenshot.245.jpg" /> </p>
+<h3 id="monitoring">Monitoring<a class="headerlink" href="#monitoring" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Baseline<ul>
+<li>Monitor state of The VPN and data in or out of the tunnel</li>
+<li>AWs provides tool to monitoring</li>
+</ul>
+</li>
+<li>Cloudwatch Alarms<ul>
+<li>Cloudwatch can monitor the VPN, based on a single metric that you specify, and take actions based on the metric value relative to a provided threshold over a time period (Send SNS Topic)</li>
+<li>aws cloudwatch list-metrics --namespace "AWS/DX"</li>
+</ul>
+</li>
+<li>Consider monitoring<ul>
+<li>TunnelState</li>
+<li>TunnelDataOut</li>
+<li>TunnelDataIn</li>
+</ul>
+</li>
+</ul>
+<h3 id="aws-vpn-cloudhub">AWS VPN CloudHub<a class="headerlink" href="#aws-vpn-cloudhub" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Allows multiple VPN connections to be attached a single VGW</li>
+<li>This can be used to provide redundant connections from a single datacenter for redundancy, so that if one Customer Gateway fails the redundant Customer Gateway can be used<ul>
+<li>When using it for redundant connections, the prefix should be the same (0.0.0.0/0)</li>
+</ul>
+</li>
+<li>Multiple distinct dataceneters can also be connected to AWS VPN cloudHub<ul>
+<li>With multiple datacenters, the prefizes should be different each site to the VGW</li>
+</ul>
+</li>
+<li>Connected VPNs may access the VPC viua the VGW, and other connected VPNs as well<ul>
+<li>VPN Cloudhub operates on a hub-and-spoke model that can be used with and without a VPC</li>
+</ul>
+</li>
+<li>Different BGP ASNs are required for each VPN</li>
+<li>Routes will need to be updated within the VPC in order to route traffic to each VPN</li>
+</ul>
+<p><img alt="Diagram" src="../../images/screenshot.242.jpg" /></p>
+<h3 id="transit-vpc">Transit VPC<a class="headerlink" href="#transit-vpc" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Transit VPC build upon software VPNs, and make it possible to connect multiple geographically dispersed VPCs and remote networks</li>
+<li>This strategy allows for transitive routing between the member VPCs, the transit VPC, and the on-premises environment</li>
+<li>Transit VPC solves Edge-to-Edge routing</li>
+<li>Transit VPC has Ec2 instances with VPN software that advertises routes to each VGW with BGP</li>
+<li>Transit VPG has VPN connection to each VPC Member and on-prem</li>
+</ul>
+<p><img alt="Diagram" src="../../images/screenshot.241.jpg" /></p>
+<h2 id="transit-gateway">Transit Gateway<a class="headerlink" href="#transit-gateway" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Hub-spoke model</li>
+<li>Only single connection is required from each VPC, VPN, and Direct Connection </li>
+<li>Transit Gateway is used as a hub that controls how traffic is routed between all connected networks</li>
+<li>Routes from connected VPCs/networks can be automatically propagated to Transit Gateway<ul>
+<li>Transit Gateway maintains a routing table with routes for all connected networks. Static and Dynamic routing are supported</li>
+</ul>
+</li>
+<li>Equal Cost Multipath (ECMP) is supported between on-premises gateway connections, enabling load balancing over multiple paths. ECMP can be used to aggregate bandwith</li>
+<li>5 Transit Gateways per account are supported, and a single VPC can have maximum 5 Transit Gateway attachements<ul>
+<li>Transit Gateway limits include 5000 attachments, 1.25 Gbps per VPN, 50 Gbps per VPN, 50 Gbps maximum bandwidth per VPC, and up to 10000 routes</li>
+</ul>
+</li>
+<li>Transit gateway routes do not propagate to VPC route tables. Entries must be made manually</li>
+<li>Overlapping CIDRs are not supported</li>
+<li>Can Attach VPN</li>
+<li>Need for Transit Gateway<ul>
+<li>The inability to create transitive relationships</li>
+<li>A lack of edge-to-edge routing, meaning any VPN will have to connected directly to each VPC that it needs connectivity with</li>
+<li>A complex management structure with no centralized management point</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Before" src="../../images/screenshot.247.jpg" /></p>
+<h2 id="direct-connect">Direct Connect<a class="headerlink" href="#direct-connect" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Provides a private connectio from an on-premises environment to tha AWS network</li>
+<li>Connection can be a 1 GB or 10 GB<ul>
+<li>Less 1 GB require customer to use Direct Connect provider</li>
+</ul>
+</li>
+<li>
+<p>The customers extend their backbone network into the AWS Direct Connect provider's location, where a patch is available into the AWS network</p>
+</li>
+<li>
+<p>Requirements</p>
+<ul>
+<li>Connection Type<ul>
+<li>Dedicated Conenctions: 1 Gbps or 10 Gbps. Supports up to 50 Virtual interfaces (VIF)</li>
+<li>Hosted connections: Sub 1 GB with AWS Direct connect partner at 50-500 Mbps, and 1 Gbps, 2 Gbps, 5 Gbps, and 10 Gbps from select partners. A Hosted connection supports a single VIF</li>
+<li>Hosted VIFS: Newer AWS partners are not allowed to provision Hosted VIFs because of the potential for over subscription, but some existing providers may still have this offering</li>
+</ul>
+</li>
+<li>Must use single-mode fiber with 1000 BASE-LX transceiver for 1 Gigabit Ethernet connection, or a 10GBase-LR transceiver for a 10 gigabit ethernet connection</li>
+<li>Auto-negotiation must be disabled on the port and port speed, and full-duplex must be manually configured</li>
+<li>802.1Q VLAN encapsulation is required across the entire connection, including intermediary devices</li>
+<li>The router that will be used to connect to the Direct connect must support BGP and BGP MD5 authentication</li>
+<li>Bidirectional forwarding is optional</li>
+<li>A Letter of Authorization-Connection Facility Assignment (LOA-CFA) is required for authorizing the connection into the AWS Network</li>
+<li>Create the Direct connect connection in AWS console, specifying the name, Direct Connect location, and port speed</li>
+<li>Download the LOA-CFA from the AWS Direct Console. (typically within 72 hours of the request submission), and create the cross-network connection. Create one LOA per connection, per data center</li>
+<li>LOA-CFA expires after 90 days</li>
+<li>Port-hour billing starts 90 days after the connection is created in the AWS console, or when the connection between your router and Direct connect endpoint is established.</li>
+<li>AWS provides the router configuration necessary for connection to the AWS network</li>
+<li>Hosted connections are purchased from an AWS Direct Connect Partner. The partner provisions the connection for you and authorizes the hosted connection to your account. You must accept the connection before you can use it</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Diagram" src="../../images/screenshot.248.jpg" /></p>
+<h3 id="public-and-private-vifs">Public and Private VIFs<a class="headerlink" href="#public-and-private-vifs" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Virtual Interfaces (VIFs)<ul>
+<li>VIFs are logical connections between your router and the AWS Direct Connect router.</li>
+<li>A max 50 VIFs may be created per physical interface</li>
+<li>Both public and private VIFs can be created on the same Direct connect connection</li>
+<li>All traffic on the Direct connect utilizes 802.1Q VLAN Tagging</li>
+<li>VLAN tagging ensures that traffic is directed between the customer network and appropriate Public or Private VIF</li>
+</ul>
+</li>
+<li>Public VIFs<ul>
+<li>Allow connection to AWS public endpoints such as S3, DynamoDB with dedicated network performance</li>
+<li>Allow connectivity to all AWS public IP spaces via AWS advertised routes globally, except in China</li>
+<li>Can be utilized to access VPCs in different regions. The network traffic used to access these public services remains on the AWS global network backbone</li>
+<li>VIFS are 802.1Q VLAN Tags that are provisioned on the physical interface. BGP peers are configured on either end of the VIF<ul>
+<li>BGP is used on the VIF for dynamic route selection</li>
+</ul>
+</li>
+<li>Hosted accounts are accounts that utilize sub-rate throughput across a physical Direct Connection<ul>
+<li>VIFs for hosted connections may be created once they're accepted in the target AWS account</li>
+</ul>
+</li>
+<li>Prerequisites<ul>
+<li>Assign an ASN. A public ANS can be used if the ASN has been registered with IANA for public use. A private ASN can be used, but AS Path prepending will not work with a private ASN</li>
+<li>Setting a unique and unused VLAN ID for the 802.1Q Vlan Tag, as all traffic for the VIF must be tagged</li>
+<li>BGP peer public IP address (must be public on a Public VIF)</li>
+<li>MD5 authentication</li>
+<li>Specifying any prefixes you want to be advertise (advertised globally except China)</li>
+<li>Jumbo Frames<ul>
+<li>The default is MTU 1500, but you can enabled jumbo frames by enabling MUT 9001 on the VIF. When using Jumbo Frames, the MTU size must be updated throughout the data path (the application and peer routes)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Private VIFs<ul>
+<li>Allow connections to private services such as VPC.</li>
+<li>Private VIFs can connect to a Direct Connect Gateway, which can associated with one or more VGWs in any AWS region except China</li>
+<li>Non-AWS prefixes are not advertised</li>
+<li>Hosted connections are also supported with private VIFs</li>
+<li>If you choose to have AWS auto-generate the BGP peer IP CIDR, the IP address for both ends of the connection will be from 169.254.0.0/16 range</li>
+<li>Prerequisites<ul>
+<li>Configuring the VGW and specifying the Amazon side ASN</li>
+<li>Creating a Private VIF in the AWS Direct Connect console</li>
+<li>Configuring the VIF with unique 802.1Q VLAN tag</li>
+<li>VIF name and owner information (or Account ID if this is for another account)</li>
+<li>Customer-side BGP Peer IP (option for AWS to generate: 169.254.0.0/26)</li>
+<li>MD5 authentication for BGP peers (with an option for AWS to generate it)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>There is a maximum of 50 VIFS max per VGW ( think 50 BGP sessions per VPC)</li>
+<li>When utilizing hosted VIFs, the AWS Direct Connect owner hosts VIFS and can assign them to different accounts if desired<ul>
+<li>This means that the payer account is different than the account that will use the VIF</li>
+<li>The VIF will show up in the other account as a VIF, and once accepted, the acceptor has full management of that hosted VIF</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Diagram" src="../../images/screenshot.249.jpg" /></p>
+<h3 id="lag">LAG<a class="headerlink" href="#lag" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A link aggregation group uses the Link Aggregation Protocol (LACP) to aggregate multiple connections at single Direct Connect endpoint.</li>
+<li>This allows the connections to be treated and managed a single connection</li>
+<li>LACP allows for aggregation of bandwidth across multiple links</li>
+<li>The links are treated as active-active links</li>
+<li>All connections in a LAG must use the same bandwidth (1Gb or 10 Gb)</li>
+<li>All connections in the LAG must terminate at the same direct connect endpoint</li>
+</ul>
+<p><img alt="Diagram" src="../../images/screenshot.250.jpg" /></p>
+<h3 id="direct-connect-routing">Direct connect Routing<a class="headerlink" href="#direct-connect-routing" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Route for a VPC are selected and processed in the following order<ul>
+<li>VPC local routes are preferred (even over more specific propagated routes)</li>
+<li>Longest prefix match</li>
+<li>Propagated routes from the VGW<ul>
+<li>Direct Connect BGP routes</li>
+<li>VPN static routes</li>
+<li>VPN Dynamic routes</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Once they are passed to the Direct Connect Router, the routes are processed in the following order<ul>
+<li>Longest prefix-global</li>
+<li>Local preference-global</li>
+<li>AS-Path-Direct Connect location<ul>
+<li>If AWS network cost is equal, local preference is used</li>
+</ul>
+</li>
+<li>Routes considered equal can be load balanced</li>
+<li>Static Routes</li>
+<li>Propagated routes from the VGW<ul>
+<li>Direct connect BGP routes</li>
+<li>VPN static routes</li>
+<li>VPN dynamic routes</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Bidirectional forwarding is automatically enabled for each Direct connect virutal interface</p>
+<ul>
+<li>But you must also enable it on your router</li>
+<li>Bidirectional forwarding allows for faster routing reconvergence due to path failure</li>
+<li>If bidirectional forwarding detects path failure, another route is selected</li>
+</ul>
+</li>
+<li>
+<p>Routing Scenarios</p>
+<ul>
+<li>Basic Path selection on active/active links
+<img alt="Basic Path selection on active/active links" src="../../images/screenshot.251.jpg" /></li>
+<li>Route Selection with two datacenter
+<img alt="Route Selection with two datacenter" src="../../images/screenshot.252.jpg" /></li>
+<li>Longest prefix Match
+<img alt="Longest prefix Match" src="../../images/screenshot.253.jpg" /></li>
+</ul>
+</li>
+</ul>
+<h3 id="bgp-communities">BGP Communities<a class="headerlink" href="#bgp-communities" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A BGP community is metadata applied to a route prefix during route advertisement, to influence route selection</li>
+<li>The BGP ASN number and the BGP community number are advertised together</li>
+<li>For example, an ASN number of 65511 and a BGP community number of 5533 would be displayed as 65511:5533</li>
+<li>The following BGP communities are used to influence route selection<ul>
+<li>Public VIF route scoping (applied by you)<ul>
+<li>7724:9100 - Local AWS Region</li>
+<li>7724:9200 - Continental Regions</li>
+<li>7724:9300 - Global/All regions</li>
+</ul>
+</li>
+<li>Scoping applied by AWS to public VIFs (applied by AWS)<ul>
+<li>7724:8100 - Local (Home) Region</li>
+<li>7724:8200 - Continental Regions</li>
+<li>No tag - Global</li>
+</ul>
+</li>
+<li>Private VIF egress route manipulation (local-pref)<ul>
+<li>7724:7100 - Low preference</li>
+<li>7724:7200 - Medium preference</li>
+<li>7724:7300 - High Preference</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Diagram" src="../../images/screenshot.256.jpg" /></p>
+<h3 id="direct-connect-gateway">Direct Connect Gateway<a class="headerlink" href="#direct-connect-gateway" title="Permanent link">&para;</a></h3>
+<ul>
+<li>When a private VIP requires connectivity to a single VPC in one region, the VIF can be directly attached to the VPC. But if there is a requirement to connect across multiple regions, Direct connect Gateway is what should be used</li>
+<li>Direct connect Gateway simplifies not only global connectivity across regional boundaries, but also BGP peering and VPC attachment</li>
+<li>Direct connect Gateway is redundant distributed peering point that mediates and aggregates Direct Connect peering and VPC attachment</li>
+<li>The Direct Connect Gateway attaches to the VGW associated with the VPC</li>
+<li>Creating the gateway requires providing an name and Amazon side-ASN</li>
+<li>The gateway can only be used for vpc attachment. Cannot be used for any AWS public VIF connectivity</li>
+<li>Each VGW may only be attached to a single Direct Connect Gateway</li>
+<li>Maximum of 10 VGWs can be attached to a Direct Connect Gateway, and a maximum of 10 VPCs may be attached to a single Direct Connect Gateway</li>
+<li>Hosted VIFs may also be attached to a Direct Connect Gateway</li>
+<li>Each Direct connect Gateway supports up to 30 private VIFS per gateway</li>
+<li>Make sure there are at least 2 VIF attachments for high availability, preferably across different Direct Connect routers (LAG connections would be on the same router)</li>
+<li>AWS has added multi-account support for Direct Connect Gateway. A maximum of 10 VPCs from multiple accounts may be associated with a Direct Connect Gateway</li>
+<li>The VPCs and the Direct Connect Gateway must be owned by the same AWS payer account</li>
+<li>Route advertisements managed with Direct connect Gateway<ul>
+<li>Overlapping CIDRs are not supported</li>
+<li>Inter-VPC communication is not supported. Use VPC peering instead</li>
+<li>VPC CIDRs are advertised as is. There is no route summarization or manipulation at Direct connect Gateway</li>
+<li>Each Private VIF supports a maximum of 100 route advertisements on a VIF, because of route propagation</li>
+<li>Cross communication between VIFS attached to the gateway is not supported</li>
+<li>VPNs and Direct Connect Gateway both attach to a VGW, but cross communication is not support</li>
+</ul>
+</li>
+</ul>
+<h3 id="redundancy-and-resilient">Redundancy and Resilient<a class="headerlink" href="#redundancy-and-resilient" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Single Data Center Redundancy</li>
+</ul>
+<p><img alt="Single Data Center Redundancy" src="../../images/screenshot.258.jpg" /></p>
+<ul>
+<li>Multi-Data Center Redundancy</li>
+</ul>
+<p><img alt="Multi-Data Center Redundancy" src="../../images/screenshot.259.jpg" /></p>
+<h3 id="billing">Billing<a class="headerlink" href="#billing" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Based on port hours and outbound data transfer. There is no charge for inbound data transfer, and outbound data transfer is billed per GB</li>
+<li>Pricing for hosted connections vary based on capacity</li>
+</ul>
+<h3 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Permanent link">&para;</a></h3>
+<p><img alt="FAQs" src="../../images/screenshot.260.jpg" /></p>
+<p><img alt="MPLS" src="https://d1.awsstatic.com/whitepapers/Networking/integrating-aws-with-multiprotocol-label-switching.pdf" /></p>
+<h2 id="dns">DNS<a class="headerlink" href="#dns" title="Permanent link">&para;</a></h2>
+<h3 id="delegating-a-subdomain-to-route-53">Delegating a subdomain to Route 53<a class="headerlink" href="#delegating-a-subdomain-to-route-53" title="Permanent link">&para;</a></h3>
+<ul>
+<li>If you have a domain name that is hosted elsewhere, but would like to host the sub-domain on Route 53 without migrating the parent domain, you can create a hosted zone for the subdomain<ul>
+<li>You will need to create a Public Hosted zone for the subdomain. Do not modify NS or SOA records, and do not create additional records for NS or SOA</li>
+<li>Update the parent DNS records by adding NS records for the subdomain. This delegates responsibility for the subdomain to Route 53</li>
+<li>Also, ensure that the parent DNS service does not add an SOA record for the subdomain. Do not modify or delete the SOA record for the parent</li>
+</ul>
+</li>
+</ul>
+<h3 id="dns-records">Dns Records<a class="headerlink" href="#dns-records" title="Permanent link">&para;</a></h3>
+<ul>
+<li>NS (Name Server): Specifies which server is delegated as authoritative for the domain</li>
+<li>A record: points a domain/sub-domain name to an IP address</li>
+<li>AAAA record: Used for resolving hostnames to Ipv6</li>
+<li>CNAME (Cannonical Name): Point domain/sub-domain names to other domain names</li>
+<li>MX (Mail Exchanger): Directs email to a mail server. MX records always point to a domain name, not an IP Address</li>
+<li>Alias records: Can be used to resolve alternate names to an apex record.</li>
+<li>CAA (Certificate Authority Authorization): These allow domain owners to declare which certificate authorities are allowd to issue certificates for a domain</li>
+<li>NAPTR (Name authority Pointer Record): Typically used for internet telephony, the records are used to map servers and user addresses</li>
+<li>PTR: Used for Reverse DNS lookup, these use the IP address to get the associated domain name</li>
+<li>SOA (Start of Authority): Contain administrative info about a zone and is transferred with that zone to other servers</li>
+<li>SPF (Sender policy Framework): They specify a list of authorized host names/IP addresses that mail can originate from for a domain</li>
+<li>SRV (Service Record): This is a special record that allows for specifying the port in addition to the IP</li>
+<li>
+<p>TXT (Text Record): These allow the addition of text about the server, network, or other info</p>
+</li>
+<li>
+<p>Records have additional detail such as TTL. Once a record is retrieved, the requesting server will cache the data for the time defined in the TTL</p>
+</li>
+</ul>
+<h3 id="routing-policies">Routing Policies<a class="headerlink" href="#routing-policies" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Determines how Route 53 will respond to queries</li>
+<li>Health checks can be used with routing policies<ul>
+<li>If a resource is determined to be unhealthy, it will be removed from consideration before the routing policy is applied</li>
+</ul>
+</li>
+<li>Routing Policies<ul>
+<li>Simple: default. Used when single resource performs function for the domain. Ex: load balancer in front of a website</li>
+<li>Weight: Multiple resources can be associated with weight DNS. These resources perform the same function, and Route 53 will respond to DNS queries by selecting a resource from the group based on the weight<ul>
+<li>The lower the weight, the smaller amount of traffic that resource will receive</li>
+<li>A value of zero will stop all traffic to that resource</li>
+<li>The higher the weight, the more frequently that resource will receive traffic</li>
+</ul>
+</li>
+<li>Latency-Based: Traffic routed based on the lowest network latency for the end user<ul>
+<li>This option works best when resources are in multiple AZs or Regions</li>
+</ul>
+</li>
+<li>Failover: Are used for active-passive failover. If resource fails a health check, the passive resource becomes active</li>
+<li>Geolocation: Chooses the route based on the geographic location of user<ul>
+<li>Works by using a database to map IP addresses to locations</li>
+</ul>
+</li>
+<li>Multivalue: Allows multiple values to be returned in response to a query. These values might be for IP address of web servers<ul>
+<li>It can be used as a type of round-robin method for seleting a resource</li>
+</ul>
+</li>
+<li>Health Checks - Route 53 health checks the health of resources, including web servers and applications<ul>
+<li>Monitoring includes health of a specific resource, like a web server, the status of other health checks, or cloudwatch alarms</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="hybrid-dns">Hybrid DNS<a class="headerlink" href="#hybrid-dns" title="Permanent link">&para;</a></h3>
+<ul>
+<li>AWS DNS resolver is what resolves domain names from the VPC's private hosted zone within Route53<ul>
+<li>Cannot resolve domain names across VPN or Direct Connect, as it does not answer queries from outside its own network</li>
+</ul>
+</li>
+<li>Route 53 resolver endpoints use ENIs for inbound and outbound (bi-directional) DNS resolver queries between on-premises and VPCS<ul>
+<li>The endpoints can resolve queries for VPCs in multiple accounts, as long as the resources are all in the same region, and are using Resource Access Manager</li>
+</ul>
+</li>
+<li>
+<p>Each VPC uses the + 2 resolver for the VPC, and forwards to the DNS Resolver Endpoint ENI in the hub VPC</p>
+</li>
+<li>
+<p>Scenario 1: An on-premises client needs to resolve the DNS name of a server inside of a VPC. The on-premises server contacts an EC2-based DNS server acting as forward</p>
+</li>
+</ul>
+<p><img alt="Diagram" src="../../images/screenshot.267.jpg" /></p>
+<ul>
+<li>Scenario 2: An on-premises client needs to resolve the DNS name of a server inside of a VPC. The on-premises server contacts a DNS Endpoints (Inbound Point)</li>
+</ul>
+<p><img alt="Diagram" src="../../images/screenshot.268.jpg" /></p>
+<ul>
+<li>Scenario 3: A server in a VPC needs to access on-premises client. Route 53 uses (Outbound Endpoint) a conditional forward rule to query the on-premises DNS server</li>
+</ul>
+<p><img alt="Diagram" src="../../images/screenshot.269.jpg" /></p>
+<ul>
+<li>Prior to the introduction of Route 53 DNS Endpoints, the DHCP options set in the VPC would have to be updated with the DNS forwards as a custom DNS server. This was because the forwarder had to device if the requests should have been set to Route 53, or the on-premises DNS server</li>
+</ul>
+<h3 id="ad-dns-forwarding">AD DNS Forwarding<a class="headerlink" href="#ad-dns-forwarding" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Active Directory can be used to forward DNS Queries for non-authoritative domains</li>
+<li>It is an alternative way to setup DNS resolution between on-premises and the VPC<ul>
+<li>AWS supports DNS forwarding using Simple AD or AWS Directory Services and Microsoft Active Directory</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Diagram" src="../../images/screenshot.270.jpg" /></p>
+<p><img alt="Diagram" src="../../images/screenshot.271.jpg" /></p>
+<h3 id="shuffle-sharding">Shuffle Sharding<a class="headerlink" href="#shuffle-sharding" title="Permanent link">&para;</a></h3>
+<p><img alt="Shuffle Sharding" src="https://aws.amazon.com/blogs/architecture/shuffle-sharding-massive-and-magical-fault-isolation/" /></p>
+<ul>
+<li>Needs a fault tolerant client</li>
+<li>Works for servers, queues and other resources</li>
+<li>Fixed assignements</li>
+<li>Needs a routing mechanism: per-customer DNS Names, pre-resource DNS names or a shuffleSharding-aware routing</li>
+</ul>
+<h3 id="dns-filtering-to-your-nat-instance-with-squid">DNS filtering to your NAT instance with Squid<a class="headerlink" href="#dns-filtering-to-your-nat-instance-with-squid" title="Permanent link">&para;</a></h3>
+<p><img alt="Squid" src="https://aws.amazon.com/blogs/security/how-to-add-dns-filtering-to-your-nat-instance-with-squid/" /></p>
+<h2 id="load-balancers">Load Balancers<a class="headerlink" href="#load-balancers" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Types<ul>
+<li>Application Load Balancer:  Works at layer 7 of the OSI Model (HTTP/HTTPS)</li>
+<li>Network Load Balancer: Works at Layer 4 (TPC)</li>
+<li>Classic Load Balancer: Works at layer 4 and 7 of the OSI Model (TCP and HTTP/HTTPs)</li>
+</ul>
+</li>
+<li>Minimum of /27 subnet required for the Load balancer and a minimum of 8 free IPs</li>
+<li>SGs and NACLS may be applied. The rules will need to allow communication between the private instances and ELB</li>
+<li>Connection Dranning ensures that client connections are closed before an instance is taken out of service. The default is 5 minutes, but it can be anywhere between 1 sencond and 1 hour</li>
+<li>SSL negotiation between the clients and ELBs are called security policies<ul>
+<li>The security policy is a combination of SSL protocols, SSL ciphers, and server order preference</li>
+<li>SSL 2.0 is deprecated; SSL 3.0 and TLS 1.0, 1.1., 1.2 are supported</li>
+</ul>
+</li>
+<li>Access logs are published every 60 minutes, but the interval can be either 5 or 60 minutes</li>
+</ul>
+<h3 id="classic-load-balancer">Classic Load Balancer<a class="headerlink" href="#classic-load-balancer" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Designed for EC2-Classic</li>
+<li>Supports multi-Az environment</li>
+<li>Health checks</li>
+<li>SSL Offloading</li>
+<li>Sticky sessions - Sessions maintained based on duration or may be controlled by an application cookie</li>
+<li>Supports Layer 4 and 7<ul>
+<li>Layer 4 to applications that only require TCP</li>
+<li>Layer 7 is used for HTTP/HTTPS, X-Forwarded, and sticky session</li>
+</ul>
+</li>
+<li>Proxy Protocol can be used to add a human-readable header to the request header and can include information such as source IP, destination IP and port numbers</li>
+</ul>
+<h3 id="network-load-balancer">Network Load Balancer<a class="headerlink" href="#network-load-balancer" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Operates Layer 4</li>
+<li>EC2, microservices and containers as targets</li>
+<li>Can maintain low latency - Being capble of handling millions of requests per second</li>
+<li>Optimized for unpredictable traffic patterns, and supports using a single static IP address per Availability Zone</li>
+<li>Both Static and Elastic IP support</li>
+<li>TLS Termination</li>
+<li>Health checks- Application health checks can check a URL on target</li>
+<li>DNS Failover using route 53 is possible. The NLS will redirect to another AZ if fail instances are unhealthy in particulary AZ</li>
+<li>Flow Logs are supported and Cloudwatch Logs<ul>
+<li>Access logs can be enable to capture information about the TLS connections that the listener receives. This provides visibility into sucessful and failed TLS Handshakes, so that they may be reviewed</li>
+</ul>
+</li>
+</ul>
+<h3 id="application-load-balancer">Application Load Balancer<a class="headerlink" href="#application-load-balancer" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Operates Layer 7</li>
+<li>Evaluates listener rules to determine what rule to apply, and then selects a target from the target group. The target rules can route requests do different target groups based on contents of the application traffic</li>
+<li>Instances can be added and removed from the target group as needed</li>
+<li>Ec2 instances, containers (ECS), IP addresses and Lambda functions as targets</li>
+<li>Path-based routing is supported</li>
+<li>Host-based routing supported . supports multiple domains using a single load balancer</li>
+<li>Supports Custom HTTP responses</li>
+<li>ALB supports redirecting requests from one URL to another</li>
+<li>Users may optionally be authenticated using corporate or social identities before routing requests</li>
+<li>Health checks are the target level, which allows for auto scaling based Cloudwatch metrics</li>
+<li>Supports AWS WAF</li>
+<li>Sticky Sessions. Maintained based on duration or AWS ALB Cookie. Application based cookies not supported</li>
+<li>ALB supports IP based targes, which allows for targets outside of the VPC ( on-premises)</li>
+</ul>
+<h3 id="elb-sandwich">ELB Sandwich<a class="headerlink" href="#elb-sandwich" title="Permanent link">&para;</a></h3>
+<ul>
+<li>At times virtual load balancers may offer features that are not native on AWS</li>
+<li>It is possible to use combination of Load Balancers with Virtual load balancer applicances running on an EC2 Instance</li>
+<li>The ELB is accessed using the fully qualified Domain name (FQDN) of the load balancer<ul>
+<li>Route 53 record can optionally be used to reference the load balancer</li>
+</ul>
+</li>
+<li>The first level load balancer, in this case, balances the load across the virtual load balancer instances<ul>
+<li>Ex: HA Proxy or F5 LTM Big-IP Virtual</li>
+</ul>
+</li>
+<li>The virtual load balancer then forwards traffic onto the second layer of ELBs, which then load balance the front end application tier</li>
+<li>Virtual Load balancers sometimes have issues forwarding to a FDQN, and this can cause issues whtn the IP address of the Load Balancer changes.<ul>
+<li>Recommended use FDQN and a Route 53 Alias record to reference the load balancer</li>
+<li>If the virtual applicance has trouble resolving FDQNs for the next hop, use a Network Load Balancer as the sencond ELB tier</li>
+<li>The NLB uses a single IP per AZ, which the virtual load balancers can point to instead of having to perform periodic lookups and caches of Classic Load Balancer's IP</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Diagram" src="../../images/screenshot.272.jpg" /></p>
+<h2 id="cloudfront">Cloudfront<a class="headerlink" href="#cloudfront" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Supports HTTP or WebSocket protocols (dynamic and static web pages, applications, images, media files or other file downloads) </li>
+<li>Supports RTMP distributions, can stream media files using Adobe Media Server and Adobe RMTP<ul>
+<li>When using RMTP distributions, cloudgron admins must distribute media players as well as the media files themselves</li>
+</ul>
+</li>
+<li>Origin can be combination of EC2, S3 buckets, media services or non-AWS origins</li>
+<li>Origin data is copied to web distribution</li>
+<li>Cache-control headers set by the origin server control how long the data stays cached on Cloudgront</li>
+<li>Setting TTL for objects in cloudfront distribution can also control cache time</li>
+<li>Objects that need to be removed before the cache expires can simply be invalidated</li>
+<li>Cloudfront assigns a domain name to the distribution and, if desired, a Route 53 alias</li>
+<li>HTTPS - In wbe distributions, Cloudfront can require HTTPS for requests<ul>
+<li>Users can also be redirect if they access an HTTP endpoint</li>
+<li>Pulls from origins can also use HTTPS, but note that HTTPs is not supported between S3 and cloufront</li>
+<li>Connections between CLoudfront and origins support TLS1.1, TLS1.2 and SSL3</li>
+<li>The origin protocol policy can be set to HTTP only, HTTPs only, Or Match viewer</li>
+<li>To for https between Cloudfront and origins set the Origin Portocol setting in cloudgront to Match Viewer<ul>
+<li>The viewer protocol policy must also be set to require HTTPS</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>AWS ACM<ul>
+<li>Can manage certificates from cloudfront and renewal</li>
+<li>Self-signed certificate between the origin and Cloudfron is not supported</li>
+</ul>
+</li>
+<li>Access Logs<ul>
+<li>Cloudfront can create log files that include detailed information about all requests received for bot RTMP and Web</li>
+<li>S3 is required as a location to store logs</li>
+</ul>
+</li>
+<li>Cloudfront Security<ul>
+<li>Supports custom headers to requests from origin</li>
+<li>The header can be used to help validate that requests made to your origin were actually sent from Cloudfront</li>
+<li>The origin can be configured only allow requests that contain the custom header values specified</li>
+</ul>
+</li>
+<li>Field-Level Encryption<ul>
+<li>This allows secure user-submitted data uploads, and encrypts the data at the edge location</li>
+<li>The data remains encrypted until the hand-off to your application</li>
+<li>A private key is required to decrypt the data</li>
+<li>Encrypt specific fields in a Post request ( like a credit card number on a purchase form)</li>
+</ul>
+</li>
+<li>WEB WAF<ul>
+<li>Integrates with AWS Shield, WAF and Route 53 to create security perimeter against things like DDoS attacks</li>
+<li>Cloudfront can essentially absorb the attach by moving the primary attack surface away from your critical infra and data</li>
+<li>WAF can be used for controlling access to Cloudfront data<ul>
+<li>Can specify Ip address as criteria for allowing or blocking access</li>
+<li>Unauthorized access wil get HTTP 403 forbidden error response</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Private Content<ul>
+<li>Signed URLs: Valid only during a specific time frame and, optionally, can be restricted to specific IP address</li>
+<li>Signed cookies: Requires authentication via public and private key pairs</li>
+<li>OAI: restrict access to an s3 bucket to a special Cloudfront server associated to the distribution<ul>
+<li>This ensures that cloudfront is not bypassed for direct access to the bucket</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Lambda Edge<ul>
+<li>For costumization of content that is delivered to cloudfront</li>
+<li>Inspect cookies and rewrite URLS for A/B testing of website</li>
+<li>Rturn different objects based on user device type</li>
+<li>Return different objects based on cookies</li>
+<li>Generate an HTTP response based on origin requests</li>
+</ul>
+</li>
+</ul>
+<h2 id="application-architectures-in-hybrid-cloud-infrastructure">Application Architectures in Hybrid Cloud Infrastructure<a class="headerlink" href="#application-architectures-in-hybrid-cloud-infrastructure" title="Permanent link">&para;</a></h2>
+<h3 id="aws-directory-service">AWS Directory Service<a class="headerlink" href="#aws-directory-service" title="Permanent link">&para;</a></h3>
+<p>Active Directory integrates with AWS Directory Services. In scenario where Active Directory or LDAP are required for cloud or hybrid cloud environments, AWS recommends the following services:</p>
+<ul>
+<li>AWS Directory Service for Microsoft Active Directory (Standard allows up to 5000 users and 30000 directory objects, or Enterprise Edition with to 500000 directory objects). AWS Directory Service for Microsoft Active Directory supports AD-aware workloads and application services such as Amazon Workspaces, Workdocs, QuickSight, Chime, Connect and RDS for Microsoft SQL Server<ul>
+<li>It it also used for LDAP support in Linux Applications</li>
+</ul>
+</li>
+<li>AD connector is recommended if the on-premises users are the only ones that need to log into the AWS application or service. The connector also allows Amazon EC2 instances to join the on-premesis Active Directory domain</li>
+<li>Simple AD is a low cost, low sale directory with basic Active Directory and LDAP compatibility<ul>
+<li>Is available in two sizes, with small supporting up to 500 users and large up to 5000</li>
+<li>It does not support multi-factor authentication or trust relationships</li>
+<li>Compatibility with Workspaces, WorkDocs, QuickSight and workMail</li>
+<li>Designed for use as stand-alone directory, to support either windows workloads with basic AD features or linux workloads that require and LDAP service</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Diagram" src="../../images/screenshot.273.jpg" /></p>
+<p><img alt="Diagram" src="../../images/screenshot.274.jpg" /></p>
+<p><img alt="Diagram" src="../../images/screenshot.275.jpg" /></p>
+<h3 id="storage-in-hybrid-architecture">Storage in Hybrid Architecture<a class="headerlink" href="#storage-in-hybrid-architecture" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Accessing S3 from on-premises Networks<ul>
+<li>A public VIF can be used in a hybrid environment to access S3, as S3 is a service that the AWS public network can access</li>
+<li>A proxy server (i.e Squid proxy) can direct traffic to the VPC Endpoint from inside the VPC. So a private VIF directs traffic into the VPC, where a NLB could optionally be used to then direct traffic to the proxy server<ul>
+<li>The proxy server would direct all traffic to the Endpoint. The clients would use settings that direct to the load balancer.</li>
+<li>The proxy EC2 instances might become a bottleneck for network throughput</li>
+<li>A transit VPC architecture can be used to achieve this architecture</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Accessing EFS Storage<ul>
+<li>A private VIF can be used to mount an EFS file system to on-premises servers</li>
+<li>EFS mount targets may be accessed by IP using NFS mount commands from the client</li>
+<li>Port 2049 must be allowed through the security group and NACL configuration</li>
+<li>Using DNS forwarding or the /etc/hosts file can resolve the EFS mount names</li>
+<li>The AWS EFS utilities can provide TLS encryption using STunnel and simplified file system mounting</li>
+</ul>
+</li>
+<li>Storage Gateway<ul>
+<li>Enables on-premises applications to use AWS Cloud Storage. There are 3 types of gateways</li>
+<li>File Gateways - support S3, using protocols like NFS</li>
+<li>volume Gateway are for using EBS storage, and allow the use of the ISCSI protocol</li>
+<li>Virtual tape library supports using virtual media changer, virtual tape drives and virtual tapes</li>
+<li>Storage Gateway uses S3 Endpoints to access Amazon public IP services like S3</li>
+<li>Virtual and physical appliances are available. Storage Gateway provides low latency by caching frequently accessed data, while keeping the data in the cloud</li>
+</ul>
+</li>
+</ul>
+<h3 id="public-vif-to-s3">Public VIF to S3<a class="headerlink" href="#public-vif-to-s3" title="Permanent link">&para;</a></h3>
+<p><img alt="Diagram" src="../../images/screenshot.276.jpg" /></p>
+<h3 id="vpn-over-aws-direct-connect">VPN Over AWS Direct Connect<a class="headerlink" href="#vpn-over-aws-direct-connect" title="Permanent link">&para;</a></h3>
+<p>If an application requires consistent network performance, Direct Connect is a good option.
+Direct connect, however, does not provide encrypted communication across the connection.
+A VPN can be established on DX Connections. This allows for encrypted, IPSec communication across the DX connection, providing encrypted communication with a low-latency, consistent bandwidth solution</p>
+<h2 id="implementing-aws-cloud-services-with-specific-network-requirements">Implementing AWS Cloud Services with Specific Network Requirements<a class="headerlink" href="#implementing-aws-cloud-services-with-specific-network-requirements" title="Permanent link">&para;</a></h2>
+<h3 id="workspaces">Workspaces<a class="headerlink" href="#workspaces" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Managed Desktop as a Service</li>
+<li>Provisions cloud-based Microsoft Windows</li>
+<li>Each desktop is provisioned as dual-homed<ul>
+<li>One Interface has access to a customer specific VPC</li>
+<li>Other has access to an AWS management VPC that allows external connectivity</li>
+</ul>
+</li>
+<li>A private CIDR in the range of one of the following is automatically assigned to the management VPC<ul>
+<li>172.31.0.0/16</li>
+<li>192.168.0.0/16</li>
+<li>198.19.0.0/16</li>
+<li>Must ensure that your VPC CIDRs do not overlap with the assigned management VPC CIDR</li>
+</ul>
+</li>
+<li>Workspaces requires the following<ul>
+<li>A client device that supports AWS Workspaces</li>
+<li>A VPC with one public and two private subnets<ul>
+<li>Directory Services requires two subnets in multi AZs</li>
+</ul>
+</li>
+<li>A directory service for authenticating users<ul>
+<li>AWS Managed AD and simple AD are supported</li>
+<li>Active Directory (Simple AD or AWS Managed) and AWS Directory Services are both supported. In a hybrid environment, the on-premises AD server works with AWS Directory Services so that users can use their existing user credentials</li>
+</ul>
+</li>
+<li>Security Groups</li>
+<li>A round trip time for latency under 100 ms<ul>
+<li>It it's between 100 ms and 250 ms, the user can access the Workspaces but performance is degregaded</li>
+</ul>
+</li>
+<li>A VPC the connection that supports a maximum MTU of at least 1200</li>
+</ul>
+</li>
+</ul>
+<h3 id="app-stream-20">APP Stream 2.0<a class="headerlink" href="#app-stream-20" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Is a secure application streaming service that allows for streaming desktop applications from any device with a web browser, without rewriting the applications</li>
+<li>Application performance is responsive with features like instant on. Instant on is a features of always-on fleets</li>
+<li>Always-on fleets are best for users that need high-available and instant access to applications</li>
+<li>On-demand fleets require up to two minutes to start</li>
+<li>Networking Requiremnts:<ul>
+<li>HTML5-compatible web browser</li>
+<li>A VPC with a subnet for APPStream 2.0, or two subnets for high availability<ul>
+<li>Every user is connected to a separate instance</li>
+</ul>
+</li>
+<li>Security Groups are used to control access to AppStream 2.0</li>
+</ul>
+</li>
+</ul>
+<h3 id="lambda">Lambda<a class="headerlink" href="#lambda" title="Permanent link">&para;</a></h3>
+<ul>
+<li>IP address requirements vary based on invocation count for lambda functions. The current soft limits is 1000 for region</li>
+<li>For HA, use multiple subnets that span AZs</li>
+<li>Security Groups are used to control access to each Lambda function</li>
+<li>Lambda functions cannot be assigned public IP addrsses. A Nat Gateway or Nat Instance would be required for Internet Access</li>
+</ul>
+<h3 id="ecs">ECS<a class="headerlink" href="#ecs" title="Permanent link">&para;</a></h3>
+<p>Four modes for container network connectivity</p>
+<ul>
+<li>Bridge is the default option and it bridges from a containers internal network to a common docker network</li>
+<li>The host option maps containers directly into the host network</li>
+<li>AWSvpc lets you attach an ENI directly to each container. This is the only option available when using containers with AWS Gargate</li>
+<li>For instance based Amazon ECS each instance in the cluster needs an IP address in the subnet. If using awsvpc mode each container will require an IP address in the subnet</li>
+<li>Security Groups are used to control access based on ports required by the containers</li>
+<li>Public IP addresses, NAt or HTTP proxy are reqired for container instances to access the ECS service endpoint</li>
+</ul>
+<h3 id="emr">EMR<a class="headerlink" href="#emr" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Managed Hadoop framework for fast processing of large amounts of data</li>
+<li>Launch in a Single AZ for performance and cost optimization</li>
+<li>DNS hostnames must be enabled within the VPC</li>
+<li>The private CIDR that is assigned to the VPC must be 10.0.0.0/8, 172.16.0.0/12 or 192.168.0.0/16 range. Using Public IP addresses can be cause DNS name resoltion issues</li>
+<li>Connectivity to the public AWS environment is required for access to S3 for logging and Amazon SQS for debugging support.<ul>
+<li>DynamoDb access may also be required if EMR will interact with DynamoDB tables</li>
+<li>VPC Endpoints may be used to access these services</li>
+</ul>
+</li>
+</ul>
+<h3 id="elastic-beanstalk">Elastic Beanstalk<a class="headerlink" href="#elastic-beanstalk" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Internet accessibility through the use of a public IP address or NAT</li>
+<li>Outbound UDP port 123, for NTP time synchronization in the security group</li>
+<li>Inbound rule for EC2 or a load balancer (i.e port 80/443)</li>
+<li>The default VPC is used for Elastic Beanstalk if no customization is made<ul>
+<li>If customized, a VPC with appropriate network connectivity is required</li>
+<li>Security gorups and NACL vary, depending on the application</li>
+</ul>
+</li>
+</ul>
+<h3 id="rds">RDS<a class="headerlink" href="#rds" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A VPC with at least two subnets in different AZs<ul>
+<li>When subnet groups are created, RDS requires subnets in at least two different AZs</li>
+<li>The DB instance IP addresses is selected from a subnet in the preferred AZ</li>
+</ul>
+</li>
+<li>Public access to a database requires DNS hostnames and DNS resolution to be enabled in the VPC</li>
+</ul>
+<h3 id="database-migration-service">Database Migration Service<a class="headerlink" href="#database-migration-service" title="Permanent link">&para;</a></h3>
+<p>Requires access to the internet with public IP or Nat gateway, and security groups with appropriate ports (based on the database being migrated)</p>
+<h3 id="redshift">Redshift<a class="headerlink" href="#redshift" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Enchanced VPC forces all traffic to flow through the VPC<ul>
+<li>equires a network path between your cluster's VPC and data resources</li>
+</ul>
+</li>
+<li>A VPC with subnet redshift, and enough IP address for each node plus, including the leader node</li>
+<li>A security group to control access to the cluster</li>
+<li>Enabled DNS hostnames on the VPC
+ When using enchanced routing, a VPc endpoint is required for connectivity to S3. If access is for S3 in another region, then a public IP, internet Gateway or NAT is required</li>
+</ul>
+<h2 id="manage-optimize-and-troubleshooting-the-network">Manage, Optimize and Troubleshooting the network<a class="headerlink" href="#manage-optimize-and-troubleshooting-the-network" title="Permanent link">&para;</a></h2>
+<h3 id="network-performance-basis">Network performance basis<a class="headerlink" href="#network-performance-basis" title="Permanent link">&para;</a></h3>
+<p>Factors that can affect network performance</p>
+<ul>
+<li>Bandwidth is the maximum rate of transfer over the network. Bandwidth is typically measured in Mbps or Gbps. The actual transfer rate will vary from bandwidth as latency protocol, and other factors will affect throughput</li>
+<li>Latency is the delay between two points, cn be measured in one-way trip or Round Trip Time (RTT) between two points. The ping command is often used to check RTT</li>
+<li>Jitter is typically seen with voice applications. Jitter is caused by a variance in delay over time for things such as processing delays</li>
+<li>Throughput is the rate of data transferred sucessfully. Bandwidth, latency and packet loss affect throughput</li>
+<li>Packet loss is the percentage of packets dropped in transmission. TCP based applications are sensitive to packet loss</li>
+<li>MTU specifies the largest packet that can be sent over a network. MTU 1500 is commonly used for most traffic on the internet and WAN environments. Jumbo frames are packets larger than 1500 bytes but are commonly express as MTU 9001. Remmeber, traffic leaving VPC(i.e VPC Peering) uses a MTU size of 1500. So does Direct connect and traffic crossing IGW</li>
+<li>The type of instance selected affects networking speeds and server features</li>
+<li>Placement Groups enable higher bandwidth and lower latency between members of the placement group</li>
+<li>Instances can be launched as EBS Optimized. EBS optimized instances achieve dedicated troughput between EC2 and EBS with speeds between 500 and 4000 Mbps. This speed varies based on the type of instance. EBS optimized images also max out I/O performance for the instance and EBS storage</li>
+<li>Nat Gateway is horizontally scalable within an AZ, and can forward up to 10 Gbps of traffic. Nat Gateways are preferred over NAT Instances for performance and scalability</li>
+<li>Enchanced networking provides lower latency and higher throughput. We previously discussed Enchanced networking and Placement Group</li>
+<li>Jumbo frames provider higher throughput. MTU 9001 is recommended, with placement groups. Jumbo frames is supported within a VPC, but not for inter-VPC communication</li>
+<li>VPN endpoints support 1.25 Gbps per tunnel. ECMP (Equal cost Multipath) is supported for load balacing traffic across both links</li>
+<li>Cloudwatch monitors metrics including NetworkIn, NetworkOut, NetworkPacketsIn and NetworkPackests out for an instance.<ul>
+<li>VPN metrics include tunnel status, and data in and data out</li>
+<li>DX connection metrics include TunnelSate and bit rate for inbound and outbound data packet rate, health of fiber and CRC Error count checks</li>
+</ul>
+</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../bigdata-specialty/" title="Big-Data" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Big-Data
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../google/associate-cloud-engineer/" title="Associate-Cloud-Engineer" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Associate-Cloud-Engineer
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 Fabio Santos
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.dc02f8ce.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+        <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

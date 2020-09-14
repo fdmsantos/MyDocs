@@ -40,7 +40,7 @@
     
     
       
-        <title>Cloudformation - My Docs</title>
+        <title>Deploy - My Docs</title>
       
     
     
@@ -114,7 +114,7 @@
               My Docs
             </span>
             <span class="md-header-nav__topic">
-              Cloudformation
+              Deploy
             </span>
           
         </div>
@@ -621,11 +621,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Cloudformation
+        Deploy
       </label>
     
-    <a href="./" title="Cloudformation" class="md-nav__link md-nav__link--active">
-      Cloudformation
+    <a href="./" title="Deploy" class="md-nav__link md-nav__link--active">
+      Deploy
     </a>
     
       
@@ -834,20 +834,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../migrate/sqlserver/" title="SqlServer" class="md-nav__link">
-      SqlServer
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../migrate/apsnet.net" title="Aspnet" class="md-nav__link">
-      Aspnet
+    <a href="../../migrate/windows-workshops/" title="Windows-Workshops" class="md-nav__link">
+      Windows-Workshops
     </a>
   </li>
 
@@ -1261,6 +1249,18 @@
   <li class="md-nav__item">
     <a href="../../../unix/virsh/" title="Virsh" class="md-nav__link">
       Virsh
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../unix/wordpress/" title="Wordpress" class="md-nav__link">
+      Wordpress
     </a>
   </li>
 
@@ -1841,6 +1841,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../certifications/aws/networking-specialty/" title="Networking" class="md-nav__link">
+      Networking
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -2019,7 +2031,7 @@
               
                 
                 
-                  <h1>Cloudformation</h1>
+                  <h1>Deploy</h1>
                 
                 <h2 id="cdk">CDK<a class="headerlink" href="#cdk" title="Permanent link">&para;</a></h2>
 <p><a href="https://cdkworkshop.com/">Workshop</a></p>
@@ -2056,7 +2068,8 @@ aws cloudformation deploy
 </pre></div>
 
 <h3 id="init">Init<a class="headerlink" href="#init" title="Permanent link">&para;</a></h3>
-<p><a href="https://github.com/widdix/aws-cf-templates">Samples</a></p>
+<p><a href="https://github.com/widdix/aws-cf-templates">Samples</a>
+<a href="https://s3.amazonaws.com/cloudformation-templates-us-east-1/AutoScalingMultiAZWithNotifications.template">Complete Example</a></p>
 <p>Logs are stored in:</p>
 <ul>
 <li>/var/log/cfn-init*</li>
@@ -2145,7 +2158,98 @@ aws cloudformation deploy
           <span class="no">/opt/aws/bin/cfn-signal -e 0 --stack ${AWS::StackName} --resource Master --region ${AWS::Region}</span>
       <span class="nt">Tags</span><span class="p">:</span>
         <span class="p p-Indicator">-</span> <span class="nt">Key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Name</span>
-          <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Jenkins-Master</span>
+          <span class="nt">Value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Jenkins-Master</span>        
+  <span class="nt">WebLaunchConfig</span><span class="p">:</span> <span class="c1"># Example with cfn-init in launch template</span>
+      <span class="nt">Type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AWS::AutoScaling::LaunchConfiguration</span>
+      <span class="nt">Metadata</span><span class="p">:</span>
+        <span class="nt">Comment</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Install a simple application</span>
+        <span class="l l-Scalar l-Scalar-Plain">AWS::CloudFormation::Init</span><span class="p p-Indicator">:</span>
+          <span class="nt">config</span><span class="p">:</span>
+            <span class="nt">packages</span><span class="p">:</span>
+              <span class="nt">yum</span><span class="p">:</span>
+                <span class="nt">httpd</span><span class="p">:</span> <span class="p p-Indicator">[]</span>
+            <span class="nt">files</span><span class="p">:</span>
+              <span class="nt">&quot;/var/www/html/index.html&quot;</span><span class="p">:</span>
+                <span class="nt">content</span><span class="p">:</span>
+                  <span class="l l-Scalar l-Scalar-Plain">Fn::Join</span><span class="p p-Indicator">:</span>
+                    <span class="p p-Indicator">-</span> <span class="s">&quot;\n&quot;</span>
+                    <span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">&lt;img src=https://s3-eu-west-1.amazonaws.com/cloudformation-examples-eu-west-1/cloudformation_graphic.png&quot; alt=&quot;AWS CloudFormation Logo&quot;/&gt;</span>
+                      <span class="p p-Indicator">-</span> <span class="s">&quot;&lt;h1&gt;Congratulations,</span><span class="nv"> </span><span class="s">you</span><span class="nv"> </span><span class="s">have</span><span class="nv"> </span><span class="s">successfully</span><span class="nv"> </span><span class="s">launched</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">AWS</span><span class="nv"> </span><span class="s">CloudFormation</span>
+                          <span class="s">sample.&lt;/h1&gt;&quot;</span>
+                <span class="nt">mode</span><span class="p">:</span> <span class="s">&#39;000644&#39;</span>
+                <span class="nt">owner</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
+                <span class="nt">group</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
+              <span class="nt">&quot;/etc/cfn/cfn-hup.conf&quot;</span><span class="p">:</span>
+                <span class="nt">content</span><span class="p">:</span>
+                  <span class="l l-Scalar l-Scalar-Plain">Fn::Join</span><span class="p p-Indicator">:</span>
+                    <span class="p p-Indicator">-</span> <span class="s">&#39;&#39;</span>
+                    <span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="s">&quot;[main]\n&quot;</span>
+                      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">stack=</span>
+                      <span class="p p-Indicator">-</span> <span class="nt">Ref</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AWS::StackId</span>
+                      <span class="p p-Indicator">-</span> <span class="s">&quot;\n&quot;</span>
+                      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">region=</span>
+                      <span class="p p-Indicator">-</span> <span class="nt">Ref</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AWS::Region</span>
+                      <span class="p p-Indicator">-</span> <span class="s">&quot;\n&quot;</span>
+                <span class="nt">mode</span><span class="p">:</span> <span class="s">&#39;000400&#39;</span>
+                <span class="nt">owner</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
+                <span class="nt">group</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
+              <span class="nt">&quot;/etc/cfn/hooks.d/cfn-auto-reloader.conf&quot;</span><span class="p">:</span>
+                <span class="nt">content</span><span class="p">:</span>
+                  <span class="l l-Scalar l-Scalar-Plain">Fn::Join</span><span class="p p-Indicator">:</span>
+                    <span class="p p-Indicator">-</span> <span class="s">&#39;&#39;</span>
+                    <span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="s">&quot;[cfn-auto-reloader-hook]\n&quot;</span>
+                      <span class="p p-Indicator">-</span> <span class="s">&quot;triggers=post.update\n&quot;</span>
+                      <span class="p p-Indicator">-</span> <span class="s">&quot;path=Resources.WebLaunchConfig.Metadata.AWS::CloudFormation::Init\n&quot;</span>
+                      <span class="p p-Indicator">-</span> <span class="s">&quot;action=/opt/aws/bin/cfn-init</span><span class="nv"> </span><span class="s">-v</span><span class="nv"> </span><span class="s">&quot;</span>
+                      <span class="p p-Indicator">-</span> <span class="s">&quot;</span><span class="nv">         </span><span class="s">--stack</span><span class="nv"> </span><span class="s">&quot;</span>
+                      <span class="p p-Indicator">-</span> <span class="nt">Ref</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AWS::StackName</span>
+                      <span class="p p-Indicator">-</span> <span class="s">&quot;</span><span class="nv">         </span><span class="s">--resource</span><span class="nv"> </span><span class="s">WebLaunchConfig</span><span class="nv"> </span><span class="s">&quot;</span>
+                      <span class="p p-Indicator">-</span> <span class="s">&quot;</span><span class="nv">         </span><span class="s">--region</span><span class="nv"> </span><span class="s">&quot;</span>
+                      <span class="p p-Indicator">-</span> <span class="nt">Ref</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AWS::Region</span>
+                      <span class="p p-Indicator">-</span> <span class="s">&quot;\n&quot;</span>
+                      <span class="p p-Indicator">-</span> <span class="s">&quot;runas=root&quot;</span>
+                <span class="nt">mode</span><span class="p">:</span> <span class="s">&#39;000400&#39;</span>
+                <span class="nt">owner</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
+                <span class="nt">group</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
+            <span class="nt">services</span><span class="p">:</span>
+              <span class="nt">sysvinit</span><span class="p">:</span>
+                <span class="nt">httpd</span><span class="p">:</span>
+                  <span class="nt">enabled</span><span class="p">:</span> <span class="s">&#39;true&#39;</span>
+                  <span class="nt">ensureRunning</span><span class="p">:</span> <span class="s">&#39;true&#39;</span>
+                <span class="nt">cfn-hup</span><span class="p">:</span>
+                  <span class="nt">enabled</span><span class="p">:</span> <span class="s">&#39;true&#39;</span>
+                  <span class="nt">ensureRunning</span><span class="p">:</span> <span class="s">&#39;true&#39;</span>
+                  <span class="nt">files</span><span class="p">:</span>
+                    <span class="p p-Indicator">-</span> <span class="s">&quot;/etc/cfn/cfn-hup.conf&quot;</span>
+                    <span class="p p-Indicator">-</span> <span class="s">&quot;/etc/cfn/hooks.d/cfn-auto-reloader.conf&quot;</span>
+      <span class="nt">Properties</span><span class="p">:</span>
+        <span class="nt">KeyName</span><span class="p">:</span> <span class="kt">!Ref</span> <span class="l l-Scalar l-Scalar-Plain">KeyPair</span>
+        <span class="nt">LaunchConfigurationName</span><span class="p">:</span> <span class="kt">!Sub</span> <span class="l l-Scalar l-Scalar-Plain">${Name}-web-launchconfig</span>
+        <span class="nt">ImageId</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ami-08935252a36e25f85</span>
+        <span class="nt">InstanceType</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">t2.micro</span>
+        <span class="nt">SecurityGroups</span><span class="p">:</span>
+          <span class="p p-Indicator">-</span> <span class="nt">Ref</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">WebInstancesSecurityGroup</span>
+        <span class="nt">UserData</span><span class="p">:</span>
+          <span class="l l-Scalar l-Scalar-Plain">Fn::Base64</span><span class="p p-Indicator">:</span>
+            <span class="l l-Scalar l-Scalar-Plain">Fn::Join</span><span class="p p-Indicator">:</span>
+              <span class="p p-Indicator">-</span> <span class="s">&#39;&#39;</span>
+              <span class="p p-Indicator">-</span> <span class="p p-Indicator">-</span> <span class="s">&quot;#!/bin/bash</span><span class="nv"> </span><span class="s">-xe\n&quot;</span>
+                <span class="p p-Indicator">-</span> <span class="s">&quot;yum</span><span class="nv"> </span><span class="s">update</span><span class="nv"> </span><span class="s">-y</span><span class="nv"> </span><span class="s">aws-cfn-bootstrap\n&quot;</span>
+                <span class="p p-Indicator">-</span> <span class="s">&quot;yum</span><span class="nv"> </span><span class="s">update</span><span class="nv"> </span><span class="s">-y</span><span class="nv"> </span><span class="s">aws-cli\n&quot;</span>
+                <span class="p p-Indicator">-</span> <span class="s">&quot;/opt/aws/bin/cfn-init</span><span class="nv"> </span><span class="s">-v</span><span class="nv"> </span><span class="s">&quot;</span>
+                <span class="p p-Indicator">-</span> <span class="s">&quot;</span><span class="nv">         </span><span class="s">--stack</span><span class="nv"> </span><span class="s">&quot;</span>
+                <span class="p p-Indicator">-</span> <span class="nt">Ref</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AWS::StackName</span>
+                <span class="p p-Indicator">-</span> <span class="s">&quot;</span><span class="nv">         </span><span class="s">--resource</span><span class="nv"> </span><span class="s">WebLaunchConfig</span><span class="nv"> </span><span class="s">&quot;</span>
+                <span class="p p-Indicator">-</span> <span class="s">&quot;</span><span class="nv">         </span><span class="s">--region</span><span class="nv"> </span><span class="s">&quot;</span>
+                <span class="p p-Indicator">-</span> <span class="nt">Ref</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AWS::Region</span>
+                <span class="p p-Indicator">-</span> <span class="s">&quot;\n&quot;</span>
+                <span class="p p-Indicator">-</span> <span class="s">&quot;/opt/aws/bin/cfn-signal</span><span class="nv"> </span><span class="s">-e</span><span class="nv"> </span><span class="s">$?</span><span class="nv"> </span><span class="s">&quot;</span>
+                <span class="p p-Indicator">-</span> <span class="s">&quot;</span><span class="nv">         </span><span class="s">--stack</span><span class="nv"> </span><span class="s">&quot;</span>
+                <span class="p p-Indicator">-</span> <span class="nt">Ref</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AWS::StackName</span>
+                <span class="p p-Indicator">-</span> <span class="s">&quot;</span><span class="nv">         </span><span class="s">--resource</span><span class="nv"> </span><span class="s">WebServerGroup</span><span class="nv"> </span><span class="s">&quot;</span>
+                <span class="p p-Indicator">-</span> <span class="s">&quot;</span><span class="nv">         </span><span class="s">--region</span><span class="nv"> </span><span class="s">&quot;</span>
+                <span class="p p-Indicator">-</span> <span class="nt">Ref</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AWS::Region</span>
+                <span class="p p-Indicator">-</span> <span class="s">&quot;\n&quot;</span>
 </pre></div>
                 
                   
