@@ -1,8 +1,16 @@
 # AWS Certified Networking Specialty
 
-# Chapter 1 - General Networking Fundamentals
+[Diagram](https://app.lucidchart.com/lucidchart/a66d300a-dd15-4cda-80a9-32731f44056d/view?page=0)
 
-## OSI Model
+[Networking Sample Questions](https://d1.awsstatic.com/training-and-certification/docs-advnetworking-spec/AWS-Certified-Advanced-Networking-Specialty_Sample-Questions.pdf)
+
+[Subjects](https://acloud.guru/forums/aws-networking-specialty/discussion/-M93EIqR5kynmTYnFBH-/advanced_networking_speciality)
+
+[Transo Diagrams](https://transno.com/)
+
+## Chapter 1 - General Networking Fundamentals
+
+### OSI Model
 
 * Layer 1 - Physical
     * Responsible for physical connectivity to the network, and transmission of data
@@ -44,6 +52,8 @@
 * Layer 7
     * ELB - ALB
     
+    
+
 ## Chapter 2 - General Networking Fundamentals
 
 ### IpV4
@@ -83,7 +93,7 @@
 
 * When you set IPv6 on AWs , you need add it to your VPC as additional CIDR
     * AWS assigned /56 to your VPC
-    * It's recommended you assing /64 to your subnets
+    * It's recommended you assign /64 to your subnets
     
 * Cannot create a VPC limited to IPv6
 
@@ -117,7 +127,7 @@
 
 * Layer 2 Switching is the Data Link Layer of OSI Model
 * Switches operate at layer 2, and are used to break collision domains into smaller ones
-    * Each pot on a switch is a collision domain which avoids collisions from multiple devices attempting to talk at once
+    * Each spot on a switch is a collision domain which avoids collisions from multiple devices attempting to talk at once
 * Network adapters have MAC addresses assigned, and switches use the MAC addresses to send frames between devices
 * Devices send ARP requests to learn the MAC address of other devices
 * Switches store learned MAC addresses in a MAC address table
@@ -215,7 +225,8 @@ For example, the following IP addresses would be reserved on the 192.168.0.0/24 
 * Options Sets
     * Once created, DHCP options cannot be changed. Instead, a new option set would have to be created
     * DHCP options are automatically applied to instances every few hours, based on the DHCP lease renewal
-    * Private instances in a nondefault VPC receive an unresolvable host name, like ip-10-0-0-202
+    * Private instances in a non-d
+    ult VPC receive an unresolvable host name, like ip-10-0-0-202
     * The default DNS option is AmazonProvidedDNS
     * Custom Domain name and DNS servers may be specified, and up to 4 custom DNS servers are supported
     * Custom values are specified in the DHCP Option set
@@ -304,6 +315,7 @@ For example, the following IP addresses would be reserved on the 192.168.0.0/24 
 * Endpoints may only connect within the same regions as the VPC, and cannot be transferred
 * Can use Security Groups
     
+
 ## Use Case 3: Implement an AWS Management Network Infrastructure
 
 ### Elastic IPS
@@ -338,7 +350,7 @@ For example, the following IP addresses would be reserved on the 192.168.0.0/24 
 * Elastic Network Adapters
     * Elastic Network interfaces are different from Elastic Network Adapters (ENAs)
     * An ENA is a custom interface used to optimize network performance on some instance types
-* Linux and Windows Server instances will automatically configure the private IPv4 address and gateway on he operation system when dual-homed
+* Linux and Windows Server instances will automatically configure the private IPv4 address and gateway on the operation system when dual-homed
 * Adding an ENI cannot be used to aggregate bandwidth. NIC teaming or port-channel bandwidth aggregation is not supported
 * Attaching dual-homed network interfaces to the same subnet may produce unanticipated issues, such as asymmetric routing. Consider using a secondary private IP address on the eth0 interface instead
 * AMIs may have a script preinstalled by AWS called ec2-net-utils, which can automate configuration of network interfaces
@@ -365,7 +377,7 @@ For example, the following IP addresses would be reserved on the 192.168.0.0/24 
 * All nodes can talk to all other nodes within the placement group, at a full line rate of 10 Gbps and 25 Gpbs aggregate
 * Instances that support enhanced networking will see the lowest latency and highest packet-per-second network performance
 * The types of instances that can be launched into a cluster placement group is limited
-* Traffic to and from S3 buckets in the same region, over the public IP or VPC endpoint can use all available instace aggregated bandwidth
+* Traffic to and from S3 buckets in the same region, over the public IP or VPC endpoint can use all available instance aggregated bandwidth
 * Mixed instance types are supported, but AWS recommends using the same instance type for all instances, to minimize the risk of the required capacity not being available
 * Network traffic to the internet, and over Direct Connect connections, to on.premises locations is limited to 5 Gpbs
 
@@ -389,7 +401,7 @@ For example, the following IP addresses would be reserved on the 192.168.0.0/24 
 ### Enhanced Networking
 
 * ENA (Enhanced Networking Adapter) drivers provide fast packet processing and are licensed under the open source Data Plate Development kit.
-* Enhanced networking can not be managed from the AWS console
+* Enhanced networking cannot be managed from the AWS console
 * The available bandwidth will vary based on the instance type, and not all instance types support enhanced networking
     * The latest AMI (Amazon Linux 2), already have enchanced networking enable on the instances
 * ENAs can utilize up 25 Gbps of bandwidth, depending on the instance type
@@ -397,7 +409,7 @@ For example, the following IP addresses would be reserved on the 192.168.0.0/24 
     * They must be configured using the AWS cli, or AWS Tools for EC2 for Powershell
 * Intel 82599 Virtual Function (VF) interface
     * Use AWS Ec2 describe-instance-attribute to verify if SR-IOV support is enabled
-    * SR-IOV (Single-Root Input/Output virtualization) offers higher I/O performance and lower CPU utilization than traditional virtualized network interfacces
+    * SR-IOV (Single-Root Input/Output virtualization) offers higher I/O performance and lower CPU utilization than traditional virtualized network interfaces
         * SR-IOV allows a physical PCI adapter to be shared in a virtual environment
         * The PCI adapter looks like multiple virtual network interfaces to the host hypervisor, allowing multiple virtual machines to utilize the adapter
 * Jumbo frames are Ethernet frames with payloads larger than 1500 bytes, which can improve network performance.
@@ -452,7 +464,7 @@ Configuring IPv6 for private use requires additional configuration. To keep an i
     * IPv6 is not supported
     * MTU maximum is 1500
 * Inter-region peer traffic is encrypted and sent across the AWS private network
-* A security group may be updated with the security group of the peer VPC, if it is in the same region, or the CIDR block block of a peer VPC if it is in different region
+* A security group may be updated with the security group of the peer VPC, if it is in the same region, or the CIDR block of a peer VPC if it is in different region
 * Routes are required for VPC peer communication, and have target id of pcx-xxxxx
 * The most specific route takes priority if routes to different VPC peers overlap
 * Support for PrivateLink access over VPC peers was recently added, which allows access to VPC endpoints
@@ -467,17 +479,19 @@ Configuring IPv6 for private use requires additional configuration. To keep an i
 * Provisioning
 * Active: Once active, connection can be deleted but not rejected
 
-#### Mutiple VPC Peers
+#### Multiple VPC Peers
 
 * HUB and Spoke: A single VPC in the center (with access to all other VPCS), this is typical when using management VPC, or a central file storage VPC
 * Full Mesh: All VPCs have direct connection to all other VPCs
 * Not supported
     * Overlapping CIDR Blocs
-    * Transitive peering -Need Use transit gateway. Not supported Native
+    * Transitive peering - Need Use transit gateway. Not supported Native
     * Edge-To-Edge routing through a gateway or private connection
         * VPN or Direct connection
         * Internet Gateway
         * Private subnet through a NAT device
+        
+[Peering Configuration with Specific Routes](https://docs.aws.amazon.com/vpc/latest/peering/peering-configurations-partial-access.html)
 
 ## VPN - Design and Implement VPN Solution
 
@@ -504,7 +518,7 @@ Configuring IPv6 for private use requires additional configuration. To keep an i
 * 2 separate tunnel to different AZs (AWS Side)
 
 ![Diagram](../images/screenshot.246.jpg)
-
+    
 #### Site-to-Site VPN Routing
 
 * The type of device you use for your on-premises VPN will determine if you will use static or dynamic routing
@@ -564,10 +578,21 @@ Configuring IPv6 for private use requires additional configuration. To keep an i
 
 ### AWS Client-to-Site VPN
 
-* based OpenVPN software
-* client establish client VPN Endpoint
+* Based OpenVPN software
+* Client establish client VPN Endpoint
     * AWS Recommends associate at least two subnets in different AZs to client establish client VPN Endpoint
+    * Cannot associate to the other VPCs
 * Can apply security groups to restrict access to client vpn endpoints
+* Can Restrict access to AWS Resources
+* Can access
+    * VPC Peered VPCs
+    * On-Prem via VGW
+    * Internet Via IGW and public AWS Services
+* The client VPN Endpoint CIDR cannot overlap with any VPC CIDRs in VPC
+* Authentication
+    * Mutual authentication
+    * Active Directory
+* Support split tunnel
 
 ![Diagram](../images/screenshot.245.jpg) 
 
@@ -589,8 +614,8 @@ Configuring IPv6 for private use requires additional configuration. To keep an i
 * Allows multiple VPN connections to be attached a single VGW
 * This can be used to provide redundant connections from a single datacenter for redundancy, so that if one Customer Gateway fails the redundant Customer Gateway can be used
     * When using it for redundant connections, the prefix should be the same (0.0.0.0/0)
-* Multiple distinct dataceneters can also be connected to AWS VPN cloudHub
-    * With multiple datacenters, the prefizes should be different each site to the VGW
+* Multiple distinct datacenters can also be connected to AWS VPN cloudHub
+    * With multiple datacenters, the prefixes should be different each site to the VGW
 * Connected VPNs may access the VPC viua the VGW, and other connected VPNs as well
     * VPN Cloudhub operates on a hub-and-spoke model that can be used with and without a VPC
 * Different BGP ASNs are required for each VPN
@@ -630,14 +655,14 @@ Configuring IPv6 for private use requires additional configuration. To keep an i
 
 ## Direct Connect
 
-* Provides a private connectio from an on-premises environment to tha AWS network
+* Provides a private connection from an on-premises environment to tha AWS network
 * Connection can be a 1 GB or 10 GB
     * Less 1 GB require customer to use Direct Connect provider
 * The customers extend their backbone network into the AWS Direct Connect provider's location, where a patch is available into the AWS network
 
 * Requirements
     * Connection Type
-        * Dedicated Conenctions: 1 Gbps or 10 Gbps. Supports up to 50 Virtual interfaces (VIF)
+        * Dedicated Connections: 1 Gbps or 10 Gbps. Supports up to 50 Virtual interfaces (VIF)
         * Hosted connections: Sub 1 GB with AWS Direct connect partner at 50-500 Mbps, and 1 Gbps, 2 Gbps, 5 Gbps, and 10 Gbps from select partners. A Hosted connection supports a single VIF
         * Hosted VIFS: Newer AWS partners are not allowed to provision Hosted VIFs because of the potential for over subscription, but some existing providers may still have this offering
     * Must use single-mode fiber with 1000 BASE-LX transceiver for 1 Gigabit Ethernet connection, or a 10GBase-LR transceiver for a 10 gigabit ethernet connection
@@ -678,7 +703,7 @@ Configuring IPv6 for private use requires additional configuration. To keep an i
         * MD5 authentication
         * Specifying any prefixes you want to be advertise (advertised globally except China)
         * Jumbo Frames
-            * The default is MTU 1500, but you can enabled jumbo frames by enabling MUT 9001 on the VIF. When using Jumbo Frames, the MTU size must be updated throughout the data path (the application and peer routes)
+            * The default is MTU 1500, but you can enabled jumbo frames by enabling MTU 9001 on the VIF. When using Jumbo Frames, the MTU size must be updated throughout the data path (the application and peer routes)
 * Private VIFs
     * Allow connections to private services such as VPC.
     * Private VIFs can connect to a Direct Connect Gateway, which can associated with one or more VGWs in any AWS region except China
@@ -692,7 +717,7 @@ Configuring IPv6 for private use requires additional configuration. To keep an i
         * VIF name and owner information (or Account ID if this is for another account)
         * Customer-side BGP Peer IP (option for AWS to generate: 169.254.0.0/26)
         * MD5 authentication for BGP peers (with an option for AWS to generate it)
-* There is a maximum of 50 VIFS max per VGW ( think 50 BGP sessions per VPC)
+* There is a maximum of 50 VIFS max per VGW (think 50 BGP sessions per VPC)
 * When utilizing hosted VIFs, the AWS Direct Connect owner hosts VIFS and can assign them to different accounts if desired
     * This means that the payer account is different than the account that will use the VIF
     * The VIF will show up in the other account as a VIF, and once accepted, the acceptor has full management of that hosted VIF
@@ -853,7 +878,7 @@ Configuring IPv6 for private use requires additional configuration. To keep an i
     * Geolocation: Chooses the route based on the geographic location of user
         * Works by using a database to map IP addresses to locations
     * Multivalue: Allows multiple values to be returned in response to a query. These values might be for IP address of web servers
-        * It can be used as a type of round-robin method for seleting a resource
+        * It can be used as a type of round-robin method for selecting a resource
     * Health Checks - Route 53 health checks the health of resources, including web servers and applications
         * Monitoring includes health of a specific resource, like a web server, the status of other health checks, or cloudwatch alarms
         
@@ -1073,9 +1098,9 @@ Active Directory integrates with AWS Directory Services. In scenario where Activ
 
 ### VPN Over AWS Direct Connect
 
-If an application requires consistent network performance, Direct Connect is a good option.
-Direct connect, however, does not provide encrypted communication across the connection.
-A VPN can be established on DX Connections. This allows for encrypted, IPSec communication across the DX connection, providing encrypted communication with a low-latency, consistent bandwidth solution
+* If an application requires consistent network performance, Direct Connect is a good option.
+* Direct connect, however, does not provide encrypted communication across the connection.
+* A VPN can be established on DX Connections. This allows for encrypted, IPSec communication across the DX connection, providing encrypted communication with a low-latency, consistent bandwidth solution
 
 ## Implementing AWS Cloud Services with Specific Network Requirements
 
@@ -1194,3 +1219,357 @@ Factors that can affect network performance
 * Cloudwatch monitors metrics including NetworkIn, NetworkOut, NetworkPacketsIn and NetworkPackests out for an instance.
     * VPN metrics include tunnel status, and data in and data out
     * DX connection metrics include TunnelSate and bit rate for inbound and outbound data packet rate, health of fiber and CRC Error count checks
+    
+
+### Troubleshooting
+
+* Most of AWS issues are layer 3 and above. They're usually problems with routing, TCP/UDP, or Layer 7 applications
+* Network troubleshooting tools
+    * Ping Command checks network round trip time using ICMP. It can be used to test connectivity from an instance. Can it ping other instances within the VPC? Can it ping an address on the internet? Be sure ICMP is allowed in the NACLs and security groups, as it not allowed by default
+    * traceroute provides the path to the destination. This is helpful in verifying the route traffic will take through the network
+    * nslookup queries information on a domain name and receives domain name to IP resolution information
+    * ipconfig/ifconfig provides IP address, DNS and other network related settings for a host
+    * Cloudwatch logs function as a central repository for log files. A log stream is a squence of log events from the same source. Captured logs can be sent to other services for storage or streams, Elasticsearch, or other third party services
+    * Cloudwatch log groups define retention, monitoring and access policies
+    * Use the cloudwatch log agent to send log data from EC2 Instances to Cloudwatch logs
+* Service Limits
+    * Another thing to consider is whether or not you hae hit an AWS service limit
+    * AWS imposes limits, some of which are hard limits, and some of which are soft
+    * The limites can be raised by submitting a ticket with AWs support
+    
+* AWS Troubleshooting tools
+    * Cloudwatch collects and tracks metrics and log files, and can also alarm and send notifications to changes in system state based on defined thresholds
+    * AWS config captures a history of AWS resource configuration changes. It can also be used to help identify issues related to configuration changes
+    * AWS trusted Advisor provides guidance to help you provision resources based on best practices
+    * AWS IAM Policy simulator evaluates policies that you select, to determine the effects of permissions for each of the actions that you specify
+    * VPC Flow logs enable the capture of information about IP traffic going to and from the network interfaces in VPC. VPC flow log data can be sent to cloudwatch logs and S3. Flow logs can assist with troubleshooting. 
+        * Traffic not captured by flow logs
+            * traffic generated from an instance to the DNS server (custom DNS server traffic is logged)
+            * Traffic generated by a Windows instance to the Amazon Windows activation server
+            * Traffic for instance metadata and time sync services
+            * DHCP traffic
+            * Traffic to the reserved IP address for the default VPC route
+            * traffic between an endpoint network interface and a Network load balancer interface
+        * traffic monitored on a secondary interface shows the traffic in the flow log with the primary interface address
+        
+## Design and implement for Security and compliance
+
+### Holistic Approach to Security
+
+* A holistic approach security includes securing the infra all leves
+    * User management and access
+    * Physical Security
+    * OS Level Security
+    * Data Protection for data at rest and in flight
+    * Network Security
+    * Alerting and auditing use of administrative rights
+    * Threat Protection
+    
+### AWS Security Services
+
+* AWS Organizations allows for centralized management of AWS accounts and billing. Apply Service Control Policies
+* AWS Service Catalog allows organizations to create and manage of portfolio of products. Allows for deployment consistency and governance
+* Guarduty is a threat detection service that provides a way to continuously monitor and protect AWS accounts and workloads. Guarduty Can analyze events from cloudtrail, VPC flow logs and DNS Logs. No Agents.
+* Amazon Inspector analyzes VPC environment for potential security issues.
+* Amazon Macie uses machine learning to find, classify and protect sensitive data.
+* Amazon Security hub aggregates findings from services such as Guarduty, inspesctor and Machine
+
+### Malicious Activity Detection
+
+* AWS Shield provides managed DDoS protection (Two versions)
+    * AWS Shield Standard
+        * All customers have automatic protection from AWS Shield Standard at no cost. Defends against the most common types of network and transport layer DDoS Attacks
+    * AWS Shield Advanced 
+        * Provides higher level of protection for web applications on EC2, ELB, Cloudfront and Route 53. Has 24x7 DDoS response team support for assistance during the attack. Access to real-time metrics. Provides layer 7 protection, while standard provides layer 3 and 4
+* AWS Web Application Firewall (WAF) 
+    * Monitors HTTP/HTTPs requests forward by Api Gateway, Cloudfront and ALB. WAF is used for controlling access to contect based on specific conditions
+    * Can be used with Cloudfront custom error pages based on conditions
+    * Example of how block access to resources based on geographical location
+* Penetration testing previously required authorization from AWS, but they allow it now on the following services
+    * EC2, Nat Gateways, and ELBs
+    * RDS
+    * Cloudfront
+    * API Gateway
+    * Lightsail
+    * Elastic Beanstalk
+    
+
+## Cantril
+
+### AWS Global Accelerator
+
+* Uses two Anycast IP Address
+* Anycast IP's allow a single IP be in multiple locations. Routing moves traffic to closest location
+* Traffic initialy uses public internet & enters a Global Accelerator edge location
+* From the edge, data transits globally across the AWS global backbone network. Less hops, directly under AWS Control significantly better performance
+* Moves the AWS network closer to customers
+* Can be used for NON HTTP/S(TCP/UDP)
+
+### AWS Site-to-Site VPN
+
+* A logical connection between a VPC and on-premises network encrypted using IPSec, running over the public internet
+* Full HA - If you design and implement it correctly
+* Quick to provision - less than an hour
+* VGW is Highly Available by Design (CGW Not)
+* Speed limitations ~ 1.25 Gbps (AWS Limit)
+* Latency Considerations - inconsistent, public internet
+* Cost - AWS Hourly cost, GB out cost, data cap (on premises)
+* Quick setup - all software configuration
+* Can be used as a backup for Direct Connect (DX)
+* Can be used with Direct Connect (DX)
+    * Can user over top Direct Connect to add encryption
+
+![Diagram](../images/site-to-site-ha.png)
+
+### AWS Transit Gateway
+
+* Network Transit Hub to connect VPCs to on premises networks
+* Reduces network compelexity
+* Single network object - HA and Scalable
+* Attachements to other network types
+* VPC, Site-to-Site VPN & Direct connect Gateway
+* Supports Transitive routing device
+* VPC attachments are configured with a subnet in each AZ where service is required
+* Can peer with another Transit Gateways in Other Region (Same/Cross Account)
+    * Good solution to create global networks
+* Can attach with Direct Connect Gateway
+
+![Diagram](../images/transitgateway.png)
+
+### Advanced VPC Routing
+
+* Priority
+    * Local
+    * Longest prefix wins
+    * Static Routes
+    * Propagated Routes
+        * DX
+        * VPN Static
+        * VPN BGP
+        * AS_PATH
+
+* Ingress Routing
+    * Gateway route tables can be used to direct a gateway (IGW) to take actions on inbound traffic - such as forwarding it to a security appliance
+ 
+![Diagram](../images/ingress-routing.png)
+ 
+ 
+ 
+### Accelerated Site-to-Site VPN
+
+* VPN Problem
+    * S-2-S VPN - 2 Resilient Public Space Endpoints
+    * 2 IPSEC Tunnels
+    * Transit over the Public Internet
+    * Variable performance, latency & Consistency
+    * ... or a Direct Connect (DX) Public VIF
+        * Better performance - but costly for many business
+* Accelerated VPN
+    * Uses AWS Edge Locations
+    * VPN tunnel IPS are global, and connections are routed to the closest global accelerator edge location
+    * Low latency, less jitter & higher throughtput
+    * Acceleration can be enabled when creating a TGW VPN attachment. Not comptabile with VPNs using VGW
+    * Fixed accelerator cost plus transfer fee
+
+### Direct Connect
+
+* Types
+    * via AWS/ ... Dedicated Connection - Direct from AWS
+        * 1 Gbps => 10 Gbps
+    * via partner
+        * Ranges of Seepds 50 Mbps => 10 Gbps
+        * Hosted Connection - a DX connection with one VIF
+        * Hosted VIF - a single VIF (no connection), shared bandwidth
+* No Encryption
+* Add Encryption: 
+    * Public VIF + Site-to-Site VPN
+    * No sharing internet data cap
+    * No sharing internet bandwidth
+    * No transit over the internet - low / consistent latency
+    * cheaper data transfer // faster speeds
+* Resilience
+    * Not Resilience
+    * DX locations are connected to the AWS region via redundant high speed connections
+    * By Default a single cross-connect links a DX port with a customer or provider router
+    * A DX is extended from the DX location to a customer premises
+* LAG
+    * Multiple Physical Connections act as one - Speed * N
+    * Active / Active Architecture
+    * Max 4 Connections per LAG
+    * All connections need to be the same speed
+    * and terminate at the same location
+    * A LAG has a minimumLinks attribute - The LAG is active as long as this value or More connections are active
+
+![Diagram](../images/dx.png)
+
+![Diagram](../images/dxres.png)
+
+![Diagram](../images/dxlag.png)
+
+#### Direct Connect Gateway
+
+* Direct Connect Limitations
+    * Regional Service
+    * Customer premises to 1+ DX Locations
+    * Public VIF can access all AWS Public Regions
+    * Private VIF can only access VPC's in the same AWS Region via VGW's
+* To use Private VIF in different Regions, need to use Direct connect Gateway
+* Global network device - acessible in all regions
+* Integrates via a 1 private VIF
+* DX Gateway uses VGW associations globally
+* VPC <-> On Premises Communications
+* Not Support VPC <-> Other VPCs on same DX Gateway (Transitive Routing)
+* 10 VGW per DX Gateway
+* 1 DX can have many private VIFS == Many DX Gateways
+* Integrate with TGW
+    * Create a transit VIF - 1 per DX connection
+    * Associated with the DX Gateway
+    * Allows 3 TGW to be attached to the DX Gateway
+    * TGWs can be peered - supports transitive routing
+ 
+![Diagram](../images/dxtgw.png)
+
+### VPC Endpoints
+
+#### Gateway
+
+* Regional ... can't access cross region services
+* Prevent leaky buckets - S3 buckets can be set to private only by allowing access only from a gateway endpont
+* Endpoint policy is used to control what it can access
+* Are not acessible outside the VPC
+
+#### Interface
+
+* Added to specific subnets - an ENI - not HA
+* FOR HA - add one endpoint, to one subnet, per AZ used in the VPC
+* Network access controlled via Security Groups
+* Endpoint policies - restrict what can be done with the endpoint
+* Only Support TCP and IPv4 Only
+* Behind scenes uses PrivateLink
+* Provides a new Service endpoint DNS
+* Endpoint Regional DNS
+* Endpoint Zonal DNS
+* Using private DNS, overrides the default service DNS. So with this we can use the public service dns instead the the endpoint specific dns
+
+### DNS
+
+* Route 53 Resolver (.2)
+    * Only acessible from VPC. Not from VPN or Direct Connect
+* Route 53 Endpoints
+    * VPC interfaces (ENIS) - Accessible over VPN or DX
+    * Inbound and Outbound
+    * Inbound = On-premises can forward to R53 Resolver
+    * Outbound = conditional forwaders, R53 to On-prem
+    * Rules control what requests are forwarded
+  
+
+### Private Link (Endpoint service)
+
+* HA via multiple endpoints
+* IPv4 & TCP Only
+* Private DNS is supported (verified domains)
+* Direct Connect, Site-to-Site VPN and VPC Peering are supported
+
+### Cloudfront
+
+* Origin - The source location of your content
+    * S3 Origin
+    * Custom Origin
+* Distribution - The configuration unit of cloudfront
+* Edge Location - Local cache of your data
+* Regional Edge Cache - Larger version of an edge location. Provides another layer of caching
+    * Only Supported to custom origin
+* No Writes caching - Upload direct to origins
+
+* TTL -> Behaviour
+    * More frequent cache hits = Lower Origin load
+    * Default TTL (behaviour) = 24 hours (validity period)
+    * You can set Minimum TTL and Maximum TTL Values
+    * Can specify object TTL values
+        * Origin Header: Cache-control max-age (seconds)
+        * Origin Header : Cache-controls s-maxage (seconds)
+        * Origin Header: Expires (Date & Time)
+        * Custom Origin or S3 (Via Object metadata)
+* Invalidations
+    * performed on a distribution
+    * applies to all edge locations... takes time
+    * can use wildcards
+    * Has cost. If need several times invalidate files, use versioned file names - Need change application
+    
+![Diagram](../images/cloudfront.png)   
+![Diagram](../images/cloudfront-behaviours.png)   
+
+### VPC Structure
+
+* How Many AZs
+
+![Diagram](../images/azs.png)
+
+* Subnets & Tiers
+
+## Extras
+
+### BGP Precedence
+
+* Highest weight ( Direct Attched peers have 32768) . Property doesn't share between routers
+* Highest Local preference - Only shared with routers in same ASN (iBGP)
+* Shortest AS Path - Propragated over the network
+    * eBGP over iBGP
+* Lowest Metric - Only see by the peers. Metric is not propragated
+* BGP Port TCP 170
+
+### Site-To-Site
+
+* Tunnels ar eonly established by traffic flowing from on-prem to AWS
+* AWS pre shared key only use 12 characters. - Create own if need more
+* Tunels CIDR must be /30 from 169.254.0.0/16
+* VGW
+    * Limitations
+        * Not Transitive
+        * Throughput capped at 1.25 Gbps
+        * VGW always uses a single VPN tunnel endpoint when returning to a traffic to a network
+        * AWS VPN tunnels can only support a single pair of IPSec security Associations
+        * Only Support IPv4 and IPSec
+        * Atach only one VPC
+
+* Customer Gateway
+    * Must support
+        * IKE
+        * IPSec
+        * Dead Peer connection
+        * Must be static ip public . Use Nat server IP for Nat Transversal
+        * BGP for dynamic routing
+    * Firewall Ports Open
+        * udp 500
+        * IP Protocol 50
+        * udp 4500 to Nat Transversal
+
+### Direct Connect
+
+* Physical Requirements
+    * 10 Base LR (10) and 1000Base-LX(1)
+    * Need support BGP and BGP MD5 Auth
+* Hosted Connections
+    * 50,100,200,300,400,500 Mbps
+    * 1,2,5,10 Gbs
+* Virtual Interfaces
+    * Private VIF
+        * Connects to Single VGW
+        * Connects to single DX Gateway (that can connect to 10 vpcs)
+    * Transit Vif
+        * Associate only to VGW. Connect to a transit Gateway
+    * Public Vif
+        * Connect to AWs public services in all public Regions
+* DX Gateway may connect with either
+    * Private Vif and VGWs
+    * Transit Vif and TGWs
+    * But Not Both
+* MTU is configured on VIF. Each VIF must run in own Vlan ID
+* DX Limitations
+    * Max 10 VGW per GXw
+    * Not overlapping CIDR
+    * Only sessions via a Single VIF to one connected VPC at a time are allowed
+    * Cannot send traffic
+        * From one associated VPC to another
+        * From one Connected VIF to another
+        * From a connected VIF through VPN connection using a VGW

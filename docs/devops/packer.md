@@ -1,3 +1,11 @@
+## Know Errors
+
+### ResourceNotReady: exceeded wait attempts
+
+* Change AWS_MAX_ATTEMPTS environment var. Default is 40 tries
+
+[Link](https://www.packer.io/docs/builders/amazon#aws_max_attempts)
+
 ## Install
 
 ```bash
