@@ -6,7 +6,11 @@
 
 [Subjects](https://acloud.guru/forums/aws-networking-specialty/discussion/-M93EIqR5kynmTYnFBH-/advanced_networking_speciality)
 
-[Transo Diagrams](https://transno.com/)
+[Transo Diagrams](https://transno.com/doc5gOoYBnAmEV)
+
+[Direct Connect Deep Dive](https://www.youtube.com/watch?v=DXFooR95BYc)
+
+[Transit Gateway Deep Dive](https://www.youtube.com/watch?v=9Nikqn_02Oc&t=3354s)
 
 ## Chapter 1 - General Networking Fundamentals
 
@@ -1511,7 +1515,7 @@ Factors that can affect network performance
 
 ### BGP Precedence
 
-* Highest weight ( Direct Attched peers have 32768) . Property doesn't share between routers
+* Highest weight ( Direct Attached peers have 32768) . Property doesn't share between routers
 * Highest Local preference - Only shared with routers in same ASN (iBGP)
 * Shortest AS Path - Propragated over the network
     * eBGP over iBGP

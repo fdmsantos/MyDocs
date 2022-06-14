@@ -130,6 +130,7 @@ nav:
           - Archlinux: platforms/unix/archlinux.md
           - Virsh: platforms/unix/virsh.md
           - Wordpress: platforms/unix/wordpress.md
+          - IpTables: platforms/unix/iptables.md
   - DevOps:
       - Terraform: devops/terraform.md
       - Packer: devops/packer.md
